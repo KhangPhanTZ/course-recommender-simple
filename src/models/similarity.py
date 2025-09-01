@@ -3,7 +3,6 @@ import pandas as pd
 from typing import Tuple, Dict, Any, Optional, List
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from sentence_transformers import SentenceTransformer
 from scipy import sparse
 from . import vector_backend
 from ..utils.io import save_pickle, save_sparse_matrix, save_parquet
@@ -40,9 +39,17 @@ def fit_tfidf(corpus, max_features: int = 50000):
 
 
 def embed_sbert(corpus: List[str], model_name: str):
+    try:
+        from sentence_transformers import SentenceTransformer
+    except Exception as e:
+        raise ImportError(
+            "sentence-transformers chưa được cài. "
+            "Hãy `pip install sentence-transformers` khi bạn muốn dùng SBERT."
+        ) from e
     model = SentenceTransformer(model_name)
     X = model.encode(corpus, show_progress_bar=True, convert_to_numpy=True, normalize_embeddings=True)
     return model, X
+
 
 def build_similarity_artifacts(df: pd.DataFrame, corpus: List[str], use_sbert: bool, model_name: str):
     if use_sbert:
