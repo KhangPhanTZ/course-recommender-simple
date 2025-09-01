@@ -1,0 +1,36 @@
+# === Column mapping (edit to match your CSV) ===
+columns:
+  id: id                  # không có -> để nguyên, pipeline sẽ tự tạo
+  title: course           # dùng cột 'course' làm tiêu đề khóa học
+  description: partner    # tạm dùng 'partner' làm mô tả, vì không có cột 'description'
+  skills: skills
+  category: certificatetype   # gán category = loại chứng chỉ
+  level: level
+  rating: rating
+  url:                     # không có -> để trống
+
+
+# === Text building ===
+use_sbert: true           # dùng Sentence-BERT (hiểu ngữ nghĩa tốt hơn TF-IDF)
+
+text_fields:              # lặp field để "boost" (trọng số)
+  - title
+  - title
+  - skills
+  - skills
+  - description
+  - level
+  - category
+
+min_characters: 30       # drop rows with too-short text after cleaning
+
+# === Embeddings ===
+use_sbert: false         # true to use Sentence-BERT instead of TF-IDF
+sbert_model: sentence-transformers/all-MiniLM-L6-v2
+
+# === Clustering ===
+kmeans_k: 20
+random_state: 42
+
+# === Similarity search ===
+top_k: 10

@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+scipy
+nltk
+tqdm
+pyyaml
+streamlit
+sentence-transformers
+umap-learn
+matplotlib
+plotly

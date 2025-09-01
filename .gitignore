@@ -1,0 +1,19 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+.ipynb_checkpoints/
+
+# Data & Artifacts
+artifacts/*
+!artifacts/.gitkeep
+data/*
+
+# OS
+.DS_Store
+
+# Streamlit
+.streamlit/
