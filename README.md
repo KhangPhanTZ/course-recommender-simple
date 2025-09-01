@@ -78,7 +78,7 @@ A GitHub-ready **content-based recommendation system** for Coursera-style datase
 - Data is ignored by Git; upload your CSV or document how to obtain it.
 - Replace Coursera.csv with your own and update config accordingly.
 
-##Dataset 
+## Dataset 
 - using dataset from kaggle : Multi-Platform Online Courses Dataset
 - Dataset URL : https://www.kaggle.com/datasets/everydaycodings/multi-platform-online-courses-dataset
 - Only coursera data in project operation
