@@ -1,25 +1,47 @@
 name: ci
+
 on:
   push:
   pull_request:
 
 jobs:
-  test:
+  import-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install deps
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements-ci.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install light deps
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-      - name: Smoke build (no data check)
+          pip install -r requirements-ci.txt
+
+      - name: Static import sanity
         run: |
-          # nếu không có data/Coursera.csv trong repo public,
-          # bước này chỉ kiểm tra import & lệnh help
           python - << 'PY'
-import runpy
-print("Imports OK")
-PY
+          import importlib
+          # Các module không nên import heavy deps khi chỉ import cấp package
+          import src.utils.config as cfg
+          import src.pipeline as pipe
+          import src.models.similarity as sim
+          import src.models.clustering as cl
+          print("Imports OK")
+          PY
+
+      # Không có data thì không build; chỉ kiểm tra tồn tại file & schema hợp lệ
+      - name: Lint basic (optional)
+        run: |
+          python -m compileall -q src

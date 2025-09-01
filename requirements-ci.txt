@@ -1,0 +1,6 @@
+# requirements-ci.txt
+numpy
+pandas
+scikit-learn
+pyyaml
+scipy
