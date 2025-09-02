@@ -72,11 +72,6 @@ A GitHub-ready **content-based recommendation system** for Coursera-style datase
   - Pick an existing course and get **Top-N similar** courses
   - Explore clusters + 2D map
 
-## Notes
-
-- If you don't have GPU, keep `use_sbert: false` for speed.
-- Data is ignored by Git; upload your CSV or document how to obtain it.
-- Replace Coursera.csv with your own and update config accordingly.
 
 ## Dataset 
 - using dataset from kaggle : Multi-Platform Online Courses Dataset
