@@ -20,7 +20,7 @@ A GitHub-ready **content-based recommendation system** for Coursera-style datase
 ├── config/
 │   └── config.yaml              # Column names & settings
 ├── data/
-│   └── Coursera.csv             # Your dataset (not committed by default)
+│   └── Coursera.csv             # Dataset (not committed by default)
 ├── notebooks/
 │   └── EDA_guide.md             # Lightweight EDA guide
 ├── src/
