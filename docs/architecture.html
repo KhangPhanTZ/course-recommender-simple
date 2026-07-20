@@ -1,0 +1,433 @@
+<title>Course Recommender — Kiến trúc hệ thống</title>
+<style>
+  :root {
+    --bg: #f5f7f9;
+    --surface: #ffffff;
+    --surface-2: #eef1f5;
+    --ink: #131a22;
+    --ink-2: #45525f;
+    --muted: #78848f;
+    --border: #e1e6ec;
+    --accent: #0d8f83;
+    --accent-soft: rgba(13,143,131,0.10);
+    --amber: #b56a12;
+    --amber-soft: rgba(181,106,18,0.12);
+    --blue: #2f6bd6;
+    --blue-soft: rgba(47,107,214,0.12);
+    --panel: #0f1620;          /* diagram surface — fixed in both themes */
+    --shadow: 0 1px 2px rgba(16,24,32,.05), 0 8px 24px -12px rgba(16,24,32,.18);
+    --radius: 14px;
+    --maxw: 1120px;
+    --textw: 70ch;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code", Menlo, monospace;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0a0e13;
+      --surface: #121822;
+      --surface-2: #0e141c;
+      --ink: #e7edf3;
+      --ink-2: #aab6c2;
+      --muted: #6c7885;
+      --border: #212b36;
+      --accent: #2dd4bf;
+      --accent-soft: rgba(45,212,191,0.12);
+      --amber: #e6b061;
+      --amber-soft: rgba(230,176,97,0.14);
+      --blue: #78a9ff;
+      --blue-soft: rgba(120,169,255,0.14);
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f5f7f9; --surface: #ffffff; --surface-2: #eef1f5; --ink: #131a22;
+    --ink-2: #45525f; --muted: #78848f; --border: #e1e6ec; --accent: #0d8f83;
+    --accent-soft: rgba(13,143,131,0.10); --amber: #b56a12; --amber-soft: rgba(181,106,18,0.12);
+    --blue: #2f6bd6; --blue-soft: rgba(47,107,214,0.12);
+    --shadow: 0 1px 2px rgba(16,24,32,.05), 0 8px 24px -12px rgba(16,24,32,.18);
+  }
+  :root[data-theme="dark"] {
+    --bg: #0a0e13; --surface: #121822; --surface-2: #0e141c; --ink: #e7edf3;
+    --ink-2: #aab6c2; --muted: #6c7885; --border: #212b36; --accent: #2dd4bf;
+    --accent-soft: rgba(45,212,191,0.12); --amber: #e6b061; --amber-soft: rgba(230,176,97,0.14);
+    --blue: #78a9ff; --blue-soft: rgba(120,169,255,0.14);
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* ---- header ---- */
+  header.hero {
+    border-bottom: 1px solid var(--border);
+    background:
+      radial-gradient(120% 140% at 100% -10%, var(--accent-soft), transparent 60%),
+      var(--surface);
+  }
+  .hero-inner { padding: 56px 0 44px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 14px;
+  }
+  h1 {
+    font-size: clamp(30px, 5vw, 46px); line-height: 1.08; margin: 0 0 16px;
+    letter-spacing: -.02em; text-wrap: balance; font-weight: 700;
+  }
+  .lede { font-size: clamp(16px, 2.2vw, 19px); color: var(--ink-2); max-width: 62ch; margin: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+  .chip {
+    font-family: var(--mono); font-size: 12.5px; padding: 6px 11px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--surface-2); color: var(--ink-2);
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .chip b { color: var(--ink); font-weight: 600; }
+
+  /* ---- sections ---- */
+  section { padding: 52px 0; border-bottom: 1px solid var(--border); }
+  .sec-head { max-width: var(--textw); margin-bottom: 28px; }
+  .sec-num {
+    font-family: var(--mono); font-size: 12px; color: var(--muted);
+    letter-spacing: .12em; text-transform: uppercase;
+  }
+  h2 { font-size: clamp(22px, 3.4vw, 30px); letter-spacing: -.015em; margin: 8px 0 12px; text-wrap: balance; }
+  h2 + p { color: var(--ink-2); margin: 0; }
+  .prose { max-width: var(--textw); color: var(--ink-2); }
+  .prose p { margin: 0 0 14px; }
+
+  /* ---- diagram panel (always dark blueprint) ---- */
+  .diagram {
+    background: var(--panel);
+    border: 1px solid #223040;
+    border-radius: var(--radius);
+    padding: 22px 14px;
+    overflow-x: auto;
+    box-shadow: var(--shadow);
+  }
+  .diagram pre.mermaid { margin: 0; text-align: center; min-width: 640px; }
+  .diagram-cap {
+    font-family: var(--mono); font-size: 12px; color: var(--muted);
+    margin: 10px 2px 0; text-align: center;
+  }
+
+  /* ---- component cards ---- */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(268px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 8px;
+  }
+  .card h3 { margin: 0; font-size: 16.5px; letter-spacing: -.01em; display: flex; align-items: center; gap: 9px; }
+  .card p { margin: 0; font-size: 14.5px; color: var(--ink-2); }
+  .card .path { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .tag {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 6px; font-weight: 600; white-space: nowrap;
+  }
+  .t-engine { background: var(--accent-soft); color: var(--accent); }
+  .t-genai  { background: var(--amber-soft); color: var(--amber); }
+  .t-serve  { background: var(--blue-soft); color: var(--blue); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .d-engine { background: var(--accent); }
+  .d-genai { background: var(--amber); }
+  .d-serve { background: var(--blue); }
+
+  /* ---- artifacts table ---- */
+  .table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+  table { border-collapse: collapse; width: 100%; min-width: 560px; background: var(--surface); font-size: 14px; }
+  th, td { text-align: left; padding: 11px 16px; border-bottom: 1px solid var(--border); }
+  th { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  td code, .prose code { font-family: var(--mono); font-size: 12.5px; background: var(--surface-2); padding: 2px 6px; border-radius: 5px; color: var(--ink); }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 18px; }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: var(--ink-2); font-family: var(--mono); }
+
+  footer { padding: 34px 0 60px; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 640px) {
+    .hero-inner { padding: 40px 0 32px; }
+    section { padding: 40px 0; }
+  }
+</style>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Course Recommender · System Architecture</p>
+    <h1>Hệ thống khuyến nghị khóa học: Retrieval + GenAI/RAG, triển khai trên AWS</h1>
+    <p class="lede">Một kiến trúc ba lớp — <b>engine truy hồi</b>, <b>lớp GenAI/RAG</b>, và <b>lớp phục vụ API</b> — ngăn cách bởi một tầng lưu trữ trừu tượng, để cùng một mã nguồn chạy được cả trên máy cá nhân lẫn trên AWS.</p>
+    <div class="chips">
+      <span class="chip"><b>2-stage</b> retrieval (FAISS + rerank)</span>
+      <span class="chip"><b>RAG</b> · Claude API ⇄ Bedrock</span>
+      <span class="chip"><b>FastAPI</b> serving</span>
+      <span class="chip"><b>Terraform</b> · ECS Fargate</span>
+      <span class="chip"><b>30</b> tests · CI/CD</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- 1. OVERVIEW -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">01 — Tổng quan</span>
+        <h2>Kiến trúc tổng thể</h2>
+        <p>Client gọi vào FastAPI. Mỗi request đi qua lớp GenAI (hiểu truy vấn) → engine truy hồi (encode → ANN → lọc → rerank) → và tùy chọn quay lại GenAI để sinh giải thích. Tất cả artifact (vector, index, dữ liệu) nạp qua tầng lưu trữ local hoặc S3.</p>
+      </div>
+      <div class="diagram">
+<pre class="mermaid">
+%%{init: {'theme':'base','themeVariables':{'background':'#0f1620','primaryColor':'#12212c','primaryBorderColor':'#2dd4bf','primaryTextColor':'#e7edf3','secondaryColor':'#20180d','tertiaryColor':'#101d2b','lineColor':'#5d6f7e','clusterBkg':'rgba(45,212,191,0.04)','clusterBorder':'#2a3b49','titleColor':'#8aa0af','fontFamily':'ui-monospace, monospace','fontSize':'13px'},'flowchart':{'curve':'basis','htmlLabels':true,'padding':10}}}%%
+flowchart TB
+  U["👤 Client<br/>UI · curl · SDK"]
+  subgraph SV["Serving — FastAPI (src/api)"]
+    R["/recommend · /similar<br/>/courses · /health"]
+  end
+  subgraph EN["Retrieval engine (src/recsys)"]
+    ENC["Encode query<br/>TF-IDF / SBERT"]
+    IDX["ANN index<br/>FAISS / numpy"]
+    RR["Cross-encoder<br/>rerank (optional)"]
+  end
+  subgraph AI["GenAI / RAG (src/llm)"]
+    QU["Query understanding<br/>NL → filters"]
+    EX["Explanations<br/>(RAG grounded)"]
+    PV["Provider<br/>abstraction"]
+  end
+  subgraph ST["Artifact storage (src/storage)"]
+    LOC["Local FS"]
+    S3[("AWS S3")]
+  end
+  CL["Claude API"]
+  BR["Amazon Bedrock"]
+
+  U --> R
+  R --> QU --> ENC --> IDX --> RR --> R
+  R --> EX
+  QU --> PV
+  EX --> PV
+  PV --> CL
+  PV --> BR
+  IDX -. nạp .-> ST
+  ENC -. nạp .-> ST
+  LOC -.-> S3
+</pre>
+      </div>
+      <div class="legend">
+        <span><span class="dot d-engine"></span>Engine truy hồi</span>
+        <span><span class="dot d-genai"></span>GenAI / RAG</span>
+        <span><span class="dot d-serve"></span>Serving &amp; hạ tầng</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. REQUEST FLOW -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">02 — Luồng dữ liệu</span>
+        <h2>Một request <code>POST /recommend</code> đi qua đâu</h2>
+        <p>Hai tầng truy hồi: tầng recall nhanh (ANN) lấy ứng viên, tầng rerank tinh chỉnh độ chính xác. GenAI bao ở hai đầu: hiểu truy vấn trước, và giải thích kết quả sau — đều có phương án dự phòng tất định nếu không cấu hình LLM.</p>
+      </div>
+      <div class="diagram">
+<pre class="mermaid">
+%%{init: {'theme':'base','themeVariables':{'background':'#0f1620','primaryColor':'#12212c','primaryBorderColor':'#2dd4bf','primaryTextColor':'#e7edf3','lineColor':'#5d6f7e','actorBkg':'#12212c','actorBorder':'#2dd4bf','actorTextColor':'#e7edf3','signalColor':'#8aa0af','signalTextColor':'#c4d0da','labelBoxBkgColor':'#16202b','labelTextColor':'#e7edf3','noteBkgColor':'#20180d','noteTextColor':'#e6b061','noteBorderColor':'#5a4a2a','fontFamily':'ui-monospace, monospace','fontSize':'12.5px'}}}%%
+sequenceDiagram
+  participant U as Client
+  participant API as FastAPI
+  participant LLM as GenAI
+  participant REC as Recommender
+  participant IDX as ANN index
+  U->>API: {query, top_k, explain}
+  API->>LLM: understand_query(query)
+  LLM-->>API: {search, level, category}
+  Note over LLM: LLM hoặc heuristic dự phòng
+  API->>REC: recommend(search, filters)
+  REC->>IDX: nearest neighbours (cosine)
+  IDX-->>REC: candidate ids + scores
+  REC->>REC: lọc + rerank (tùy chọn)
+  REC-->>API: top-k courses
+  opt explain = true
+    API->>LLM: explain(query, courses)
+    LLM-->>API: giải thích grounded (RAG)
+  end
+  API-->>U: results + filters + explanation
+</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. COMPONENTS -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">03 — Chức năng</span>
+        <h2>Các thành phần &amp; nhiệm vụ</h2>
+        <p>Mỗi module có một trách nhiệm rõ ràng và ranh giới sạch, để dễ test, thay thế và mở rộng.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <span class="tag t-engine">Engine</span>
+          <h3><span class="dot d-engine"></span>Pipeline dựng dữ liệu</h3>
+          <p>Đọc CSV → chuẩn hóa cột → làm sạch &amp; ghép text → sinh embeddings → dựng FAISS index → phân cụm KMeans + UMAP → lưu artifacts. Một lệnh: <code>python -m src.pipeline --mode build</code>.</p>
+          <span class="path">src/pipeline.py · src/models</span>
+        </div>
+        <div class="card">
+          <span class="tag t-engine">Engine</span>
+          <h3><span class="dot d-engine"></span>Truy hồi hai tầng</h3>
+          <p>Encode truy vấn (TF-IDF hoặc SBERT) → tìm láng giềng gần nhất theo cosine → lọc theo level/category → rerank bằng cross-encoder để tăng độ chính xác.</p>
+          <span class="path">src/recsys/recommender.py</span>
+        </div>
+        <div class="card">
+          <span class="tag t-engine">Engine</span>
+          <h3><span class="dot d-engine"></span>Vector index (ANN)</h3>
+          <p>FAISS inner-product trên vector đã chuẩn hóa (= cosine). Tự động fallback sang tìm kiếm numpy vector-hóa khi không có FAISS, nên hành vi giống hệt, chỉ chậm hơn.</p>
+          <span class="path">src/recsys/index.py</span>
+        </div>
+        <div class="card">
+          <span class="tag t-genai">GenAI</span>
+          <h3><span class="dot d-genai"></span>Hiểu truy vấn</h3>
+          <p>Biến câu hỏi ngôn ngữ tự nhiên lộn xộn thành một truy vấn ngữ nghĩa gọn + bộ lọc có cấu trúc (level, category). Có LLM thì dùng LLM, không thì dùng heuristic.</p>
+          <span class="path">src/llm/service.py</span>
+        </div>
+        <div class="card">
+          <span class="tag t-genai">GenAI</span>
+          <h3><span class="dot d-genai"></span>Giải thích RAG</h3>
+          <p>Retrieval-Augmented: các khóa học <em>đã truy hồi</em> chính là ngữ cảnh nền, nên mô hình giải thích trên kết quả thật thay vì bịa ra danh mục không tồn tại.</p>
+          <span class="path">src/llm/service.py</span>
+        </div>
+        <div class="card">
+          <span class="tag t-genai">GenAI</span>
+          <h3><span class="dot d-genai"></span>Trừu tượng LLM</h3>
+          <p>Một interface, hai backend hoán đổi qua biến môi trường: <code>anthropic</code> (Claude API) và <code>bedrock</code> (Claude trên AWS). Trên ECS, Bedrock không cần API key — dùng IAM role.</p>
+          <span class="path">src/llm/provider.py</span>
+        </div>
+        <div class="card">
+          <span class="tag t-serve">Serving</span>
+          <h3><span class="dot d-serve"></span>FastAPI service</h3>
+          <p>Các endpoint <code>/recommend</code>, <code>/similar</code>, <code>/courses</code>, <code>/health</code>, kèm OpenAPI docs, đo thời gian request, và nạp model một lần rồi tái dùng.</p>
+          <span class="path">src/api</span>
+        </div>
+        <div class="card">
+          <span class="tag t-serve">Hạ tầng</span>
+          <h3><span class="dot d-serve"></span>Trừu tượng lưu trữ</h3>
+          <p>Cùng interface đọc/ghi artifact cho hai backend: hệ thống file local và <b>AWS S3</b>. Đổi từ laptop sang cloud chỉ là đổi <code>ARTIFACT_STORE=s3</code>, không sửa code.</p>
+          <span class="path">src/storage</span>
+        </div>
+        <div class="card">
+          <span class="tag t-serve">Hạ tầng</span>
+          <h3><span class="dot d-serve"></span>Hạ tầng AWS (IaC)</h3>
+          <p>Terraform dựng ECR, ECS Fargate sau ALB, S3 cho artifact, IAM role (đọc S3 + gọi Bedrock), CloudWatch logs — theo một lệnh <code>terraform apply</code>.</p>
+          <span class="path">infra/aws</span>
+        </div>
+        <div class="card">
+          <span class="tag t-serve">DevOps</span>
+          <h3><span class="dot d-serve"></span>CI/CD</h3>
+          <p>GitHub Actions: CI chạy lint + 30 test + build image; <code>deploy-aws</code> build/push ECR rồi cập nhật ECS qua OIDC; <code>terraform</code> validate hạ tầng.</p>
+          <span class="path">.github/workflows</span>
+        </div>
+        <div class="card">
+          <span class="tag t-serve">UI</span>
+          <h3><span class="dot d-serve"></span>Streamlit UI</h3>
+          <p>Giao diện demo mỏng, gọi thẳng API (nên demo chạy đúng luồng như production): tìm kiếm, tìm khóa tương tự, và bản đồ cụm UMAP.</p>
+          <span class="path">app/streamlit_app.py</span>
+        </div>
+        <div class="card">
+          <span class="tag t-engine">Engine</span>
+          <h3><span class="dot d-engine"></span>Đánh giá offline</h3>
+          <p>Đo Precision/Recall/NDCG theo nhãn category &amp; skills, và chất lượng phân cụm (silhouette, intra/inter-similarity) để chứng minh chất lượng gợi ý.</p>
+          <span class="path">src/eval.py</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ARTIFACTS -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">04 — Dữ liệu</span>
+        <h2>Artifacts sinh ra khi build</h2>
+        <p>Pipeline ghi một bộ artifact nhất quán qua tầng lưu trữ; engine phục vụ đọc lại đúng bộ đó — dù ở local hay S3.</p>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Artifact</th><th>Nội dung</th><th>Backend</th></tr></thead>
+          <tbody>
+            <tr><td><code>meta.json</code></td><td>backend, số chiều embedding, tên model, số dòng</td><td>cả hai</td></tr>
+            <tr><td><code>courses.parquet</code></td><td>dữ liệu đã làm sạch + nhãn cụm</td><td>cả hai</td></tr>
+            <tr><td><code>embeddings.npy</code></td><td>vector SBERT dày (dense)</td><td>sbert</td></tr>
+            <tr><td><code>vector.index</code></td><td>FAISS / numpy index đã serialize</td><td>sbert</td></tr>
+            <tr><td><code>tfidf_vectorizer.pkl</code></td><td>vectorizer TF-IDF đã fit</td><td>tfidf</td></tr>
+            <tr><td><code>X_tfidf.npz</code></td><td>ma trận TF-IDF thưa (sparse)</td><td>tfidf</td></tr>
+            <tr><td><code>kmeans.pkl · umap_embedding.npy</code></td><td>mô hình cụm + tọa độ 2D cho bản đồ</td><td>cả hai</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. AWS -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">05 — Triển khai</span>
+        <h2>Hình hài trên AWS</h2>
+        <p>Người dùng vào qua ALB; ECS Fargate chạy nhiều task FastAPI; task IAM role cho phép đọc artifact từ S3 và gọi Claude trên Bedrock. Ảnh container ở ECR, log ở CloudWatch.</p>
+      </div>
+      <div class="diagram">
+<pre class="mermaid">
+%%{init: {'theme':'base','themeVariables':{'background':'#0f1620','primaryColor':'#12212c','primaryBorderColor':'#78a9ff','primaryTextColor':'#e7edf3','lineColor':'#5d6f7e','clusterBkg':'rgba(120,169,255,0.05)','clusterBorder':'#2a3b49','titleColor':'#8aa0af','fontFamily':'ui-monospace, monospace','fontSize':'13px'},'flowchart':{'curve':'basis','htmlLabels':true,'padding':10}}}%%
+flowchart LR
+  Dev["👩‍💻 Dev / CI"] -->|docker push| ECR["ECR"]
+  Dev -->|terraform apply| TF["Terraform"]
+  Users["👥 Users"] --> ALB["ALB :80"]
+  subgraph AWS["AWS"]
+    ALB --> ECS["ECS Fargate<br/>FastAPI tasks"]
+    ECR --> ECS
+    ECS -->|task IAM role| S3B[("S3<br/>artifacts")]
+    ECS -->|task IAM role| BRK["Bedrock<br/>(Claude)"]
+    ECS --> CW["CloudWatch<br/>Logs"]
+  end
+</pre>
+      </div>
+      <p class="diagram-cap">Bedrock là provider mặc định trên cloud — không cần API key, quyền do IAM role cấp.</p>
+    </div>
+  </section>
+
+  <!-- 6. STACK -->
+  <section style="border-bottom:none;">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">06 — Công nghệ</span>
+        <h2>Tech stack</h2>
+      </div>
+      <div class="chips">
+        <span class="chip"><b>Python 3.11</b></span>
+        <span class="chip"><b>FastAPI</b> · Uvicorn · Pydantic</span>
+        <span class="chip"><b>scikit-learn</b> · TF-IDF · KMeans</span>
+        <span class="chip"><b>Sentence-BERT</b> · cross-encoder</span>
+        <span class="chip"><b>FAISS</b> ANN</span>
+        <span class="chip"><b>UMAP</b> · Plotly</span>
+        <span class="chip"><b>Anthropic</b> Claude · <b>AWS Bedrock</b></span>
+        <span class="chip"><b>boto3</b> · S3</span>
+        <span class="chip"><b>Docker</b> · compose</span>
+        <span class="chip"><b>Terraform</b> · ECS · ALB · ECR · IAM</span>
+        <span class="chip"><b>GitHub Actions</b></span>
+        <span class="chip"><b>pytest</b> · ruff</span>
+        <span class="chip"><b>Streamlit</b></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Course Recommender · kiến trúc ba lớp (retrieval · GenAI/RAG · serving) triển khai trên AWS.
+    Chi tiết mã nguồn: <a href="https://github.com/KhangPhanTZ/course-recommender-simple">github.com/KhangPhanTZ/course-recommender-simple</a>
+  </div>
+</footer>
