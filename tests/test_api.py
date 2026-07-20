@@ -47,6 +47,14 @@ def test_course_not_found(built_artifacts):
     assert c.get("/courses/9999").status_code == 404
 
 
+def test_map_endpoint_graceful_without_viz(built_artifacts):
+    # The test fixture builds with compute_viz disabled -> no UMAP artifact.
+    c = _client(built_artifacts)
+    body = c.get("/map").json()
+    assert body["available"] is False
+    assert body["points"] == []
+
+
 def test_root(built_artifacts):
     c = _client(built_artifacts)
     assert c.get("/").json()["service"] == "course-recommender"

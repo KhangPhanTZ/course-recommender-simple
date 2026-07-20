@@ -22,6 +22,22 @@ export interface RecommendResponse {
   llm_enabled: boolean;
 }
 
+export interface MapPoint {
+  id: number | string;
+  title: string;
+  cluster: number;
+  x: number;
+  y: number;
+}
+
+export interface ClusterMap {
+  points: MapPoint[];
+  n_clusters: number;
+  count: number;
+  total: number;
+  available: boolean;
+}
+
 export interface Health {
   status: string;
   backend?: string | null;
@@ -80,6 +96,7 @@ export const api = {
       body: JSON.stringify({ course_id, top_k }),
     }),
   course: (id: number | string) => request<Record<string, unknown>>(`/courses/${id}`),
+  map: () => request<ClusterMap>("/map"),
 };
 
 export { BASE as API_BASE };

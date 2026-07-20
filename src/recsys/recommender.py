@@ -230,6 +230,36 @@ class Recommender:
             return None
         return matches.iloc[0].to_dict()
 
+    def cluster_map(self, max_points: int = 2000) -> dict[str, Any] | None:
+        """Return the 2-D UMAP projection + cluster labels for visualization.
+
+        Reads the ``umap_embedding.npy`` artifact through the store. Returns
+        ``None`` when the projection was not computed (``compute_viz: false``).
+        Down-samples evenly to ``max_points`` to keep the payload browser-sized.
+        """
+        if "cluster" not in self.courses.columns or not self.store.exists("umap_embedding.npy"):
+            return None
+        emb = np.load(io.BytesIO(self.store.read_bytes("umap_embedding.npy")))
+        n = min(len(self.courses), len(emb))
+        if n == 0:
+            return None
+
+        step = max(1, n // max_points)
+        rows = range(0, n, step)
+        df = self.courses
+        points = [
+            {
+                "id": _opt(df.iloc[i].get("id", i)),
+                "title": str(df.iloc[i].get("title", "")),
+                "cluster": int(df.iloc[i]["cluster"]),
+                "x": round(float(emb[i][0]), 3),
+                "y": round(float(emb[i][1]), 3),
+            }
+            for i in rows
+        ]
+        n_clusters = int(df["cluster"].max()) + 1 if len(df) else 0
+        return {"points": points, "n_clusters": n_clusters, "count": len(points), "total": n}
+
 
 def _opt(value: Any) -> Any:
     """Normalize NA/NaN to None and numpy scalars to native Python for JSON."""

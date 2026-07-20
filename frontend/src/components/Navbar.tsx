@@ -6,6 +6,7 @@ import { Close, Github, Menu, Sparkles } from "./icons";
 const links = [
   { to: "/search", label: "Search" },
   { to: "/explore", label: "Explore" },
+  { to: "/map", label: "Map" },
   { to: "/architecture", label: "Architecture" },
   { to: "/about", label: "About" },
 ];
@@ -23,7 +24,7 @@ export default function Navbar() {
             <Sparkles width={18} height={18} />
           </span>
           <span className="text-[rgb(var(--text))]">
-            Course<span className="text-brand-600 dark:text-brand-400">IQ</span>
+            Path<span className="text-brand-600 dark:text-brand-400">finder</span>
           </span>
         </Link>
 

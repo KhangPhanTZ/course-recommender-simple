@@ -23,7 +23,7 @@ export default function About() {
           A recommender, engineered like a product
         </h1>
         <p className="mt-4 text-lg text-body">
-          CourseIQ started as a content-based course recommender and was rebuilt into a production-shaped
+          Pathfinder started as a content-based course recommender and was rebuilt into a production-shaped
           system: a two-stage retriever, a GenAI/RAG layer, a FastAPI service, and a full AWS deployment path.
           It’s designed to demonstrate the end-to-end skill set of an AI engineer — not just a model in a
           notebook.

@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container-page flex flex-col gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="font-semibold">
-            Course<span className="text-brand-600 dark:text-brand-400">IQ</span>
+            Path<span className="text-brand-600 dark:text-brand-400">finder</span>
           </div>
           <p className="mt-1 max-w-md text-sm text-muted">
             Two-stage retrieval + a GenAI/RAG layer, served over FastAPI and deployable on AWS.

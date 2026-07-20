@@ -60,7 +60,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-body">
-              CourseIQ pairs a two-stage semantic retriever with a GenAI layer that understands messy
+              Pathfinder pairs a two-stage semantic retriever with a GenAI layer that understands messy
               requests and grounds its recommendations in real results.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
