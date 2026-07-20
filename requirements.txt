@@ -24,8 +24,7 @@ pydantic>=2
 anthropic
 boto3
 
-# --- demo UI & viz ---
-streamlit
+# --- visualization (clusters map / UMAP export) ---
 plotly
 matplotlib
 

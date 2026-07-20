@@ -30,17 +30,36 @@ jobs:
           pip install ruff
 
       - name: Lint (ruff)
-        run: ruff check src app tests
+        run: ruff check src tests
 
       - name: Byte-compile
-        run: python -m compileall -q src app
+        run: python -m compileall -q src
 
       - name: Unit tests
         run: pytest -q
 
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install
+        run: npm ci
+      - name: Type-check
+        run: npm run lint
+      - name: Build
+        run: npm run build
+
   docker-build:
     runs-on: ubuntu-latest
-    needs: test
+    needs: [test, frontend]
     steps:
       - uses: actions/checkout@v4
       - name: Build API image (no push)
@@ -50,3 +69,10 @@ jobs:
           file: docker/Dockerfile.api
           push: false
           tags: course-recommender-api:ci
+      - name: Build web image (no push)
+        uses: docker/build-push-action@v6
+        with:
+          context: ./frontend
+          file: frontend/Dockerfile
+          push: false
+          tags: course-recommender-web:ci
