@@ -19,6 +19,8 @@ explanations), exposes everything through a **FastAPI** service, and ships with
   deterministic fallbacks when no LLM is configured.
 - 🧩 **Clustering + UMAP** map for catalog exploration.
 - ⚡ **FastAPI** service with health probes, request timing, and OpenAPI docs.
+- 🎨 **Modern web UI** (React + Vite + Tailwind) — landing page, live search demo,
+  explore, and architecture pages; dark/light themed, talks to the API.
 - ☁️ **Cloud-native storage** — pluggable local ⇄ S3 artifact store; identical
   code on a laptop and on AWS.
 - 🐳 **Docker + compose**, 🏗️ **Terraform** (ECR, ECS Fargate, ALB, S3, IAM,
@@ -49,8 +51,8 @@ src/
 ├── pipeline.py      # end-to-end build
 ├── eval.py          # offline evaluation (precision/recall/NDCG, silhouette)
 └── settings.py      # env-driven runtime config
-app/streamlit_app.py # demo UI (thin client over the API)
-docker/              # Dockerfiles (API, Streamlit) + compose
+frontend/            # React + Vite + Tailwind web UI (SPA, talks to the API)
+docker/              # Dockerfile.api + docker-compose
 infra/aws/           # Terraform: ECR, ECS, ALB, S3, IAM, CloudWatch
 .github/workflows/   # ci.yml, deploy-aws.yml, terraform.yml
 tests/               # pytest suite
@@ -68,12 +70,14 @@ python -m src.pipeline --mode build --data data/Coursera.csv
 # 2a) Query from the CLI
 python -m src.pipeline --mode query --text "deep learning with pytorch for beginners"
 
-# 2b) Or run the API + UI
+# 2b) Or run the API + web UI
 uvicorn src.api.main:app --reload --port 8000   # http://localhost:8000/docs
-streamlit run app/streamlit_app.py              # http://localhost:8501
+cd frontend && npm install && npm run dev       # http://localhost:5173
 ```
 
-Prefer Docker? `docker compose up --build` starts the API and UI together.
+The Vite dev server proxies `/api` → `http://localhost:8000`, so the UI and API
+share an origin. Prefer Docker? `docker compose up --build` starts both
+(web on `:8080`, API on `:8000`).
 
 ### Example API call
 

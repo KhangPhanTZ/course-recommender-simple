@@ -1,9 +1,9 @@
-# Local full-stack: API + Streamlit UI, sharing the artifacts directory.
+# Local full-stack: FastAPI backend + React/Vite web UI (served by nginx).
 #
 #   1) python -m src.pipeline --mode build        # produce ./artifacts once
 #   2) docker compose up --build
+#   Web  -> http://localhost:8080   (UI + /api proxy)
 #   API  -> http://localhost:8000/docs
-#   UI   -> http://localhost:8501
 services:
   api:
     build:
@@ -30,17 +30,15 @@ services:
       retries: 3
       start_period: 40s
 
-  ui:
+  web:
     build:
-      context: .
-      dockerfile: docker/Dockerfile.streamlit
-    image: course-recommender-ui:local
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: course-recommender-web:local
     ports:
-      - "8501:8501"
+      - "8080:80"
     environment:
-      RECSYS_API_URL: http://api:8000
-    volumes:
-      - ./artifacts:/app/artifacts:ro
+      API_UPSTREAM: api:8000          # nginx proxies /api -> this backend
     depends_on:
       api:
         condition: service_healthy

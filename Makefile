@@ -1,4 +1,4 @@
-.PHONY: help install dev build query api ui test lint fmt docker-build compose up down clean
+.PHONY: help install dev build query api web web-install web-build test lint fmt docker-build up down clean
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN{FS=":.*?## "}{printf "  \033[36m%-14s\033[0m %s\n", $$1, $$2}'
@@ -18,22 +18,29 @@ query: ## Query from the CLI: make query Q="deep learning with pytorch"
 api: ## Run the FastAPI service locally on :8000
 	uvicorn src.api.main:app --reload --port 8000
 
-ui: ## Run the Streamlit demo on :8501
-	streamlit run app/streamlit_app.py
+web-install: ## Install frontend dependencies
+	cd frontend && npm install
+
+web: ## Run the React/Vite dev server on :5173 (proxies /api -> :8000)
+	cd frontend && npm run dev
+
+web-build: ## Build the frontend for production
+	cd frontend && npm run build
 
 test: ## Run unit tests
 	pytest
 
 lint: ## Lint with ruff
-	ruff check src app tests
+	ruff check src tests
 
 fmt: ## Auto-fix lint issues
-	ruff check --fix src app tests
+	ruff check --fix src tests
 
-docker-build: ## Build the API image
+docker-build: ## Build the API + web images
 	docker build -f docker/Dockerfile.api -t course-recommender-api:local .
+	docker build -f frontend/Dockerfile -t course-recommender-web:local frontend
 
-up: ## Start the full stack (API + UI) with docker compose
+up: ## Start the full stack (API + web) with docker compose
 	docker compose up --build
 
 down: ## Stop the stack
