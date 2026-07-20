@@ -1,10 +1,6 @@
-import numpy as np
-import pandas as pd
-from typing import Tuple
-from sklearn.cluster import KMeans
-import umap
-from ..utils.io import save_pickle
 from scipy import sparse
+from sklearn.cluster import KMeans
+
 
 def fit_kmeans(X, k: int, random_state: int = 42) -> KMeans:
     if sparse.issparse(X):
@@ -22,6 +18,8 @@ def fit_kmeans(X, k: int, random_state: int = 42) -> KMeans:
     return km
 
 def compute_umap_2d(X, random_state: int = 42, n_neighbors: int = 15, min_dist: float = 0.1):
+    import umap  # lazy import: umap-learn is a heavy, optional dependency
+
     if sparse.issparse(X):
         X_dense = X.toarray()
     else:

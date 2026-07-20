@@ -1,0 +1,18 @@
+# Copy to terraform.tfvars and adjust.
+aws_region     = "us-east-1"
+project_name   = "course-recommender"
+environment    = "dev"
+
+# Leave empty for the first `apply` (creates ECR); set to the pushed image
+# URI (e.g. <acct>.dkr.ecr.us-east-1.amazonaws.com/course-recommender-dev-api:<sha>)
+# once CI has published one, or let the deploy workflow update the service.
+container_image = ""
+
+task_cpu      = 1024
+task_memory   = 2048
+desired_count = 2
+
+# GenAI layer. 'bedrock' is credential-free on ECS (uses the task IAM role).
+llm_provider  = "bedrock"
+llm_model     = "anthropic.claude-3-5-sonnet-20240620-v1:0"
+enable_rerank = false

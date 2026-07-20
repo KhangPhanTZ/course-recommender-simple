@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  import-check:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,27 +21,32 @@ jobs:
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements-ci.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          restore-keys: ${{ runner.os }}-pip-
 
       - name: Install light deps
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements-ci.txt
+          pip install ruff
 
-      - name: Static import sanity
-        run: |
-          python - << 'PY'
-          import importlib
-          # Các module không nên import heavy deps khi chỉ import cấp package
-          import src.utils.config as cfg
-          import src.pipeline as pipe
-          import src.models.similarity as sim
-          import src.models.clustering as cl
-          print("Imports OK")
-          PY
+      - name: Lint (ruff)
+        run: ruff check src app tests
 
-      # Không có data thì không build; chỉ kiểm tra tồn tại file & schema hợp lệ
-      - name: Lint basic (optional)
-        run: |
-          python -m compileall -q src
+      - name: Byte-compile
+        run: python -m compileall -q src app
+
+      - name: Unit tests
+        run: pytest -q
+
+  docker-build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build API image (no push)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: docker/Dockerfile.api
+          push: false
+          tags: course-recommender-api:ci

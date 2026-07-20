@@ -1,0 +1,47 @@
+# syntax=docker/dockerfile:1
+# ---------------------------------------------------------------------------
+# FastAPI serving image for the course recommender.
+# Multi-stage: build wheels once, then copy into a slim runtime layer.
+# ---------------------------------------------------------------------------
+FROM python:3.11-slim AS builder
+
+ENV PIP_NO_CACHE_DIR=1 PIP_DISABLE_PIP_VERSION_CHECK=1
+WORKDIR /app
+
+# Build deps for scientific wheels (faiss/scipy) if needed.
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements-api.txt .
+RUN python -m venv /opt/venv \
+    && /opt/venv/bin/pip install --upgrade pip \
+    && /opt/venv/bin/pip install -r requirements-api.txt
+
+
+FROM python:3.11-slim AS runtime
+
+# Cache HF/sentence-transformers models inside the image layer's writable dir.
+ENV PATH="/opt/venv/bin:$PATH" \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    HF_HOME=/home/appuser/.cache/huggingface \
+    ARTIFACT_STORE=local \
+    ARTIFACT_DIR=/app/artifacts
+
+WORKDIR /app
+COPY --from=builder /opt/venv /opt/venv
+
+# Non-root runtime user.
+RUN useradd --create-home --uid 10001 appuser
+COPY src/ ./src/
+COPY config/ ./config/
+RUN mkdir -p /app/artifacts && chown -R appuser:appuser /app /home/appuser
+USER appuser
+
+EXPOSE 8000
+
+# Container-level healthcheck hits the API's own probe.
+HEALTHCHECK --interval=30s --timeout=5s --start-period=40s --retries=3 \
+    CMD python -c "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8000/health').status==200 else 1)" || exit 1
+
+CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

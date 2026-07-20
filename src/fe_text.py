@@ -1,6 +1,6 @@
 import re
+
 import pandas as pd
-from typing import List
 
 PUNCT_RE = re.compile(r"[^a-zA-Z0-9\s\-\+\#]")
 
@@ -17,7 +17,7 @@ def normalize_for_model(s: str) -> str:
     s = re.sub(r"\s+", " ", s).strip()
     return s
 
-def build_text_row(row: pd.Series, fields: List[str]) -> str:
+def build_text_row(row: pd.Series, fields: list[str]) -> str:
     parts = []
     for f in fields:
         val = row.get(f, "")

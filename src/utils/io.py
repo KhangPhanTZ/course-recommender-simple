@@ -1,9 +1,10 @@
-import os
 import json
+import os
 import pickle
+from typing import Any
+
 import pandas as pd
 from scipy import sparse
-from typing import Any
 
 ART_DIR = "artifacts"
 

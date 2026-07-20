@@ -1,12 +1,34 @@
-pandas
+# Full local / development environment (everything).
+# For a lean serving image use requirements-api.txt instead.
+
+# --- core ML / data ---
 numpy
+pandas
 scikit-learn
 scipy
-nltk
-tqdm
+pyarrow
 pyyaml
-streamlit
+tqdm
+
+# --- embeddings & ANN ---
 sentence-transformers
+faiss-cpu
 umap-learn
-matplotlib
+
+# --- serving API ---
+fastapi
+uvicorn[standard]
+pydantic>=2
+
+# --- GenAI / RAG ---
+anthropic
+boto3
+
+# --- demo UI & viz ---
+streamlit
 plotly
+matplotlib
+
+# --- dev / test ---
+pytest
+httpx

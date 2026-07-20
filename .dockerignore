@@ -1,0 +1,17 @@
+.git
+.github
+.venv
+__pycache__
+*.pyc
+*.egg-info
+.pytest_cache
+notebooks
+infra
+docs
+tests
+data
+artifacts/*
+!artifacts/.gitkeep
+.env
+*.md
+scratchpad

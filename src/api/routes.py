@@ -1,0 +1,120 @@
+"""API routes for the course recommender service."""
+from __future__ import annotations
+
+import logging
+
+from fastapi import APIRouter, HTTPException
+
+from .. import __version__
+from . import deps
+from .schemas import (
+    CourseHit,
+    HealthResponse,
+    RecommendRequest,
+    RecommendResponse,
+    SimilarRequest,
+)
+
+logger = logging.getLogger("recsys.api")
+router = APIRouter()
+
+
+@router.get("/health", response_model=HealthResponse, tags=["ops"])
+def health() -> HealthResponse:
+    """Liveness/readiness probe. Reports whether artifacts and LLM are ready."""
+    s = deps.settings()
+    backend = n = None
+    try:
+        rec = deps.get_recommender()
+        backend, n = rec.backend, rec.size
+        status = "ok"
+    except Exception as exc:  # artifacts not built yet -> degraded, not dead
+        logger.warning("Recommender not ready: %s", exc)
+        status = "degraded"
+    return HealthResponse(
+        status=status,
+        backend=backend,
+        n_courses=n,
+        llm_provider=s.llm.provider if s.llm.is_active else None,
+        llm_enabled=s.llm.is_active,
+        version=__version__,
+    )
+
+
+@router.post("/recommend", response_model=RecommendResponse, tags=["recommend"])
+def recommend(req: RecommendRequest) -> RecommendResponse:
+    """Recommend courses for a free-text goal, optionally with RAG explanation."""
+    rec = deps.get_recommender()
+    llm = deps.get_llm()
+    s = deps.settings()
+
+    resolved = req.query
+    filters = {}
+    if req.level:
+        filters["level"] = req.level
+    if req.category:
+        filters["category"] = req.category
+
+    # LLM/heuristic query understanding fills in filters not set explicitly.
+    if req.understand:
+        intent = llm.understand_query(req.query)
+        resolved = intent.get("search") or req.query
+        for key in ("level", "category"):
+            if intent.get(key) and not filters.get(key):
+                filters[key] = intent[key]
+    filters = {k: v for k, v in filters.items() if v}
+
+    use_rerank = s.enable_rerank if req.rerank is None else req.rerank
+    hits = rec.recommend(
+        resolved, top_k=req.top_k, filters=filters, use_rerank=use_rerank
+    )
+    results = [CourseHit(**_hit(h)) for h in hits]
+
+    explanation = None
+    if req.explain:
+        explanation = llm.explain_recommendations(req.query, [h.to_dict() for h in hits])
+
+    return RecommendResponse(
+        query=req.query,
+        resolved_query=resolved,
+        filters=filters,
+        results=results,
+        explanation=explanation,
+        llm_enabled=llm.enabled,
+    )
+
+
+@router.post("/similar", response_model=list[CourseHit], tags=["recommend"])
+def similar(req: SimilarRequest) -> list[CourseHit]:
+    """Find courses similar to an existing course id."""
+    rec = deps.get_recommender()
+    try:
+        hits = rec.similar_to(req.course_id, top_k=req.top_k)
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    return [CourseHit(**_hit(h)) for h in hits]
+
+
+@router.get("/courses/{course_id}", tags=["catalog"])
+def get_course(course_id: str):
+    """Fetch a single course by id (tries int then string)."""
+    rec = deps.get_recommender()
+    for cid in _id_candidates(course_id):
+        course = rec.get_course(cid)
+        if course is not None:
+            return course
+    raise HTTPException(status_code=404, detail=f"Course not found: {course_id}")
+
+
+def _hit(reco) -> dict:
+    d = reco.to_dict()
+    d.pop("explanation", None)
+    return d
+
+
+def _id_candidates(raw: str):
+    try:
+        yield int(raw)
+    except ValueError:
+        pass
+    yield raw

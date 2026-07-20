@@ -1,0 +1,46 @@
+# Local full-stack: API + Streamlit UI, sharing the artifacts directory.
+#
+#   1) python -m src.pipeline --mode build        # produce ./artifacts once
+#   2) docker compose up --build
+#   API  -> http://localhost:8000/docs
+#   UI   -> http://localhost:8501
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    image: course-recommender-api:local
+    ports:
+      - "8000:8000"
+    environment:
+      ARTIFACT_STORE: local
+      ARTIFACT_DIR: /app/artifacts
+      ENABLE_RERANK: "false"          # keep the demo snappy; set true for quality
+      LLM_PROVIDER: ${LLM_PROVIDER:-anthropic}
+      LLM_MODEL: ${LLM_MODEL:-claude-sonnet-5}
+      LLM_ENABLED: ${LLM_ENABLED:-true}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      AWS_REGION: ${AWS_REGION:-us-east-1}
+    volumes:
+      - ./artifacts:/app/artifacts:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8000/health').status==200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 40s
+
+  ui:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.streamlit
+    image: course-recommender-ui:local
+    ports:
+      - "8501:8501"
+    environment:
+      RECSYS_API_URL: http://api:8000
+    volumes:
+      - ./artifacts:/app/artifacts:ro
+    depends_on:
+      api:
+        condition: service_healthy
