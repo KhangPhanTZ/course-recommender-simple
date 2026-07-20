@@ -1,79 +1,141 @@
-# Coursera Content-Based Course Recommender
+# Course Recommender — Retrieval + GenAI, deployable on AWS
 
-A GitHub-ready **content-based recommendation system** for Coursera-style datasets that only include **course metadata** (no user interactions). It provides:
+A content-based course recommendation system, engineered like a production
+service rather than a notebook. It pairs a **two-stage retriever** (ANN +
+cross-encoder) with a **GenAI/RAG layer** (query understanding + grounded
+explanations), exposes everything through a **FastAPI** service, and ships with
+**Docker** and **Terraform** for a one-command **AWS ECS/Fargate** deployment.
 
-- 🔎 TF-IDF & (optional) Sentence-BERT embeddings
-- 🤝 Course-to-course similarity search
-- 🧩 K-Means clustering + 2D visualization (UMAP)
-- 🖥️ Streamlit app for demo (search by text or find similar courses)
-- ⚙️ Config-driven column mapping (robust to unknown schema)
+> Built to demonstrate the end-to-end skill set for an **AI Engineer** role:
+> retrieval, LLM integration, API design, containerization, IaC, and CI/CD.
 
-> Works out-of-the-box with `data/Coursera.csv`. If your column names differ, tweak `config/config.yaml` and rerun.
+## Highlights
 
-## Project Structure
+- 🔎 **Two-stage retrieval** — Sentence-BERT + FAISS ANN (numpy fallback), with
+  optional cross-encoder reranking for precision.
+- 🧠 **GenAI / RAG** — LLM query understanding (NL → filters) and
+  retrieval-grounded "why these courses" explanations. Works with the
+  **Claude API** or **Amazon Bedrock** behind one interface; degrades to
+  deterministic fallbacks when no LLM is configured.
+- 🧩 **Clustering + UMAP** map for catalog exploration.
+- ⚡ **FastAPI** service with health probes, request timing, and OpenAPI docs.
+- ☁️ **Cloud-native storage** — pluggable local ⇄ S3 artifact store; identical
+  code on a laptop and on AWS.
+- 🐳 **Docker + compose**, 🏗️ **Terraform** (ECR, ECS Fargate, ALB, S3, IAM,
+  Bedrock), and 🔁 **GitHub Actions** CI/CD (test, lint, image build, deploy).
+- ✅ **29 unit tests** + ruff lint, all green in CI.
+
+## Architecture
+
+See **[docs/architecture.md](docs/architecture.md)** for full diagrams.
 
 ```
-.
-├── app/
-│   └── streamlit_app.py         # Streamlit UI
-├── artifacts/                   # Saved models & vectors
-├── config/
-│   └── config.yaml              # Column names & settings
-├── data/
-│   └── Coursera.csv             # Dataset (not committed by default)
-├── notebooks/
-│   └── EDA_guide.md             # Lightweight EDA guide
-├── src/
-│   ├── pipeline.py              # Orchestrates end-to-end build
-│   ├── fe_text.py               # Text cleaning & feature building
-│   ├── models/
-│   │   ├── similarity.py        # Similarity search (TF-IDF or SBERT)
-│   │   └── clustering.py        # KMeans + UMAP
-│   └── utils/
-│       ├── io.py                # IO helpers
-│       └── config.py            # Config loader
-├── tests/
-│   └── smoke_test.py            # Quick pipeline sanity check
-├── .gitignore
-├── requirements.txt
-└── README.md
+Client ─▶ FastAPI ─▶ Retrieval engine (encode ▶ ANN ▶ rerank)
+              │            └─▶ Artifact store (local | S3)
+              └─▶ GenAI/RAG (query understanding + explanations)
+                       └─▶ Claude API | Amazon Bedrock
+Deploy:  ECR ▶ ECS Fargate (behind ALB) ▶ S3 + Bedrock + CloudWatch
 ```
 
-## Quickstart
+## Project structure
 
-1. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+```
+src/
+├── recsys/          # retrieval engine: index (FAISS/numpy), recommender, rerank
+├── llm/             # GenAI/RAG: provider abstraction (Claude/Bedrock) + service
+├── storage/         # artifact store: local filesystem + S3
+├── api/             # FastAPI app: routes, schemas, DI
+├── models/          # TF-IDF / SBERT vectorizers, KMeans, UMAP
+├── pipeline.py      # end-to-end build
+├── eval.py          # offline evaluation (precision/recall/NDCG, silhouette)
+└── settings.py      # env-driven runtime config
+app/streamlit_app.py # demo UI (thin client over the API)
+docker/              # Dockerfiles (API, Streamlit) + compose
+infra/aws/           # Terraform: ECR, ECS, ALB, S3, IAM, CloudWatch
+.github/workflows/   # ci.yml, deploy-aws.yml, terraform.yml
+tests/               # pytest suite
+```
 
-2. **Check/edit config**
-   - Open `config/config.yaml`, confirm your column names (title, description, skills, etc.)
+## Quickstart (local)
 
-3. **Build artifacts (vectors, clusters)**
-   ```bash
-   python -m src.pipeline --mode build
-   ```
+```bash
+pip install -r requirements.txt          # or: make install
+cp .env.example .env                      # optional: add ANTHROPIC_API_KEY
 
-4. **Run the app**
-   ```bash
-   streamlit run app/streamlit_app.py
-   ```
+# 1) Build artifacts from your dataset
+python -m src.pipeline --mode build --data data/Coursera.csv
 
-## What it does
+# 2a) Query from the CLI
+python -m src.pipeline --mode query --text "deep learning with pytorch for beginners"
 
-- Cleans & concatenates text fields → builds `corpus`
-- Creates TF-IDF vectors (default) or Sentence-BERT embeddings (set `use_sbert: true`)
-- Saves `artifacts/`:
-  - `tfidf_vectorizer.pkl`, `X_tfidf.npz` (or `sbert_model_name.txt`, `X_sbert.npy`)
-  - `kmeans.pkl`, `umap_embedding.npy`
-  - `courses.parquet` (cleaned dataset + ids)
-- Streamlit UI to:
-  - Search by free text
-  - Pick an existing course and get **Top-N similar** courses
-  - Explore clusters + 2D map
+# 2b) Or run the API + UI
+uvicorn src.api.main:app --reload --port 8000   # http://localhost:8000/docs
+streamlit run app/streamlit_app.py              # http://localhost:8501
+```
 
+Prefer Docker? `docker compose up --build` starts the API and UI together.
 
-## Dataset 
-- using dataset from kaggle : Multi-Platform Online Courses Dataset
-- Dataset URL : https://www.kaggle.com/datasets/everydaycodings/multi-platform-online-courses-dataset
-- Only coursera data in project operation
+### Example API call
+
+```bash
+curl -s localhost:8000/recommend -H 'content-type: application/json' -d '{
+  "query": "I want to learn deep learning with pytorch as a beginner",
+  "top_k": 5, "explain": true
+}' | jq
+```
+
+Response includes the ranked courses, the **filters the system inferred**
+(`{"level": "beginner"}`), and an LLM-generated **explanation** grounded in the
+retrieved results.
+
+## Configuration
+
+Two layers:
+
+- `config/config.yaml` — dataset column mapping, backend (`use_sbert`),
+  clustering, retrieval params.
+- Environment variables (see `.env.example`) — storage, LLM provider/model,
+  reranking. Documented in [`src/settings.py`](src/settings.py).
+
+Switch backends with a single flag: `use_sbert: true` (semantic, FAISS) or
+`false` (TF-IDF, zero downloads — used by CI).
+
+## Deploy to AWS
+
+Terraform provisions ECR, an S3 artifact bucket, an ECS Fargate service behind
+an ALB, IAM roles (S3 read + Bedrock invoke), and CloudWatch logging. The
+GenAI layer defaults to **Bedrock**, so no API key is needed in the cloud — the
+task IAM role authorizes `bedrock:InvokeModel`.
+
+```bash
+cd infra/aws && cp terraform.tfvars.example terraform.tfvars
+terraform init && terraform apply
+# then push the image + upload artifacts (see infra/aws/README.md)
+```
+
+Full runbook: **[infra/aws/README.md](infra/aws/README.md)**.
+
+## Evaluation
+
+Offline metrics against category/skill labels and clustering quality:
+
+```bash
+python -m src.eval --metric category --topk 10
+python -m src.eval --metric skills   --topk 10
+python -m src.eval --metric silhouette
+```
+
+## Development
+
+```bash
+make dev      # install lint/test deps
+make test     # pytest (29 tests)
+make lint     # ruff
+```
+
+## Dataset
+
+- Kaggle: *Multi-Platform Online Courses Dataset* —
+  https://www.kaggle.com/datasets/everydaycodings/multi-platform-online-courses-dataset
+- Only the Coursera slice is used. Place it at `data/Coursera.csv`
+  (git-ignored) and adjust `config/config.yaml` if your columns differ.

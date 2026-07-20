@@ -1,6 +1,17 @@
-# requirements-ci.txt
+# Lightweight dependencies for CI (lint + unit tests).
+# Heavy optional deps (sentence-transformers, faiss, umap) are intentionally
+# excluded: tests exercise the TF-IDF backend and the numpy ANN fallback, and
+# mock the LLM layer, so CI stays fast.
+
 numpy
 pandas
 scikit-learn
-pyyaml
 scipy
+pyyaml
+pyarrow
+
+# serving + test client
+fastapi
+uvicorn
+httpx
+pytest

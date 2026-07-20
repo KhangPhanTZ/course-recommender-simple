@@ -1,0 +1,27 @@
+[project]
+name = "course-recommender"
+version = "2.0.0"
+description = "Content-based course recommender with a two-stage retriever, GenAI/RAG layer, and AWS deployment."
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+exclude = ["notebooks", "artifacts", "infra", ".venv"]
+
+[tool.ruff.lint]
+# pyflakes (F), pycodestyle errors (E), isort (I), bugbear (B), pyupgrade (UP)
+select = ["E", "F", "I", "B", "UP"]
+ignore = [
+  "E501",  # line length handled by formatter
+  "B008",  # FastAPI uses function calls (Depends/Query) in defaults
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,24 +1,28 @@
 # src/eval.py
-import argparse, os, re, math, random
+import argparse
+import math
+import os
+import random
+import re
+
 import numpy as np
 import pandas as pd
-from typing import List, Tuple, Set
-from sklearn.metrics import silhouette_score
 from scipy import sparse
+from sklearn.metrics import silhouette_score
 
 ART = "artifacts"
 
 # --- utils ---
-def tokenize_skills(s: str) -> Set[str]:
+def tokenize_skills(s: str) -> set[str]:
     if not isinstance(s, str):
         return set()
     parts = re.split(r"[;,/|]", s.lower())
     return {p.strip() for p in parts if p.strip()}
 
-def dcg(rels: List[int]) -> float:
+def dcg(rels: list[int]) -> float:
     return sum(r / math.log2(i + 2) for i, r in enumerate(rels))
 
-def ndcg_at_k(rels: List[int], k: int) -> float:
+def ndcg_at_k(rels: list[int], k: int) -> float:
     rels_k = rels[:k]
     idcg = dcg([1]*min(k, sum(rels_k)))
     return (dcg(rels_k)/idcg) if idcg > 0 else 0.0
@@ -121,8 +125,9 @@ def eval_intra_inter(courses: pd.DataFrame, X, sample_per_cluster=50, seed=42):
     for i, c in enumerate(clusters):
         by_c.setdefault(c, []).append(i)
     intra, inter = [], []
-    for c, members in by_c.items():
-        if len(members) < 2: continue
+    for members in by_c.values():
+        if len(members) < 2:
+            continue
         picks = rng.sample(members, min(sample_per_cluster, len(members)))
         for i in picks:
             sims = row_sims(i, X)

@@ -1,79 +1,108 @@
-import sys
-import streamlit as st
-import pandas as pd
-import numpy as np
+"""Streamlit demo UI for the course recommender.
+
+Thin client: search & similar go through the FastAPI service (so the demo
+exercises the same code path as production). The clusters map reads the local
+artifacts directory directly when available.
+
+Configure the backend API with the ``RECSYS_API_URL`` env var
+(default ``http://localhost:8000``).
+"""
 import os
 from pathlib import Path
 
-st.set_page_config(page_title="Course Recommender", layout="wide")
-ART = Path("artifacts")
+import numpy as np
+import pandas as pd
+import requests
+import streamlit as st
 
-@st.cache_data
+API_URL = os.getenv("RECSYS_API_URL", "http://localhost:8000").rstrip("/")
+ART = Path(os.getenv("ARTIFACT_DIR", "artifacts"))
+
+st.set_page_config(page_title="Course Recommender", layout="wide")
+
+
+@st.cache_data(show_spinner=False)
 def load_courses():
     path = ART / "courses.parquet"
-    if not path.exists():
-        st.error("Artifacts not found. Please run: python -m src.pipeline --mode build")
-        st.stop()
-    return pd.read_parquet(path)
+    return pd.read_parquet(path) if path.exists() else None
 
-@st.cache_data
+
+@st.cache_data(show_spinner=False)
 def load_embedding():
-    emb_path = ART / "umap_embedding.npy"
-    if emb_path.exists():
-        return np.load(emb_path)
-    return None
+    path = ART / "umap_embedding.npy"
+    return np.load(path) if path.exists() else None
 
-def query_free_text(q: str, topk: int = 10):
-    import sys
-    from pathlib import Path
-    sys.path.append(str(Path(".").resolve()))
-    from src.pipeline import query_similar
-    df = query_similar("config/config.yaml", q, topk)
-    cols = ["id","title","category","level","rating","score"]
-    return df[[c for c in cols if c in df.columns]]
+
+def api_get(path: str):
+    try:
+        return requests.get(f"{API_URL}{path}", timeout=30).json()
+    except requests.RequestException as exc:
+        st.error(f"API unreachable at {API_URL}: {exc}")
+        return None
+
+
+def api_post(path: str, payload: dict):
+    try:
+        r = requests.post(f"{API_URL}{path}", json=payload, timeout=120)
+        r.raise_for_status()
+        return r.json()
+    except requests.RequestException as exc:
+        st.error(f"API error: {exc}")
+        return None
 
 
 st.title("🎓 Content-Based Course Recommender")
-st.write("Search similar courses by **free text** or **pick an existing course**.")
+health = api_get("/health") or {}
+cols = st.columns(4)
+cols[0].metric("API status", health.get("status", "unknown"))
+cols[1].metric("Backend", health.get("backend", "—"))
+cols[2].metric("Courses", health.get("n_courses", "—"))
+cols[3].metric("LLM", health.get("llm_provider") or "off")
 
-tab1, tab2, tab3 = st.tabs(["🔎 Search", "🎯 Similar by Course", "🗺️ Clusters Map"])
+tab1, tab2, tab3 = st.tabs(["🔎 Search (RAG)", "🎯 Similar by Course", "🗺️ Clusters Map"])
 
 with tab1:
     q = st.text_input("Describe what you want to learn:", "deep learning with python for beginners")
-    topk = st.slider("Top-K results", 5, 30, 10)
-    if st.button("Search"):
-        st.write("**Results (terminal-style preview)**")
-        res = query_free_text(q, topk)
-        st.dataframe(res.reset_index(drop=True))
-        
+    c1, c2, c3 = st.columns(3)
+    topk = c1.slider("Top-K", 5, 30, 10)
+    explain = c2.checkbox("LLM explanation (RAG)", value=True)
+    rerank = c3.checkbox("Cross-encoder rerank", value=False)
+    if st.button("Search", type="primary"):
+        data = api_post("/recommend", {
+            "query": q, "top_k": topk, "explain": explain,
+            "understand": True, "rerank": rerank,
+        })
+        if data:
+            if data.get("filters"):
+                st.caption(f"Understood filters: `{data['filters']}` · resolved query: _{data['resolved_query']}_")
+            if data.get("explanation"):
+                st.info(data["explanation"])
+            st.dataframe(pd.DataFrame(data["results"]).reset_index(drop=True), use_container_width=True)
+
 with tab2:
     df = load_courses()
-    topk2 = st.slider("Top-K similar", 5, 30, 10, key="topk2")
-    titles = df["title"].astype(str).fillna("").tolist()
-    sel = st.selectbox("Pick a course", options=range(len(titles)), format_func=lambda i: titles[i][:120])
-    # Compute similarity in-app
-    from sklearn.metrics.pairwise import cosine_similarity
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    # Simple TF-IDF on the fly over cleaned text fields (for demo)
-    corpus = (df["title"].fillna("") + " | " + df["description"].fillna("") + " | " + df["skills"].fillna("")).str.lower().tolist()
-    vec = TfidfVectorizer(max_features=40000, ngram_range=(1,2))
-    X = vec.fit_transform(corpus)
-    sims = cosine_similarity(X[sel], X).ravel()
-    sims[sel] = -1.0
-    idx = np.argpartition(-sims, range(topk2))[:topk2]
-    idx = idx[np.argsort(-sims[idx])]
-    st.subheader("Top similar")
-    st.dataframe(df.iloc[idx][["title","category","level","rating","url"]].assign(score=sims[idx]).reset_index(drop=True))
+    if df is None:
+        st.info("Build artifacts first: `python -m src.pipeline --mode build`.")
+    else:
+        topk2 = st.slider("Top-K similar", 5, 30, 10, key="topk2")
+        titles = df["title"].astype(str).tolist()
+        sel = st.selectbox("Pick a course", options=range(len(titles)), format_func=lambda i: titles[i][:120])
+        if st.button("Find similar"):
+            course_id = df.iloc[sel].get("id", sel)
+            data = api_post("/similar", {"course_id": int(course_id), "top_k": topk2})
+            if data is not None:
+                st.dataframe(pd.DataFrame(data).reset_index(drop=True), use_container_width=True)
 
 with tab3:
     df = load_courses()
     emb = load_embedding()
-    if emb is None:
-        st.info("Run build first to compute UMAP embedding.")
+    if df is None or emb is None:
+        st.info("Run build with `compute_viz: true` to see the clusters map.")
     else:
         import plotly.express as px
-        plot_df = pd.DataFrame(emb, columns=["x","y"])
+
+        plot_df = pd.DataFrame(emb, columns=["x", "y"])
         plot_df["title"] = df["title"].astype(str)
-        plot_df["cluster"] = df["cluster"].astype(str)
+        plot_df["cluster"] = df["cluster"].astype(str) if "cluster" in df else "0"
         fig = px.scatter(plot_df, x="x", y="y", color="cluster", hover_data=["title"], title="UMAP of Courses")
         st.plotly_chart(fig, use_container_width=True)

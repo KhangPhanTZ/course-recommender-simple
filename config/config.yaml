@@ -1,19 +1,22 @@
-# === Column mapping (edit to match your CSV) ===
+# ============================================================================
+# Course Recommender configuration
+# Edit column names to match your CSV; the pipeline is robust to missing ones.
+# ============================================================================
+
+# --- Column mapping (source CSV -> canonical names) -------------------------
 columns:
-  id: id                  # không có -> để nguyên, pipeline sẽ tự tạo
-  title: course           # dùng cột 'course' làm tiêu đề khóa học
-  description: partner    # tạm dùng 'partner' làm mô tả, vì không có cột 'description'
+  id:                     # empty -> pipeline auto-generates a stable id
+  title: course           # course title column
+  description: partner    # no real description column, reuse 'partner'
   skills: skills
-  category: certificatetype   # gán category = loại chứng chỉ
+  category: certificatetype
   level: level
   rating: rating
-  url:                     # không có -> để trống
+  url:                    # empty -> omitted
 
-
-# === Text building ===
-use_sbert: true           # dùng Sentence-BERT (hiểu ngữ nghĩa tốt hơn TF-IDF)
-
-text_fields:              # lặp field để "boost" (trọng số)
+# --- Text corpus construction ----------------------------------------------
+# Repeat a field to give it more weight ("boosting").
+text_fields:
   - title
   - title
   - skills
@@ -22,15 +25,21 @@ text_fields:              # lặp field để "boost" (trọng số)
   - level
   - category
 
-min_characters: 30       # drop rows with too-short text after cleaning
+min_characters: 30        # drop rows whose cleaned text is shorter than this
 
-# === Embeddings ===
-use_sbert: false         # true to use Sentence-BERT instead of TF-IDF
+# --- Embedding backend ------------------------------------------------------
+# true  -> Sentence-BERT dense vectors + FAISS/ANN index (best semantics)
+# false -> TF-IDF sparse vectors + exact cosine (lightweight, no downloads)
+use_sbert: true
 sbert_model: sentence-transformers/all-MiniLM-L6-v2
+tfidf_max_features: 50000
 
-# === Clustering ===
+# --- Clustering & visualization --------------------------------------------
 kmeans_k: 20
 random_state: 42
+compute_viz: true         # compute UMAP 2D embedding for the clusters map
 
-# === Similarity search ===
+# --- Retrieval --------------------------------------------------------------
 top_k: 10
+overfetch: 50             # candidates pulled before reranking
+use_rerank: false         # cross-encoder rerank (heavier, more precise)

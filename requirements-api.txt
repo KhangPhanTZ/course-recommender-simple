@@ -1,0 +1,22 @@
+# Lean dependency set for the FastAPI serving container (docker/Dockerfile.api).
+# Excludes UMAP / Streamlit / plotting to keep the image small.
+
+numpy
+pandas
+scikit-learn
+scipy
+pyarrow
+pyyaml
+
+# embeddings + ANN retrieval
+sentence-transformers
+faiss-cpu
+
+# serving
+fastapi
+uvicorn[standard]
+pydantic>=2
+
+# GenAI / RAG + AWS
+anthropic
+boto3

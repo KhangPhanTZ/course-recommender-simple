@@ -1,0 +1,8 @@
+# Streamlit demo UI container deps. The UI is a thin client over the API,
+# so it needs neither the ML stack nor the artifacts.
+streamlit
+plotly
+pandas
+numpy
+pyarrow
+requests
