@@ -58,10 +58,11 @@ class AnthropicProvider(LLMProvider):
         return self._client
 
     def complete(self, system: str, prompt: str, *, max_tokens: int = 512, temperature: float = 0.2) -> str:
+        # ``temperature`` is accepted for interface compatibility but not sent:
+        # current Claude models reject sampling parameters with a 400.
         resp = self.client.messages.create(
             model=self.model,
             max_tokens=max_tokens,
-            temperature=temperature,
             system=system,
             messages=[{"role": "user", "content": prompt}],
         )
@@ -85,10 +86,10 @@ class BedrockProvider(LLMProvider):
         return self._client
 
     def complete(self, system: str, prompt: str, *, max_tokens: int = 512, temperature: float = 0.2) -> str:
+        # ``temperature`` omitted for the same reason as AnthropicProvider.complete.
         body = {
             "anthropic_version": "bedrock-2023-05-31",
             "max_tokens": max_tokens,
-            "temperature": temperature,
             "system": system,
             "messages": [{"role": "user", "content": [{"type": "text", "text": prompt}]}],
         }
