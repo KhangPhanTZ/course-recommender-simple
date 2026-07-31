@@ -50,6 +50,10 @@ def built_artifacts(tmp_path, monkeypatch):
 
     monkeypatch.setenv("ARTIFACT_STORE", "local")
     monkeypatch.setenv("ARTIFACT_DIR", str(art_dir))
+    # Keep the suite hermetic: never reach a real LLM provider, even when a
+    # developer's .env configures one. Process env wins over .env.
+    monkeypatch.setenv("LLM_PROVIDER", "disabled")
+    monkeypatch.setenv("LLM_ENABLED", "false")
 
     from src.pipeline import build
     from src.storage import get_artifact_store
