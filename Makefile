@@ -27,8 +27,14 @@ web: ## Run the React/Vite dev server on :5173 (proxies /api -> :8000)
 web-build: ## Build the frontend for production
 	cd frontend && npm run build
 
-test: ## Run unit tests
+test: ## Run unit tests (no network, no LLM calls)
 	pytest
+
+test-llm: ## Run live LLM tests against the configured provider (costs tokens)
+	RUN_LLM_TESTS=1 pytest tests/test_llm_live.py -v
+
+smoke-llm: ## Smoke-test the GenAI layer and report model vs fallback per stage
+	python scripts/smoke_llm.py
 
 lint: ## Lint with ruff
 	ruff check src tests

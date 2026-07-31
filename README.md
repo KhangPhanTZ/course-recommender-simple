@@ -183,6 +183,26 @@ with `terraform destroy` when finished.
 
 ```bash
 make dev      # install lint and test dependencies
-make test     # pytest
+make test     # pytest (hermetic: no network, no LLM calls)
 make lint     # ruff
 ```
+
+### Testing the GenAI layer
+
+The default suite pins `LLM_PROVIDER=disabled` so it stays fast, free, and
+deterministic. Two opt-in tools exercise a real provider instead:
+
+```bash
+make smoke-llm   # per-stage report: model answered, or fell back to a template
+make test-llm    # RUN_LLM_TESTS=1 pytest tests/test_llm_live.py
+```
+
+Both matter because the service degrades silently: when a call fails, it returns
+a deterministic template and `/health` still reports the LLM as enabled, so a
+plausible-looking response is not evidence the provider is reachable. The live
+tests assert on signals the fallback cannot produce, such as translating a
+non-English query.
+
+Note that `LLM_MAX_TOKENS` budgets reasoning and answer together on models that
+think by default, so a value tuned to the answer length alone can return an
+empty response.
