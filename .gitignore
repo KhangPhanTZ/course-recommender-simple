@@ -5,6 +5,10 @@ __pycache__/
 *.egg-info/
 .venv/
 .env
+.env.*
+.env*.local
+*.env
+!.env.example
 .ipynb_checkpoints/
 
 # Data & Artifacts
