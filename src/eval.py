@@ -33,7 +33,7 @@ def load_env(cfg_path="config/config.yaml"):
     cfg = load_config(cfg_path)
     courses = pd.read_parquet(os.path.join(ART, "courses.parquet"))
     if cfg.use_sbert:
-        X = np.load(os.path.join(ART, "X_sbert.npy"))
+        X = np.load(os.path.join(ART, "embeddings.npy"))
     else:
         from src.utils.io import load_sparse_matrix
         X = load_sparse_matrix(os.path.join(ART, "X_tfidf.npz"))
