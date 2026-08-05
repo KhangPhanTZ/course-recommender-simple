@@ -6,6 +6,7 @@ dependency. Real builds use UMAP (see ``src.pipeline``); this is a lightweight
 stand-in for the demo only.
 """
 import io
+import os
 import sys
 
 import numpy as np
@@ -18,12 +19,16 @@ from src.pipeline import build  # noqa: E402
 from src.storage import get_artifact_store  # noqa: E402
 
 CONFIG = "config/demo.yaml"
-DATA = "examples/sample_courses.csv"
+FULL_DATASET = "data/Coursera.csv"
+SAMPLE_DATASET = "examples/sample_courses.csv"
 
 
 def main() -> None:
+    # Use the full Coursera dataset when it's committed, else the sample.
+    data = FULL_DATASET if os.path.isfile(FULL_DATASET) else SAMPLE_DATASET
+    print(f"Building demo artifacts from: {data}")
     store = get_artifact_store()
-    build(CONFIG, DATA, store=store)
+    build(CONFIG, data, store=store)
 
     # 2-D projection for the Map view (SVD stands in for UMAP in the lite image).
     X = sparse.load_npz(io.BytesIO(store.read_bytes("X_tfidf.npz")))

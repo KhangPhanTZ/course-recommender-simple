@@ -12,6 +12,8 @@ tests
 frontend/node_modules
 frontend/dist
 data
+!data/.gitkeep
+!data/Coursera.csv
 artifacts/*
 !artifacts/.gitkeep
 .env

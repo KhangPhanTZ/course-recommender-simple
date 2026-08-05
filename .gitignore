@@ -15,6 +15,10 @@ __pycache__/
 artifacts/*
 !artifacts/.gitkeep
 data/*
+!data/.gitkeep
+# Commit the full Coursera dataset here to deploy the complete catalog
+# (the demo build auto-detects it). Check the dataset license first.
+!data/Coursera.csv
 
 # OS
 .DS_Store
