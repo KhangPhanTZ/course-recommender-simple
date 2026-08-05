@@ -1,222 +1,56 @@
-# Course Recommender
+# Pathfinder — AI Course Recommender
 
-A content-based course recommendation system built as a production service rather
-than a notebook. It pairs a two-stage retriever (ANN + optional cross-encoder)
-with a GenAI layer for query understanding and grounded explanations, serves both
-through FastAPI, and ships with Docker and Terraform for an AWS ECS/Fargate
-deployment.
+A content-based course recommender: a **two-stage retriever** (ANN + optional
+cross-encoder) paired with a **GenAI/RAG** layer for query understanding and
+grounded explanations. FastAPI backend, React + Tailwind UI, deployable to
+Render (one click) or AWS (Terraform).
 
-Built to demonstrate the end-to-end skill set for an AI Engineer role: retrieval,
-LLM integration, API design, containerization, IaC, and CI/CD.
-
-## Live demo
-
-One-click deploy of a self-contained demo — the web UI and API on a single URL,
-with a small sample catalog baked in, no API keys required:
+**🔗 Live demo:** https://course-recommender-6y4z.onrender.com
+_(free tier — the first request may take ~50s while the instance wakes up)_
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/KhangPhanTZ/course-recommender-simple)
 
-<!-- LIVE_DEMO_URL -->
-> **Live URL:** _not deployed yet — click the button above (free tier), then add the URL here._
+## Features
 
-The demo uses the lightweight TF-IDF backend (`docker/Dockerfile.demo`,
-`render.yaml`) so it fits free hosting tiers. For the full Sentence-BERT + Bedrock
-stack, see [Deploy to AWS](#deploy-to-aws).
+- **Two-stage retrieval** — Sentence-BERT + FAISS (numpy fallback) + optional cross-encoder rerank.
+- **GenAI / RAG** — natural-language query understanding and retrieval-grounded explanations, via Claude API or AWS Bedrock, with deterministic fallbacks when no LLM is set.
+- **Explore** — KMeans clustering with a UMAP catalog map.
+- **Web UI** — React + Vite + Tailwind SPA (landing, search, explore, map), dark/light.
+- **Production-shaped** — pluggable local⇄S3 storage, Docker, Terraform (AWS ECS/Fargate), CI/CD, 35 tests.
+
+**Stack:** Python · FastAPI · scikit-learn · Sentence-BERT · FAISS · React · Vite · Tailwind · Docker · Terraform · AWS · GitHub Actions
 
 ## Architecture
 
 ```
-Client -> FastAPI -> Retrieval engine (encode -> ANN -> rerank)
-             |            `-> Artifact store (local | S3)
-             `-> GenAI layer (query understanding + explanations)
-                      `-> Claude API | Amazon Bedrock
-
-Deploy:  ECR -> ECS Fargate (behind ALB) -> S3 + Bedrock + CloudWatch
+Client → FastAPI → retrieval engine (encode → ANN → rerank)
+             │            └─ artifact store (local | S3)
+             └─ GenAI/RAG (understand + explain) → Claude API | Bedrock
 ```
 
-Full diagrams: [docs/architecture.md](docs/architecture.md)
-
-## Features
-
-- Two-stage retrieval: Sentence-BERT + FAISS ANN, with a numpy fallback when
-  FAISS is unavailable, plus optional cross-encoder reranking.
-- GenAI layer: natural-language query understanding (text to filters) and
-  retrieval-grounded explanations. Works with the Claude API or Amazon Bedrock
-  behind one interface, and degrades to deterministic templates when no LLM is
-  configured.
-- KMeans clustering with a UMAP projection for catalog exploration.
-- FastAPI service with health probes, request timing, and OpenAPI docs.
-- React + Vite + Tailwind web UI: landing page, live search, explore, and
-  architecture pages, dark/light themed.
-- Pluggable artifact store: identical code paths for local disk and S3.
-- Docker Compose for local full-stack, Terraform for AWS, GitHub Actions for CI/CD.
-- 31 unit tests and ruff lint, green in CI.
-
-## Project structure
-
-```
-src/
-  recsys/       retrieval engine: index (FAISS/numpy), recommender, rerank
-  llm/          GenAI layer: provider abstraction (Claude/Bedrock) + service
-  storage/      artifact store: local filesystem + S3
-  api/          FastAPI app: routes, schemas, dependency injection
-  models/       TF-IDF / SBERT vectorizers, KMeans, UMAP
-  pipeline.py   end-to-end build
-  eval.py       offline evaluation (precision/recall/NDCG, silhouette)
-  settings.py   env-driven runtime config
-frontend/       React + Vite + Tailwind SPA
-docker/         Dockerfile.api
-infra/aws/      Terraform: ECR, ECS, ALB, S3, IAM, CloudWatch
-.github/        CI, AWS deploy, and Terraform workflows
-tests/          pytest suite
-```
+Diagrams and details: [docs/architecture.md](docs/architecture.md).
 
 ## Quickstart
 
 Requires Python 3.11+ and Node 20+.
 
 ```bash
-python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-
-cp .env.example .env
+python -m src.pipeline --mode build --data data/Coursera.csv   # build artifacts
+uvicorn src.api.main:app --port 8000                           # API + docs at /docs
+cd frontend && npm install && npm run dev                      # UI at :5173
 ```
 
-### 1. Get the dataset
+Dataset: Kaggle [Multi-Platform Online Courses](https://www.kaggle.com/datasets/everydaycodings/multi-platform-online-courses-dataset) (Coursera slice) → `data/Coursera.csv`. Set `use_sbert: false` in `config/config.yaml` for a no-download TF-IDF setup. To enable the GenAI layer, set `LLM_PROVIDER=anthropic` and `ANTHROPIC_API_KEY` in `.env`.
 
-Kaggle: [Multi-Platform Online Courses Dataset](https://www.kaggle.com/datasets/everydaycodings/multi-platform-online-courses-dataset).
-Only the Coursera slice is used. Place it at `data/Coursera.csv` (git-ignored) and
-adjust the column mapping in `config/config.yaml` if your columns differ.
+## Deploy
 
-```bash
-pip install kaggle
-kaggle datasets download -d everydaycodings/multi-platform-online-courses-dataset -p data --unzip
-```
-
-### 2. Build artifacts
-
-```bash
-python -m src.pipeline --mode build --data data/Coursera.csv
-```
-
-First run downloads the Sentence-BERT model (~90 MB). To skip it entirely, set
-`use_sbert: false` in `config/config.yaml` to use TF-IDF instead.
-
-### 3. Run
-
-Query from the CLI:
-
-```bash
-python -m src.pipeline --mode query --text "deep learning with pytorch for beginners"
-```
-
-Or run the API and web UI in two terminals:
-
-```bash
-uvicorn src.api.main:app --reload --port 8000    # http://localhost:8000/docs
-cd frontend && npm install && npm run dev        # http://localhost:5173
-```
-
-The Vite dev server proxies `/api` to `http://localhost:8000`, so the UI and API
-share an origin.
-
-Docker Compose runs both (web on `:8080`, API on `:8000`):
-
-```bash
-docker compose up --build
-```
-
-## API
-
-```bash
-curl -s localhost:8000/recommend -H 'content-type: application/json' -d '{
-  "query": "I want to learn deep learning with pytorch as a beginner",
-  "top_k": 5, "explain": true
-}'
-```
-
-The response contains the ranked courses, the filters the system inferred from
-the query (`{"level": "beginner"}`), and an explanation grounded in the retrieved
-results.
-
-| Method | Path                 | Description                              |
-|--------|----------------------|------------------------------------------|
-| GET    | `/health`            | Liveness probe, backend and catalog size |
-| POST   | `/recommend`         | Rank courses for a natural-language goal |
-| POST   | `/similar`           | Courses similar to a given course id     |
-| GET    | `/courses/{id}`      | Single course record                     |
-| GET    | `/map`               | 2D cluster projection for the map view   |
-
-## Configuration
-
-Two layers:
-
-- `config/config.yaml` — dataset column mapping, embedding backend (`use_sbert`),
-  clustering, retrieval parameters.
-- Environment variables (`.env.example`) — artifact storage, LLM provider and
-  model, reranking. Documented in [src/settings.py](src/settings.py).
-
-Switch retrieval backends with a single flag: `use_sbert: true` for semantic
-search with FAISS, or `false` for TF-IDF with no model downloads (used by CI).
-
-To enable the GenAI layer, set `LLM_PROVIDER=anthropic` and `ANTHROPIC_API_KEY`
-in `.env`. Leave it at `disabled` to run without an API key. Note that the
-parser in `src/settings.py` does not strip trailing `#` comments, so keep
-comments on their own lines in `.env`.
-
-## Evaluation
-
-Offline metrics against category and skill labels, plus clustering quality:
-
-```bash
-python -m src.eval --metric category --topk 10
-python -m src.eval --metric skills   --topk 10
-python -m src.eval --metric silhouette
-```
-
-## Deploy to AWS
-
-Terraform provisions ECR, an S3 artifact bucket, an ECS Fargate service behind an
-ALB, IAM roles (S3 read, Bedrock invoke), and CloudWatch logging. The GenAI layer
-defaults to Bedrock in the cloud, so no API key is needed — the task role
-authorizes `bedrock:InvokeModel`.
-
-```bash
-cd infra/aws
-cp terraform.tfvars.example terraform.tfvars
-terraform init && terraform apply
-```
-
-Then push the image and upload artifacts. Full runbook:
-[infra/aws/README.md](infra/aws/README.md).
-
-Note that the Fargate tasks and the ALB accrue hourly cost. Tear everything down
-with `terraform destroy` when finished.
+- **Render (one click):** the button above, driven by [`render.yaml`](render.yaml).
+- **AWS:** `./scripts/deploy_aws.sh` provisions ECR, ECS Fargate, ALB, S3, IAM and Bedrock via Terraform ([infra/aws](infra/aws)).
 
 ## Development
 
 ```bash
-make dev      # install lint and test dependencies
-make test     # pytest (hermetic: no network, no LLM calls)
-make lint     # ruff
+make test    # pytest (hermetic: no network, no LLM calls)
+make lint    # ruff
 ```
-
-### Testing the GenAI layer
-
-The default suite pins `LLM_PROVIDER=disabled` so it stays fast, free, and
-deterministic. Two opt-in tools exercise a real provider instead:
-
-```bash
-make smoke-llm   # per-stage report: model answered, or fell back to a template
-make test-llm    # RUN_LLM_TESTS=1 pytest tests/test_llm_live.py
-```
-
-Both matter because the service degrades silently: when a call fails, it returns
-a deterministic template and `/health` still reports the LLM as enabled, so a
-plausible-looking response is not evidence the provider is reachable. The live
-tests assert on signals the fallback cannot produce, such as translating a
-non-English query.
-
-Note that `LLM_MAX_TOKENS` budgets reasoning and answer together on models that
-think by default, so a value tuned to the answer length alone can return an
-empty response.
