@@ -76,3 +76,10 @@ jobs:
           file: frontend/Dockerfile
           push: false
           tags: course-recommender-web:ci
+      - name: Build all-in-one demo image (no push)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: docker/Dockerfile.demo
+          push: false
+          tags: course-recommender-demo:ci

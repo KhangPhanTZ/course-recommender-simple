@@ -1,0 +1,21 @@
+# Render Blueprint — one-click deploy of the self-contained demo (UI + API).
+# Deploy: https://render.com/deploy?repo=https://github.com/KhangPhanTZ/course-recommender-simple
+#
+# One web service builds docker/Dockerfile.demo (small TF-IDF image with a
+# sample catalog baked in) and serves both the SPA and the API on one URL.
+services:
+  - type: web
+    name: course-recommender
+    runtime: image
+    plan: free
+    dockerfilePath: ./docker/Dockerfile.demo
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      # GenAI is off by default so no key is required. To enable real RAG
+      # explanations, set LLM_PROVIDER=anthropic and add ANTHROPIC_API_KEY
+      # in the Render dashboard.
+      - key: LLM_PROVIDER
+        value: disabled
+      - key: LLM_ENABLED
+        value: "false"

@@ -1,0 +1,18 @@
+# Minimal deps for the self-contained demo image (docker/Dockerfile.demo).
+# TF-IDF backend only: no torch / sentence-transformers / faiss / umap, so the
+# image stays small and fits free hosting tiers (Render, Railway, Fly).
+
+numpy
+pandas
+scikit-learn
+scipy
+pyarrow
+pyyaml
+
+# serving
+fastapi
+uvicorn[standard]
+pydantic>=2
+
+# optional GenAI via Claude API (set ANTHROPIC_API_KEY to enable real RAG)
+anthropic

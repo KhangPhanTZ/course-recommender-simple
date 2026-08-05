@@ -9,6 +9,20 @@ deployment.
 Built to demonstrate the end-to-end skill set for an AI Engineer role: retrieval,
 LLM integration, API design, containerization, IaC, and CI/CD.
 
+## Live demo
+
+One-click deploy of a self-contained demo — the web UI and API on a single URL,
+with a small sample catalog baked in, no API keys required:
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/KhangPhanTZ/course-recommender-simple)
+
+<!-- LIVE_DEMO_URL -->
+> **Live URL:** _not deployed yet — click the button above (free tier), then add the URL here._
+
+The demo uses the lightweight TF-IDF backend (`docker/Dockerfile.demo`,
+`render.yaml`) so it fits free hosting tiers. For the full Sentence-BERT + Bedrock
+stack, see [Deploy to AWS](#deploy-to-aws).
+
 ## Architecture
 
 ```
