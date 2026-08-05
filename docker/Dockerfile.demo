@@ -34,6 +34,8 @@ COPY config/ ./config/
 COPY examples/ ./examples/
 COPY scripts/build_demo_artifacts.py ./scripts/build_demo_artifacts.py
 COPY --from=web /web/dist ./static
+# Fail fast (and log the listing) if the SPA build didn't land in /app/static.
+RUN ls -la /app/static && test -f /app/static/index.html
 
 # Bake the TF-IDF catalog + 2-D map into the image.
 RUN python scripts/build_demo_artifacts.py
