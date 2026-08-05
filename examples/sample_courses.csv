@@ -1,129 +1,1501 @@
 course,partner,skills,certificatetype,level,rating
-Cloud & AWS Specialization,Microsoft,"devops, aws, ec2",Course,advanced,4.0
-Cybersecurity in Practice,Microsoft,"pentesting, firewall, networking",Course,advanced,4.3
-Web Development Masterclass,Meta,"node, react, javascript",Course,intermediate,4.6
-Cybersecurity Essentials,Google,"pentesting, firewall, networking",Course,intermediate,4.3
-Cybersecurity Fundamentals,DeepLearning.AI,"security, cryptography, firewall",Course,advanced,4.8
-Cybersecurity in Practice,AWS,"pentesting, firewall, networking",Course,intermediate,4.9
-Web Development in Practice,DeepLearning.AI,"javascript, react, typescript",Course,intermediate,4.1
-Data & SQL Specialization,Stanford,"analytics, sql, pandas",Course,advanced,4.9
-Cybersecurity Specialization,DeepLearning.AI,"security, networking, cryptography",Course,advanced,4.5
-Data & SQL Essentials,Coursera,"sql, databases, analytics",Course,beginner,4.5
-Web Development Masterclass,Coursera,"html, react, frontend",Course,advanced,4.8
-Machine Learning Masterclass,Coursera,"classification, regression, machine learning",Course,intermediate,4.6
-Data Visualization Fundamentals,Google,"matplotlib, dashboards, visualization",Course,intermediate,4.4
-Cloud & AWS Essentials,IBM,"devops, lambda, docker",Course,beginner,4.9
-Deep Learning Masterclass,Stanford,"transformers, tensorflow, cnn",Course,beginner,4.5
-Data & SQL Masterclass,Coursera,"sql, databases, analytics",Course,beginner,4.5
-Data Visualization Fundamentals,IBM,"dashboards, matplotlib, visualization",Course,intermediate,4.1
-Deep Learning Essentials,DeepLearning.AI,"deep learning, neural networks, pytorch",Course,beginner,4.1
-Python Programming for Everyone,Google,"automation, python, oop",Course,intermediate,4.1
-Data Visualization Bootcamp,Meta,"dashboards, visualization, plotly",Course,intermediate,4.7
-Deep Learning Masterclass,Google,"pytorch, transformers, deep learning",Course,beginner,4.6
-Data & SQL Bootcamp,DeepLearning.AI,"databases, sql, data analysis",Course,advanced,4.2
-Deep Learning Bootcamp,IBM,"transformers, neural networks, deep learning",Course,beginner,4.4
-Web Development Specialization,Meta,"javascript, node, html",Course,advanced,4.3
-Cybersecurity Bootcamp,AWS,"cryptography, networking, firewall",Course,advanced,4.6
-Cybersecurity Masterclass,DeepLearning.AI,"networking, cryptography, firewall",Course,beginner,4.6
-Data & SQL Deep Dive,Google,"etl, databases, pandas",Course,advanced,4.5
-Machine Learning for Everyone,AWS,"classification, machine learning, regression",Course,advanced,4.1
-Cybersecurity Fundamentals,Stanford,"cryptography, security, networking",Course,intermediate,4.8
-Python Programming Masterclass,AWS,"python, programming, oop",Course,intermediate,4.4
-Deep Learning in Practice,Coursera,"deep learning, tensorflow, transformers",Course,advanced,4.1
-Machine Learning Bootcamp,Meta,"scikit-learn, machine learning, feature engineering",Course,intermediate,4.6
-Machine Learning Deep Dive,Google,"machine learning, classification, scikit-learn",Course,advanced,4.5
-Cloud & AWS for Everyone,DeepLearning.AI,"ec2, kubernetes, cloud",Course,intermediate,4.1
-Cybersecurity Fundamentals,DeepLearning.AI,"security, networking, cryptography",Course,intermediate,4.3
-Cloud & AWS Bootcamp,DeepLearning.AI,"lambda, devops, ec2",Course,intermediate,4.5
-Web Development Bootcamp,Coursera,"frontend, css, typescript",Course,intermediate,4.2
-Data Visualization for Everyone,AWS,"plotly, dashboards, matplotlib",Course,beginner,4.7
-Data Visualization Fundamentals,AWS,"visualization, matplotlib, dashboards",Course,beginner,4.9
-Deep Learning Fundamentals,DeepLearning.AI,"cnn, tensorflow, pytorch",Course,advanced,4.8
-Data Visualization Bootcamp,Microsoft,"plotly, visualization, dashboards",Course,advanced,4.6
-Cloud & AWS Essentials,Coursera,"s3, aws, cloud",Course,beginner,4.2
-Data Visualization Masterclass,AWS,"charts, dashboards, plotly",Course,intermediate,4.4
-Cybersecurity Specialization,Coursera,"cryptography, networking, security",Course,intermediate,4.2
-Web Development Bootcamp,Microsoft,"node, css, typescript",Course,beginner,4.8
-Python Programming for Everyone,Coursera,"python, programming, scripting",Course,advanced,4.1
-Data Visualization for Everyone,Stanford,"visualization, plotly, charts",Course,beginner,4.4
-Machine Learning Bootcamp,DeepLearning.AI,"regression, feature engineering, scikit-learn",Course,intermediate,4.5
-Deep Learning Specialization,Google,"transformers, tensorflow, cnn",Course,advanced,4.0
-Python Programming Specialization,Meta,"oop, python, scripting",Course,advanced,4.3
-Python Programming in Practice,Stanford,"oop, scripting, python",Course,intermediate,4.6
-Machine Learning Masterclass,IBM,"classification, machine learning, feature engineering",Course,beginner,4.5
-Data Visualization Specialization,AWS,"charts, visualization, dashboards",Course,intermediate,4.7
-Python Programming Essentials,Microsoft,"oop, python, scripting",Course,intermediate,4.6
-Web Development Fundamentals,Meta,"react, html, css",Course,beginner,4.3
-Cybersecurity Specialization,IBM,"pentesting, security, networking",Course,advanced,4.9
-Web Development Bootcamp,Google,"react, typescript, frontend",Course,intermediate,4.9
-Cloud & AWS Essentials,Coursera,"ec2, s3, aws",Course,advanced,4.1
-Cloud & AWS Masterclass,Microsoft,"devops, cloud, ec2",Course,beginner,4.7
-Web Development Essentials,AWS,"javascript, node, html",Course,advanced,4.3
-Cybersecurity Bootcamp,AWS,"pentesting, cryptography, networking",Course,beginner,4.5
-Deep Learning for Everyone,Meta,"transformers, cnn, neural networks",Course,intermediate,4.1
-Web Development Fundamentals,IBM,"node, react, typescript",Course,intermediate,4.7
-Data Visualization Essentials,Microsoft,"charts, visualization, dashboards",Course,intermediate,4.9
-Deep Learning Deep Dive,Coursera,"pytorch, transformers, neural networks",Course,beginner,4.7
-Deep Learning Masterclass,Coursera,"cnn, tensorflow, transformers",Course,intermediate,4.8
-Cybersecurity Masterclass,Stanford,"security, networking, firewall",Course,intermediate,4.6
-Python Programming Bootcamp,Coursera,"scripting, python, automation",Course,beginner,4.4
-Deep Learning in Practice,AWS,"deep learning, tensorflow, transformers",Course,advanced,4.3
-Web Development for Everyone,IBM,"react, javascript, frontend",Course,intermediate,4.3
-Deep Learning for Everyone,Stanford,"pytorch, neural networks, tensorflow",Course,advanced,4.8
-Cloud & AWS Fundamentals,DeepLearning.AI,"ec2, kubernetes, docker",Course,beginner,4.0
-Data Visualization Masterclass,Stanford,"plotly, visualization, dashboards",Course,beginner,4.2
-Machine Learning Deep Dive,AWS,"scikit-learn, regression, feature engineering",Course,intermediate,4.7
-Cloud & AWS Essentials,IBM,"cloud, kubernetes, devops",Course,beginner,4.8
-Machine Learning Specialization,Meta,"feature engineering, scikit-learn, machine learning",Course,intermediate,4.3
-Machine Learning Fundamentals,Coursera,"machine learning, classification, feature engineering",Course,beginner,4.2
-Python Programming Deep Dive,Google,"automation, python, programming",Course,advanced,4.1
-Deep Learning Bootcamp,AWS,"cnn, tensorflow, pytorch",Course,intermediate,4.7
-Machine Learning Bootcamp,Google,"classification, scikit-learn, machine learning",Course,beginner,4.5
-Data Visualization Essentials,Meta,"visualization, plotly, charts",Course,advanced,4.7
-Web Development Masterclass,Coursera,"node, html, css",Course,advanced,4.5
-Python Programming Fundamentals,IBM,"automation, programming, oop",Course,advanced,4.1
-Data & SQL Masterclass,Meta,"sql, pandas, analytics",Course,beginner,4.7
-Data & SQL for Everyone,Microsoft,"pandas, data analysis, sql",Course,intermediate,4.7
-Data & SQL for Everyone,Google,"analytics, data analysis, pandas",Course,beginner,4.8
-Data & SQL Specialization,Stanford,"databases, etl, sql",Course,advanced,4.1
-Data Visualization Essentials,Meta,"charts, dashboards, visualization",Course,intermediate,4.9
-Web Development Specialization,Coursera,"frontend, javascript, html",Course,advanced,4.0
-Data & SQL Masterclass,Google,"etl, databases, sql",Course,beginner,4.4
-Data & SQL Bootcamp,Microsoft,"pandas, sql, etl",Course,beginner,4.4
-Data Visualization Bootcamp,Meta,"visualization, charts, matplotlib",Course,intermediate,4.2
-Data & SQL Deep Dive,Microsoft,"pandas, sql, analytics",Course,beginner,4.8
-Web Development in Practice,Coursera,"node, typescript, react",Course,beginner,4.1
-Machine Learning Bootcamp,Coursera,"scikit-learn, regression, feature engineering",Course,advanced,4.8
-Data Visualization Bootcamp,AWS,"matplotlib, dashboards, plotly",Course,beginner,4.9
-Data & SQL in Practice,AWS,"data analysis, sql, databases",Course,intermediate,4.2
-Python Programming Specialization,Stanford,"automation, oop, scripting",Course,intermediate,4.2
-Python Programming Essentials,Microsoft,"programming, scripting, python",Course,intermediate,4.7
-Cloud & AWS Bootcamp,IBM,"lambda, aws, kubernetes",Course,intermediate,4.8
-Python Programming Masterclass,IBM,"programming, automation, scripting",Course,advanced,4.3
-Cloud & AWS Deep Dive,IBM,"cloud, s3, docker",Course,advanced,4.2
-Python Programming Bootcamp,Stanford,"programming, python, automation",Course,beginner,4.5
-Cloud & AWS Masterclass,AWS,"cloud, s3, docker",Course,beginner,4.6
-Machine Learning Masterclass,DeepLearning.AI,"classification, feature engineering, regression",Course,intermediate,4.0
-Machine Learning in Practice,Meta,"classification, feature engineering, machine learning",Course,advanced,4.8
-Machine Learning Masterclass,Stanford,"scikit-learn, feature engineering, machine learning",Course,advanced,4.1
-Deep Learning Deep Dive,Microsoft,"neural networks, tensorflow, pytorch",Course,advanced,4.9
-Cloud & AWS Bootcamp,Stanford,"docker, ec2, s3",Course,intermediate,4.1
-Cybersecurity in Practice,Microsoft,"security, firewall, cryptography",Course,intermediate,4.7
-Python Programming for Everyone,Coursera,"programming, python, automation",Course,beginner,4.0
-Data Visualization Bootcamp,DeepLearning.AI,"matplotlib, charts, dashboards",Course,intermediate,4.1
-Cybersecurity in Practice,Stanford,"pentesting, firewall, cryptography",Course,intermediate,4.7
-Data & SQL Essentials,Microsoft,"analytics, pandas, databases",Course,advanced,4.5
-Data & SQL Masterclass,Google,"data analysis, etl, analytics",Course,advanced,4.5
-Deep Learning Deep Dive,Microsoft,"transformers, tensorflow, cnn",Course,beginner,4.1
-Cloud & AWS in Practice,DeepLearning.AI,"kubernetes, devops, ec2",Course,beginner,4.7
-Web Development Essentials,Microsoft,"html, react, node",Course,beginner,4.2
-Data & SQL Essentials,AWS,"etl, analytics, databases",Course,intermediate,4.1
-Deep Learning Specialization,DeepLearning.AI,"neural networks, transformers, cnn",Course,beginner,4.1
-Cloud & AWS for Everyone,DeepLearning.AI,"kubernetes, aws, ec2",Course,advanced,4.1
-Cybersecurity for Everyone,Coursera,"networking, pentesting, firewall",Course,beginner,4.0
-Python Programming Bootcamp,Microsoft,"python, scripting, automation",Course,advanced,4.5
-Python Programming Specialization,IBM,"scripting, oop, automation",Course,beginner,4.9
-Cloud & AWS Essentials,DeepLearning.AI,"s3, aws, docker",Course,beginner,4.8
-Machine Learning Deep Dive,Microsoft,"classification, scikit-learn, feature engineering",Course,intermediate,4.1
-Machine Learning Bootcamp,Meta,"classification, feature engineering, regression",Course,intermediate,4.3
-Web Development Specialization,DeepLearning.AI,"css, node, react",Course,beginner,4.4
+Introduction to Machine Learning,University of Michigan,"feature engineering, regression, classification, scikit-learn",Course,advanced,4.5
+Modern Cybersecurity Professional Certificate,University of Michigan,"cryptography, networking, incident response, firewalls",Course,advanced,4.8
+Applied Mobile Development Specialization,Microsoft,"kotlin, react native, swift, android",Course,intermediate,4.9
+Deep Learning Hands-On 291,Johns Hopkins University,"cnn, deep learning, rnn, keras",Course,beginner,5.0
+Cybersecurity Bootcamp 232,Coursera,"security, networking, incident response, firewalls",Course,intermediate,4.6
+Practical Machine Learning,University of London,"classification, clustering, xgboost",Course,advanced,4.7
+Foundations of MLOps in Practice,Duke University,"mlops, monitoring, mlflow, docker",Course,advanced,4.1
+Computer Vision Capstone Project 54,Duke University,"yolo, image classification, segmentation",Course,beginner,4.7
+Foundations of Computer Vision,Google,"image classification, segmentation, computer vision, cnn",Course,beginner,4.4
+Statistics Hands-On 124,Meta,"regression, statistics, inference, distributions",Course,beginner,4.5
+Azure Cloud Crash Course 224,Microsoft,"functions, azure, aks",Course,beginner,3.9
+Web Backend Essentials 118,AWS,"graphql, express, node.js",Course,advanced,4.3
+Essential DevOps for Everyone,Stanford University,"kubernetes, docker, terraform",Course,beginner,4.0
+Data Analysis Bootcamp 63,Google,"pandas, excel, numpy",Course,beginner,4.8
+Azure Cloud Professional Certificate 225,Imperial College London,"aks, cosmos db, azure",Course,advanced,4.7
+Data Analysis Hands-On,University of Michigan,"data wrangling, data cleaning, statistics, hypothesis testing",Course,advanced,4.2
+Data Visualization from Scratch,Coursera,"seaborn, tableau, d3.js",Course,beginner,4.8
+Essential DevOps Crash Course,DeepLearning.AI,"ansible, monitoring, docker",Course,beginner,5.0
+Machine Learning Deep Dive 179,Google,"regression, machine learning, clustering, classification",Course,advanced,4.5
+Cybersecurity for Everyone,Johns Hopkins University,"security, incident response, firewalls",Course,intermediate,4.4
+Web Backend Complete Guide,Coursera,"django, express, node.js",Course,beginner,5.0
+DevOps Deep Dive,DataCamp,"kubernetes, github actions, ansible",Course,intermediate,4.0
+Deep Learning: Hands-On,Microsoft,"tensorflow, deep learning, pytorch",Course,intermediate,4.4
+Web Frontend from Scratch 224,Imperial College London,"vue, html, typescript, tailwind",Course,advanced,4.1
+Mastering Python Programming Essentials,Duke University,"python, async, scripting",Course,beginner,4.6
+Modern Cybersecurity Bootcamp,IBM,"security, incident response, networking, firewalls",Course,advanced,4.8
+Complete Mobile Development Professional Certificate,Stanford University,"ios, react native, kotlin, flutter",Course,beginner,4.8
+Data Analysis Crash Course 64,DataCamp,"data wrangling, hypothesis testing, numpy, excel",Course,advanced,4.6
+Mastering DevOps Specialization,Google,"jenkins, monitoring, github actions",Course,intermediate,4.5
+Advanced Computer Vision Crash Course,Johns Hopkins University,"segmentation, opencv, cnn",Course,beginner,4.6
+Statistics for Everyone 21,Microsoft,"a/b testing, bayesian, distributions",Course,intermediate,4.7
+Essential Data Engineering Hands-On,Johns Hopkins University,"warehousing, kafka, data pipelines",Course,beginner,4.1
+Cloud & AWS Professional Certificate 149,AWS,"aws, vpc, s3",Course,advanced,4.6
+MLOps Essentials 199,Google,"ci/cd, mlops, mlflow",Course,beginner,4.2
+Python Programming Crash Course,Imperial College London,"scripting, python, data structures, testing",Course,beginner,5.0
+SQL & Databases: Hands-On,IBM,"joins, mongodb, indexing",Course,advanced,4.4
+Python Programming: Essentials,IBM,"python, data structures, algorithms, testing",Course,advanced,4.7
+Web Backend Essentials 128,Duke University,"node.js, authentication, microservices",Course,advanced,3.9
+Data Engineering Specialization,Johns Hopkins University,"spark, data pipelines, kafka, batch processing",Course,beginner,4.8
+Practical Machine Learning Workshop,DeepLearning.AI,"feature engineering, regression, xgboost",Course,advanced,5.0
+Mastering NLP,AWS,"bert, transformers, embeddings",Course,intermediate,4.2
+Computer Vision Masterclass 143,AWS,"image classification, segmentation, opencv, computer vision",Course,intermediate,4.2
+Cybersecurity Deep Dive 146,AWS,"networking, incident response, penetration testing, security",Course,advanced,4.9
+Practical Data Visualization Hands-On,DeepLearning.AI,"tableau, storytelling, dashboards",Course,intermediate,4.1
+Practical Product & Analytics,Coursera,"sql, cohort analysis, experimentation, dashboards",Course,beginner,4.2
+Advanced MLOps Essentials,Duke University,"sagemaker, monitoring, feature store, ci/cd",Course,beginner,3.9
+Machine Learning: Complete Guide,IBM,"clustering, scikit-learn, machine learning",Course,beginner,4.2
+Web Frontend Bootcamp 73,Coursera,"css, html, vue, javascript",Course,beginner,4.1
+Computer Vision Masterclass 280,Johns Hopkins University,"computer vision, image classification, yolo",Course,advanced,4.0
+Applied MLOps in Practice,Johns Hopkins University,"model deployment, mlops, sagemaker",Course,beginner,3.8
+Foundations of Computer Vision Masterclass,DataCamp,"opencv, segmentation, object detection",Course,intermediate,4.4
+Big Data Professional Certificate 10,DeepLearning.AI,"distributed computing, scala, data lake, hadoop",Course,beginner,3.9
+Modern DevOps from Scratch,Imperial College London,"terraform, kubernetes, docker",Course,advanced,4.1
+Product & Analytics Professional Certificate 146,Google,"product analytics, dashboards, cohort analysis, kpi",Course,intermediate,4.2
+Mastering MLOps Specialization,IBM,"mlflow, ci/cd, docker, mlops",Course,intermediate,4.4
+Big Data for Everyone 59,Google,"big data, data lake, hive",Course,advanced,4.5
+Introduction to Data Analysis Workshop,Microsoft,"eda, data wrangling, pandas",Course,beginner,4.4
+Data Analysis Capstone Project 191,Stanford University,"pandas, hypothesis testing, numpy",Course,intermediate,4.3
+Introduction to Web Backend Crash Course,IBM,"microservices, graphql, node.js",Course,intermediate,3.9
+Complete Statistics,Duke University,"bayesian, inference, regression, statistics",Course,beginner,4.0
+Statistics: Fundamentals,Duke University,"bayesian, probability, inference",Course,beginner,4.9
+Modern Mobile Development Bootcamp,AWS,"react native, mobile ui, swift",Course,intermediate,4.3
+Practical Big Data from Scratch,Stanford University,"big data, data lake, distributed computing, spark",Course,beginner,4.4
+Data Engineering: Specialization,DeepLearning.AI,"etl, kafka, batch processing, spark",Course,intermediate,3.9
+Machine Learning Professional Certificate 299,DataCamp,"feature engineering, clustering, machine learning, regression",Course,advanced,4.5
+Statistics Workshop 101,DataCamp,"inference, distributions, statistics, regression",Course,advanced,4.5
+Advanced NLP Crash Course,AWS,"nlp, sentiment analysis, bert, named entity recognition",Course,advanced,4.0
+Essential Product & Analytics,Microsoft,"kpi, experimentation, metrics",Course,intermediate,4.8
+Complete MLOps Crash Course,University of Michigan,"sagemaker, feature store, docker, monitoring",Course,advanced,5.0
+Complete Mobile Development Essentials,Imperial College London,"swift, mobile ui, android, kotlin",Course,advanced,4.1
+Modern Web Frontend,DataCamp,"css, typescript, javascript, next.js",Course,intermediate,4.1
+SQL & Databases Hands-On 209,University of London,"query optimization, postgresql, joins, mysql",Course,beginner,4.2
+Cybersecurity Bootcamp,DataCamp,"incident response, firewalls, penetration testing, security",Course,advanced,4.7
+Mobile Development: Hands-On,University of London,"swift, ios, kotlin, android",Course,intermediate,4.9
+NLP Capstone Project 56,Meta,"bert, named entity recognition, llm, transformers",Course,advanced,4.7
+Mastering Python Programming Specialization,University of Michigan,"data structures, testing, automation, algorithms",Course,advanced,4.7
+Modern Data Visualization Hands-On,AWS,"d3.js, plotly, seaborn, matplotlib",Course,intermediate,4.7
+Machine Learning: Workshop,DeepLearning.AI,"machine learning, clustering, model evaluation, xgboost",Course,intermediate,4.0
+Practical Data Engineering Capstone Project,Duke University,"airflow, dbt, data pipelines",Course,beginner,4.4
+Statistics Specialization 213,Duke University,"regression, probability, statistics, a/b testing",Course,beginner,4.2
+Cybersecurity: Capstone Project,DataCamp,"networking, penetration testing, cryptography, firewalls",Course,advanced,4.1
+Introduction to Web Frontend Bootcamp,Google Cloud,"javascript, tailwind, react, css",Course,beginner,3.9
+Mastering DevOps,Google Cloud,"docker, jenkins, ansible, monitoring",Course,advanced,4.6
+Web Backend: Complete Guide,Google,"express, node.js, microservices, django",Course,advanced,4.7
+Big Data Specialization,DataCamp,"scala, big data, distributed computing",Course,intermediate,4.1
+NLP from Scratch 149,University of Michigan,"llm, transformers, named entity recognition",Course,advanced,4.7
+Statistics Masterclass 160,Microsoft,"a/b testing, bayesian, statistics, distributions",Course,advanced,4.8
+Python Programming: Workshop,DeepLearning.AI,"algorithms, python, scripting, data structures",Course,advanced,4.0
+Web Frontend: Masterclass,DeepLearning.AI,"html, next.js, css",Course,beginner,4.2
+Essential DevOps,Google Cloud,"terraform, docker, kubernetes",Course,intermediate,4.9
+SQL & Databases for Everyone,IBM,"query optimization, indexing, mongodb",Course,intermediate,4.5
+Introduction to Mobile Development Bootcamp,Duke University,"kotlin, ios, mobile ui",Course,beginner,4.3
+SQL & Databases Essentials 61,DataCamp,"query optimization, nosql, mysql",Course,advanced,4.9
+Web Backend Essentials 46,Coursera,"graphql, authentication, rest api",Course,advanced,4.8
+Foundations of DevOps,Stanford University,"monitoring, ci/cd, terraform",Course,intermediate,4.6
+Computer Vision Bootcamp 105,DataCamp,"yolo, image classification, cnn",Course,intermediate,4.3
+Cybersecurity Capstone Project 4,IBM,"penetration testing, cryptography, owasp",Course,advanced,4.6
+Computer Vision Deep Dive,IBM,"object detection, computer vision, segmentation",Course,intermediate,4.9
+Applied Python Programming,AWS,"testing, data structures, async, automation",Course,beginner,4.6
+Mastering Python Programming,Stanford University,"oop, testing, automation",Course,beginner,4.2
+SQL & Databases in Practice,IBM,"nosql, query optimization, normalization, indexing",Course,advanced,4.2
+Data Engineering for Everyone,Stanford University,"batch processing, kafka, spark",Course,intermediate,4.6
+Python Programming Essentials 207,Duke University,"data structures, async, scripting, python",Course,beginner,4.2
+NLP Professional Certificate 29,Meta,"nlp, bert, transformers, tokenization",Course,advanced,3.9
+MLOps Specialization 254,Stanford University,"mlflow, monitoring, ci/cd",Course,beginner,4.8
+Complete NLP Hands-On,Johns Hopkins University,"embeddings, transformers, llm",Course,intermediate,4.1
+Mobile Development Bootcamp,Microsoft,"mobile ui, swift, kotlin, ios",Course,beginner,4.3
+Advanced SQL & Databases Complete Guide,AWS,"mysql, postgresql, query optimization, mongodb",Course,beginner,3.9
+Cloud & AWS in Practice,Meta,"aws, dynamodb, s3, cloudformation",Course,beginner,4.2
+MLOps Professional Certificate 269,Coursera,"docker, mlflow, feature store",Course,intermediate,4.6
+Data Visualization for Everyone 62,Johns Hopkins University,"d3.js, tableau, dashboards",Course,beginner,4.7
+Mastering Mobile Development Workshop,DataCamp,"android, ios, mobile ui",Course,advanced,4.4
+Machine Learning Capstone Project 104,AWS,"machine learning, classification, xgboost",Course,intermediate,4.6
+Applied NLP Capstone Project,Imperial College London,"sentiment analysis, tokenization, named entity recognition",Course,advanced,4.9
+Modern Web Backend,Imperial College London,"rest api, authentication, node.js, graphql",Course,intermediate,4.8
+Mobile Development Masterclass 106,Stanford University,"mobile ui, android, react native",Course,advanced,4.1
+Big Data Crash Course 245,Coursera,"distributed computing, scala, spark",Course,advanced,4.3
+Web Frontend Capstone Project 184,University of Michigan,"css, vue, typescript",Course,beginner,4.7
+DevOps Workshop 179,Imperial College London,"ansible, kubernetes, terraform, ci/cd",Course,advanced,4.8
+Statistics: Crash Course,University of Michigan,"bayesian, distributions, inference",Course,advanced,4.4
+Data Engineering in Practice 112,Google Cloud,"etl, airflow, kafka, batch processing",Course,intermediate,3.8
+Introduction to Python Programming Fundamentals,DataCamp,"data structures, automation, testing",Course,advanced,5.0
+Practical NLP for Everyone,Microsoft,"embeddings, bert, llm, sentiment analysis",Course,beginner,4.3
+Data Visualization Crash Course 115,Meta,"d3.js, seaborn, dashboards",Course,advanced,3.9
+NLP Complete Guide,Duke University,"nlp, tokenization, bert, embeddings",Course,intermediate,3.9
+Introduction to Big Data Complete Guide,Imperial College London,"hadoop, hive, scala, spark",Course,beginner,4.0
+Deep Learning Essentials 99,Meta,"rnn, tensorflow, keras, cnn",Course,advanced,4.1
+Introduction to Cybersecurity Fundamentals,Meta,"security, networking, incident response, cryptography",Course,advanced,4.5
+Deep Learning Essentials,Duke University,"attention, cnn, keras, transformers",Course,intermediate,4.5
+Machine Learning Specialization 278,Meta,"feature engineering, machine learning, scikit-learn, classification",Course,advanced,4.9
+Data Engineering for Everyone 207,Imperial College London,"warehousing, airflow, dbt",Course,intermediate,4.2
+Modern NLP from Scratch,Google Cloud,"embeddings, llm, bert, named entity recognition",Course,advanced,4.5
+Web Backend Specialization 223,AWS,"fastapi, django, express",Course,advanced,4.3
+Introduction to Machine Learning for Everyone,AWS,"feature engineering, model evaluation, clustering, scikit-learn",Course,intermediate,4.2
+Web Backend Essentials 47,Microsoft,"microservices, fastapi, rest api, node.js",Course,beginner,3.8
+Modern Product & Analytics,Imperial College London,"product analytics, sql, dashboards, cohort analysis",Course,advanced,4.3
+Mobile Development: for Everyone,IBM,"android, kotlin, react native, mobile ui",Course,advanced,4.1
+Data Engineering: Masterclass,Duke University,"airflow, etl, dbt",Course,advanced,3.8
+MLOps Bootcamp,Imperial College London,"ci/cd, docker, mlflow",Course,advanced,4.6
+Cybersecurity Complete Guide 33,University of London,"security, owasp, networking, firewalls",Course,advanced,3.8
+Essential Web Frontend Fundamentals,Google Cloud,"javascript, html, typescript, tailwind",Course,intermediate,3.8
+Foundations of SQL & Databases,University of Michigan,"query optimization, nosql, joins, mysql",Course,beginner,4.6
+Azure Cloud in Practice,Meta,"azure, devops, aks",Course,intermediate,4.2
+Cloud & AWS: Deep Dive,DataCamp,"ec2, cloudformation, lambda, dynamodb",Course,intermediate,4.9
+Web Backend: Crash Course,Google,"authentication, rest api, graphql",Course,advanced,3.9
+Product & Analytics: Fundamentals,Duke University,"cohort analysis, product analytics, sql",Course,advanced,4.5
+Essential Machine Learning Professional Certificate,Stanford University,"machine learning, classification, clustering, scikit-learn",Course,advanced,4.4
+Computer Vision for Everyone,IBM,"object detection, cnn, opencv",Course,intermediate,4.7
+Web Frontend Hands-On 267,University of Michigan,"react, tailwind, next.js, javascript",Course,advanced,4.5
+Azure Cloud Professional Certificate 4,Duke University,"functions, blob storage, devops",Course,intermediate,4.1
+SQL & Databases Capstone Project 10,Google Cloud,"indexing, joins, mysql",Course,intermediate,3.8
+Essential SQL & Databases Workshop,DataCamp,"normalization, mysql, indexing, joins",Course,intermediate,4.5
+Web Frontend: Complete Guide,Google Cloud,"tailwind, next.js, typescript, vue",Course,advanced,5.0
+Modern Statistics Capstone Project,Duke University,"distributions, bayesian, probability, a/b testing",Course,advanced,4.4
+Web Frontend: Hands-On,Microsoft,"javascript, next.js, html",Course,advanced,4.4
+Data Visualization Workshop,IBM,"dashboards, storytelling, matplotlib",Course,intermediate,3.9
+Azure Cloud Hands-On,DeepLearning.AI,"aks, active directory, functions",Course,intermediate,3.9
+Practical Big Data Capstone Project,DeepLearning.AI,"scala, distributed computing, data lake, big data",Course,advanced,4.3
+Mobile Development Essentials 233,Stanford University,"ios, mobile ui, react native, android",Course,advanced,4.9
+Product & Analytics: Specialization,DeepLearning.AI,"experimentation, product analytics, cohort analysis",Course,intermediate,4.1
+Python Programming Capstone Project 229,Stanford University,"async, data structures, python, scripting",Course,beginner,4.8
+Practical Data Analysis Professional Certificate,DataCamp,"pandas, statistics, eda, data wrangling",Course,intermediate,4.7
+Data Engineering Deep Dive,Imperial College London,"data pipelines, dbt, spark, airflow",Course,advanced,4.2
+Statistics for Everyone 24,Duke University,"probability, distributions, bayesian",Course,intermediate,4.4
+Applied Mobile Development Bootcamp,Duke University,"swift, mobile ui, react native, flutter",Course,beginner,4.0
+Complete Deep Learning Workshop,Johns Hopkins University,"transformers, rnn, keras",Course,beginner,4.2
+Product & Analytics Crash Course 108,Meta,"product analytics, cohort analysis, dashboards, metrics",Course,beginner,4.6
+Advanced Azure Cloud,Google,"aks, devops, azure",Course,intermediate,4.5
+Computer Vision Complete Guide 192,Google Cloud,"computer vision, opencv, yolo",Course,beginner,4.0
+Foundations of NLP Specialization,University of Michigan,"tokenization, named entity recognition, transformers",Course,beginner,3.9
+Cloud & AWS Essentials 208,DataCamp,"lambda, aws, cloudwatch, vpc",Course,beginner,4.9
+Machine Learning: Professional Certificate,DeepLearning.AI,"clustering, classification, feature engineering",Course,intermediate,4.1
+Statistics from Scratch 79,Microsoft,"bayesian, probability, statistics, distributions",Course,intermediate,4.7
+NLP for Everyone,Imperial College London,"bert, sentiment analysis, tokenization, nlp",Course,beginner,4.9
+Foundations of Python Programming Complete Guide,DataCamp,"async, algorithms, oop",Course,advanced,4.6
+Big Data: Capstone Project,Duke University,"spark, hadoop, hive",Course,beginner,4.5
+Big Data Specialization 224,Duke University,"scala, distributed computing, hadoop, data lake",Course,beginner,3.9
+Cybersecurity: Essentials,DeepLearning.AI,"owasp, firewalls, security",Course,beginner,3.9
+Azure Cloud: Fundamentals,Duke University,"azure, aks, cosmos db, functions",Course,advanced,4.4
+Applied Big Data Fundamentals,AWS,"data lake, big data, hadoop, distributed computing",Course,intermediate,4.1
+Web Frontend Bootcamp 197,DeepLearning.AI,"tailwind, react, next.js",Course,intermediate,4.6
+Web Backend: from Scratch,IBM,"express, rest api, node.js",Course,intermediate,3.9
+Machine Learning Crash Course,AWS,"classification, model evaluation, feature engineering",Course,intermediate,3.9
+Azure Cloud Workshop 203,DeepLearning.AI,"aks, active directory, blob storage",Course,beginner,4.5
+Web Backend Crash Course 110,University of Michigan,"fastapi, graphql, node.js, microservices",Course,advanced,4.6
+Deep Learning Complete Guide 215,Meta,"keras, gan, tensorflow, deep learning",Course,advanced,3.8
+Mastering Product & Analytics Specialization,Microsoft,"sql, dashboards, metrics, cohort analysis",Course,advanced,4.2
+Product & Analytics Crash Course,Google Cloud,"metrics, sql, experimentation, product analytics",Course,advanced,3.9
+Advanced Data Engineering from Scratch,University of Michigan,"spark, batch processing, airflow",Course,beginner,4.6
+Computer Vision from Scratch 124,AWS,"computer vision, image classification, cnn, object detection",Course,advanced,4.3
+Web Frontend Bootcamp 195,Google Cloud,"next.js, javascript, redux, typescript",Course,beginner,4.9
+Essential Deep Learning Complete Guide,University of Michigan,"attention, pytorch, tensorflow",Course,advanced,3.9
+Modern Web Backend Bootcamp,University of Michigan,"node.js, django, rest api",Course,beginner,4.1
+Introduction to Web Frontend Essentials,Meta,"vue, tailwind, html, redux",Course,beginner,4.0
+Mobile Development Complete Guide 75,University of London,"react native, swift, ios, kotlin",Course,intermediate,3.9
+Modern Data Analysis Capstone Project,Microsoft,"statistics, eda, numpy",Course,beginner,4.9
+Mastering Computer Vision,AWS,"cnn, segmentation, opencv, yolo",Course,beginner,4.7
+Web Backend: Masterclass,Coursera,"authentication, django, fastapi",Course,intermediate,4.9
+Essential SQL & Databases,DataCamp,"mysql, nosql, mongodb",Course,beginner,4.6
+Applied Python Programming Professional Certificate,AWS,"python, automation, scripting",Course,beginner,4.6
+Essential Statistics Hands-On,Johns Hopkins University,"inference, a/b testing, statistics",Course,intermediate,4.6
+Foundations of Computer Vision Professional Certificate,Microsoft,"object detection, image classification, opencv",Course,beginner,4.2
+Web Frontend Capstone Project,University of Michigan,"vue, html, tailwind",Course,beginner,4.2
+DevOps Bootcamp 232,Google Cloud,"terraform, jenkins, ci/cd, kubernetes",Course,beginner,3.9
+Machine Learning Specialization 211,University of Michigan,"clustering, model evaluation, feature engineering, xgboost",Course,beginner,4.7
+Computer Vision Hands-On,Microsoft,"computer vision, segmentation, object detection, yolo",Course,beginner,4.4
+Cybersecurity Deep Dive 239,Duke University,"penetration testing, incident response, security, firewalls",Course,intermediate,3.9
+Introduction to Web Backend for Everyone,Google Cloud,"express, django, authentication, fastapi",Course,intermediate,4.3
+MLOps Capstone Project,DataCamp,"feature store, docker, sagemaker",Course,advanced,4.7
+Web Frontend Specialization,DeepLearning.AI,"next.js, css, html, react",Course,advanced,4.6
+Foundations of Cloud & AWS,Google Cloud,"iam, dynamodb, lambda, vpc",Course,beginner,3.9
+Advanced Web Frontend Bootcamp,Meta,"typescript, html, redux, tailwind",Course,advanced,4.4
+Data Visualization Capstone Project 95,IBM,"dashboards, storytelling, plotly, matplotlib",Course,intermediate,4.6
+Data Analysis Masterclass 235,DataCamp,"eda, data wrangling, hypothesis testing",Course,beginner,4.9
+Complete Azure Cloud Capstone Project,Imperial College London,"cosmos db, functions, blob storage",Course,beginner,4.9
+Computer Vision Hands-On 272,Google Cloud,"computer vision, segmentation, image classification",Course,intermediate,4.5
+Essential Azure Cloud Capstone Project,Imperial College London,"cosmos db, azure, functions, blob storage",Course,advanced,3.9
+Python Programming Capstone Project,AWS,"async, python, data structures",Course,beginner,4.3
+Modern Cloud & AWS,Microsoft,"ec2, iam, dynamodb, lambda",Course,intermediate,4.9
+Applied NLP for Everyone,Meta,"llm, sentiment analysis, transformers",Course,advanced,4.6
+Essential Machine Learning,DeepLearning.AI,"scikit-learn, model evaluation, classification, machine learning",Course,advanced,4.0
+Modern Data Engineering Masterclass,Duke University,"spark, warehousing, batch processing, data pipelines",Course,beginner,4.9
+Python Programming Workshop 89,Duke University,"automation, scripting, data structures",Course,intermediate,4.7
+Product & Analytics Capstone Project 48,IBM,"cohort analysis, sql, kpi",Course,advanced,4.8
+Web Backend in Practice 288,Google,"authentication, node.js, graphql",Course,beginner,4.1
+SQL & Databases Deep Dive 55,Stanford University,"sql, joins, indexing",Course,intermediate,3.9
+Essential Big Data from Scratch,IBM,"big data, data lake, hadoop",Course,beginner,4.9
+Azure Cloud: Bootcamp,DataCamp,"devops, azure, active directory",Course,intermediate,4.9
+Mobile Development Complete Guide,Google,"flutter, mobile ui, ios, react native",Course,beginner,4.8
+Statistics Hands-On 170,Johns Hopkins University,"statistics, bayesian, probability",Course,intermediate,3.8
+Data Engineering Hands-On 55,Imperial College London,"airflow, spark, warehousing, etl",Course,intermediate,4.8
+Deep Learning Specialization,IBM,"deep learning, attention, rnn, pytorch",Course,intermediate,4.8
+DevOps Essentials 28,Stanford University,"monitoring, ansible, docker, github actions",Course,intermediate,4.8
+Foundations of Web Backend,DataCamp,"django, express, graphql, node.js",Course,advanced,4.5
+Introduction to Cloud & AWS,DataCamp,"vpc, aws, s3",Course,beginner,4.1
+Azure Cloud: Masterclass,Duke University,"blob storage, cosmos db, azure",Course,intermediate,4.0
+Applied DevOps for Everyone,University of Michigan,"ansible, monitoring, terraform",Course,advanced,4.4
+Practical Cloud & AWS,University of Michigan,"iam, aws, vpc, ec2",Course,advanced,4.5
+Deep Learning Fundamentals,DataCamp,"deep learning, attention, gan",Course,advanced,4.3
+NLP: Capstone Project,University of London,"sentiment analysis, llm, nlp, transformers",Course,intermediate,4.7
+Complete Azure Cloud,University of London,"functions, aks, cosmos db",Course,advanced,4.6
+NLP Deep Dive,Imperial College London,"bert, embeddings, named entity recognition",Course,advanced,4.4
+Mastering Statistics for Everyone,Imperial College London,"regression, statistics, bayesian, a/b testing",Course,beginner,5.0
+Machine Learning Workshop,Johns Hopkins University,"xgboost, classification, model evaluation, machine learning",Course,beginner,4.4
+Modern Data Engineering Deep Dive,IBM,"warehousing, etl, kafka",Course,advanced,4.8
+Python Programming Fundamentals,DataCamp,"async, scripting, oop",Course,intermediate,4.1
+Essential Big Data Specialization,DeepLearning.AI,"hive, spark, big data, scala",Course,advanced,4.3
+Cybersecurity Crash Course 298,DataCamp,"incident response, owasp, security",Course,intermediate,4.6
+DevOps Complete Guide,Duke University,"jenkins, monitoring, github actions",Course,advanced,4.5
+Introduction to Machine Learning Essentials,Stanford University,"scikit-learn, clustering, feature engineering, regression",Course,advanced,4.2
+Data Engineering Hands-On 34,AWS,"airflow, batch processing, etl, dbt",Course,beginner,3.9
+Cybersecurity: Specialization,DeepLearning.AI,"firewalls, networking, cryptography",Course,intermediate,4.3
+Foundations of Big Data Essentials,Microsoft,"scala, big data, hive, hadoop",Course,beginner,4.5
+Web Backend Fundamentals 118,University of Michigan,"node.js, django, graphql, rest api",Course,advanced,4.6
+Azure Cloud Crash Course 150,Stanford University,"blob storage, devops, azure, active directory",Course,advanced,5.0
+MLOps Fundamentals 274,Duke University,"feature store, mlops, mlflow",Course,advanced,4.0
+Practical MLOps Crash Course,Google,"docker, mlops, monitoring",Course,advanced,4.6
+Advanced NLP Hands-On,Duke University,"transformers, named entity recognition, llm, sentiment analysis",Course,advanced,4.8
+Practical Cybersecurity,DataCamp,"cryptography, penetration testing, owasp",Course,intermediate,4.9
+Cybersecurity: Complete Guide,Imperial College London,"firewalls, cryptography, owasp",Course,intermediate,4.7
+Essential MLOps Bootcamp,Meta,"feature store, model deployment, docker, monitoring",Course,intermediate,4.5
+Machine Learning Workshop 161,University of London,"model evaluation, clustering, regression, xgboost",Course,beginner,4.1
+Data Visualization Specialization 134,AWS,"power bi, tableau, dashboards",Course,intermediate,4.6
+Big Data Professional Certificate 177,University of Michigan,"scala, hadoop, spark, data lake",Course,intermediate,4.8
+Statistics Deep Dive,University of Michigan,"distributions, inference, a/b testing, regression",Course,advanced,4.2
+SQL & Databases Complete Guide,IBM,"normalization, query optimization, joins",Course,intermediate,4.2
+Essential Cloud & AWS Capstone Project,Google Cloud,"iam, vpc, cloudformation, ec2",Course,advanced,3.9
+NLP Masterclass 147,Google Cloud,"named entity recognition, sentiment analysis, llm",Course,beginner,4.4
+Product & Analytics Essentials 60,DataCamp,"metrics, dashboards, kpi",Course,advanced,4.5
+Data Analysis: Fundamentals,Johns Hopkins University,"hypothesis testing, eda, data cleaning, data wrangling",Course,intermediate,4.4
+Essential Machine Learning in Practice,Johns Hopkins University,"xgboost, feature engineering, regression, scikit-learn",Course,beginner,4.3
+Applied Python Programming Specialization,Johns Hopkins University,"async, automation, algorithms, testing",Course,intermediate,4.4
+NLP: Crash Course,Johns Hopkins University,"llm, nlp, tokenization, transformers",Course,intermediate,4.5
+Python Programming Hands-On 232,Stanford University,"data structures, python, async, testing",Course,intermediate,4.1
+Web Backend from Scratch 21,Duke University,"graphql, rest api, node.js",Course,advanced,4.5
+Introduction to SQL & Databases Hands-On,University of Michigan,"sql, mysql, normalization",Course,intermediate,4.5
+Web Backend Specialization 141,AWS,"django, authentication, graphql, express",Course,intermediate,4.2
+Essential Data Visualization,Stanford University,"power bi, d3.js, tableau",Course,advanced,4.1
+Data Engineering Professional Certificate,Google,"airflow, data pipelines, spark, kafka",Course,intermediate,4.0
+Mobile Development Specialization 238,Stanford University,"android, mobile ui, ios, react native",Course,beginner,4.9
+Cybersecurity Crash Course 167,Google,"penetration testing, incident response, owasp, cryptography",Course,advanced,4.7
+Data Analysis: from Scratch,Duke University,"numpy, data cleaning, hypothesis testing, statistics",Course,intermediate,4.7
+Foundations of Data Engineering,University of Michigan,"etl, batch processing, warehousing",Course,beginner,4.3
+Data Engineering Essentials 275,Stanford University,"data pipelines, spark, batch processing",Course,advanced,4.3
+Big Data: Workshop,DeepLearning.AI,"hadoop, data lake, distributed computing, spark",Course,intermediate,4.5
+Statistics: Complete Guide,Google,"distributions, a/b testing, bayesian",Course,advanced,4.2
+Introduction to Cloud & AWS Deep Dive,Imperial College London,"dynamodb, aws, iam",Course,intermediate,3.9
+Data Visualization Specialization,Coursera,"storytelling, plotly, d3.js",Course,intermediate,4.8
+Statistics Deep Dive 272,Johns Hopkins University,"probability, regression, distributions, bayesian",Course,advanced,4.9
+Practical Python Programming Hands-On,Coursera,"automation, scripting, algorithms, oop",Course,intermediate,4.5
+Azure Cloud from Scratch 188,Stanford University,"active directory, devops, blob storage, functions",Course,advanced,4.4
+DevOps Masterclass,Google,"docker, ansible, ci/cd",Course,beginner,4.7
+Modern Cybersecurity Complete Guide,Stanford University,"cryptography, networking, penetration testing, owasp",Course,beginner,4.4
+Deep Learning Masterclass 4,Google,"tensorflow, keras, attention",Course,advanced,4.5
+Statistics Capstone Project 176,Meta,"probability, regression, a/b testing, inference",Course,beginner,4.1
+Introduction to MLOps,University of Michigan,"ci/cd, monitoring, mlflow",Course,beginner,4.1
+NLP Hands-On,Meta,"bert, sentiment analysis, llm, embeddings",Course,advanced,4.8
+Introduction to Data Visualization Complete Guide,Stanford University,"d3.js, matplotlib, seaborn, power bi",Course,advanced,4.7
+Data Visualization Fundamentals 145,Coursera,"matplotlib, seaborn, dashboards, d3.js",Course,intermediate,4.7
+Cybersecurity Bootcamp 115,University of London,"cryptography, firewalls, networking, security",Course,intermediate,4.3
+Product & Analytics Fundamentals 233,AWS,"metrics, dashboards, kpi, sql",Course,advanced,4.8
+Web Frontend Workshop 293,IBM,"css, html, next.js",Course,beginner,4.7
+SQL & Databases: Crash Course,DeepLearning.AI,"sql, mongodb, postgresql, query optimization",Course,beginner,4.1
+Web Frontend: from Scratch,Microsoft,"typescript, next.js, redux, react",Course,intermediate,4.1
+Advanced Big Data,Duke University,"big data, scala, data lake, distributed computing",Course,intermediate,4.8
+SQL & Databases Workshop 58,Imperial College London,"nosql, sql, mongodb, mysql",Course,intermediate,3.8
+Web Backend: Fundamentals,Google,"microservices, django, rest api",Course,advanced,4.6
+Data Analysis Capstone Project 291,University of London,"statistics, pandas, excel, eda",Course,advanced,4.0
+Advanced Machine Learning Deep Dive,Coursera,"regression, scikit-learn, clustering",Course,intermediate,3.9
+NLP Bootcamp 155,Stanford University,"llm, sentiment analysis, nlp",Course,beginner,4.3
+SQL & Databases: Masterclass,Duke University,"nosql, joins, indexing, postgresql",Course,intermediate,4.5
+Data Visualization Masterclass,AWS,"d3.js, dashboards, power bi, plotly",Course,advanced,4.7
+NLP for Everyone 233,Microsoft,"tokenization, sentiment analysis, named entity recognition, nlp",Course,intermediate,4.4
+Web Frontend from Scratch 120,University of Michigan,"tailwind, next.js, react, typescript",Course,intermediate,3.8
+Foundations of Mobile Development,Imperial College London,"react native, kotlin, ios",Course,advanced,4.6
+Deep Learning Essentials 149,Meta,"keras, rnn, pytorch",Course,beginner,4.2
+Product & Analytics Workshop 186,IBM,"metrics, cohort analysis, experimentation",Course,beginner,4.8
+MLOps Professional Certificate,DataCamp,"feature store, model deployment, monitoring, sagemaker",Course,advanced,3.9
+Introduction to Python Programming,Microsoft,"oop, algorithms, python, automation",Course,intermediate,4.4
+Web Backend Essentials,DeepLearning.AI,"authentication, microservices, fastapi, graphql",Course,advanced,4.2
+Machine Learning from Scratch,DataCamp,"clustering, machine learning, regression",Course,beginner,4.2
+Introduction to Product & Analytics for Everyone,Stanford University,"cohort analysis, metrics, dashboards, kpi",Course,beginner,3.9
+Complete Web Frontend,Coursera,"typescript, next.js, html",Course,intermediate,4.9
+Advanced Azure Cloud Complete Guide,IBM,"devops, cosmos db, aks, azure",Course,intermediate,4.5
+Python Programming Workshop 145,Johns Hopkins University,"async, algorithms, oop, automation",Course,intermediate,4.2
+Mastering Data Analysis for Everyone,Coursera,"data cleaning, excel, eda",Course,intermediate,4.2
+Practical Cybersecurity Specialization,Duke University,"firewalls, security, networking, owasp",Course,advanced,4.9
+Data Visualization: Complete Guide,Johns Hopkins University,"matplotlib, seaborn, dashboards, power bi",Course,beginner,4.2
+Azure Cloud Essentials 2,Coursera,"azure, active directory, functions, aks",Course,advanced,4.8
+Modern Computer Vision Workshop,Johns Hopkins University,"opencv, cnn, segmentation, yolo",Course,advanced,4.3
+Foundations of Deep Learning Specialization,AWS,"transformers, keras, tensorflow",Course,intermediate,4.6
+Modern Azure Cloud for Everyone,Coursera,"blob storage, cosmos db, functions",Course,beginner,4.6
+Mastering MLOps Hands-On,Google,"mlops, mlflow, monitoring, docker",Course,intermediate,4.3
+Machine Learning Fundamentals,Meta,"machine learning, classification, clustering",Course,advanced,3.9
+Computer Vision Specialization 9,Imperial College London,"cnn, computer vision, segmentation, yolo",Course,advanced,4.5
+Cloud & AWS for Everyone,Duke University,"ec2, vpc, aws, cloudwatch",Course,advanced,4.1
+Complete SQL & Databases Hands-On,IBM,"normalization, postgresql, query optimization",Course,advanced,3.9
+Cybersecurity for Everyone 136,IBM,"firewalls, incident response, cryptography",Course,intermediate,4.0
+Computer Vision Capstone Project 268,Imperial College London,"yolo, segmentation, object detection",Course,intermediate,4.6
+Practical Azure Cloud Crash Course,Johns Hopkins University,"azure, devops, aks, cosmos db",Course,advanced,4.8
+Mastering MLOps from Scratch,AWS,"docker, feature store, mlflow",Course,beginner,3.9
+Mobile Development Crash Course,Microsoft,"flutter, mobile ui, ios",Course,intermediate,4.1
+DevOps: for Everyone,Google,"github actions, terraform, kubernetes",Course,beginner,4.6
+Essential Computer Vision Fundamentals,Google Cloud,"cnn, computer vision, object detection, image classification",Course,beginner,4.7
+Cloud & AWS Workshop 38,AWS,"vpc, aws, lambda, ec2",Course,advanced,4.3
+SQL & Databases: in Practice,DataCamp,"nosql, joins, postgresql",Course,intermediate,4.8
+Mastering SQL & Databases Complete Guide,Google,"query optimization, nosql, indexing",Course,beginner,4.0
+Machine Learning: Capstone Project,University of Michigan,"model evaluation, xgboost, regression",Course,beginner,4.6
+Machine Learning: for Everyone,Google,"classification, clustering, scikit-learn, feature engineering",Course,intermediate,4.3
+Applied Data Visualization,University of London,"seaborn, plotly, matplotlib, power bi",Course,advanced,4.3
+SQL & Databases: Fundamentals,AWS,"nosql, joins, normalization, indexing",Course,beginner,4.8
+Complete Product & Analytics,University of Michigan,"metrics, cohort analysis, product analytics, sql",Course,intermediate,4.6
+Cloud & AWS: Specialization,Johns Hopkins University,"dynamodb, cloudformation, vpc",Course,intermediate,4.8
+Product & Analytics: Deep Dive,University of Michigan,"cohort analysis, sql, metrics",Course,beginner,4.2
+Computer Vision from Scratch 14,DataCamp,"yolo, segmentation, image classification",Course,beginner,4.2
+DevOps: from Scratch,DeepLearning.AI,"ansible, docker, ci/cd",Course,intermediate,4.7
+Modern Data Visualization,Meta,"power bi, plotly, seaborn",Course,advanced,4.5
+Python Programming Specialization,AWS,"scripting, async, testing, python",Course,beginner,4.6
+Data Analysis Masterclass,DataCamp,"hypothesis testing, numpy, pandas",Course,beginner,5.0
+Deep Learning: Masterclass,Duke University,"pytorch, keras, attention",Course,advanced,4.6
+SQL & Databases from Scratch,Meta,"postgresql, indexing, joins",Course,intermediate,4.8
+Web Frontend Professional Certificate,Microsoft,"html, css, javascript, react",Course,beginner,4.7
+SQL & Databases Complete Guide 59,Imperial College London,"joins, sql, indexing, postgresql",Course,intermediate,4.6
+Computer Vision Workshop 233,Meta,"opencv, yolo, image classification, cnn",Course,intermediate,4.9
+MLOps Masterclass,University of Michigan,"mlflow, mlops, model deployment",Course,advanced,4.9
+Computer Vision Workshop 292,AWS,"object detection, cnn, computer vision",Course,beginner,4.1
+Web Backend Crash Course,Stanford University,"authentication, microservices, rest api",Course,beginner,4.7
+Advanced SQL & Databases Deep Dive,Meta,"nosql, joins, sql, indexing",Course,beginner,4.7
+Data Visualization Fundamentals,Microsoft,"seaborn, dashboards, matplotlib",Course,advanced,4.4
+Complete Data Visualization Deep Dive,Microsoft,"storytelling, tableau, dashboards",Course,intermediate,3.9
+NLP from Scratch,IBM,"nlp, transformers, tokenization, embeddings",Course,intermediate,4.5
+Advanced Web Backend Crash Course,AWS,"fastapi, microservices, express",Course,intermediate,4.7
+Complete Big Data,Google,"distributed computing, big data, data lake",Course,advanced,5.0
+Essential Cloud & AWS,Meta,"iam, vpc, aws, dynamodb",Course,advanced,4.3
+Foundations of Web Frontend Essentials,Microsoft,"vue, javascript, css, typescript",Course,advanced,4.9
+Practical Big Data,DeepLearning.AI,"data lake, spark, distributed computing, hadoop",Course,beginner,5.0
+Data Analysis: Capstone Project,Microsoft,"excel, numpy, data wrangling, hypothesis testing",Course,beginner,4.0
+Practical Mobile Development Capstone Project,DeepLearning.AI,"ios, mobile ui, swift, flutter",Course,advanced,4.5
+Advanced Cybersecurity,Johns Hopkins University,"cryptography, incident response, security",Course,beginner,4.1
+DevOps Masterclass 113,Coursera,"docker, terraform, ci/cd",Course,beginner,3.9
+Essential Web Backend from Scratch,Imperial College London,"django, microservices, rest api, node.js",Course,advanced,4.0
+Web Frontend Masterclass 192,Google,"react, vue, next.js",Course,advanced,4.9
+Foundations of Big Data,Imperial College London,"hadoop, scala, distributed computing, data lake",Course,intermediate,4.5
+DevOps Specialization 238,Microsoft,"github actions, kubernetes, docker, ci/cd",Course,beginner,4.5
+Foundations of Cloud & AWS Masterclass,Johns Hopkins University,"aws, s3, iam",Course,beginner,4.0
+Mastering Data Engineering Professional Certificate,Duke University,"warehousing, dbt, spark, kafka",Course,advanced,4.3
+Cloud & AWS Fundamentals 129,DataCamp,"s3, cloudformation, vpc",Course,intermediate,4.4
+Practical Data Analysis,DataCamp,"data wrangling, hypothesis testing, numpy, pandas",Course,intermediate,4.2
+Applied Cloud & AWS from Scratch,DataCamp,"lambda, dynamodb, iam",Course,intermediate,4.9
+Complete SQL & Databases Fundamentals,DeepLearning.AI,"query optimization, mysql, sql",Course,intermediate,4.9
+Mobile Development: Specialization,Google Cloud,"mobile ui, kotlin, react native",Course,beginner,4.4
+Introduction to Cybersecurity Bootcamp,Google,"networking, firewalls, cryptography",Course,advanced,4.3
+MLOps: Professional Certificate,Coursera,"mlops, mlflow, model deployment, monitoring",Course,beginner,4.5
+Advanced Data Analysis,Imperial College London,"data wrangling, pandas, eda, data cleaning",Course,intermediate,3.8
+Introduction to Web Backend,Microsoft,"fastapi, authentication, graphql, django",Course,advanced,3.8
+NLP Essentials 115,DataCamp,"tokenization, bert, named entity recognition",Course,intermediate,4.9
+DevOps Essentials 227,Google Cloud,"docker, jenkins, ansible",Course,beginner,5.0
+Introduction to NLP Deep Dive,DeepLearning.AI,"embeddings, nlp, sentiment analysis",Course,advanced,4.7
+Introduction to Mobile Development from Scratch,University of London,"android, mobile ui, flutter",Course,beginner,4.2
+Advanced NLP,Imperial College London,"named entity recognition, transformers, llm, nlp",Course,advanced,5.0
+Essential Azure Cloud Crash Course,Duke University,"azure, cosmos db, blob storage, active directory",Course,beginner,4.1
+Cloud & AWS Masterclass 75,Johns Hopkins University,"iam, cloudwatch, ec2",Course,intermediate,4.9
+Azure Cloud: Crash Course,Microsoft,"active directory, blob storage, functions, aks",Course,advanced,4.3
+Advanced Data Engineering,DataCamp,"dbt, airflow, kafka",Course,beginner,4.6
+Mastering Web Backend,Meta,"node.js, graphql, authentication",Course,advanced,5.0
+Python Programming Bootcamp 40,Imperial College London,"testing, automation, scripting",Course,intermediate,4.8
+Essential SQL & Databases Fundamentals,Stanford University,"query optimization, joins, normalization, mongodb",Course,intermediate,3.8
+Complete Data Visualization Specialization,Imperial College London,"storytelling, matplotlib, dashboards",Course,beginner,4.2
+Foundations of Python Programming Masterclass,Johns Hopkins University,"scripting, oop, data structures",Course,advanced,4.0
+Data Analysis: Specialization,Microsoft,"pandas, statistics, eda",Course,advanced,4.8
+Practical Data Engineering for Everyone,Microsoft,"batch processing, dbt, airflow, data pipelines",Course,intermediate,4.1
+Essential Statistics for Everyone,Imperial College London,"regression, inference, statistics",Course,intermediate,5.0
+Advanced Python Programming Bootcamp,Coursera,"testing, async, oop, automation",Course,intermediate,4.7
+Python Programming for Everyone 99,DataCamp,"oop, python, data structures",Course,beginner,4.5
+Foundations of Cybersecurity Workshop,DataCamp,"cryptography, firewalls, networking, penetration testing",Course,beginner,4.1
+Data Engineering: Complete Guide,Coursera,"airflow, warehousing, etl, batch processing",Course,intermediate,4.0
+Practical Data Visualization,Duke University,"d3.js, storytelling, matplotlib, dashboards",Course,beginner,4.7
+Cloud & AWS from Scratch 187,Google,"iam, vpc, ec2, cloudwatch",Course,advanced,4.6
+Mastering Azure Cloud,Google,"active directory, aks, azure",Course,intermediate,3.8
+Python Programming: Masterclass,Meta,"oop, async, python",Course,beginner,4.3
+Statistics Specialization 295,University of Michigan,"regression, probability, inference, distributions",Course,beginner,4.4
+Essential Azure Cloud Professional Certificate,Meta,"functions, azure, active directory, blob storage",Course,advanced,4.3
+Complete Statistics Fundamentals,AWS,"regression, inference, a/b testing",Course,intermediate,4.5
+Data Engineering Essentials,IBM,"data pipelines, dbt, etl",Course,intermediate,4.1
+Introduction to Web Frontend Hands-On,IBM,"redux, html, tailwind",Course,beginner,4.9
+Introduction to Big Data,Google Cloud,"scala, spark, big data, hadoop",Course,beginner,4.5
+Foundations of Deep Learning Capstone Project,Duke University,"deep learning, pytorch, tensorflow, cnn",Course,intermediate,4.6
+Practical Statistics,University of Michigan,"distributions, inference, bayesian",Course,advanced,4.7
+Deep Learning Bootcamp 268,AWS,"attention, tensorflow, rnn, cnn",Course,beginner,3.8
+Data Visualization for Everyone,AWS,"seaborn, matplotlib, dashboards",Course,intermediate,5.0
+Data Visualization: Capstone Project,University of Michigan,"storytelling, matplotlib, dashboards",Course,beginner,5.0
+Data Visualization Complete Guide 242,DataCamp,"d3.js, seaborn, storytelling",Course,advanced,4.1
+Product & Analytics Bootcamp 165,Stanford University,"cohort analysis, product analytics, experimentation, kpi",Course,intermediate,4.0
+Complete Data Engineering Deep Dive,Stanford University,"warehousing, etl, data pipelines, batch processing",Course,beginner,3.8
+Python Programming Crash Course 145,University of London,"scripting, python, algorithms, automation",Course,beginner,4.7
+Applied Azure Cloud Complete Guide,Google,"devops, active directory, functions, blob storage",Course,advanced,3.8
+Complete Statistics Workshop,Imperial College London,"inference, a/b testing, distributions",Course,advanced,4.1
+Advanced Deep Learning,IBM,"deep learning, attention, transformers",Course,advanced,4.7
+Data Analysis: Crash Course,Coursera,"data cleaning, pandas, numpy",Course,advanced,5.0
+Data Analysis Deep Dive,Imperial College London,"statistics, hypothesis testing, data wrangling",Course,beginner,4.4
+Data Engineering Bootcamp 236,Meta,"etl, batch processing, warehousing, airflow",Course,advanced,3.9
+Data Analysis Deep Dive 211,AWS,"pandas, hypothesis testing, numpy, excel",Course,advanced,4.2
+Statistics in Practice 30,Google,"distributions, a/b testing, statistics",Course,beginner,4.1
+Web Backend: Deep Dive,IBM,"express, authentication, node.js",Course,intermediate,3.9
+Advanced Deep Learning Workshop,DataCamp,"gan, tensorflow, pytorch",Course,beginner,4.1
+Data Visualization Capstone Project 159,DataCamp,"tableau, seaborn, storytelling, d3.js",Course,beginner,3.8
+Essential Cybersecurity Crash Course,Google Cloud,"networking, penetration testing, incident response, cryptography",Course,advanced,4.0
+NLP: Workshop,Microsoft,"bert, transformers, nlp",Course,intermediate,4.0
+Modern Product & Analytics Professional Certificate,Google,"sql, metrics, dashboards",Course,intermediate,3.8
+Machine Learning Capstone Project,Google,"classification, machine learning, xgboost",Course,beginner,4.1
+Cybersecurity Capstone Project,DeepLearning.AI,"penetration testing, cryptography, incident response",Course,intermediate,4.8
+Practical Mobile Development Workshop,Microsoft,"kotlin, flutter, android, mobile ui",Course,intermediate,4.4
+Computer Vision Capstone Project,IBM,"image classification, yolo, computer vision",Course,intermediate,4.0
+Mastering Data Analysis Masterclass,IBM,"pandas, data wrangling, data cleaning, eda",Course,intermediate,4.1
+Mobile Development Deep Dive,Coursera,"react native, ios, flutter",Course,beginner,4.5
+Essential Cloud & AWS Masterclass,Microsoft,"dynamodb, vpc, cloudformation, iam",Course,beginner,4.1
+DevOps: Professional Certificate,Google Cloud,"github actions, ci/cd, jenkins, terraform",Course,advanced,3.8
+Cybersecurity Professional Certificate,Duke University,"security, cryptography, penetration testing",Course,beginner,3.9
+NLP Fundamentals,Johns Hopkins University,"tokenization, transformers, embeddings",Course,advanced,4.8
+Mastering DevOps for Everyone,University of Michigan,"docker, jenkins, github actions",Course,beginner,4.5
+SQL & Databases Hands-On 285,University of London,"nosql, normalization, sql",Course,intermediate,4.3
+Cybersecurity Professional Certificate 48,Meta,"incident response, networking, cryptography, security",Course,intermediate,5.0
+Statistics Crash Course,University of Michigan,"probability, regression, bayesian, inference",Course,advanced,3.9
+Advanced Deep Learning Deep Dive,DeepLearning.AI,"tensorflow, deep learning, rnn, keras",Course,advanced,4.8
+Foundations of Computer Vision Complete Guide,IBM,"opencv, object detection, yolo, cnn",Course,advanced,4.6
+Essential Azure Cloud,University of Michigan,"active directory, aks, blob storage, cosmos db",Course,advanced,4.9
+Computer Vision: Bootcamp,Johns Hopkins University,"image classification, object detection, segmentation",Course,beginner,4.8
+Web Frontend: Professional Certificate,DataCamp,"typescript, react, javascript",Course,beginner,4.1
+Deep Learning Crash Course 243,Johns Hopkins University,"tensorflow, keras, gan",Course,beginner,4.2
+Practical Data Analysis Masterclass,Stanford University,"hypothesis testing, data cleaning, pandas, eda",Course,beginner,4.4
+Cloud & AWS Specialization 217,Meta,"cloudformation, ec2, iam, lambda",Course,beginner,4.5
+Big Data Professional Certificate,University of London,"hive, scala, data lake",Course,intermediate,4.2
+Mobile Development Crash Course 133,Imperial College London,"flutter, react native, kotlin",Course,beginner,4.0
+Applied Statistics Masterclass,Microsoft,"bayesian, distributions, inference",Course,intermediate,4.7
+Mastering NLP Fundamentals,Coursera,"named entity recognition, bert, llm, embeddings",Course,beginner,4.5
+Practical Data Visualization Deep Dive,Stanford University,"dashboards, seaborn, matplotlib",Course,beginner,4.8
+Foundations of Python Programming Workshop,Johns Hopkins University,"oop, algorithms, automation, data structures",Course,beginner,4.6
+Applied Machine Learning Crash Course,Duke University,"feature engineering, model evaluation, machine learning, xgboost",Course,advanced,4.1
+Complete NLP,Meta,"embeddings, bert, nlp",Course,beginner,3.8
+Data Visualization Bootcamp,DeepLearning.AI,"dashboards, plotly, storytelling",Course,advanced,4.1
+NLP Masterclass,DataCamp,"sentiment analysis, llm, transformers",Course,beginner,4.7
+Applied Product & Analytics Capstone Project,Google,"metrics, dashboards, kpi, cohort analysis",Course,beginner,4.3
+Deep Learning from Scratch 128,Imperial College London,"transformers, deep learning, gan, attention",Course,intermediate,4.1
+Statistics for Everyone,IBM,"bayesian, distributions, probability, a/b testing",Course,beginner,4.1
+Machine Learning: in Practice,Meta,"feature engineering, classification, xgboost",Course,beginner,4.9
+Essential Deep Learning for Everyone,Duke University,"cnn, rnn, keras, tensorflow",Course,beginner,4.9
+SQL & Databases Fundamentals 47,DeepLearning.AI,"query optimization, mongodb, joins",Course,advanced,4.6
+Essential Statistics,University of Michigan,"inference, distributions, bayesian, regression",Course,intermediate,4.2
+Statistics: Workshop,DeepLearning.AI,"statistics, inference, regression, bayesian",Course,advanced,4.2
+Azure Cloud Hands-On 230,Meta,"azure, functions, blob storage",Course,advanced,4.1
+Applied SQL & Databases,DeepLearning.AI,"joins, mongodb, sql",Course,advanced,4.9
+Mobile Development from Scratch 94,DeepLearning.AI,"swift, ios, react native, mobile ui",Course,intermediate,4.4
+Advanced Statistics Professional Certificate,Stanford University,"statistics, bayesian, distributions",Course,beginner,4.0
+Advanced Machine Learning in Practice,Coursera,"machine learning, classification, model evaluation",Course,beginner,4.6
+Applied Mobile Development Hands-On,Meta,"mobile ui, android, ios",Course,advanced,4.5
+Practical MLOps Hands-On,University of Michigan,"monitoring, feature store, ci/cd, sagemaker",Course,beginner,4.2
+Web Frontend Deep Dive,IBM,"css, redux, typescript",Course,beginner,4.7
+Applied Product & Analytics Complete Guide,Google,"sql, cohort analysis, experimentation",Course,advanced,4.5
+Data Analysis: Complete Guide,Duke University,"statistics, hypothesis testing, eda, pandas",Course,intermediate,4.0
+NLP in Practice,Microsoft,"transformers, tokenization, sentiment analysis",Course,beginner,4.8
+Cybersecurity Complete Guide 295,Imperial College London,"owasp, security, incident response",Course,intermediate,4.1
+Cloud & AWS Capstone Project,Microsoft,"iam, dynamodb, vpc, cloudwatch",Course,intermediate,3.8
+Data Analysis: Essentials,Google,"statistics, data cleaning, hypothesis testing",Course,intermediate,4.5
+Data Visualization Deep Dive 13,University of London,"storytelling, power bi, dashboards",Course,beginner,4.9
+Machine Learning Masterclass 95,DataCamp,"classification, clustering, model evaluation",Course,beginner,4.6
+Big Data: Crash Course,Duke University,"scala, spark, hadoop, hive",Course,advanced,4.1
+Modern Statistics Workshop,DataCamp,"regression, bayesian, probability, statistics",Course,intermediate,4.6
+SQL & Databases Professional Certificate 191,Imperial College London,"sql, normalization, nosql, mongodb",Course,intermediate,4.8
+SQL & Databases Fundamentals,University of London,"indexing, mysql, query optimization, nosql",Course,advanced,4.7
+Cloud & AWS: Masterclass,DataCamp,"lambda, vpc, s3",Course,advanced,4.0
+Applied Data Analysis in Practice,University of London,"excel, data cleaning, numpy, eda",Course,advanced,4.1
+Applied DevOps,Duke University,"jenkins, github actions, kubernetes",Course,advanced,4.3
+Data Analysis Fundamentals,Duke University,"eda, pandas, excel",Course,advanced,4.4
+Applied Machine Learning,DataCamp,"feature engineering, scikit-learn, xgboost, classification",Course,advanced,4.0
+Web Backend Fundamentals,Meta,"authentication, microservices, graphql",Course,intermediate,3.8
+Complete Data Analysis,IBM,"eda, statistics, numpy, data wrangling",Course,intermediate,3.9
+Web Backend Fundamentals 192,Microsoft,"microservices, rest api, express, graphql",Course,advanced,4.9
+Introduction to Data Visualization Crash Course,University of Michigan,"d3.js, power bi, storytelling",Course,advanced,4.5
+MLOps Deep Dive,Coursera,"mlflow, ci/cd, sagemaker, mlops",Course,beginner,4.5
+Advanced Python Programming,Stanford University,"data structures, automation, oop",Course,intermediate,4.6
+Computer Vision Complete Guide 156,IBM,"cnn, yolo, object detection, image classification",Course,beginner,4.0
+Cybersecurity: Deep Dive,Microsoft,"security, owasp, cryptography, firewalls",Course,beginner,3.9
+Complete MLOps,Microsoft,"model deployment, mlflow, feature store, monitoring",Course,beginner,3.9
+Mastering Big Data Essentials,Imperial College London,"hadoop, spark, data lake, scala",Course,intermediate,4.4
+Mastering Machine Learning Masterclass,Google,"scikit-learn, xgboost, regression, classification",Course,advanced,4.1
+DevOps Complete Guide 231,University of Michigan,"ansible, ci/cd, github actions, monitoring",Course,intermediate,4.2
+Complete SQL & Databases,AWS,"mongodb, indexing, query optimization, nosql",Course,beginner,4.1
+Big Data for Everyone,DataCamp,"spark, scala, distributed computing",Course,advanced,4.2
+Essential NLP Fundamentals,Stanford University,"embeddings, named entity recognition, transformers",Course,advanced,4.7
+Foundations of SQL & Databases Hands-On,Imperial College London,"nosql, mysql, mongodb, postgresql",Course,advanced,4.8
+Cloud & AWS: Bootcamp,DataCamp,"s3, lambda, aws, cloudformation",Course,beginner,4.1
+Mobile Development Deep Dive 146,University of London,"android, react native, flutter, mobile ui",Course,intermediate,4.7
+Machine Learning: Masterclass,University of Michigan,"scikit-learn, clustering, feature engineering, classification",Course,beginner,4.4
+Deep Learning Crash Course 128,Google,"tensorflow, rnn, keras",Course,beginner,4.7
+Deep Learning Capstone Project 139,IBM,"keras, attention, transformers, pytorch",Course,beginner,4.9
+Cybersecurity: Hands-On,Coursera,"networking, incident response, security",Course,advanced,3.9
+Azure Cloud Complete Guide 126,Microsoft,"devops, functions, azure",Course,beginner,4.8
+Essential Cloud & AWS from Scratch,AWS,"lambda, cloudformation, s3, aws",Course,beginner,5.0
+Mobile Development Capstone Project 255,Google,"kotlin, ios, swift",Course,advanced,4.9
+Web Backend Fundamentals 212,Johns Hopkins University,"express, graphql, rest api, microservices",Course,advanced,4.0
+Cybersecurity Essentials,Coursera,"networking, incident response, cryptography",Course,advanced,4.0
+Product & Analytics Crash Course 286,Duke University,"metrics, experimentation, cohort analysis, sql",Course,advanced,4.8
+Machine Learning Specialization,Google Cloud,"model evaluation, regression, classification, xgboost",Course,advanced,4.8
+Introduction to Cybersecurity,Google Cloud,"owasp, security, penetration testing, networking",Course,advanced,4.9
+Python Programming: in Practice,IBM,"python, async, algorithms, automation",Course,intermediate,4.4
+Modern Azure Cloud Fundamentals,Microsoft,"azure, active directory, devops",Course,intermediate,4.9
+Mastering Web Frontend in Practice,Google,"vue, javascript, tailwind, next.js",Course,intermediate,4.2
+SQL & Databases Masterclass 23,Johns Hopkins University,"normalization, indexing, mysql, postgresql",Course,intermediate,4.4
+Advanced Product & Analytics Deep Dive,Microsoft,"metrics, product analytics, sql, cohort analysis",Course,intermediate,4.1
+Practical Cloud & AWS Workshop,DeepLearning.AI,"aws, ec2, vpc, cloudformation",Course,advanced,4.2
+Applied DevOps Bootcamp,DeepLearning.AI,"jenkins, ansible, github actions, monitoring",Course,advanced,4.8
+Essential Python Programming Workshop,Johns Hopkins University,"testing, python, algorithms, scripting",Course,intermediate,4.6
+Product & Analytics Complete Guide 25,DeepLearning.AI,"cohort analysis, sql, metrics, kpi",Course,advanced,4.0
+Web Frontend: Crash Course,Microsoft,"javascript, react, vue, css",Course,beginner,4.7
+Practical Cloud & AWS for Everyone,Google,"cloudwatch, lambda, iam, s3",Course,intermediate,4.8
+SQL & Databases Deep Dive 111,DataCamp,"mongodb, indexing, nosql",Course,beginner,4.8
+SQL & Databases Professional Certificate 154,Johns Hopkins University,"mongodb, indexing, postgresql, query optimization",Course,advanced,4.1
+Data Visualization: Specialization,Meta,"d3.js, matplotlib, storytelling",Course,advanced,4.0
+Machine Learning Professional Certificate 278,Stanford University,"model evaluation, regression, clustering",Course,intermediate,4.9
+Data Visualization: Workshop,AWS,"storytelling, seaborn, d3.js, plotly",Course,beginner,4.5
+Deep Learning: Essentials,Google,"attention, transformers, cnn, rnn",Course,beginner,4.8
+Deep Learning Workshop 274,Google Cloud,"deep learning, pytorch, rnn",Course,beginner,3.9
+SQL & Databases Professional Certificate 112,IBM,"postgresql, mysql, query optimization",Course,advanced,4.7
+Data Engineering Fundamentals 171,Meta,"kafka, spark, airflow, etl",Course,beginner,4.8
+MLOps Workshop,University of London,"model deployment, docker, mlflow, monitoring",Course,beginner,4.8
+Azure Cloud Deep Dive 243,Duke University,"devops, aks, azure, cosmos db",Course,advanced,4.1
+Python Programming Masterclass 38,DeepLearning.AI,"automation, python, oop, algorithms",Course,intermediate,4.2
+Web Frontend from Scratch 151,DeepLearning.AI,"react, redux, html",Course,intermediate,4.1
+Statistics Bootcamp,AWS,"distributions, regression, bayesian",Course,beginner,4.7
+Applied Deep Learning Bootcamp,DeepLearning.AI,"rnn, tensorflow, attention",Course,advanced,4.3
+NLP in Practice 218,IBM,"embeddings, named entity recognition, bert, sentiment analysis",Course,beginner,4.0
+DevOps Specialization 83,Duke University,"terraform, monitoring, kubernetes, docker",Course,beginner,4.6
+Practical Cybersecurity Essentials,DataCamp,"security, firewalls, penetration testing, cryptography",Course,beginner,4.7
+Advanced Data Visualization,University of London,"dashboards, power bi, d3.js",Course,intermediate,4.6
+Modern Data Analysis Hands-On,Johns Hopkins University,"data cleaning, pandas, statistics, numpy",Course,advanced,4.5
+MLOps Capstone Project 63,Duke University,"model deployment, ci/cd, mlops, monitoring",Course,intermediate,4.3
+Foundations of DevOps Crash Course,DeepLearning.AI,"kubernetes, monitoring, terraform, ansible",Course,intermediate,4.1
+Deep Learning: Complete Guide,University of London,"transformers, rnn, gan, keras",Course,beginner,4.8
+MLOps Essentials 40,Stanford University,"monitoring, docker, feature store, sagemaker",Course,beginner,4.3
+Foundations of Data Visualization,DeepLearning.AI,"dashboards, plotly, tableau",Course,beginner,4.7
+Machine Learning Professional Certificate,Google,"xgboost, clustering, scikit-learn, classification",Course,advanced,4.6
+Practical Mobile Development in Practice,IBM,"flutter, android, swift",Course,advanced,4.7
+Essential Statistics in Practice,AWS,"regression, a/b testing, statistics",Course,beginner,3.9
+DevOps: Bootcamp,Stanford University,"ci/cd, terraform, jenkins",Course,advanced,4.3
+Machine Learning in Practice,DeepLearning.AI,"scikit-learn, feature engineering, regression, model evaluation",Course,beginner,3.9
+Foundations of Mobile Development Deep Dive,Duke University,"kotlin, swift, ios",Course,beginner,4.2
+Foundations of NLP Capstone Project,Johns Hopkins University,"nlp, embeddings, sentiment analysis",Course,intermediate,4.0
+Azure Cloud: Complete Guide,DeepLearning.AI,"active directory, functions, aks",Course,beginner,4.1
+DevOps Essentials 180,University of Michigan,"jenkins, terraform, docker",Course,intermediate,3.8
+Cybersecurity Hands-On 73,DeepLearning.AI,"incident response, penetration testing, cryptography",Course,beginner,4.2
+Introduction to Cloud & AWS in Practice,DeepLearning.AI,"ec2, dynamodb, cloudformation",Course,advanced,4.8
+Cybersecurity: for Everyone,Duke University,"networking, security, penetration testing, owasp",Course,advanced,4.9
+Essential NLP for Everyone,Johns Hopkins University,"bert, embeddings, transformers",Course,advanced,4.0
+Data Visualization Complete Guide,Duke University,"d3.js, seaborn, power bi, dashboards",Course,intermediate,4.9
+Complete Cloud & AWS Complete Guide,Johns Hopkins University,"vpc, ec2, dynamodb",Course,advanced,4.6
+Azure Cloud: Workshop,Coursera,"azure, aks, active directory",Course,intermediate,4.8
+Data Analysis Essentials 98,University of London,"numpy, excel, eda, pandas",Course,advanced,4.8
+Big Data from Scratch,University of London,"distributed computing, big data, data lake",Course,advanced,4.0
+Web Frontend: Workshop,University of London,"next.js, tailwind, javascript",Course,intermediate,4.9
+Mobile Development Capstone Project,Google,"flutter, android, kotlin, react native",Course,advanced,3.9
+Foundations of Cloud & AWS Complete Guide,Duke University,"dynamodb, vpc, s3",Course,advanced,4.7
+NLP Bootcamp 16,IBM,"named entity recognition, nlp, llm, bert",Course,intermediate,4.0
+Azure Cloud: from Scratch,DeepLearning.AI,"devops, azure, functions",Course,advanced,4.4
+Web Backend Essentials 95,Stanford University,"graphql, node.js, authentication",Course,beginner,4.5
+Data Analysis Bootcamp 215,DataCamp,"data cleaning, statistics, data wrangling",Course,beginner,4.1
+Computer Vision Complete Guide 58,Stanford University,"cnn, image classification, opencv, computer vision",Course,beginner,4.0
+Cybersecurity: Crash Course,Coursera,"incident response, penetration testing, security, owasp",Course,intermediate,4.2
+Web Backend in Practice 8,Duke University,"graphql, django, fastapi, authentication",Course,intermediate,4.2
+Machine Learning Workshop 126,Stanford University,"xgboost, regression, model evaluation, classification",Course,intermediate,4.6
+Deep Learning Bootcamp 23,IBM,"cnn, deep learning, transformers",Course,beginner,4.9
+DevOps from Scratch,DeepLearning.AI,"monitoring, ci/cd, kubernetes",Course,advanced,4.1
+Deep Learning Deep Dive,Coursera,"gan, transformers, cnn",Course,beginner,3.9
+Essential Data Engineering,DeepLearning.AI,"etl, airflow, batch processing",Course,intermediate,4.1
+Deep Learning Complete Guide,Duke University,"attention, cnn, pytorch",Course,beginner,4.9
+Deep Learning: in Practice,Stanford University,"transformers, tensorflow, gan, keras",Course,beginner,4.0
+Data Engineering Hands-On 188,University of Michigan,"data pipelines, kafka, airflow",Course,intermediate,4.2
+Applied Computer Vision Complete Guide,Imperial College London,"object detection, computer vision, opencv",Course,advanced,4.6
+Mobile Development: Professional Certificate,Coursera,"swift, android, react native",Course,intermediate,4.1
+Mobile Development Hands-On,Meta,"flutter, ios, mobile ui, react native",Course,intermediate,4.1
+Practical Cybersecurity Workshop,Duke University,"owasp, firewalls, security, cryptography",Course,intermediate,4.3
+MLOps Deep Dive 186,Google Cloud,"sagemaker, model deployment, docker, ci/cd",Course,advanced,4.9
+Mobile Development Professional Certificate 169,Stanford University,"ios, react native, android, swift",Course,intermediate,4.2
+Cybersecurity: in Practice,University of London,"penetration testing, security, incident response, networking",Course,beginner,4.2
+Practical DevOps,Coursera,"ansible, terraform, kubernetes, docker",Course,intermediate,3.8
+Practical Python Programming,DataCamp,"async, python, oop, data structures",Course,advanced,5.0
+Essential Computer Vision,Google Cloud,"computer vision, cnn, image classification",Course,intermediate,4.8
+Foundations of MLOps Fundamentals,Microsoft,"sagemaker, ci/cd, feature store, mlops",Course,intermediate,4.1
+Modern SQL & Databases,Johns Hopkins University,"nosql, mongodb, joins, sql",Course,intermediate,4.1
+Web Frontend: Specialization,IBM,"vue, typescript, html",Course,advanced,4.2
+Cloud & AWS Deep Dive 167,Google Cloud,"cloudwatch, s3, vpc",Course,beginner,4.7
+Mastering Mobile Development Essentials,Microsoft,"android, swift, mobile ui, flutter",Course,advanced,4.3
+DevOps from Scratch 216,DataCamp,"kubernetes, monitoring, jenkins",Course,beginner,5.0
+Practical Python Programming in Practice,DataCamp,"testing, algorithms, oop, python",Course,intermediate,4.4
+Introduction to Statistics Crash Course,DeepLearning.AI,"bayesian, inference, probability",Course,advanced,4.0
+Deep Learning: Fundamentals,University of London,"rnn, pytorch, deep learning, tensorflow",Course,advanced,4.0
+Advanced Statistics,DeepLearning.AI,"inference, statistics, distributions, regression",Course,advanced,3.9
+SQL & Databases: for Everyone,University of Michigan,"mongodb, normalization, nosql",Course,beginner,4.3
+Complete Cloud & AWS,DeepLearning.AI,"s3, cloudformation, dynamodb",Course,beginner,4.2
+Applied Data Engineering Hands-On,AWS,"dbt, batch processing, warehousing, spark",Course,intermediate,4.4
+Modern Data Analysis,AWS,"excel, data wrangling, eda, hypothesis testing",Course,intermediate,4.5
+Foundations of Data Engineering Fundamentals,AWS,"airflow, etl, dbt, spark",Course,advanced,4.7
+Applied Mobile Development Deep Dive,IBM,"flutter, android, ios",Course,advanced,4.2
+Introduction to Web Frontend Specialization,Meta,"css, react, redux",Course,advanced,4.3
+DevOps Essentials 94,Microsoft,"ansible, docker, jenkins",Course,advanced,4.3
+Data Analysis Bootcamp,Google Cloud,"data wrangling, hypothesis testing, excel",Course,intermediate,4.9
+Machine Learning Workshop 192,Duke University,"model evaluation, machine learning, feature engineering",Course,intermediate,4.9
+Advanced Web Backend Complete Guide,University of London,"django, express, graphql",Course,advanced,4.4
+Modern Python Programming,University of Michigan,"python, data structures, async",Course,advanced,4.7
+Deep Learning in Practice 169,Meta,"deep learning, gan, keras, transformers",Course,advanced,4.7
+Foundations of Product & Analytics Fundamentals,Coursera,"metrics, cohort analysis, dashboards",Course,advanced,4.9
+Data Visualization Masterclass 44,DataCamp,"seaborn, power bi, dashboards",Course,advanced,4.3
+SQL & Databases for Everyone 108,Coursera,"postgresql, mysql, query optimization",Course,intermediate,4.7
+Data Engineering: Professional Certificate,Imperial College London,"etl, dbt, airflow, warehousing",Course,intermediate,4.0
+Big Data from Scratch 103,University of Michigan,"data lake, big data, hive",Course,intermediate,3.9
+Modern Mobile Development,IBM,"flutter, kotlin, swift, ios",Course,intermediate,4.3
+SQL & Databases: from Scratch,University of Michigan,"mysql, mongodb, nosql, sql",Course,advanced,4.9
+Introduction to Cybersecurity for Everyone,Imperial College London,"networking, security, penetration testing",Course,advanced,4.8
+Mastering Cybersecurity Hands-On,DataCamp,"penetration testing, cryptography, networking",Course,intermediate,4.6
+Introduction to Computer Vision,Microsoft,"cnn, computer vision, segmentation, opencv",Course,intermediate,4.6
+Azure Cloud Complete Guide,Stanford University,"blob storage, cosmos db, azure, functions",Course,advanced,4.4
+Data Visualization Capstone Project 271,Meta,"dashboards, matplotlib, power bi",Course,beginner,5.0
+Applied Big Data Workshop,DataCamp,"hadoop, hive, big data, scala",Course,intermediate,4.3
+Introduction to Azure Cloud Professional Certificate,University of Michigan,"active directory, blob storage, aks",Course,advanced,4.3
+Cybersecurity in Practice 249,Google,"security, cryptography, networking, penetration testing",Course,advanced,4.5
+Computer Vision from Scratch,Stanford University,"cnn, computer vision, yolo, object detection",Course,advanced,4.8
+Data Engineering for Everyone 12,DataCamp,"batch processing, data pipelines, dbt, kafka",Course,intermediate,4.4
+DevOps Hands-On,Duke University,"kubernetes, ci/cd, docker",Course,beginner,4.1
+Python Programming: for Everyone,IBM,"data structures, async, automation, scripting",Course,advanced,4.1
+Cybersecurity in Practice 124,Meta,"incident response, cryptography, penetration testing, security",Course,intermediate,5.0
+Advanced Web Frontend Masterclass,AWS,"tailwind, css, next.js, redux",Course,beginner,4.7
+Practical Machine Learning Professional Certificate,DataCamp,"feature engineering, clustering, machine learning, model evaluation",Course,beginner,4.5
+Modern Machine Learning,University of London,"scikit-learn, clustering, model evaluation, xgboost",Course,intermediate,4.8
+Essential Big Data,DataCamp,"distributed computing, scala, spark",Course,intermediate,4.3
+Introduction to Data Engineering Masterclass,University of London,"batch processing, data pipelines, warehousing, spark",Course,advanced,4.4
+Mobile Development Fundamentals,DeepLearning.AI,"android, mobile ui, react native, swift",Course,advanced,4.4
+Python Programming for Everyone 227,IBM,"algorithms, oop, async",Course,advanced,4.8
+Azure Cloud Professional Certificate,Meta,"active directory, cosmos db, blob storage",Course,intermediate,5.0
+Azure Cloud: Hands-On,Microsoft,"devops, cosmos db, active directory",Course,beginner,4.7
+Foundations of Statistics,University of London,"inference, regression, bayesian",Course,beginner,4.3
+Data Analysis from Scratch,Imperial College London,"data cleaning, hypothesis testing, pandas",Course,advanced,4.9
+Applied Big Data,Google,"scala, hive, hadoop",Course,beginner,4.6
+Statistics Crash Course 177,University of Michigan,"a/b testing, inference, bayesian",Course,intermediate,4.3
+Applied Statistics,University of London,"distributions, probability, inference, regression",Course,advanced,4.9
+Big Data Fundamentals 81,University of London,"spark, distributed computing, scala",Course,beginner,4.7
+Cybersecurity Masterclass 167,IBM,"penetration testing, security, owasp, incident response",Course,intermediate,4.4
+Modern Web Backend Fundamentals,Johns Hopkins University,"django, authentication, graphql, node.js",Course,intermediate,4.7
+SQL & Databases Hands-On,Duke University,"indexing, query optimization, mysql",Course,intermediate,4.0
+Practical Deep Learning from Scratch,Stanford University,"attention, gan, rnn",Course,advanced,4.2
+Python Programming Bootcamp,Microsoft,"data structures, python, algorithms, async",Course,beginner,4.7
+NLP Hands-On 86,IBM,"bert, nlp, transformers",Course,intermediate,3.9
+Mastering Data Analysis Hands-On,Coursera,"data wrangling, statistics, numpy, excel",Course,intermediate,4.1
+MLOps Crash Course 157,IBM,"model deployment, sagemaker, feature store, monitoring",Course,intermediate,4.8
+Applied Azure Cloud,Meta,"blob storage, active directory, devops, azure",Course,advanced,4.7
+MLOps in Practice,AWS,"sagemaker, model deployment, feature store",Course,intermediate,4.5
+Mastering Data Engineering Masterclass,DataCamp,"spark, airflow, dbt, warehousing",Course,advanced,3.8
+DevOps Bootcamp 298,DataCamp,"github actions, monitoring, ci/cd, terraform",Course,beginner,4.2
+Cloud & AWS: Professional Certificate,Meta,"s3, cloudformation, dynamodb, lambda",Course,beginner,5.0
+Complete DevOps Workshop,Duke University,"ansible, ci/cd, terraform",Course,advanced,4.3
+Modern Deep Learning,Stanford University,"rnn, deep learning, keras, pytorch",Course,beginner,4.9
+Data Visualization Essentials,Google,"matplotlib, power bi, d3.js",Course,beginner,4.2
+Statistics Hands-On 85,DataCamp,"a/b testing, inference, probability, regression",Course,intermediate,4.5
+Foundations of Python Programming Deep Dive,Google,"oop, python, data structures",Course,intermediate,4.0
+Advanced Big Data Masterclass,DataCamp,"distributed computing, hive, hadoop, spark",Course,intermediate,4.7
+Computer Vision Essentials,IBM,"image classification, object detection, cnn",Course,beginner,5.0
+NLP: Fundamentals,Stanford University,"nlp, tokenization, embeddings",Course,advanced,4.1
+Statistics Fundamentals,IBM,"statistics, probability, bayesian",Course,beginner,4.5
+SQL & Databases from Scratch 120,AWS,"mysql, sql, indexing",Course,intermediate,4.3
+DevOps Essentials,AWS,"ansible, jenkins, monitoring",Course,beginner,4.2
+Computer Vision Specialization 243,DataCamp,"segmentation, opencv, cnn",Course,intermediate,4.8
+Deep Learning Crash Course 58,IBM,"deep learning, transformers, pytorch",Course,advanced,4.8
+Azure Cloud in Practice 173,DataCamp,"azure, active directory, functions, devops",Course,advanced,4.8
+Computer Vision Bootcamp 21,Microsoft,"image classification, cnn, segmentation, object detection",Course,intermediate,3.9
+Essential SQL & Databases in Practice,Coursera,"nosql, joins, sql, mysql",Course,intermediate,3.8
+Practical Web Frontend for Everyone,AWS,"vue, redux, react, tailwind",Course,intermediate,4.4
+MLOps Hands-On,AWS,"sagemaker, feature store, ci/cd",Course,beginner,3.9
+Applied Web Backend Professional Certificate,IBM,"graphql, microservices, node.js, authentication",Course,advanced,4.7
+DevOps: Complete Guide,University of London,"terraform, kubernetes, ansible, github actions",Course,beginner,4.8
+Advanced NLP Complete Guide,DeepLearning.AI,"embeddings, transformers, sentiment analysis, named entity recognition",Course,advanced,4.3
+MLOps: Capstone Project,Google Cloud,"sagemaker, mlops, mlflow",Course,intermediate,4.3
+Product & Analytics Crash Course 227,AWS,"cohort analysis, dashboards, product analytics",Course,advanced,4.1
+Mastering Data Analysis,Microsoft,"numpy, statistics, data cleaning, data wrangling",Course,intermediate,4.4
+Complete MLOps for Everyone,IBM,"monitoring, feature store, ci/cd",Course,intermediate,3.8
+Statistics Crash Course 287,Johns Hopkins University,"probability, statistics, inference",Course,advanced,4.9
+Python Programming: Bootcamp,Johns Hopkins University,"async, oop, testing, automation",Course,beginner,4.8
+Deep Learning Bootcamp,University of London,"attention, pytorch, cnn, gan",Course,intermediate,4.3
+Foundations of Deep Learning Deep Dive,DeepLearning.AI,"keras, pytorch, cnn, transformers",Course,advanced,4.2
+Computer Vision Workshop 124,Google Cloud,"object detection, computer vision, segmentation",Course,beginner,4.7
+Product & Analytics Bootcamp,Imperial College London,"dashboards, experimentation, product analytics, sql",Course,intermediate,4.8
+Introduction to NLP for Everyone,Imperial College London,"sentiment analysis, nlp, tokenization, named entity recognition",Course,beginner,3.8
+Mobile Development Workshop,Johns Hopkins University,"swift, android, mobile ui, kotlin",Course,advanced,4.0
+Web Backend Masterclass 41,Google,"fastapi, rest api, microservices, django",Course,intermediate,4.3
+DevOps Capstone Project,Imperial College London,"terraform, kubernetes, docker, github actions",Course,beginner,4.1
+Deep Learning Professional Certificate 255,Microsoft,"pytorch, tensorflow, deep learning, cnn",Course,advanced,4.6
+Cloud & AWS Complete Guide 254,Imperial College London,"vpc, iam, cloudformation",Course,advanced,4.8
+Azure Cloud Deep Dive,IBM,"active directory, functions, aks",Course,beginner,4.7
+Essential NLP Bootcamp,University of London,"sentiment analysis, nlp, bert, embeddings",Course,advanced,4.8
+Foundations of Data Visualization from Scratch,IBM,"storytelling, seaborn, plotly, d3.js",Course,intermediate,4.2
+Statistics Workshop,Meta,"bayesian, probability, a/b testing",Course,advanced,5.0
+Foundations of NLP,DeepLearning.AI,"transformers, sentiment analysis, nlp, named entity recognition",Course,beginner,4.3
+Product & Analytics: Workshop,IBM,"dashboards, metrics, product analytics",Course,beginner,4.7
+Python Programming Specialization 11,Imperial College London,"data structures, python, oop",Course,beginner,4.5
+Mobile Development: Fundamentals,Duke University,"mobile ui, ios, android",Course,intermediate,4.6
+Complete Data Engineering in Practice,DeepLearning.AI,"warehousing, batch processing, spark",Course,intermediate,4.5
+Complete Mobile Development Crash Course,Duke University,"ios, react native, mobile ui",Course,advanced,4.7
+DevOps Specialization,Google,"github actions, terraform, ci/cd, docker",Course,beginner,3.9
+Statistics Capstone Project 71,Coursera,"regression, inference, distributions, bayesian",Course,intermediate,4.0
+MLOps Fundamentals 141,University of London,"mlops, ci/cd, feature store",Course,intermediate,5.0
+Modern Data Visualization Deep Dive,Johns Hopkins University,"matplotlib, d3.js, dashboards, power bi",Course,advanced,4.7
+NLP Capstone Project 146,Meta,"transformers, llm, bert, tokenization",Course,advanced,4.9
+Modern Python Programming Crash Course,Duke University,"automation, testing, data structures",Course,advanced,3.8
+NLP Deep Dive 287,Microsoft,"transformers, bert, named entity recognition",Course,intermediate,3.9
+Cybersecurity Professional Certificate 181,AWS,"networking, penetration testing, cryptography",Course,advanced,4.0
+MLOps Capstone Project 70,University of London,"mlflow, feature store, docker, monitoring",Course,intermediate,4.4
+Applied Machine Learning Hands-On,DeepLearning.AI,"regression, classification, feature engineering",Course,advanced,4.6
+Practical Python Programming Workshop,AWS,"testing, python, algorithms, oop",Course,intermediate,4.7
+Azure Cloud Deep Dive 102,IBM,"functions, cosmos db, azure, blob storage",Course,advanced,4.3
+Big Data Hands-On,Duke University,"big data, scala, distributed computing, data lake",Course,beginner,4.6
+Cybersecurity Fundamentals 155,IBM,"firewalls, owasp, incident response, penetration testing",Course,intermediate,4.6
+Advanced Data Visualization Bootcamp,Stanford University,"storytelling, dashboards, matplotlib",Course,intermediate,4.8
+Mobile Development Fundamentals 221,Duke University,"kotlin, android, mobile ui, flutter",Course,advanced,4.3
+DevOps: Masterclass,IBM,"docker, ansible, github actions, ci/cd",Course,beginner,4.5
+Data Engineering: Bootcamp,Johns Hopkins University,"dbt, warehousing, airflow, etl",Course,advanced,4.8
+Practical Web Backend Crash Course,DeepLearning.AI,"fastapi, express, authentication, graphql",Course,beginner,3.9
+Web Backend Workshop,Imperial College London,"fastapi, rest api, microservices",Course,intermediate,4.9
+MLOps in Practice 120,Johns Hopkins University,"ci/cd, docker, mlflow",Course,intermediate,4.5
+Introduction to Machine Learning Hands-On,IBM,"clustering, machine learning, scikit-learn",Course,advanced,4.7
+Advanced Machine Learning Capstone Project,Johns Hopkins University,"scikit-learn, clustering, classification",Course,advanced,5.0
+Cloud & AWS Fundamentals 225,Johns Hopkins University,"lambda, cloudwatch, dynamodb, vpc",Course,beginner,3.9
+Machine Learning Fundamentals 266,Meta,"regression, model evaluation, classification",Course,beginner,5.0
+NLP: Professional Certificate,University of Michigan,"nlp, bert, llm",Course,intermediate,4.3
+Modern DevOps,Johns Hopkins University,"monitoring, ansible, github actions, docker",Course,beginner,4.1
+Essential Data Engineering for Everyone,Johns Hopkins University,"spark, batch processing, dbt, warehousing",Course,intermediate,3.8
+Data Visualization Essentials 169,Microsoft,"dashboards, plotly, power bi",Course,beginner,4.6
+Applied DevOps Professional Certificate,Imperial College London,"terraform, ansible, github actions, jenkins",Course,intermediate,4.6
+Introduction to Data Engineering Complete Guide,DeepLearning.AI,"airflow, spark, warehousing, etl",Course,beginner,4.0
+Computer Vision: Fundamentals,Meta,"computer vision, segmentation, cnn",Course,beginner,3.8
+Practical Data Engineering Masterclass,University of Michigan,"dbt, etl, data pipelines",Course,beginner,4.4
+Data Analysis Deep Dive 94,AWS,"numpy, excel, data wrangling",Course,intermediate,4.4
+Big Data: from Scratch,Google,"spark, data lake, hive",Course,advanced,4.8
+Essential DevOps Capstone Project,Coursera,"docker, github actions, ansible",Course,beginner,4.4
+Data Analysis Deep Dive 79,Johns Hopkins University,"data cleaning, hypothesis testing, statistics, data wrangling",Course,advanced,4.7
+Computer Vision Specialization 187,DataCamp,"image classification, cnn, object detection, opencv",Course,advanced,4.0
+Big Data Fundamentals,Coursera,"hadoop, distributed computing, big data, spark",Course,beginner,3.8
+Cloud & AWS Capstone Project 231,Google,"iam, dynamodb, ec2",Course,beginner,4.9
+MLOps Professional Certificate 121,AWS,"monitoring, mlflow, sagemaker",Course,intermediate,3.9
+Applied Deep Learning,University of London,"gan, tensorflow, rnn, attention",Course,beginner,3.8
+Applied MLOps Masterclass,University of London,"mlflow, feature store, mlops",Course,intermediate,4.9
+Cybersecurity Masterclass 64,AWS,"networking, cryptography, penetration testing, security",Course,advanced,3.8
+Mobile Development Essentials 153,Microsoft,"react native, flutter, mobile ui",Course,beginner,3.9
+Computer Vision Complete Guide 16,DataCamp,"opencv, segmentation, yolo, image classification",Course,beginner,4.4
+DevOps Deep Dive 62,Imperial College London,"kubernetes, docker, terraform",Course,advanced,4.9
+Advanced MLOps Deep Dive,University of London,"mlops, docker, feature store",Course,intermediate,4.3
+Introduction to Azure Cloud Bootcamp,Meta,"aks, functions, blob storage, cosmos db",Course,beginner,4.6
+Big Data Essentials,Duke University,"distributed computing, data lake, spark",Course,intermediate,4.4
+Modern Computer Vision,Stanford University,"opencv, object detection, yolo, cnn",Course,beginner,4.9
+Complete Computer Vision Capstone Project,AWS,"opencv, computer vision, image classification",Course,beginner,4.5
+Complete Data Visualization from Scratch,IBM,"matplotlib, dashboards, tableau",Course,intermediate,4.6
+MLOps: Deep Dive,IBM,"mlflow, sagemaker, mlops",Course,beginner,4.5
+Product & Analytics Complete Guide 94,University of London,"dashboards, cohort analysis, metrics, product analytics",Course,intermediate,4.0
+Web Backend: Essentials,IBM,"microservices, node.js, fastapi, django",Course,beginner,4.3
+Data Visualization: Fundamentals,Meta,"seaborn, matplotlib, dashboards",Course,advanced,4.3
+Data Analysis from Scratch 38,IBM,"hypothesis testing, statistics, numpy",Course,beginner,4.1
+Applied Computer Vision,IBM,"image classification, object detection, cnn",Course,intermediate,4.2
+Cybersecurity Complete Guide 296,IBM,"penetration testing, security, networking",Course,advanced,4.8
+Modern Machine Learning Capstone Project,University of London,"machine learning, classification, feature engineering, clustering",Course,intermediate,4.5
+Product & Analytics: Professional Certificate,AWS,"cohort analysis, sql, product analytics",Course,intermediate,4.5
+Product & Analytics Complete Guide,Imperial College London,"kpi, cohort analysis, sql",Course,beginner,4.7
+Computer Vision Masterclass,Microsoft,"segmentation, opencv, object detection",Course,advanced,5.0
+Cloud & AWS Workshop,IBM,"vpc, aws, s3",Course,beginner,4.0
+DevOps Essentials 46,University of London,"ansible, kubernetes, ci/cd, github actions",Course,beginner,4.8
+Deep Learning Hands-On,AWS,"tensorflow, rnn, deep learning",Course,advanced,4.0
+MLOps Masterclass 87,Imperial College London,"sagemaker, model deployment, monitoring",Course,beginner,4.4
+Applied Cybersecurity Deep Dive,DataCamp,"owasp, cryptography, incident response, security",Course,intermediate,3.8
+Essential Web Backend,Google,"graphql, node.js, fastapi, microservices",Course,beginner,4.2
+Foundations of Azure Cloud,DeepLearning.AI,"cosmos db, aks, azure",Course,beginner,4.1
+Data Analysis from Scratch 252,Duke University,"excel, pandas, eda",Course,beginner,4.4
+Mastering Data Engineering,Duke University,"warehousing, dbt, airflow",Course,advanced,4.9
+Data Visualization Professional Certificate 154,Microsoft,"tableau, seaborn, power bi",Course,advanced,3.9
+Complete Azure Cloud Deep Dive,Meta,"blob storage, devops, cosmos db, active directory",Course,intermediate,4.1
+Mobile Development: Deep Dive,Imperial College London,"ios, kotlin, flutter",Course,intermediate,4.5
+Python Programming Bootcamp 35,Duke University,"automation, algorithms, testing, oop",Course,intermediate,4.3
+Web Backend from Scratch,Duke University,"node.js, django, rest api, graphql",Course,advanced,4.4
+Cybersecurity Deep Dive 127,Duke University,"owasp, security, cryptography, networking",Course,advanced,3.8
+Deep Learning: Professional Certificate,Imperial College London,"cnn, tensorflow, gan, attention",Course,beginner,4.5
+Deep Learning Essentials 211,Duke University,"rnn, deep learning, transformers, cnn",Course,advanced,4.9
+Product & Analytics Crash Course 97,University of Michigan,"experimentation, metrics, dashboards, sql",Course,intermediate,3.9
+Machine Learning Deep Dive 143,DeepLearning.AI,"clustering, xgboost, regression, feature engineering",Course,intermediate,3.9
+SQL & Databases: Workshop,Microsoft,"mongodb, joins, nosql, normalization",Course,beginner,4.5
+Practical Web Backend Masterclass,University of Michigan,"graphql, authentication, node.js, microservices",Course,advanced,4.3
+Mastering Statistics Fundamentals,Google Cloud,"probability, statistics, bayesian",Course,beginner,4.4
+Product & Analytics Fundamentals 146,Coursera,"metrics, kpi, experimentation",Course,beginner,4.5
+Statistics Essentials,Google,"bayesian, probability, inference, distributions",Course,beginner,4.2
+DevOps Bootcamp 238,AWS,"terraform, kubernetes, monitoring, ci/cd",Course,beginner,4.5
+Cybersecurity: Professional Certificate,AWS,"incident response, firewalls, owasp",Course,advanced,4.2
+MLOps Hands-On 148,Imperial College London,"monitoring, feature store, mlops, ci/cd",Course,advanced,4.1
+Cybersecurity Complete Guide,Microsoft,"penetration testing, incident response, owasp",Course,intermediate,4.5
+Web Frontend Workshop 294,IBM,"next.js, css, redux",Course,advanced,4.4
+Applied Machine Learning Essentials,University of London,"classification, clustering, model evaluation",Course,advanced,4.3
+Introduction to Cloud & AWS from Scratch,Google,"s3, cloudformation, lambda, iam",Course,advanced,4.2
+DevOps Hands-On 156,Microsoft,"ansible, github actions, terraform, monitoring",Course,intermediate,4.7
+Applied NLP Workshop,DeepLearning.AI,"named entity recognition, transformers, sentiment analysis, nlp",Course,beginner,3.9
+Big Data: Complete Guide,Google,"spark, scala, hadoop, data lake",Course,advanced,4.6
+Python Programming Masterclass,AWS,"algorithms, oop, data structures, automation",Course,advanced,5.0
+Mastering Cybersecurity,Coursera,"security, owasp, networking, firewalls",Course,intermediate,4.1
+Mobile Development Masterclass,University of London,"mobile ui, kotlin, ios",Course,advanced,4.3
+Big Data Capstone Project,Stanford University,"data lake, hadoop, hive",Course,advanced,4.6
+Complete Product & Analytics Deep Dive,Duke University,"product analytics, experimentation, kpi, sql",Course,intermediate,4.5
+Practical Web Frontend,Imperial College London,"html, css, tailwind, vue",Course,beginner,4.1
+Advanced Azure Cloud Bootcamp,Google,"active directory, cosmos db, blob storage",Course,advanced,4.4
+Big Data Professional Certificate 213,Meta,"data lake, big data, distributed computing",Course,intermediate,3.8
+Data Analysis: for Everyone,Google,"excel, hypothesis testing, data cleaning, statistics",Course,beginner,4.3
+Cybersecurity Crash Course 24,DataCamp,"owasp, networking, security",Course,advanced,4.6
+Introduction to Deep Learning,Google,"keras, attention, transformers, deep learning",Course,advanced,5.0
+Azure Cloud Essentials,University of Michigan,"active directory, azure, functions",Course,intermediate,4.9
+Data Engineering Professional Certificate 2,Google,"spark, kafka, etl",Course,beginner,4.2
+Complete Product & Analytics Professional Certificate,University of London,"metrics, cohort analysis, experimentation, product analytics",Course,beginner,4.0
+Foundations of Computer Vision Workshop,Meta,"segmentation, object detection, yolo, cnn",Course,intermediate,4.1
+Applied Product & Analytics Deep Dive,Microsoft,"dashboards, product analytics, kpi, metrics",Course,beginner,4.0
+Introduction to NLP,DeepLearning.AI,"sentiment analysis, bert, llm",Course,intermediate,4.3
+Applied Computer Vision Masterclass,Meta,"computer vision, yolo, opencv, image classification",Course,advanced,4.8
+Data Engineering: Capstone Project,Duke University,"airflow, kafka, warehousing",Course,beginner,4.2
+Product & Analytics Capstone Project 217,AWS,"metrics, product analytics, dashboards",Course,intermediate,4.3
+Advanced Big Data Capstone Project,University of London,"scala, spark, distributed computing, hadoop",Course,advanced,4.6
+MLOps Fundamentals 192,IBM,"mlflow, feature store, docker",Course,beginner,4.7
+MLOps from Scratch 235,Johns Hopkins University,"mlflow, docker, ci/cd, monitoring",Course,intermediate,4.8
+Product & Analytics Essentials 166,DeepLearning.AI,"cohort analysis, kpi, product analytics, sql",Course,intermediate,4.0
+Python Programming: Hands-On,Imperial College London,"automation, data structures, scripting, python",Course,intermediate,4.9
+Computer Vision for Everyone 63,Microsoft,"cnn, segmentation, yolo, image classification",Course,advanced,4.2
+Cybersecurity Workshop 140,Google Cloud,"cryptography, owasp, penetration testing, networking",Course,beginner,4.6
+Web Frontend Complete Guide,University of London,"javascript, next.js, tailwind",Course,intermediate,4.7
+Mobile Development from Scratch,Imperial College London,"flutter, react native, android, kotlin",Course,intermediate,4.3
+Foundations of Azure Cloud for Everyone,DeepLearning.AI,"cosmos db, devops, azure, blob storage",Course,intermediate,4.3
+SQL & Databases Masterclass,IBM,"indexing, nosql, query optimization",Course,beginner,4.9
+Product & Analytics Capstone Project,DataCamp,"experimentation, product analytics, cohort analysis",Course,beginner,4.5
+Computer Vision for Everyone 53,AWS,"cnn, opencv, yolo, segmentation",Course,intermediate,3.9
+Cybersecurity Masterclass 272,Google,"firewalls, owasp, cryptography, incident response",Course,beginner,4.5
+Advanced Cybersecurity from Scratch,DataCamp,"owasp, networking, penetration testing",Course,advanced,3.8
+DevOps Specialization 57,Duke University,"docker, github actions, monitoring",Course,advanced,3.9
+Deep Learning for Everyone 105,DeepLearning.AI,"pytorch, cnn, attention, tensorflow",Course,beginner,4.3
+Web Backend Deep Dive,Google Cloud,"rest api, fastapi, graphql, microservices",Course,beginner,4.2
+Data Engineering Specialization 128,University of London,"airflow, batch processing, spark, dbt",Course,intermediate,3.9
+Data Analysis: Workshop,Stanford University,"statistics, data cleaning, hypothesis testing, excel",Course,beginner,4.1
+Data Visualization: Hands-On,Imperial College London,"plotly, dashboards, matplotlib",Course,advanced,4.8
+Mastering Machine Learning,University of Michigan,"scikit-learn, machine learning, feature engineering, regression",Course,beginner,4.5
+Web Frontend: for Everyone,University of London,"react, typescript, tailwind",Course,beginner,4.9
+Foundations of Cybersecurity Masterclass,University of London,"networking, security, firewalls",Course,intermediate,4.6
+Practical Big Data Complete Guide,University of Michigan,"distributed computing, scala, big data",Course,advanced,4.7
+Python Programming: Specialization,AWS,"oop, python, scripting, async",Course,advanced,3.9
+Foundations of Python Programming,DeepLearning.AI,"automation, oop, scripting",Course,beginner,4.6
+Introduction to Data Engineering,Imperial College London,"data pipelines, warehousing, kafka, spark",Course,beginner,3.9
+Advanced Big Data Essentials,Coursera,"hive, scala, data lake",Course,beginner,4.9
+Data Engineering Bootcamp,Google Cloud,"airflow, batch processing, kafka, dbt",Course,advanced,5.0
+Complete Data Engineering,Google,"warehousing, data pipelines, dbt",Course,advanced,4.9
+Introduction to Machine Learning Specialization,Johns Hopkins University,"classification, scikit-learn, clustering",Course,beginner,4.5
+Product & Analytics: Capstone Project,DataCamp,"kpi, cohort analysis, dashboards, metrics",Course,beginner,4.5
+Mastering DevOps Fundamentals,Microsoft,"kubernetes, ci/cd, ansible, terraform",Course,advanced,4.1
+Computer Vision for Everyone 217,Google,"opencv, yolo, image classification",Course,beginner,4.1
+DevOps Fundamentals,Imperial College London,"monitoring, docker, terraform, kubernetes",Course,advanced,3.8
+Statistics: from Scratch,Microsoft,"a/b testing, probability, distributions, inference",Course,beginner,4.3
+Modern Data Visualization Specialization,DataCamp,"matplotlib, power bi, d3.js",Course,intermediate,4.8
+Cloud & AWS Deep Dive,Meta,"cloudformation, cloudwatch, iam, s3",Course,intermediate,4.0
+Mobile Development Specialization 203,University of Michigan,"flutter, ios, swift",Course,advanced,4.6
+Mastering Data Analysis Deep Dive,University of Michigan,"data cleaning, excel, numpy",Course,intermediate,4.4
+Computer Vision Hands-On 168,Meta,"segmentation, computer vision, opencv, object detection",Course,intermediate,4.6
+Cybersecurity Crash Course 85,Johns Hopkins University,"networking, firewalls, cryptography",Course,intermediate,4.4
+Mastering Statistics,University of London,"a/b testing, statistics, distributions, inference",Course,beginner,4.3
+Cloud & AWS Complete Guide,Google,"lambda, vpc, cloudformation",Course,advanced,4.1
+Data Engineering Masterclass,Stanford University,"airflow, batch processing, warehousing",Course,intermediate,4.3
+Python Programming Specialization 156,DataCamp,"automation, oop, async, data structures",Course,intermediate,4.3
+Advanced Python Programming Capstone Project,DataCamp,"testing, python, oop, data structures",Course,advanced,3.9
+Azure Cloud Capstone Project 23,DataCamp,"cosmos db, devops, aks, blob storage",Course,advanced,3.9
+Data Visualization Deep Dive,Google Cloud,"tableau, plotly, dashboards",Course,beginner,4.6
+Statistics Hands-On 6,Duke University,"distributions, inference, regression, a/b testing",Course,beginner,4.2
+Practical Product & Analytics Complete Guide,DataCamp,"sql, kpi, cohort analysis, metrics",Course,intermediate,4.4
+Data Engineering Fundamentals 103,Google,"data pipelines, spark, etl",Course,beginner,4.8
+Mastering Cloud & AWS Crash Course,Imperial College London,"lambda, s3, cloudwatch, iam",Course,beginner,4.8
+Deep Learning Hands-On 161,AWS,"attention, cnn, transformers",Course,advanced,4.5
+Essential Python Programming Fundamentals,DataCamp,"oop, python, automation, scripting",Course,beginner,4.6
+Foundations of Web Frontend,University of London,"tailwind, redux, next.js",Course,advanced,4.1
+Foundations of Data Visualization Capstone Project,Duke University,"tableau, dashboards, storytelling, d3.js",Course,advanced,4.2
+Foundations of Mobile Development Complete Guide,Meta,"ios, android, react native",Course,beginner,4.4
+Cloud & AWS Workshop 282,Duke University,"cloudwatch, cloudformation, lambda, s3",Course,beginner,4.1
+DevOps for Everyone,Microsoft,"github actions, monitoring, kubernetes, docker",Course,intermediate,4.8
+Modern Big Data,Duke University,"data lake, distributed computing, hadoop, spark",Course,intermediate,4.9
+SQL & Databases Professional Certificate 26,Duke University,"normalization, sql, postgresql, mongodb",Course,beginner,3.9
+Data Analysis: Deep Dive,Google Cloud,"data cleaning, numpy, data wrangling",Course,intermediate,4.9
+Deep Learning: Crash Course,Imperial College London,"attention, keras, transformers",Course,beginner,4.9
+Data Visualization in Practice 62,University of London,"storytelling, d3.js, tableau, plotly",Course,advanced,4.5
+Computer Vision: from Scratch,University of London,"object detection, opencv, cnn",Course,advanced,4.7
+MLOps: in Practice,Coursera,"feature store, model deployment, sagemaker, mlflow",Course,advanced,4.8
+Cloud & AWS: Crash Course,AWS,"vpc, iam, ec2",Course,advanced,4.9
+NLP Bootcamp 178,DataCamp,"named entity recognition, nlp, tokenization, embeddings",Course,beginner,4.4
+Complete Cybersecurity for Everyone,DataCamp,"firewalls, incident response, cryptography, security",Course,advanced,4.9
+Mobile Development: Capstone Project,University of Michigan,"android, mobile ui, ios, react native",Course,beginner,4.5
+Complete SQL & Databases Deep Dive,Imperial College London,"sql, joins, indexing, mongodb",Course,advanced,4.6
+Big Data Deep Dive 273,University of Michigan,"data lake, big data, scala",Course,advanced,3.9
+Web Backend Masterclass 105,DataCamp,"microservices, authentication, graphql, node.js",Course,beginner,4.4
+Cybersecurity Workshop 57,Duke University,"cryptography, owasp, security, networking",Course,advanced,4.3
+Product & Analytics Hands-On,Stanford University,"kpi, metrics, product analytics, cohort analysis",Course,intermediate,4.0
+Deep Learning Professional Certificate,Google Cloud,"pytorch, attention, deep learning",Course,advanced,4.0
+Mastering Cloud & AWS in Practice,Google,"s3, ec2, lambda",Course,advanced,4.3
+MLOps in Practice 299,Microsoft,"docker, model deployment, ci/cd",Course,beginner,4.3
+Essential NLP Crash Course,Imperial College London,"embeddings, nlp, transformers",Course,advanced,4.5
+Big Data Complete Guide,Stanford University,"scala, data lake, big data",Course,intermediate,4.8
+Data Engineering Hands-On 181,Microsoft,"airflow, spark, warehousing",Course,advanced,4.1
+Introduction to Big Data Workshop,DeepLearning.AI,"data lake, distributed computing, spark, hadoop",Course,beginner,4.3
+Advanced Web Backend for Everyone,Duke University,"node.js, express, fastapi, graphql",Course,intermediate,4.4
+Machine Learning Complete Guide 125,Google Cloud,"feature engineering, clustering, machine learning, classification",Course,intermediate,4.7
+Cloud & AWS Fundamentals,Johns Hopkins University,"lambda, ec2, aws",Course,beginner,4.3
+Introduction to Web Frontend,Duke University,"css, html, tailwind, javascript",Course,intermediate,4.2
+MLOps Complete Guide,Microsoft,"mlops, sagemaker, mlflow, docker",Course,beginner,4.8
+Cybersecurity Masterclass 264,IBM,"networking, cryptography, penetration testing",Course,intermediate,4.3
+NLP Masterclass 183,IBM,"sentiment analysis, named entity recognition, tokenization, bert",Course,intermediate,4.5
+Machine Learning Bootcamp 228,Stanford University,"clustering, machine learning, feature engineering",Course,beginner,4.2
+Foundations of Web Frontend Hands-On,Google Cloud,"javascript, redux, react",Course,intermediate,4.3
+SQL & Databases Deep Dive,Google Cloud,"mysql, mongodb, normalization, joins",Course,intermediate,4.5
+Foundations of DevOps Bootcamp,IBM,"monitoring, ci/cd, github actions, jenkins",Course,beginner,4.6
+SQL & Databases Hands-On 242,Google,"indexing, mysql, sql",Course,advanced,3.9
+Practical Cloud & AWS in Practice,AWS,"s3, aws, cloudwatch",Course,advanced,3.8
+Complete Python Programming in Practice,DeepLearning.AI,"data structures, async, python, testing",Course,beginner,4.6
+Data Visualization in Practice,Stanford University,"d3.js, dashboards, power bi",Course,intermediate,4.7
+DevOps Crash Course 116,Duke University,"ci/cd, terraform, ansible",Course,beginner,3.9
+Cloud & AWS Professional Certificate,Johns Hopkins University,"dynamodb, aws, s3, vpc",Course,advanced,4.0
+Advanced Data Engineering Masterclass,Microsoft,"batch processing, dbt, data pipelines, warehousing",Course,advanced,4.9
+Cybersecurity Capstone Project 273,DataCamp,"penetration testing, cryptography, incident response, security",Course,beginner,3.9
+Product & Analytics: Complete Guide,Google Cloud,"experimentation, metrics, sql",Course,beginner,4.8
+Big Data Fundamentals 97,University of Michigan,"big data, data lake, distributed computing, hive",Course,advanced,4.3
+Data Engineering Deep Dive 252,Google Cloud,"warehousing, kafka, spark",Course,intermediate,4.2
+Practical SQL & Databases Essentials,University of Michigan,"mysql, postgresql, normalization, joins",Course,intermediate,4.3
+Advanced SQL & Databases,DeepLearning.AI,"joins, postgresql, nosql, query optimization",Course,beginner,4.7
+MLOps: Essentials,Microsoft,"feature store, model deployment, sagemaker",Course,advanced,5.0
+Data Visualization Essentials 41,DeepLearning.AI,"tableau, power bi, d3.js, plotly",Course,advanced,4.7
+Cybersecurity Specialization,Johns Hopkins University,"penetration testing, security, networking",Course,intermediate,4.5
+Cloud & AWS Crash Course,Johns Hopkins University,"ec2, lambda, vpc, cloudwatch",Course,advanced,4.5
+Foundations of Data Analysis,IBM,"hypothesis testing, statistics, excel",Course,intermediate,4.6
+Foundations of Machine Learning Crash Course,Google,"regression, machine learning, feature engineering",Course,intermediate,4.9
+Essential Data Visualization for Everyone,DataCamp,"storytelling, dashboards, tableau, d3.js",Course,intermediate,4.7
+Web Backend Specialization 227,Google,"fastapi, authentication, express, node.js",Course,beginner,3.8
+Mobile Development Hands-On 72,DeepLearning.AI,"flutter, ios, swift",Course,intermediate,4.3
+Computer Vision: Essentials,DataCamp,"cnn, object detection, image classification",Course,beginner,3.8
+Essential Azure Cloud for Everyone,Meta,"blob storage, active directory, functions, aks",Course,beginner,4.9
+MLOps Crash Course 95,IBM,"monitoring, ci/cd, docker",Course,beginner,4.3
+Applied Computer Vision for Everyone,Imperial College London,"image classification, object detection, cnn, yolo",Course,advanced,3.9
+Introduction to Data Analysis from Scratch,University of London,"hypothesis testing, data wrangling, excel",Course,advanced,4.7
+Practical DevOps Crash Course,DataCamp,"ansible, kubernetes, ci/cd, jenkins",Course,beginner,4.6
+Web Backend: Capstone Project,Microsoft,"graphql, fastapi, express",Course,advanced,4.2
+Cybersecurity: Fundamentals,Meta,"owasp, penetration testing, incident response",Course,intermediate,4.2
+Cloud & AWS Hands-On,University of Michigan,"ec2, iam, s3, vpc",Course,intermediate,4.7
+Product & Analytics Professional Certificate,University of Michigan,"sql, experimentation, product analytics, metrics",Course,intermediate,4.3
+Mastering Cloud & AWS,Microsoft,"cloudformation, s3, dynamodb, aws",Course,intermediate,4.6
+Foundations of SQL & Databases Specialization,University of London,"postgresql, query optimization, mysql, normalization",Course,advanced,4.1
+Python Programming Complete Guide,University of Michigan,"testing, automation, async",Course,intermediate,4.4
+Computer Vision Deep Dive 102,Coursera,"computer vision, object detection, opencv",Course,advanced,4.2
+Data Analysis Capstone Project,Duke University,"pandas, eda, data cleaning, numpy",Course,advanced,5.0
+Data Engineering: in Practice,Imperial College London,"etl, dbt, kafka",Course,beginner,4.1
+Machine Learning: Specialization,Stanford University,"classification, model evaluation, regression",Course,intermediate,4.7
+Applied Cloud & AWS,Meta,"s3, dynamodb, cloudformation",Course,intermediate,4.3
+Product & Analytics from Scratch,Johns Hopkins University,"sql, kpi, dashboards",Course,beginner,4.1
+Introduction to Azure Cloud,Stanford University,"azure, blob storage, cosmos db, functions",Course,advanced,4.3
+Computer Vision Crash Course 28,IBM,"segmentation, cnn, computer vision",Course,beginner,4.3
+Statistics Complete Guide,IBM,"distributions, probability, regression",Course,advanced,4.1
+Web Frontend: Essentials,DataCamp,"typescript, react, redux, tailwind",Course,intermediate,4.1
+Essential Machine Learning Capstone Project,IBM,"classification, feature engineering, regression, clustering",Course,beginner,4.9
+SQL & Databases Essentials,Coursera,"sql, nosql, query optimization",Course,intermediate,4.1
+Advanced Data Analysis Hands-On,AWS,"data cleaning, excel, pandas",Course,beginner,4.4
+DevOps Workshop,University of London,"monitoring, kubernetes, docker, ci/cd",Course,beginner,4.5
+Introduction to DevOps,Duke University,"github actions, ansible, docker, ci/cd",Course,intermediate,4.6
+Practical Azure Cloud Professional Certificate,University of Michigan,"cosmos db, aks, azure, functions",Course,beginner,4.3
+Introduction to Web Backend Fundamentals,University of London,"microservices, authentication, express",Course,advanced,4.6
+Computer Vision Crash Course,Johns Hopkins University,"cnn, opencv, object detection",Course,beginner,4.1
+SQL & Databases Bootcamp,Imperial College London,"joins, sql, mysql, nosql",Course,advanced,4.9
+Applied Deep Learning Essentials,Duke University,"cnn, gan, attention",Course,advanced,4.9
+Cloud & AWS Masterclass,University of Michigan,"lambda, s3, vpc, cloudformation",Course,advanced,4.5
+Web Backend: Workshop,DataCamp,"fastapi, express, django",Course,beginner,4.6
+MLOps Professional Certificate 71,Microsoft,"ci/cd, docker, monitoring",Course,advanced,4.4
+Modern Data Analysis from Scratch,IBM,"statistics, eda, excel, data wrangling",Course,advanced,4.0
+Product & Analytics: Crash Course,Stanford University,"experimentation, kpi, cohort analysis, sql",Course,advanced,4.3
+Essential Data Engineering from Scratch,Johns Hopkins University,"batch processing, spark, dbt, etl",Course,intermediate,4.2
+Modern Data Visualization Fundamentals,University of Michigan,"matplotlib, tableau, d3.js",Course,advanced,4.5
+Statistics: Hands-On,University of Michigan,"bayesian, inference, a/b testing",Course,intermediate,4.6
+Web Backend Bootcamp,DataCamp,"graphql, rest api, fastapi, node.js",Course,intermediate,4.4
+Web Backend Professional Certificate 269,Google Cloud,"express, django, authentication",Course,beginner,4.9
+Product & Analytics Fundamentals,University of London,"cohort analysis, product analytics, kpi",Course,intermediate,3.8
+Modern SQL & Databases Essentials,Johns Hopkins University,"sql, mongodb, query optimization",Course,advanced,4.3
+Statistics for Everyone 133,University of Michigan,"inference, probability, bayesian, a/b testing",Course,beginner,4.0
+Mobile Development Bootcamp 253,Coursera,"kotlin, mobile ui, react native, android",Course,intermediate,4.9
+Modern Data Engineering,Stanford University,"batch processing, data pipelines, kafka, airflow",Course,intermediate,4.4
+Cybersecurity Specialization 4,DeepLearning.AI,"incident response, cryptography, firewalls, networking",Course,advanced,4.1
+Web Backend Professional Certificate,DeepLearning.AI,"rest api, microservices, django",Course,beginner,4.8
+Mastering Cloud & AWS Capstone Project,Google,"dynamodb, iam, lambda, cloudformation",Course,intermediate,4.4
+Azure Cloud: Specialization,Duke University,"azure, active directory, devops",Course,beginner,4.4
+Essential Data Engineering in Practice,IBM,"airflow, warehousing, etl, batch processing",Course,beginner,3.9
+Essential Web Backend Essentials,Meta,"rest api, fastapi, django, graphql",Course,beginner,4.7
+Web Backend Capstone Project 285,Stanford University,"graphql, microservices, express, authentication",Course,advanced,4.5
+NLP Crash Course 70,Imperial College London,"nlp, llm, embeddings, bert",Course,intermediate,4.1
+Foundations of Mobile Development Capstone Project,Duke University,"android, mobile ui, ios",Course,beginner,4.7
+Data Engineering Workshop 274,Imperial College London,"dbt, data pipelines, batch processing",Course,beginner,3.9
+Complete Python Programming,Johns Hopkins University,"oop, automation, data structures",Course,intermediate,4.0
+Big Data Workshop 298,University of London,"data lake, scala, spark",Course,beginner,4.1
+Mastering Machine Learning Workshop,IBM,"scikit-learn, model evaluation, xgboost",Course,beginner,4.2
+Azure Cloud Professional Certificate 235,Meta,"blob storage, functions, azure",Course,intermediate,4.8
+Advanced Mobile Development,Coursera,"flutter, ios, android, kotlin",Course,beginner,4.2
+Applied Web Frontend,DeepLearning.AI,"tailwind, vue, redux, typescript",Course,beginner,4.0
+Product & Analytics: Bootcamp,AWS,"product analytics, cohort analysis, experimentation",Course,beginner,4.4
+Advanced Product & Analytics,University of London,"sql, experimentation, product analytics, kpi",Course,intermediate,4.7
+Complete Data Visualization,AWS,"plotly, seaborn, power bi, d3.js",Course,beginner,3.8
+DevOps Professional Certificate,Stanford University,"monitoring, jenkins, ci/cd, ansible",Course,beginner,4.7
+Data Analysis Workshop 55,IBM,"statistics, data cleaning, numpy",Course,beginner,4.4
+Foundations of Web Backend Workshop,DeepLearning.AI,"rest api, django, fastapi",Course,intermediate,4.8
+Python Programming Workshop 75,University of Michigan,"algorithms, oop, python, data structures",Course,intermediate,4.6
+Complete Mobile Development,DataCamp,"ios, mobile ui, react native, android",Course,beginner,4.1
+Foundations of Machine Learning,Coursera,"scikit-learn, classification, clustering",Course,beginner,4.7
+Advanced Computer Vision Specialization,Microsoft,"image classification, object detection, segmentation",Course,beginner,5.0
+Modern Computer Vision Complete Guide,IBM,"segmentation, computer vision, yolo, cnn",Course,advanced,4.6
+Practical Deep Learning Hands-On,IBM,"cnn, keras, deep learning",Course,advanced,4.8
+Complete Product & Analytics Bootcamp,University of London,"kpi, cohort analysis, dashboards, experimentation",Course,beginner,4.8
+Advanced Cloud & AWS Capstone Project,Duke University,"iam, cloudwatch, dynamodb",Course,advanced,4.7
+Statistics Hands-On 282,Duke University,"a/b testing, regression, inference, bayesian",Course,advanced,4.5
+Deep Learning for Everyone,AWS,"tensorflow, rnn, gan",Course,intermediate,4.9
+Mastering SQL & Databases,Google Cloud,"sql, nosql, postgresql, query optimization",Course,intermediate,5.0
+Web Frontend Specialization 246,Google,"typescript, html, vue",Course,intermediate,4.0
+MLOps Crash Course,Google Cloud,"monitoring, feature store, docker",Course,intermediate,4.7
+Cybersecurity Deep Dive 196,DeepLearning.AI,"cryptography, penetration testing, incident response",Course,advanced,3.9
+Python Programming: Complete Guide,Google Cloud,"python, algorithms, automation, testing",Course,advanced,4.6
+Big Data: for Everyone,DeepLearning.AI,"big data, hadoop, spark",Course,beginner,4.3
+DevOps: in Practice,DataCamp,"terraform, docker, kubernetes",Course,intermediate,4.4
+Mobile Development Deep Dive 224,DeepLearning.AI,"ios, react native, kotlin",Course,beginner,4.7
+Practical SQL & Databases,Duke University,"nosql, normalization, mysql",Course,intermediate,5.0
+Machine Learning Hands-On 117,Meta,"classification, model evaluation, regression, scikit-learn",Course,advanced,4.6
+Applied Azure Cloud Bootcamp,Duke University,"cosmos db, active directory, functions, aks",Course,advanced,4.5
+Mobile Development Essentials,Google,"swift, kotlin, mobile ui, react native",Course,beginner,4.2
+MLOps: Workshop,Google,"mlflow, ci/cd, feature store",Course,intermediate,4.0
+Modern SQL & Databases Workshop,Google,"mysql, joins, sql, indexing",Course,intermediate,4.6
+Essential Machine Learning Workshop,University of London,"scikit-learn, classification, machine learning, regression",Course,intermediate,3.9
+Web Frontend Essentials,IBM,"typescript, tailwind, vue, html",Course,beginner,4.9
+Mobile Development: Masterclass,DataCamp,"react native, android, flutter",Course,advanced,4.3
+NLP Capstone Project,IBM,"named entity recognition, sentiment analysis, transformers",Course,beginner,4.4
+Web Frontend Specialization 33,DeepLearning.AI,"tailwind, html, redux",Course,advanced,4.0
+Deep Learning Complete Guide 183,DeepLearning.AI,"deep learning, transformers, cnn",Course,beginner,3.8
+Data Analysis Workshop,Google Cloud,"statistics, eda, numpy",Course,advanced,5.0
+Practical Deep Learning,Meta,"keras, cnn, rnn",Course,advanced,3.8
+Practical Deep Learning Fundamentals,DeepLearning.AI,"gan, pytorch, tensorflow, cnn",Course,advanced,4.8
+Product & Analytics Specialization,Johns Hopkins University,"dashboards, metrics, product analytics, sql",Course,advanced,4.3
+Web Frontend Crash Course,Duke University,"typescript, next.js, html",Course,advanced,4.1
+Data Analysis for Everyone 23,Microsoft,"data wrangling, hypothesis testing, pandas, excel",Course,intermediate,4.3
+Cybersecurity in Practice,Duke University,"firewalls, cryptography, owasp",Course,beginner,4.5
+Cybersecurity Crash Course,DataCamp,"incident response, owasp, firewalls",Course,intermediate,4.8
+Data Visualization Deep Dive 65,University of Michigan,"seaborn, tableau, matplotlib",Course,intermediate,4.2
+Web Backend Workshop 198,University of Michigan,"rest api, node.js, microservices, fastapi",Course,advanced,4.3
+Mastering Cybersecurity Masterclass,Meta,"cryptography, security, firewalls",Course,beginner,3.8
+Statistics: Professional Certificate,Johns Hopkins University,"bayesian, inference, regression",Course,beginner,4.8
+Web Backend: for Everyone,IBM,"authentication, node.js, express, graphql",Course,intermediate,4.2
+Practical Deep Learning Capstone Project,Google,"transformers, tensorflow, keras, pytorch",Course,advanced,5.0
+Python Programming Complete Guide 54,Coursera,"automation, async, testing",Course,beginner,4.7
+Big Data Crash Course 78,Coursera,"hadoop, big data, spark",Course,beginner,4.1
+Data Visualization: for Everyone,IBM,"plotly, d3.js, matplotlib, seaborn",Course,advanced,5.0
+Web Frontend Deep Dive 5,University of Michigan,"typescript, redux, html, next.js",Course,intermediate,4.0
+Product & Analytics Hands-On 55,AWS,"product analytics, kpi, metrics",Course,advanced,4.9
+Data Visualization: Crash Course,DataCamp,"power bi, plotly, storytelling",Course,beginner,4.4
+Deep Learning: Workshop,University of Michigan,"pytorch, tensorflow, transformers",Course,advanced,3.8
+Mastering MLOps Fundamentals,Imperial College London,"model deployment, mlops, ci/cd, monitoring",Course,intermediate,4.8
+Introduction to DevOps Masterclass,Stanford University,"docker, github actions, monitoring",Course,advanced,4.2
+Deep Learning Crash Course 88,Google Cloud,"pytorch, rnn, gan, attention",Course,advanced,4.8
+Mobile Development for Everyone 97,Imperial College London,"flutter, swift, android",Course,intermediate,4.8
+Machine Learning Specialization 212,University of Michigan,"regression, scikit-learn, model evaluation",Course,advanced,4.9
+Practical Computer Vision,Google Cloud,"opencv, image classification, object detection, segmentation",Course,advanced,4.6
+Foundations of Product & Analytics Deep Dive,AWS,"product analytics, sql, cohort analysis",Course,beginner,4.9
+MLOps Deep Dive 187,Microsoft,"mlflow, monitoring, sagemaker, mlops",Course,advanced,4.8
+Machine Learning: Essentials,Johns Hopkins University,"regression, scikit-learn, feature engineering, xgboost",Course,intermediate,4.0
+SQL & Databases Professional Certificate,University of London,"mysql, query optimization, joins",Course,advanced,4.6
+Mastering Statistics Bootcamp,University of London,"distributions, inference, bayesian, a/b testing",Course,beginner,3.9
+Mastering Azure Cloud Professional Certificate,Google,"functions, active directory, azure",Course,advanced,5.0
+Practical Machine Learning Masterclass,Coursera,"classification, feature engineering, regression, model evaluation",Course,intermediate,3.9
+SQL & Databases Workshop 217,AWS,"normalization, mysql, indexing",Course,advanced,4.4
+Cybersecurity Workshop 232,Stanford University,"cryptography, incident response, security",Course,beginner,4.5
+Data Visualization Professional Certificate 189,Microsoft,"power bi, storytelling, matplotlib, plotly",Course,advanced,4.6
+Complete Computer Vision for Everyone,DataCamp,"yolo, segmentation, object detection, opencv",Course,intermediate,4.3
+Data Engineering Bootcamp 275,DeepLearning.AI,"spark, warehousing, batch processing, kafka",Course,advanced,4.1
+Product & Analytics Masterclass,DeepLearning.AI,"sql, metrics, product analytics",Course,intermediate,4.3
+DevOps: Essentials,Coursera,"terraform, monitoring, ci/cd",Course,intermediate,4.4
+Applied Cybersecurity,Johns Hopkins University,"owasp, security, networking, penetration testing",Course,advanced,4.9
+Foundations of Python Programming Fundamentals,Coursera,"automation, testing, algorithms",Course,advanced,4.5
+MLOps in Practice 62,Meta,"mlops, monitoring, feature store, model deployment",Course,intermediate,4.5
+Essential Deep Learning,Microsoft,"deep learning, transformers, cnn, pytorch",Course,intermediate,3.9
+Foundations of Product & Analytics Crash Course,DataCamp,"dashboards, product analytics, metrics",Course,beginner,4.6
+Foundations of Cloud & AWS Hands-On,Meta,"s3, dynamodb, cloudformation, ec2",Course,intermediate,4.4
+SQL & Databases Crash Course,AWS,"mongodb, mysql, sql",Course,advanced,4.3
+Data Visualization: Professional Certificate,DeepLearning.AI,"plotly, tableau, matplotlib",Course,advanced,5.0
+Mastering Data Visualization,Google,"tableau, d3.js, matplotlib, storytelling",Course,intermediate,4.7
+MLOps in Practice 12,Stanford University,"feature store, docker, sagemaker, ci/cd",Course,intermediate,4.3
+Big Data from Scratch 245,University of Michigan,"hadoop, scala, spark, big data",Course,intermediate,4.6
+Computer Vision Specialization 176,Duke University,"image classification, segmentation, opencv",Course,advanced,4.9
+Statistics Deep Dive 100,AWS,"probability, bayesian, inference, distributions",Course,intermediate,4.2
+Complete Azure Cloud Crash Course,Imperial College London,"functions, devops, azure, aks",Course,intermediate,4.7
+Azure Cloud Crash Course,University of Michigan,"aks, blob storage, active directory",Course,beginner,4.5
+Azure Cloud Workshop 220,IBM,"active directory, devops, azure, cosmos db",Course,advanced,4.0
+Mobile Development Fundamentals 102,AWS,"ios, swift, kotlin",Course,intermediate,4.6
+Data Engineering in Practice,Coursera,"dbt, data pipelines, airflow, batch processing",Course,advanced,4.6
+Python Programming Complete Guide 211,AWS,"oop, python, data structures, algorithms",Course,advanced,4.1
+Data Engineering Fundamentals,Johns Hopkins University,"dbt, spark, batch processing",Course,intermediate,3.9
+Practical Statistics Masterclass,Coursera,"statistics, probability, regression",Course,intermediate,5.0
+Introduction to Computer Vision Crash Course,Stanford University,"image classification, cnn, computer vision",Course,advanced,3.9
+NLP Bootcamp,IBM,"llm, tokenization, transformers",Course,intermediate,4.6
+SQL & Databases: Capstone Project,University of London,"mysql, postgresql, indexing",Course,intermediate,4.1
+Applied Deep Learning Masterclass,DataCamp,"attention, pytorch, deep learning, gan",Course,intermediate,4.5
+Advanced Statistics for Everyone,Coursera,"probability, a/b testing, inference",Course,advanced,4.3
+Web Frontend for Everyone,Stanford University,"html, vue, tailwind, javascript",Course,advanced,4.8
+Machine Learning Professional Certificate 231,Imperial College London,"machine learning, xgboost, feature engineering",Course,advanced,4.6
+Computer Vision Essentials 20,IBM,"cnn, object detection, segmentation",Course,advanced,4.8
+Advanced Big Data Crash Course,Google,"scala, big data, spark",Course,beginner,3.8
+Azure Cloud from Scratch,Imperial College London,"functions, cosmos db, aks",Course,intermediate,3.9
+Essential MLOps Complete Guide,Meta,"sagemaker, ci/cd, monitoring",Course,advanced,4.7
+NLP: Hands-On,DeepLearning.AI,"bert, nlp, llm, tokenization",Course,beginner,4.4
+Mastering Cloud & AWS Bootcamp,Google Cloud,"cloudwatch, iam, vpc, dynamodb",Course,intermediate,4.6
+Product & Analytics: Hands-On,Microsoft,"kpi, metrics, product analytics, dashboards",Course,advanced,4.3
+Advanced Machine Learning,Google,"xgboost, scikit-learn, clustering, model evaluation",Course,beginner,4.3
+Machine Learning: Hands-On,Duke University,"clustering, feature engineering, scikit-learn, xgboost",Course,intermediate,4.4
+Machine Learning from Scratch 219,Stanford University,"clustering, model evaluation, feature engineering, xgboost",Course,beginner,4.5
+Python Programming Crash Course 150,DeepLearning.AI,"automation, scripting, algorithms",Course,advanced,4.8
+Applied Machine Learning Workshop,Google,"xgboost, scikit-learn, clustering, regression",Course,advanced,4.6
+Advanced DevOps,Microsoft,"github actions, kubernetes, jenkins",Course,beginner,4.0
+Advanced Deep Learning Complete Guide,DataCamp,"deep learning, pytorch, cnn, rnn",Course,intermediate,3.8
+Big Data Bootcamp 45,University of Michigan,"scala, hive, big data, distributed computing",Course,beginner,4.9
+Machine Learning: Deep Dive,Imperial College London,"scikit-learn, xgboost, classification",Course,intermediate,3.9
+Foundations of Computer Vision Capstone Project,Coursera,"segmentation, image classification, computer vision, object detection",Course,beginner,4.1
+Data Engineering: Essentials,Meta,"etl, batch processing, warehousing, kafka",Course,intermediate,4.7
+Python Programming Professional Certificate,Google Cloud,"data structures, testing, oop, async",Course,advanced,4.5
+Machine Learning for Everyone,Google Cloud,"model evaluation, feature engineering, regression",Course,beginner,4.0
+Deep Learning Professional Certificate 167,Google Cloud,"cnn, keras, tensorflow",Course,beginner,4.9
+Data Engineering: for Everyone,Johns Hopkins University,"kafka, etl, airflow",Course,advanced,3.9
+Introduction to Data Analysis Hands-On,Coursera,"statistics, hypothesis testing, eda, excel",Course,advanced,4.6
+Essential Data Analysis,Microsoft,"pandas, numpy, data wrangling",Course,intermediate,4.3
+Essential Mobile Development Capstone Project,IBM,"flutter, react native, swift, android",Course,intermediate,4.2
+MLOps Specialization,DeepLearning.AI,"model deployment, sagemaker, monitoring, ci/cd",Course,advanced,4.3
+DevOps from Scratch 213,DeepLearning.AI,"github actions, ci/cd, kubernetes, terraform",Course,advanced,3.8
+Product & Analytics: from Scratch,Imperial College London,"dashboards, metrics, sql, experimentation",Course,intermediate,4.9
+Cloud & AWS Workshop 240,Stanford University,"cloudformation, dynamodb, vpc",Course,advanced,3.9
+Applied Machine Learning in Practice,IBM,"clustering, scikit-learn, xgboost, model evaluation",Course,intermediate,4.5
+Web Backend: Hands-On,Meta,"graphql, microservices, django",Course,advanced,3.9
+MLOps Specialization 139,Meta,"feature store, mlflow, monitoring, docker",Course,advanced,4.2
+Practical Deep Learning for Everyone,Duke University,"pytorch, transformers, cnn, keras",Course,advanced,4.1
+Introduction to Cybersecurity Hands-On,Meta,"firewalls, incident response, penetration testing, networking",Course,advanced,4.2
+Data Visualization Capstone Project,IBM,"power bi, tableau, seaborn",Course,advanced,4.8
+MLOps Deep Dive 193,Imperial College London,"sagemaker, ci/cd, monitoring",Course,advanced,4.1
+Complete Cybersecurity Deep Dive,Stanford University,"owasp, cryptography, penetration testing, networking",Course,beginner,4.6
+Applied NLP,IBM,"named entity recognition, transformers, llm, sentiment analysis",Course,advanced,5.0
+Mastering NLP Crash Course,Google,"named entity recognition, sentiment analysis, embeddings",Course,beginner,4.8
+Essential Data Engineering Workshop,DataCamp,"kafka, etl, batch processing",Course,advanced,4.2
+Applied Mobile Development,AWS,"react native, ios, android",Course,beginner,4.4
+Cybersecurity Hands-On,DeepLearning.AI,"cryptography, penetration testing, owasp, firewalls",Course,intermediate,4.0
+Applied Web Backend Essentials,University of London,"express, fastapi, node.js, rest api",Course,advanced,4.3
+Web Frontend Masterclass 243,DataCamp,"vue, html, tailwind",Course,beginner,4.8
+Applied DevOps Fundamentals,Meta,"jenkins, github actions, ansible",Course,advanced,4.1
+MLOps Fundamentals,Duke University,"monitoring, docker, feature store",Course,intermediate,4.6
+SQL & Databases Specialization 60,Microsoft,"mysql, nosql, indexing",Course,beginner,4.8
+Mobile Development for Everyone,Coursera,"kotlin, android, react native",Course,beginner,4.2
+Data Analysis: Professional Certificate,Johns Hopkins University,"eda, hypothesis testing, excel",Course,advanced,4.6
+Data Visualization Professional Certificate,Google Cloud,"tableau, plotly, d3.js",Course,intermediate,4.9
+Product & Analytics Complete Guide 158,University of Michigan,"experimentation, metrics, kpi, product analytics",Course,advanced,4.1
+Complete MLOps Masterclass,Imperial College London,"mlflow, docker, mlops",Course,advanced,4.2
+Practical MLOps,Stanford University,"mlflow, ci/cd, mlops, docker",Course,advanced,3.8
+Complete Machine Learning,DeepLearning.AI,"xgboost, classification, machine learning",Course,beginner,4.1
+Deep Learning Masterclass,DeepLearning.AI,"gan, transformers, pytorch",Course,advanced,4.3
+Advanced Web Backend Deep Dive,Google,"rest api, django, microservices",Course,beginner,4.5
+Applied Data Engineering,Microsoft,"warehousing, data pipelines, kafka",Course,beginner,4.8
+Product & Analytics for Everyone,Meta,"product analytics, dashboards, kpi, sql",Course,intermediate,4.3
+Introduction to SQL & Databases,University of London,"indexing, normalization, postgresql, mongodb",Course,advanced,4.2
+Mastering Web Frontend,DeepLearning.AI,"react, javascript, html, redux",Course,advanced,5.0
+Web Backend from Scratch 49,Imperial College London,"node.js, authentication, express",Course,advanced,4.0
+Essential Web Frontend,Microsoft,"html, javascript, tailwind, typescript",Course,intermediate,3.9
+Essential Mobile Development,DataCamp,"kotlin, mobile ui, react native, flutter",Course,advanced,4.4
+Complete Web Frontend Crash Course,AWS,"redux, javascript, css",Course,advanced,4.0
+Complete Data Engineering from Scratch,DeepLearning.AI,"data pipelines, airflow, kafka",Course,advanced,4.8
+Foundations of Data Visualization in Practice,DeepLearning.AI,"dashboards, d3.js, seaborn",Course,advanced,4.1
+Machine Learning Workshop 47,DataCamp,"regression, scikit-learn, machine learning, clustering",Course,advanced,4.9
+Applied Azure Cloud Crash Course,Google,"blob storage, cosmos db, azure",Course,beginner,5.0
+Applied Product & Analytics,University of London,"sql, cohort analysis, metrics",Course,advanced,4.7
+Web Frontend Specialization 228,Coursera,"html, typescript, next.js",Course,advanced,3.8
+Complete Deep Learning,Coursera,"transformers, cnn, gan",Course,beginner,4.3
+NLP Workshop 117,University of Michigan,"named entity recognition, nlp, embeddings",Course,beginner,4.2
+Introduction to Product & Analytics,Stanford University,"cohort analysis, dashboards, experimentation, metrics",Course,intermediate,4.1
+Complete DevOps Bootcamp,Imperial College London,"monitoring, jenkins, docker, github actions",Course,advanced,4.0
+Web Backend Deep Dive 80,Johns Hopkins University,"rest api, fastapi, microservices, django",Course,intermediate,4.5
+Practical SQL & Databases for Everyone,DeepLearning.AI,"mysql, query optimization, sql, joins",Course,intermediate,4.3
+Machine Learning Capstone Project 34,Johns Hopkins University,"clustering, model evaluation, feature engineering",Course,advanced,4.6
+NLP Hands-On 268,DeepLearning.AI,"llm, sentiment analysis, transformers",Course,intermediate,4.7
+Mastering Statistics Crash Course,Johns Hopkins University,"regression, distributions, bayesian",Course,intermediate,3.8
+Cloud & AWS in Practice 223,Microsoft,"cloudwatch, lambda, s3",Course,beginner,4.1
+Web Backend Deep Dive 149,DataCamp,"node.js, graphql, rest api",Course,intermediate,4.7
+Statistics: Deep Dive,University of Michigan,"probability, statistics, inference, a/b testing",Course,beginner,4.8
+Modern Cloud & AWS Crash Course,Coursera,"cloudformation, aws, vpc",Course,intermediate,4.5
+Essential Statistics Capstone Project,Duke University,"statistics, probability, a/b testing, inference",Course,intermediate,4.2
+NLP: Bootcamp,Google Cloud,"embeddings, named entity recognition, bert, transformers",Course,advanced,4.9
+Mastering SQL & Databases Specialization,DeepLearning.AI,"indexing, mysql, query optimization, postgresql",Course,intermediate,4.8
+Modern MLOps,Microsoft,"monitoring, model deployment, mlops, ci/cd",Course,beginner,4.8
+Azure Cloud Professional Certificate 13,Microsoft,"devops, active directory, azure",Course,advanced,4.8
+Web Frontend: Capstone Project,Google,"javascript, react, html, tailwind",Course,advanced,4.2
+Computer Vision Deep Dive 140,Google,"cnn, computer vision, image classification, yolo",Course,advanced,3.8
+Advanced Web Frontend Fundamentals,Meta,"html, css, tailwind",Course,intermediate,3.9
+Data Analysis Masterclass 291,Duke University,"numpy, statistics, pandas",Course,intermediate,4.8
+MLOps for Everyone,Google,"monitoring, sagemaker, mlops, feature store",Course,intermediate,4.9
+Complete Computer Vision Crash Course,Johns Hopkins University,"object detection, yolo, computer vision",Course,advanced,4.8
+Web Backend Capstone Project 113,University of London,"microservices, graphql, node.js, express",Course,advanced,4.6
+Big Data Fundamentals 171,Microsoft,"big data, distributed computing, hadoop",Course,intermediate,4.9
+Applied Machine Learning Bootcamp,Coursera,"scikit-learn, machine learning, classification, model evaluation",Course,advanced,4.4
+Data Analysis Essentials 54,University of London,"data cleaning, statistics, hypothesis testing",Course,intermediate,4.5
+Deep Learning Essentials 17,Duke University,"keras, rnn, gan",Course,intermediate,4.8
+Python Programming Hands-On 7,Imperial College London,"automation, async, oop, python",Course,intermediate,4.6
+NLP Bootcamp 13,Johns Hopkins University,"tokenization, embeddings, bert, transformers",Course,intermediate,4.2
+Practical Data Visualization in Practice,Johns Hopkins University,"plotly, power bi, seaborn",Course,advanced,3.8
+Statistics Specialization,Duke University,"a/b testing, statistics, distributions",Course,intermediate,4.7
+Advanced Cybersecurity Deep Dive,Duke University,"incident response, penetration testing, firewalls",Course,advanced,4.5
+Applied Cloud & AWS Capstone Project,Duke University,"aws, ec2, s3, vpc",Course,intermediate,4.4
+Cybersecurity Workshop,Johns Hopkins University,"cryptography, penetration testing, firewalls, networking",Course,advanced,4.4
+Cloud & AWS: for Everyone,AWS,"cloudformation, cloudwatch, vpc",Course,advanced,4.0
+Python Programming: Capstone Project,DataCamp,"algorithms, testing, automation",Course,intermediate,5.0
+Essential Machine Learning Bootcamp,DeepLearning.AI,"xgboost, scikit-learn, classification, machine learning",Course,advanced,4.8
+Cloud & AWS from Scratch 121,AWS,"iam, lambda, ec2",Course,beginner,4.8
+Introduction to NLP Hands-On,DeepLearning.AI,"bert, transformers, tokenization, named entity recognition",Course,intermediate,3.9
+Foundations of Product & Analytics,Stanford University,"metrics, kpi, dashboards, experimentation",Course,advanced,4.9
+Data Engineering: Workshop,Microsoft,"batch processing, etl, spark",Course,intermediate,4.1
+Data Visualization Crash Course,Duke University,"storytelling, seaborn, tableau, power bi",Course,beginner,4.8
+Data Engineering Crash Course 131,Imperial College London,"spark, data pipelines, airflow, etl",Course,advanced,4.1
+Statistics: in Practice,Google Cloud,"statistics, probability, bayesian, inference",Course,advanced,4.2
+Statistics Hands-On,DataCamp,"probability, inference, distributions, a/b testing",Course,intermediate,3.9
+Complete Web Backend Professional Certificate,Meta,"express, rest api, graphql",Course,intermediate,4.2
+Applied Data Engineering Essentials,DeepLearning.AI,"kafka, spark, etl, batch processing",Course,intermediate,4.9
+Machine Learning Bootcamp 159,Google Cloud,"model evaluation, scikit-learn, feature engineering, xgboost",Course,advanced,4.1
+Azure Cloud Specialization 277,Coursera,"aks, cosmos db, active directory, azure",Course,intermediate,3.9
+Computer Vision Complete Guide 166,University of London,"yolo, computer vision, image classification",Course,intermediate,4.1
+Advanced Web Frontend Professional Certificate,Google,"typescript, vue, react, javascript",Course,intermediate,4.6
+Big Data: Deep Dive,Microsoft,"hadoop, distributed computing, spark",Course,intermediate,4.8
+Machine Learning Complete Guide 239,Google,"regression, xgboost, model evaluation, machine learning",Course,advanced,4.5
+Deep Learning: Deep Dive,University of London,"tensorflow, gan, deep learning",Course,beginner,4.0
+Introduction to Data Visualization Bootcamp,Microsoft,"power bi, plotly, dashboards, matplotlib",Course,beginner,4.2
+Python Programming: from Scratch,Stanford University,"scripting, automation, data structures, testing",Course,intermediate,4.5
+Foundations of Web Frontend Specialization,DeepLearning.AI,"html, tailwind, javascript",Course,intermediate,4.4
+Practical Computer Vision Complete Guide,Duke University,"computer vision, cnn, opencv",Course,beginner,4.1
+Statistics: Masterclass,DeepLearning.AI,"probability, regression, statistics, inference",Course,intermediate,3.9
+Big Data: Bootcamp,Google,"data lake, hive, scala, big data",Course,beginner,4.6
+Data Visualization: Masterclass,IBM,"power bi, d3.js, matplotlib, tableau",Course,intermediate,4.5
+Python Programming Deep Dive 55,Google Cloud,"async, testing, data structures",Course,beginner,3.8
+MLOps: Crash Course,Meta,"monitoring, mlops, sagemaker, feature store",Course,intermediate,4.8
+Applied Product & Analytics Workshop,University of Michigan,"product analytics, kpi, experimentation, sql",Course,advanced,4.5
+Modern Data Analysis Professional Certificate,Coursera,"pandas, eda, excel, data wrangling",Course,beginner,4.5
+Azure Cloud: Capstone Project,DataCamp,"functions, aks, azure",Course,intermediate,4.1
+NLP Professional Certificate,University of Michigan,"embeddings, sentiment analysis, named entity recognition, nlp",Course,intermediate,3.9
+Machine Learning: from Scratch,IBM,"classification, machine learning, model evaluation",Course,intermediate,4.5
+Advanced MLOps,University of London,"ci/cd, mlops, sagemaker",Course,intermediate,4.2
+Applied NLP Crash Course,Stanford University,"llm, transformers, embeddings, tokenization",Course,advanced,4.4
+Computer Vision: Crash Course,Meta,"image classification, opencv, object detection, cnn",Course,beginner,4.1
+Mastering MLOps for Everyone,DataCamp,"ci/cd, monitoring, docker",Course,beginner,4.8
+Complete Cloud & AWS in Practice,DeepLearning.AI,"iam, dynamodb, aws, cloudformation",Course,intermediate,3.8
+Data Analysis: in Practice,Meta,"eda, pandas, hypothesis testing, statistics",Course,beginner,4.9
+Web Frontend for Everyone 118,Microsoft,"next.js, css, vue",Course,intermediate,4.3
+Python Programming Essentials,Johns Hopkins University,"algorithms, testing, automation",Course,advanced,4.8
+Essential Python Programming,Meta,"algorithms, async, data structures",Course,advanced,3.9
+DevOps Bootcamp,Johns Hopkins University,"ansible, ci/cd, jenkins",Course,intermediate,4.1
+Mastering Web Backend Specialization,Meta,"node.js, graphql, microservices, django",Course,advanced,4.3
+Computer Vision Deep Dive 11,Microsoft,"cnn, segmentation, computer vision, object detection",Course,beginner,4.1
+Applied Statistics in Practice,Meta,"regression, inference, bayesian, distributions",Course,intermediate,4.3
+Computer Vision: Masterclass,University of London,"yolo, segmentation, cnn, computer vision",Course,beginner,4.0
+Azure Cloud Specialization,Imperial College London,"blob storage, functions, devops, active directory",Course,intermediate,4.6
+Essential MLOps,Duke University,"monitoring, mlflow, sagemaker, ci/cd",Course,advanced,4.3
+Mastering Web Frontend Workshop,University of Michigan,"redux, react, vue, tailwind",Course,advanced,5.0
+Modern SQL & Databases Complete Guide,Microsoft,"mongodb, postgresql, nosql",Course,advanced,4.7
+Modern Deep Learning Essentials,Google Cloud,"cnn, tensorflow, gan",Course,beginner,4.6
+Complete SQL & Databases Workshop,Duke University,"mysql, joins, query optimization, indexing",Course,intermediate,4.7
+Python Programming Hands-On,AWS,"data structures, testing, oop",Course,advanced,4.8
+Azure Cloud Workshop 140,DataCamp,"cosmos db, aks, blob storage",Course,beginner,4.3
+Web Backend: Professional Certificate,Meta,"authentication, rest api, fastapi, node.js",Course,advanced,3.9
+Statistics Capstone Project,Google Cloud,"probability, a/b testing, statistics",Course,advanced,3.9
+Practical Data Visualization Bootcamp,Stanford University,"power bi, storytelling, seaborn",Course,intermediate,4.6
+Big Data Crash Course 97,Google Cloud,"distributed computing, big data, spark",Course,intermediate,3.9
+Introduction to Data Visualization,Microsoft,"plotly, power bi, matplotlib, seaborn",Course,advanced,4.5
+Data Engineering Crash Course 259,Duke University,"spark, dbt, kafka, etl",Course,intermediate,4.3
+SQL & Databases: Complete Guide,Meta,"mongodb, mysql, joins, query optimization",Course,beginner,4.5
+Data Analysis Workshop 105,Meta,"eda, statistics, data cleaning, hypothesis testing",Course,intermediate,4.4
+Mastering Azure Cloud Hands-On,Google Cloud,"devops, functions, azure",Course,intermediate,4.6
+Complete Data Visualization in Practice,Johns Hopkins University,"plotly, seaborn, storytelling",Course,advanced,4.8
+Cybersecurity Bootcamp 158,DeepLearning.AI,"owasp, incident response, cryptography",Course,beginner,4.3
+NLP: in Practice,Johns Hopkins University,"tokenization, bert, embeddings, transformers",Course,beginner,4.3
+Data Engineering Capstone Project 9,Coursera,"etl, spark, airflow",Course,beginner,4.9
+Essential Data Visualization in Practice,University of Michigan,"d3.js, matplotlib, dashboards, power bi",Course,advanced,4.0
+Foundations of Machine Learning Complete Guide,Meta,"regression, clustering, model evaluation, xgboost",Course,advanced,4.2
+Essential NLP from Scratch,Meta,"bert, tokenization, nlp, sentiment analysis",Course,advanced,4.5
+Complete Azure Cloud Hands-On,Johns Hopkins University,"devops, active directory, functions, aks",Course,advanced,4.6
+Practical Big Data Masterclass,Stanford University,"scala, hive, spark, distributed computing",Course,advanced,4.9
+Computer Vision Specialization,Meta,"yolo, opencv, image classification",Course,advanced,4.5
+Python Programming Capstone Project 34,Microsoft,"algorithms, scripting, async, oop",Course,beginner,4.6
+Machine Learning Masterclass,DataCamp,"model evaluation, machine learning, classification, regression",Course,intermediate,4.9
+Complete Cybersecurity,Microsoft,"penetration testing, firewalls, security",Course,beginner,4.0
+Mobile Development Professional Certificate,DeepLearning.AI,"swift, kotlin, mobile ui, flutter",Course,intermediate,4.0
+Web Backend Capstone Project 54,Imperial College London,"django, express, authentication, rest api",Course,intermediate,4.7
+Data Visualization: from Scratch,Microsoft,"seaborn, matplotlib, storytelling",Course,beginner,4.0
+Data Analysis Specialization,Microsoft,"eda, numpy, statistics",Course,beginner,4.3
+Cloud & AWS from Scratch,Imperial College London,"cloudwatch, aws, lambda",Course,beginner,4.6
+Modern Azure Cloud,University of Michigan,"active directory, blob storage, devops, azure",Course,advanced,4.2
+Advanced Web Frontend Specialization,Google Cloud,"css, redux, tailwind, next.js",Course,beginner,4.2
+Modern Web Backend Crash Course,Google,"express, graphql, rest api",Course,beginner,4.8
+Product & Analytics Bootcamp 74,Microsoft,"cohort analysis, product analytics, experimentation, kpi",Course,intermediate,4.0
+Applied MLOps,University of Michigan,"monitoring, ci/cd, mlops",Course,advanced,4.8
+Complete Mobile Development Specialization,Stanford University,"mobile ui, ios, flutter, kotlin",Course,advanced,4.9
+Foundations of Machine Learning Workshop,University of London,"regression, scikit-learn, machine learning, classification",Course,intermediate,4.4
+Machine Learning: Bootcamp,Imperial College London,"xgboost, classification, clustering",Course,advanced,4.6
+Product & Analytics for Everyone 159,Microsoft,"experimentation, cohort analysis, metrics, product analytics",Course,intermediate,4.2
+Essential SQL & Databases Essentials,University of London,"sql, postgresql, nosql, mysql",Course,advanced,3.8
+Cybersecurity Workshop 73,Meta,"networking, security, firewalls, cryptography",Course,advanced,4.7
+MLOps: Specialization,Johns Hopkins University,"mlops, mlflow, feature store",Course,advanced,4.3
+Practical Data Engineering,Microsoft,"warehousing, data pipelines, airflow",Course,intermediate,4.2
+Big Data Crash Course 291,Duke University,"data lake, hive, spark",Course,intermediate,4.1
+Applied Data Engineering Fundamentals,DeepLearning.AI,"kafka, dbt, airflow",Course,intermediate,4.8
+Cybersecurity Masterclass 65,Google,"security, incident response, owasp",Course,advanced,4.9
+Data Analysis Crash Course,AWS,"excel, statistics, hypothesis testing",Course,advanced,4.5
+Applied Deep Learning Capstone Project,University of London,"attention, transformers, pytorch, cnn",Course,advanced,3.8
+Computer Vision: Capstone Project,Stanford University,"segmentation, object detection, computer vision",Course,beginner,4.1
+Cybersecurity Fundamentals,University of London,"penetration testing, firewalls, security",Course,intermediate,4.4
+Data Engineering: Hands-On,Google,"dbt, airflow, warehousing",Course,intermediate,3.9
+MLOps Essentials,University of London,"model deployment, mlflow, ci/cd",Course,intermediate,4.0
+MLOps from Scratch,DataCamp,"ci/cd, sagemaker, monitoring",Course,advanced,4.0
+Advanced Web Backend,Microsoft,"microservices, express, fastapi, django",Course,advanced,4.1
+Essential Web Backend Masterclass,Meta,"django, authentication, node.js",Course,intermediate,4.1
+Mobile Development Essentials 10,Google,"android, react native, mobile ui",Course,beginner,4.1
+NLP: Deep Dive,Google Cloud,"tokenization, sentiment analysis, llm, embeddings",Course,advanced,4.1
+Foundations of NLP in Practice,Coursera,"nlp, transformers, tokenization",Course,advanced,3.9
+Mastering Big Data,DataCamp,"hive, big data, scala, distributed computing",Course,beginner,4.2
+Practical Mobile Development Deep Dive,Google,"flutter, mobile ui, ios",Course,beginner,3.9
+Mastering NLP Workshop,Stanford University,"embeddings, named entity recognition, nlp, transformers",Course,advanced,5.0
+Applied Big Data Capstone Project,Coursera,"distributed computing, data lake, spark",Course,intermediate,4.8
+Applied Cybersecurity Hands-On,DataCamp,"security, cryptography, owasp, penetration testing",Course,intermediate,4.9
+Data Visualization: Deep Dive,Duke University,"seaborn, storytelling, d3.js",Course,advanced,3.9
+Data Engineering in Practice 273,Meta,"batch processing, warehousing, airflow, etl",Course,advanced,4.6
+Statistics: Bootcamp,Google,"a/b testing, inference, probability",Course,intermediate,4.8
+Practical Product & Analytics Capstone Project,DeepLearning.AI,"product analytics, metrics, kpi",Course,beginner,4.7
+Complete Product & Analytics from Scratch,IBM,"experimentation, cohort analysis, kpi, dashboards",Course,advanced,3.9
+Data Visualization from Scratch 38,University of London,"matplotlib, storytelling, plotly",Course,beginner,4.4
+Essential NLP,Google Cloud,"llm, tokenization, sentiment analysis, bert",Course,advanced,3.9
+Machine Learning Workshop 148,IBM,"scikit-learn, model evaluation, regression",Course,advanced,4.0
+Machine Learning Bootcamp 293,Google Cloud,"clustering, model evaluation, feature engineering, xgboost",Course,beginner,4.6
+Computer Vision Complete Guide,Meta,"computer vision, object detection, yolo, segmentation",Course,intermediate,3.8
+Modern Cybersecurity Crash Course,Microsoft,"security, networking, penetration testing",Course,intermediate,4.1
+Foundations of Cybersecurity,Meta,"owasp, penetration testing, networking",Course,beginner,4.2
+Data Analysis for Everyone 173,DataCamp,"excel, eda, pandas, numpy",Course,intermediate,4.7
+Web Frontend: in Practice,Microsoft,"react, html, css",Course,intermediate,4.1
+DevOps Essentials 90,Johns Hopkins University,"terraform, kubernetes, jenkins",Course,beginner,3.9
+Azure Cloud Fundamentals 15,Imperial College London,"functions, cosmos db, aks",Course,beginner,4.1
+Web Backend: Bootcamp,AWS,"microservices, graphql, express, django",Course,intermediate,4.8
+Modern Cybersecurity,Duke University,"firewalls, cryptography, networking",Course,intermediate,4.9
+Web Backend Masterclass,Coursera,"authentication, microservices, express",Course,beginner,4.5
+Data Visualization Essentials 52,Microsoft,"d3.js, dashboards, tableau",Course,beginner,4.7
+NLP Complete Guide 182,Google Cloud,"bert, named entity recognition, nlp, transformers",Course,advanced,4.2
+Practical MLOps Professional Certificate,Johns Hopkins University,"ci/cd, feature store, mlflow",Course,intermediate,4.6
+Applied Data Visualization Professional Certificate,Johns Hopkins University,"matplotlib, d3.js, seaborn, plotly",Course,advanced,4.8
+Python Programming Complete Guide 86,Johns Hopkins University,"python, automation, scripting",Course,intermediate,4.8
+Data Analysis Bootcamp 11,Duke University,"hypothesis testing, numpy, excel",Course,advanced,4.0
+Python Programming Workshop 280,Johns Hopkins University,"oop, automation, scripting",Course,intermediate,4.6
+Computer Vision Complete Guide 150,Meta,"yolo, cnn, computer vision, image classification",Course,advanced,4.9
+Data Analysis Essentials 173,Imperial College London,"excel, data wrangling, eda, pandas",Course,advanced,3.9
+Web Backend Essentials 205,Imperial College London,"graphql, django, authentication",Course,advanced,4.9
+SQL & Databases Deep Dive 4,Stanford University,"query optimization, indexing, nosql, mysql",Course,intermediate,4.5
+NLP: Masterclass,AWS,"transformers, sentiment analysis, llm, embeddings",Course,beginner,3.8
+DevOps: Fundamentals,IBM,"terraform, ci/cd, docker",Course,advanced,4.3
+Azure Cloud from Scratch 291,Google Cloud,"active directory, azure, blob storage",Course,beginner,3.9
+Data Visualization Masterclass 186,Imperial College London,"plotly, tableau, matplotlib, d3.js",Course,advanced,4.2
+Big Data Fundamentals 77,Microsoft,"spark, data lake, hadoop",Course,intermediate,4.0
+Complete Big Data Masterclass,Microsoft,"spark, distributed computing, big data, hive",Course,intermediate,4.7
+Foundations of Deep Learning,Stanford University,"keras, rnn, cnn, pytorch",Course,advanced,4.2
+Mastering Mobile Development,Stanford University,"flutter, ios, android",Course,beginner,3.9
+Practical Azure Cloud,AWS,"blob storage, azure, functions",Course,beginner,4.8
+Cloud & AWS Crash Course 81,Stanford University,"ec2, dynamodb, aws, vpc",Course,advanced,4.1
+Azure Cloud: Deep Dive,Johns Hopkins University,"devops, blob storage, active directory",Course,intermediate,4.4
+Machine Learning Workshop 9,Google,"xgboost, machine learning, scikit-learn, model evaluation",Course,advanced,3.8
+Modern Statistics,DeepLearning.AI,"distributions, regression, inference",Course,beginner,4.7
+SQL & Databases: Bootcamp,Johns Hopkins University,"normalization, indexing, nosql",Course,intermediate,4.9
+SQL & Databases Capstone Project 145,Imperial College London,"query optimization, postgresql, mysql, indexing",Course,advanced,5.0
+DevOps Masterclass 86,Duke University,"ansible, terraform, ci/cd, github actions",Course,beginner,4.2
+Introduction to DevOps in Practice,Google,"ci/cd, docker, github actions, ansible",Course,beginner,4.0
+Data Engineering: Fundamentals,Microsoft,"airflow, spark, dbt",Course,advanced,4.5
+Product & Analytics in Practice,DeepLearning.AI,"kpi, product analytics, experimentation",Course,beginner,4.3
+Web Backend in Practice 236,DeepLearning.AI,"django, authentication, express",Course,intermediate,5.0
+Applied Python Programming Bootcamp,Imperial College London,"testing, oop, python",Course,beginner,4.6
+Applied Web Frontend Bootcamp,Coursera,"typescript, redux, react",Course,advanced,4.6
+Product & Analytics: Essentials,DataCamp,"metrics, sql, dashboards, cohort analysis",Course,advanced,4.4
+Complete Web Backend Workshop,Imperial College London,"fastapi, microservices, rest api",Course,beginner,4.8
+Data Engineering from Scratch,Meta,"kafka, airflow, etl, warehousing",Course,intermediate,4.6
+Essential Deep Learning in Practice,University of Michigan,"keras, pytorch, gan",Course,intermediate,3.9
+Modern SQL & Databases Hands-On,Meta,"nosql, postgresql, normalization, sql",Course,advanced,4.7
+Introduction to Data Analysis,Duke University,"data wrangling, numpy, excel, pandas",Course,intermediate,4.6
+Foundations of Statistics Workshop,AWS,"probability, inference, distributions",Course,advanced,4.3
+Cloud & AWS: Hands-On,Duke University,"dynamodb, cloudwatch, ec2, vpc",Course,advanced,4.0
+SQL & Databases in Practice 95,IBM,"postgresql, mysql, nosql",Course,advanced,4.7
+Introduction to Web Frontend in Practice,Coursera,"next.js, vue, javascript",Course,advanced,4.8
+Data Analysis for Everyone 92,Stanford University,"data cleaning, numpy, pandas",Course,beginner,4.7
+Introduction to Big Data from Scratch,Microsoft,"data lake, scala, spark, big data",Course,beginner,4.4
+Python Programming in Practice,Microsoft,"testing, async, oop, algorithms",Course,intermediate,4.0
+Computer Vision: in Practice,Google Cloud,"yolo, opencv, computer vision",Course,intermediate,4.2
+DevOps Crash Course 270,Google Cloud,"kubernetes, terraform, docker, ansible",Course,beginner,3.9
+Foundations of Data Analysis Capstone Project,IBM,"hypothesis testing, numpy, pandas",Course,beginner,4.3
+Product & Analytics: Masterclass,Coursera,"experimentation, sql, cohort analysis",Course,advanced,4.1
+Big Data Bootcamp,AWS,"scala, distributed computing, data lake",Course,beginner,4.6
+Applied DevOps Capstone Project,University of Michigan,"ansible, github actions, jenkins",Course,advanced,4.0
+MLOps Specialization 283,Johns Hopkins University,"ci/cd, model deployment, monitoring",Course,intermediate,4.6
+Data Visualization: Bootcamp,University of Michigan,"plotly, d3.js, seaborn, tableau",Course,beginner,4.4
+Data Analysis Fundamentals 242,Meta,"numpy, excel, hypothesis testing",Course,advanced,4.2
+Python Programming Hands-On 166,Microsoft,"testing, scripting, python, data structures",Course,intermediate,4.2
+Azure Cloud Bootcamp,University of Michigan,"azure, devops, blob storage, active directory",Course,beginner,4.3
+Machine Learning Hands-On 72,DataCamp,"classification, regression, xgboost, scikit-learn",Course,intermediate,4.7
+Practical Deep Learning in Practice,DataCamp,"cnn, keras, attention",Course,advanced,4.3
+Big Data Essentials 143,Stanford University,"data lake, spark, big data",Course,intermediate,4.0
+Computer Vision Bootcamp,University of London,"computer vision, object detection, opencv, segmentation",Course,advanced,4.2
+Advanced Big Data Complete Guide,Google Cloud,"data lake, distributed computing, spark",Course,beginner,4.4
+Modern Statistics Professional Certificate,IBM,"a/b testing, regression, statistics",Course,advanced,4.8
+Practical Mobile Development,Imperial College London,"ios, android, mobile ui, swift",Course,advanced,4.8
+Data Visualization from Scratch 221,University of London,"plotly, matplotlib, tableau, d3.js",Course,advanced,5.0
+Deep Learning: Bootcamp,IBM,"tensorflow, cnn, rnn, deep learning",Course,beginner,4.4
+Web Frontend Bootcamp 259,Johns Hopkins University,"html, redux, typescript",Course,intermediate,4.1
+Applied Data Analysis,Stanford University,"pandas, data cleaning, statistics, hypothesis testing",Course,intermediate,4.8
+Computer Vision: Professional Certificate,Duke University,"segmentation, yolo, image classification",Course,intermediate,5.0
+Data Engineering Workshop 8,AWS,"warehousing, airflow, spark",Course,beginner,4.0
+SQL & Databases: Essentials,DataCamp,"mongodb, nosql, postgresql",Course,beginner,4.7
+Introduction to Statistics,AWS,"a/b testing, statistics, bayesian",Course,advanced,4.3
+Applied MLOps Hands-On,Johns Hopkins University,"mlflow, feature store, sagemaker, monitoring",Course,intermediate,4.5
+Practical NLP,Johns Hopkins University,"bert, transformers, tokenization, nlp",Course,advanced,4.5
+Data Analysis Specialization 150,Google,"excel, eda, pandas",Course,beginner,4.4
+Introduction to Azure Cloud Essentials,Google Cloud,"blob storage, azure, devops",Course,intermediate,3.9
+Practical Cybersecurity for Everyone,Google,"penetration testing, cryptography, security, owasp",Course,advanced,4.4
+Complete DevOps Masterclass,Microsoft,"ansible, kubernetes, monitoring, terraform",Course,advanced,4.3
+Cloud & AWS Essentials,Stanford University,"vpc, aws, cloudwatch",Course,beginner,4.9
+Essential Web Backend Specialization,DataCamp,"node.js, microservices, rest api",Course,advanced,4.4
+SQL & Databases in Practice 230,University of Michigan,"indexing, mysql, joins",Course,advanced,4.8
+Deep Learning: Capstone Project,DataCamp,"tensorflow, pytorch, attention, transformers",Course,intermediate,4.0
+NLP: Complete Guide,Johns Hopkins University,"transformers, nlp, tokenization",Course,beginner,3.9
+Machine Learning Complete Guide,IBM,"scikit-learn, xgboost, feature engineering",Course,intermediate,4.6
+Complete Data Engineering Crash Course,University of Michigan,"airflow, spark, warehousing",Course,intermediate,4.0
+Advanced Data Engineering Specialization,Microsoft,"batch processing, warehousing, etl, spark",Course,intermediate,4.6
+Computer Vision: Deep Dive,DeepLearning.AI,"object detection, yolo, cnn",Course,advanced,3.9
+Essential DevOps Specialization,Google,"kubernetes, jenkins, ansible, terraform",Course,intermediate,4.2
+Practical Statistics from Scratch,Microsoft,"regression, distributions, probability",Course,intermediate,4.6
+Foundations of Data Engineering Hands-On,IBM,"etl, data pipelines, warehousing",Course,beginner,3.8
+Product & Analytics Deep Dive 66,IBM,"product analytics, sql, cohort analysis",Course,beginner,4.2
+Deep Learning Specialization 117,Meta,"tensorflow, rnn, pytorch, keras",Course,intermediate,4.4
+Cybersecurity Capstone Project 107,Google,"owasp, incident response, security, penetration testing",Course,beginner,4.0
+NLP Workshop 134,Imperial College London,"bert, tokenization, llm, transformers",Course,intermediate,4.8
+Mastering Product & Analytics,University of Michigan,"dashboards, sql, product analytics, cohort analysis",Course,intermediate,4.4
+Cloud & AWS Fundamentals 31,Stanford University,"ec2, cloudwatch, cloudformation, dynamodb",Course,advanced,4.5
+Cloud & AWS Specialization,Imperial College London,"cloudwatch, ec2, vpc, dynamodb",Course,beginner,4.2
+Complete Computer Vision,University of Michigan,"object detection, opencv, yolo, image classification",Course,beginner,4.9
+Introduction to Python Programming in Practice,University of London,"algorithms, oop, automation",Course,advanced,4.4
+Computer Vision: Hands-On,University of Michigan,"segmentation, cnn, image classification",Course,advanced,3.9
+Introduction to Cloud & AWS Masterclass,Coursera,"aws, dynamodb, cloudformation",Course,beginner,4.4
+Practical Machine Learning Specialization,Google,"machine learning, xgboost, regression, classification",Course,advanced,4.8
+Essential Cybersecurity,University of London,"penetration testing, security, owasp, networking",Course,intermediate,4.1
+Web Backend Specialization,Stanford University,"authentication, django, node.js",Course,intermediate,3.9
+Mastering Web Frontend Essentials,University of London,"vue, redux, typescript, javascript",Course,intermediate,3.8
+Data Analysis Professional Certificate,DataCamp,"pandas, data cleaning, numpy, statistics",Course,beginner,3.8
+Essential Data Visualization Specialization,IBM,"storytelling, plotly, d3.js",Course,beginner,4.6
+Advanced Data Analysis Specialization,Google,"hypothesis testing, data cleaning, excel",Course,beginner,4.1
+Big Data Capstone Project 115,IBM,"hadoop, hive, data lake, distributed computing",Course,intermediate,4.7
+Big Data: Hands-On,University of Michigan,"hive, spark, big data, data lake",Course,intermediate,4.6
+Web Frontend Workshop 60,Microsoft,"css, html, react",Course,beginner,4.4
