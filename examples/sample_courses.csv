@@ -1,0 +1,129 @@
+course,partner,skills,certificatetype,level,rating
+Cloud & AWS Specialization,Microsoft,"devops, aws, ec2",Course,advanced,4.0
+Cybersecurity in Practice,Microsoft,"pentesting, firewall, networking",Course,advanced,4.3
+Web Development Masterclass,Meta,"node, react, javascript",Course,intermediate,4.6
+Cybersecurity Essentials,Google,"pentesting, firewall, networking",Course,intermediate,4.3
+Cybersecurity Fundamentals,DeepLearning.AI,"security, cryptography, firewall",Course,advanced,4.8
+Cybersecurity in Practice,AWS,"pentesting, firewall, networking",Course,intermediate,4.9
+Web Development in Practice,DeepLearning.AI,"javascript, react, typescript",Course,intermediate,4.1
+Data & SQL Specialization,Stanford,"analytics, sql, pandas",Course,advanced,4.9
+Cybersecurity Specialization,DeepLearning.AI,"security, networking, cryptography",Course,advanced,4.5
+Data & SQL Essentials,Coursera,"sql, databases, analytics",Course,beginner,4.5
+Web Development Masterclass,Coursera,"html, react, frontend",Course,advanced,4.8
+Machine Learning Masterclass,Coursera,"classification, regression, machine learning",Course,intermediate,4.6
+Data Visualization Fundamentals,Google,"matplotlib, dashboards, visualization",Course,intermediate,4.4
+Cloud & AWS Essentials,IBM,"devops, lambda, docker",Course,beginner,4.9
+Deep Learning Masterclass,Stanford,"transformers, tensorflow, cnn",Course,beginner,4.5
+Data & SQL Masterclass,Coursera,"sql, databases, analytics",Course,beginner,4.5
+Data Visualization Fundamentals,IBM,"dashboards, matplotlib, visualization",Course,intermediate,4.1
+Deep Learning Essentials,DeepLearning.AI,"deep learning, neural networks, pytorch",Course,beginner,4.1
+Python Programming for Everyone,Google,"automation, python, oop",Course,intermediate,4.1
+Data Visualization Bootcamp,Meta,"dashboards, visualization, plotly",Course,intermediate,4.7
+Deep Learning Masterclass,Google,"pytorch, transformers, deep learning",Course,beginner,4.6
+Data & SQL Bootcamp,DeepLearning.AI,"databases, sql, data analysis",Course,advanced,4.2
+Deep Learning Bootcamp,IBM,"transformers, neural networks, deep learning",Course,beginner,4.4
+Web Development Specialization,Meta,"javascript, node, html",Course,advanced,4.3
+Cybersecurity Bootcamp,AWS,"cryptography, networking, firewall",Course,advanced,4.6
+Cybersecurity Masterclass,DeepLearning.AI,"networking, cryptography, firewall",Course,beginner,4.6
+Data & SQL Deep Dive,Google,"etl, databases, pandas",Course,advanced,4.5
+Machine Learning for Everyone,AWS,"classification, machine learning, regression",Course,advanced,4.1
+Cybersecurity Fundamentals,Stanford,"cryptography, security, networking",Course,intermediate,4.8
+Python Programming Masterclass,AWS,"python, programming, oop",Course,intermediate,4.4
+Deep Learning in Practice,Coursera,"deep learning, tensorflow, transformers",Course,advanced,4.1
+Machine Learning Bootcamp,Meta,"scikit-learn, machine learning, feature engineering",Course,intermediate,4.6
+Machine Learning Deep Dive,Google,"machine learning, classification, scikit-learn",Course,advanced,4.5
+Cloud & AWS for Everyone,DeepLearning.AI,"ec2, kubernetes, cloud",Course,intermediate,4.1
+Cybersecurity Fundamentals,DeepLearning.AI,"security, networking, cryptography",Course,intermediate,4.3
+Cloud & AWS Bootcamp,DeepLearning.AI,"lambda, devops, ec2",Course,intermediate,4.5
+Web Development Bootcamp,Coursera,"frontend, css, typescript",Course,intermediate,4.2
+Data Visualization for Everyone,AWS,"plotly, dashboards, matplotlib",Course,beginner,4.7
+Data Visualization Fundamentals,AWS,"visualization, matplotlib, dashboards",Course,beginner,4.9
+Deep Learning Fundamentals,DeepLearning.AI,"cnn, tensorflow, pytorch",Course,advanced,4.8
+Data Visualization Bootcamp,Microsoft,"plotly, visualization, dashboards",Course,advanced,4.6
+Cloud & AWS Essentials,Coursera,"s3, aws, cloud",Course,beginner,4.2
+Data Visualization Masterclass,AWS,"charts, dashboards, plotly",Course,intermediate,4.4
+Cybersecurity Specialization,Coursera,"cryptography, networking, security",Course,intermediate,4.2
+Web Development Bootcamp,Microsoft,"node, css, typescript",Course,beginner,4.8
+Python Programming for Everyone,Coursera,"python, programming, scripting",Course,advanced,4.1
+Data Visualization for Everyone,Stanford,"visualization, plotly, charts",Course,beginner,4.4
+Machine Learning Bootcamp,DeepLearning.AI,"regression, feature engineering, scikit-learn",Course,intermediate,4.5
+Deep Learning Specialization,Google,"transformers, tensorflow, cnn",Course,advanced,4.0
+Python Programming Specialization,Meta,"oop, python, scripting",Course,advanced,4.3
+Python Programming in Practice,Stanford,"oop, scripting, python",Course,intermediate,4.6
+Machine Learning Masterclass,IBM,"classification, machine learning, feature engineering",Course,beginner,4.5
+Data Visualization Specialization,AWS,"charts, visualization, dashboards",Course,intermediate,4.7
+Python Programming Essentials,Microsoft,"oop, python, scripting",Course,intermediate,4.6
+Web Development Fundamentals,Meta,"react, html, css",Course,beginner,4.3
+Cybersecurity Specialization,IBM,"pentesting, security, networking",Course,advanced,4.9
+Web Development Bootcamp,Google,"react, typescript, frontend",Course,intermediate,4.9
+Cloud & AWS Essentials,Coursera,"ec2, s3, aws",Course,advanced,4.1
+Cloud & AWS Masterclass,Microsoft,"devops, cloud, ec2",Course,beginner,4.7
+Web Development Essentials,AWS,"javascript, node, html",Course,advanced,4.3
+Cybersecurity Bootcamp,AWS,"pentesting, cryptography, networking",Course,beginner,4.5
+Deep Learning for Everyone,Meta,"transformers, cnn, neural networks",Course,intermediate,4.1
+Web Development Fundamentals,IBM,"node, react, typescript",Course,intermediate,4.7
+Data Visualization Essentials,Microsoft,"charts, visualization, dashboards",Course,intermediate,4.9
+Deep Learning Deep Dive,Coursera,"pytorch, transformers, neural networks",Course,beginner,4.7
+Deep Learning Masterclass,Coursera,"cnn, tensorflow, transformers",Course,intermediate,4.8
+Cybersecurity Masterclass,Stanford,"security, networking, firewall",Course,intermediate,4.6
+Python Programming Bootcamp,Coursera,"scripting, python, automation",Course,beginner,4.4
+Deep Learning in Practice,AWS,"deep learning, tensorflow, transformers",Course,advanced,4.3
+Web Development for Everyone,IBM,"react, javascript, frontend",Course,intermediate,4.3
+Deep Learning for Everyone,Stanford,"pytorch, neural networks, tensorflow",Course,advanced,4.8
+Cloud & AWS Fundamentals,DeepLearning.AI,"ec2, kubernetes, docker",Course,beginner,4.0
+Data Visualization Masterclass,Stanford,"plotly, visualization, dashboards",Course,beginner,4.2
+Machine Learning Deep Dive,AWS,"scikit-learn, regression, feature engineering",Course,intermediate,4.7
+Cloud & AWS Essentials,IBM,"cloud, kubernetes, devops",Course,beginner,4.8
+Machine Learning Specialization,Meta,"feature engineering, scikit-learn, machine learning",Course,intermediate,4.3
+Machine Learning Fundamentals,Coursera,"machine learning, classification, feature engineering",Course,beginner,4.2
+Python Programming Deep Dive,Google,"automation, python, programming",Course,advanced,4.1
+Deep Learning Bootcamp,AWS,"cnn, tensorflow, pytorch",Course,intermediate,4.7
+Machine Learning Bootcamp,Google,"classification, scikit-learn, machine learning",Course,beginner,4.5
+Data Visualization Essentials,Meta,"visualization, plotly, charts",Course,advanced,4.7
+Web Development Masterclass,Coursera,"node, html, css",Course,advanced,4.5
+Python Programming Fundamentals,IBM,"automation, programming, oop",Course,advanced,4.1
+Data & SQL Masterclass,Meta,"sql, pandas, analytics",Course,beginner,4.7
+Data & SQL for Everyone,Microsoft,"pandas, data analysis, sql",Course,intermediate,4.7
+Data & SQL for Everyone,Google,"analytics, data analysis, pandas",Course,beginner,4.8
+Data & SQL Specialization,Stanford,"databases, etl, sql",Course,advanced,4.1
+Data Visualization Essentials,Meta,"charts, dashboards, visualization",Course,intermediate,4.9
+Web Development Specialization,Coursera,"frontend, javascript, html",Course,advanced,4.0
+Data & SQL Masterclass,Google,"etl, databases, sql",Course,beginner,4.4
+Data & SQL Bootcamp,Microsoft,"pandas, sql, etl",Course,beginner,4.4
+Data Visualization Bootcamp,Meta,"visualization, charts, matplotlib",Course,intermediate,4.2
+Data & SQL Deep Dive,Microsoft,"pandas, sql, analytics",Course,beginner,4.8
+Web Development in Practice,Coursera,"node, typescript, react",Course,beginner,4.1
+Machine Learning Bootcamp,Coursera,"scikit-learn, regression, feature engineering",Course,advanced,4.8
+Data Visualization Bootcamp,AWS,"matplotlib, dashboards, plotly",Course,beginner,4.9
+Data & SQL in Practice,AWS,"data analysis, sql, databases",Course,intermediate,4.2
+Python Programming Specialization,Stanford,"automation, oop, scripting",Course,intermediate,4.2
+Python Programming Essentials,Microsoft,"programming, scripting, python",Course,intermediate,4.7
+Cloud & AWS Bootcamp,IBM,"lambda, aws, kubernetes",Course,intermediate,4.8
+Python Programming Masterclass,IBM,"programming, automation, scripting",Course,advanced,4.3
+Cloud & AWS Deep Dive,IBM,"cloud, s3, docker",Course,advanced,4.2
+Python Programming Bootcamp,Stanford,"programming, python, automation",Course,beginner,4.5
+Cloud & AWS Masterclass,AWS,"cloud, s3, docker",Course,beginner,4.6
+Machine Learning Masterclass,DeepLearning.AI,"classification, feature engineering, regression",Course,intermediate,4.0
+Machine Learning in Practice,Meta,"classification, feature engineering, machine learning",Course,advanced,4.8
+Machine Learning Masterclass,Stanford,"scikit-learn, feature engineering, machine learning",Course,advanced,4.1
+Deep Learning Deep Dive,Microsoft,"neural networks, tensorflow, pytorch",Course,advanced,4.9
+Cloud & AWS Bootcamp,Stanford,"docker, ec2, s3",Course,intermediate,4.1
+Cybersecurity in Practice,Microsoft,"security, firewall, cryptography",Course,intermediate,4.7
+Python Programming for Everyone,Coursera,"programming, python, automation",Course,beginner,4.0
+Data Visualization Bootcamp,DeepLearning.AI,"matplotlib, charts, dashboards",Course,intermediate,4.1
+Cybersecurity in Practice,Stanford,"pentesting, firewall, cryptography",Course,intermediate,4.7
+Data & SQL Essentials,Microsoft,"analytics, pandas, databases",Course,advanced,4.5
+Data & SQL Masterclass,Google,"data analysis, etl, analytics",Course,advanced,4.5
+Deep Learning Deep Dive,Microsoft,"transformers, tensorflow, cnn",Course,beginner,4.1
+Cloud & AWS in Practice,DeepLearning.AI,"kubernetes, devops, ec2",Course,beginner,4.7
+Web Development Essentials,Microsoft,"html, react, node",Course,beginner,4.2
+Data & SQL Essentials,AWS,"etl, analytics, databases",Course,intermediate,4.1
+Deep Learning Specialization,DeepLearning.AI,"neural networks, transformers, cnn",Course,beginner,4.1
+Cloud & AWS for Everyone,DeepLearning.AI,"kubernetes, aws, ec2",Course,advanced,4.1
+Cybersecurity for Everyone,Coursera,"networking, pentesting, firewall",Course,beginner,4.0
+Python Programming Bootcamp,Microsoft,"python, scripting, automation",Course,advanced,4.5
+Python Programming Specialization,IBM,"scripting, oop, automation",Course,beginner,4.9
+Cloud & AWS Essentials,DeepLearning.AI,"s3, aws, docker",Course,beginner,4.8
+Machine Learning Deep Dive,Microsoft,"classification, scikit-learn, feature engineering",Course,intermediate,4.1
+Machine Learning Bootcamp,Meta,"classification, feature engineering, regression",Course,intermediate,4.3
+Web Development Specialization,DeepLearning.AI,"css, node, react",Course,beginner,4.4
