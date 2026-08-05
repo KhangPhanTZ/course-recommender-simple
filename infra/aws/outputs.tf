@@ -20,3 +20,8 @@ output "ecs_cluster_name" {
 output "ecs_service_name" {
   value = aws_ecs_service.api.name
 }
+
+output "aws_region" {
+  description = "Region the stack is deployed in."
+  value       = var.aws_region
+}
