@@ -6,7 +6,7 @@
 services:
   - type: web
     name: course-recommender
-    runtime: image
+    runtime: docker
     plan: free
     dockerfilePath: ./docker/Dockerfile.demo
     dockerContext: .
