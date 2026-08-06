@@ -22,22 +22,6 @@ export interface RecommendResponse {
   llm_enabled: boolean;
 }
 
-export interface MapPoint {
-  id: number | string;
-  title: string;
-  cluster: number;
-  x: number;
-  y: number;
-}
-
-export interface ClusterMap {
-  points: MapPoint[];
-  n_clusters: number;
-  count: number;
-  total: number;
-  available: boolean;
-}
-
 export interface ChatMessage {
   role: "user" | "assistant";
   content: string;
@@ -107,7 +91,6 @@ export const api = {
       body: JSON.stringify({ course_id, top_k }),
     }),
   course: (id: number | string) => request<Record<string, unknown>>(`/courses/${id}`),
-  map: () => request<ClusterMap>("/map"),
   chat: (messages: ChatMessage[], top_k = 6) =>
     request<ChatResponse>("/chat", {
       method: "POST",

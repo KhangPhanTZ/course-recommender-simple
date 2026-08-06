@@ -16,8 +16,11 @@ export default function Footer() {
           </p>
         </div>
         <div className="flex items-center gap-5 text-sm text-body">
-          <Link to="/architecture" className="link-underline">
-            Architecture
+          <Link to="/search" className="link-underline">
+            Search
+          </Link>
+          <Link to="/chat" className="link-underline">
+            Chat
           </Link>
           <Link to="/about" className="link-underline">
             About

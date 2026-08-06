@@ -42,7 +42,6 @@ def built_artifacts(tmp_path, monkeypatch):
         "min_characters": 5,
         "use_sbert": False,
         "kmeans_k": 3,
-        "compute_viz": False,
         "top_k": 5,
     }
     cfg_path = tmp_path / "config.yaml"

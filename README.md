@@ -14,8 +14,8 @@ _(free tier — the first request may take ~50s while the instance wakes up)_
 
 - **Two-stage retrieval** — Sentence-BERT + FAISS (numpy fallback) + optional cross-encoder rerank.
 - **GenAI / RAG** — natural-language query understanding and retrieval-grounded explanations, via Claude API or AWS Bedrock, with deterministic fallbacks when no LLM is set.
-- **Explore** — KMeans clustering with a UMAP catalog map.
-- **Web UI** — React + Vite + Tailwind SPA (landing, search, explore, map), dark/light.
+- **Chat advisor** — a conversational RAG assistant that explains syllabi and learning paths, grounded in the catalog.
+- **Web UI** — React + Vite + Tailwind SPA (landing, search, chat, about), dark/light.
 - **Production-shaped** — pluggable local⇄S3 storage, Docker, Terraform (AWS ECS/Fargate), CI/CD, 35 tests.
 
 **Stack:** Python · FastAPI · scikit-learn · Sentence-BERT · FAISS · React · Vite · Tailwind · Docker · Terraform · AWS · GitHub Actions

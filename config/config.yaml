@@ -34,10 +34,9 @@ use_sbert: true
 sbert_model: sentence-transformers/all-MiniLM-L6-v2
 tfidf_max_features: 50000
 
-# --- Clustering & visualization --------------------------------------------
+# --- Clustering -------------------------------------------------------------
 kmeans_k: 20
 random_state: 42
-compute_viz: true         # compute UMAP 2D embedding for the clusters map
 
 # --- Retrieval --------------------------------------------------------------
 top_k: 10

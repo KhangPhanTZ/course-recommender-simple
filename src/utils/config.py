@@ -33,7 +33,6 @@ class Config:
     top_k: int = 10
     overfetch: int = 50
     use_rerank: bool = False
-    compute_viz: bool = True
 
     @property
     def backend(self) -> str:
@@ -68,5 +67,4 @@ def load_config(path: str) -> Config:
         top_k=int(raw.get("top_k", 10)),
         overfetch=int(raw.get("overfetch", 50)),
         use_rerank=bool(raw.get("use_rerank", False)),
-        compute_viz=bool(raw.get("compute_viz", True)),
     )

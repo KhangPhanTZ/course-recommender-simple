@@ -45,7 +45,7 @@ def create_app() -> FastAPI:
         CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"]
     )
 
-    # API under /api so it never collides with SPA client routes (e.g. /map).
+    # API under /api so it never collides with SPA client routes (e.g. /chat).
     app.include_router(router, prefix="/api")
 
     static = _resolve_static()

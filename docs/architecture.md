@@ -14,7 +14,7 @@ flowchart TB
     end
 
     subgraph Serving["FastAPI service"]
-        R["/recommend, /similar, /courses, /health"]
+        R["/recommend, /chat, /similar, /courses, /health"]
         DEP["cached singletons\n(Recommender + LLM)"]
     end
 
@@ -107,7 +107,7 @@ reads through it. Switching from a laptop to AWS is a change of
 
 Artifacts: `meta.json`, `courses.parquet`, and either
 (`embeddings.npy` + `vector.index`) or (`tfidf_vectorizer.pkl` + `X_tfidf.npz`),
-plus `kmeans.pkl` and `umap_embedding.npy` for the clusters map.
+plus `kmeans.pkl` for the cluster labels.
 
 ## AWS deployment
 

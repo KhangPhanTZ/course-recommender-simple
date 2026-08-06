@@ -67,8 +67,8 @@ export default function Home() {
               <Link to="/search" className="btn-primary">
                 Try the live demo <ArrowRight width={18} height={18} />
               </Link>
-              <Link to="/architecture" className="btn-ghost">
-                See the architecture
+              <Link to="/about" className="btn-ghost">
+                How it works
               </Link>
             </div>
 
