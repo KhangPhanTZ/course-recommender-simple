@@ -79,6 +79,47 @@ class ChatResponse(BaseModel):
     llm_enabled: bool = False
 
 
+class TrackInfo(BaseModel):
+    id: str
+    label: str
+    summary: str
+
+
+class RoadmapNode(BaseModel):
+    id: str
+    tier: str
+    skills: list[str] = Field(default_factory=list)
+    courses: list[CourseHit] = Field(default_factory=list)
+
+
+class RoadmapEdge(BaseModel):
+    source: str
+    target: str
+    kind: str = "progress"
+
+
+class RoadmapBridge(BaseModel):
+    track: str
+    label: str
+    note: str
+
+
+class Roadmap(BaseModel):
+    track: str
+    label: str
+    summary: str
+    intro: str | None = None
+    nodes: list[RoadmapNode] = Field(default_factory=list)
+    edges: list[RoadmapEdge] = Field(default_factory=list)
+    bridges: list[RoadmapBridge] = Field(default_factory=list)
+    llm_enabled: bool = False
+
+
+class RoadmapRequest(BaseModel):
+    track: str = Field(..., description="Career track id, e.g. 'ml-engineer'.")
+    per_tier: int = Field(2, ge=1, le=5, description="Courses to surface per tier.")
+
+
 class HealthResponse(BaseModel):
     status: str
     backend: str | None = None

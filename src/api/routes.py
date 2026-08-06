@@ -6,6 +6,7 @@ import logging
 from fastapi import APIRouter, HTTPException
 
 from .. import __version__
+from ..llm.tracks import assemble_roadmap, list_tracks
 from . import deps
 from .schemas import (
     ChatRequest,
@@ -14,7 +15,10 @@ from .schemas import (
     HealthResponse,
     RecommendRequest,
     RecommendResponse,
+    Roadmap,
+    RoadmapRequest,
     SimilarRequest,
+    TrackInfo,
 )
 
 logger = logging.getLogger("recsys.api")
@@ -102,6 +106,30 @@ def chat(req: ChatRequest) -> ChatResponse:
         courses=[CourseHit(**_hit(h)) for h in hits],
         llm_enabled=llm.enabled,
     )
+
+
+@router.get("/roadmap/tracks", response_model=list[TrackInfo], tags=["roadmap"])
+def roadmap_tracks() -> list[TrackInfo]:
+    """List the curated career tracks available for a roadmap."""
+    return [TrackInfo(**t) for t in list_tracks()]
+
+
+@router.post("/roadmap", response_model=Roadmap, tags=["roadmap"])
+def roadmap(req: RoadmapRequest) -> Roadmap:
+    """Build a grounded, tiered learning roadmap for a career track."""
+    rec = deps.get_recommender()
+    llm = deps.get_llm()
+
+    def retrieve(query: str, k: int) -> list[dict]:
+        return [_hit(h) for h in rec.recommend(query, top_k=k)]
+
+    data = assemble_roadmap(req.track, retrieve, per_tier=req.per_tier)
+    if data is None:
+        raise HTTPException(status_code=404, detail=f"Unknown track: {req.track}")
+
+    data["intro"] = llm.advise_roadmap(data)
+    data["llm_enabled"] = llm.enabled
+    return Roadmap(**data)
 
 
 @router.post("/similar", response_model=list[CourseHit], tags=["recommend"])

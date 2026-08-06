@@ -51,6 +51,13 @@ _ADVISOR_SYSTEM = (
     "couldn't find matching courses and ask the learner to describe a topic."
 )
 
+_ROADMAP_SYSTEM = (
+    "You are a career-path advisor for an online-course catalog. Given a career "
+    "track and its tiered roadmap (each tier lists skills and grounded courses), "
+    "write a short, motivating overview of the path. Reference the tier names, "
+    "stay concrete, and never invent courses beyond those provided."
+)
+
 
 class RecommendationLLM:
     """Bundles the GenAI features and their non-LLM fallbacks."""
@@ -152,6 +159,46 @@ class RecommendationLLM:
             except Exception:
                 pass
         return self._template_chat(history, courses)
+
+    # ---------------------------------------------------------- track roadmap
+    def advise_roadmap(self, roadmap: dict[str, Any]) -> str:
+        """A short intro for a career-track roadmap, grounded in its tiers/courses."""
+        label = roadmap.get("label", "this track")
+        tiers = roadmap.get("nodes", [])
+        if self.enabled:
+            try:
+                context = "\n".join(
+                    f"- {n['tier']}: skills {', '.join(n.get('skills', []))}; "
+                    f"courses: {', '.join(str(c.get('title')) for c in n.get('courses', [])) or 'n/a'}"
+                    for n in tiers
+                )
+                prompt = (
+                    f"Career track: {label}\n\nRoadmap tiers (grounded in the catalog):\n{context}\n\n"
+                    "Write a short, motivating 2-3 sentence overview of this path for a "
+                    "learner: what they'll build tier by tier and where it leads. Reference "
+                    "the tier names. Do not invent courses beyond those listed."
+                )
+                return self.provider.complete(
+                    _ROADMAP_SYSTEM, prompt,
+                    max_tokens=self.settings.max_tokens, temperature=self.settings.temperature,
+                ).strip()
+            except Exception:
+                pass
+        return self._template_roadmap(roadmap)
+
+    @staticmethod
+    def _template_roadmap(roadmap: dict[str, Any]) -> str:
+        label = roadmap.get("label", "this track")
+        tiers = " → ".join(n["tier"] for n in roadmap.get("nodes", []))
+        bridges = roadmap.get("bridges", [])
+        nxt = ""
+        if bridges:
+            nxt = " From there you can branch into " + ", ".join(b["label"] for b in bridges) + "."
+        return (
+            f"Here's a {label} roadmap grounded in the catalog: {tiers}. "
+            f"{roadmap.get('summary', '')} Work tier by tier, taking the linked courses "
+            f"at each stage before moving on.{nxt}"
+        )
 
     @staticmethod
     def _template_chat(history: list[dict[str, str]], courses: list[dict[str, Any]]) -> str:
