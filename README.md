@@ -17,6 +17,7 @@ _(free tier — the first request may take ~50s while the instance wakes up)_
 - **GenAI / RAG** — natural-language query understanding and retrieval-grounded explanations, via Claude API or AWS Bedrock, with deterministic fallbacks when no LLM is set.
 - **Chat advisor** — a conversational RAG assistant that explains syllabi and learning paths, grounded in the catalog.
 - **Career-track roadmaps** — pick a track (Data Analyst, ML Engineer, MLOps, PM, QA…) and get a tiered Foundation→Specialization roadmap, each tier grounded in real catalog courses, with bridges to adjacent tracks.
+- **Evaluation dashboard** — offline retrieval metrics (Precision/Recall/MRR/nDCG@k, hit-rate), query latency (p50/p95), and clustering silhouette, surfaced at `/metrics` and a Metrics page.
 - **Web UI** — React + Vite + Tailwind SPA (landing, search, chat, about), dark/light.
 - **Production-shaped** — pluggable local⇄S3 storage, Docker, Terraform (AWS ECS/Fargate), CI/CD, tests.
 

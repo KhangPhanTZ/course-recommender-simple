@@ -1,12 +1,14 @@
 """API routes for the course recommender service."""
 from __future__ import annotations
 
+import json
 import logging
 
 from fastapi import APIRouter, HTTPException
 
 from .. import __version__
 from ..llm.tracks import assemble_roadmap, list_tracks
+from ..storage import get_artifact_store
 from . import deps
 from .schemas import (
     ChatRequest,
@@ -106,6 +108,24 @@ def chat(req: ChatRequest) -> ChatResponse:
         courses=[CourseHit(**_hit(h)) for h in hits],
         llm_enabled=llm.enabled,
     )
+
+
+@router.get("/metrics", tags=["ops"])
+def metrics():
+    """Offline evaluation metrics (retrieval quality, latency, clusters).
+
+    Reads the ``metrics.json`` artifact produced by ``scripts/run_eval.py``.
+    Returns ``{"available": false}`` when evaluation hasn't been run.
+    """
+    store = get_artifact_store()
+    if not store.exists("metrics.json"):
+        return {"available": False}
+    try:
+        data = json.loads(store.read_bytes("metrics.json"))
+    except Exception as exc:  # corrupt/partial artifact -> degrade, don't 500
+        logger.warning("Could not read metrics.json: %s", exc)
+        return {"available": False}
+    return {"available": True, **data}
 
 
 @router.get("/roadmap/tracks", response_model=list[TrackInfo], tags=["roadmap"])
