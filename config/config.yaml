@@ -14,6 +14,12 @@ columns:
   rating: rating
   url:                    # empty -> omitted
 
+# --- Column mapping note ----------------------------------------------------
+# The `columns` map above applies to a single legacy CSV. When `data/` is a
+# directory, the pipeline ingests every recognized Coursera / Udemy / edX file
+# onto one canonical schema (see src/data/sources.py) and ignores `columns`.
+# `text_fields` below reference canonical column names either way.
+
 # --- Text corpus construction ----------------------------------------------
 # Repeat a field to give it more weight ("boosting").
 text_fields:
@@ -22,6 +28,7 @@ text_fields:
   - skills
   - skills
   - description
+  - syllabus
   - level
   - category
 

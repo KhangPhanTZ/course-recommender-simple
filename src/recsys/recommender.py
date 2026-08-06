@@ -49,6 +49,8 @@ class Recommendation:
     rating: Any | None = None
     url: str | None = None
     skills: str | None = None
+    provider: str | None = None
+    source: str | None = None
     explanation: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
@@ -61,6 +63,8 @@ class Recommendation:
             "rating": self.rating,
             "url": self.url,
             "skills": self.skills,
+            "provider": self.provider,
+            "source": self.source,
             "explanation": self.explanation,
         }
 
@@ -172,6 +176,8 @@ class Recommender:
             rating=_opt(row.get("rating")),
             url=_opt(row.get("url")),
             skills=_opt(row.get("skills")),
+            provider=_opt(row.get("provider")),
+            source=_opt(row.get("source")),
         )
 
     # ---------------------------------------------------------------- public

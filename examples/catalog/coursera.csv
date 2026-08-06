@@ -1,0 +1,151 @@
+course,partner,skills,certificatetype,level,rating
+Data Analytics Specialization,IBM,"excel, sql, data visualization, tableau",Data Analysis,Beginner,4.2
+Data Analytics Specialization,University of Michigan,"pandas, excel, power bi, statistics",Data Analysis,Intermediate,4.7
+Data Analytics Specialization,University of Colorado,"statistics, pandas, sql, power bi",Data Analysis,Advanced,4.9
+SQL for Analysts Professional Certificate,Meta,"excel, pandas, reporting, sql",Data Analysis,Beginner,4.5
+SQL for Analysts Course,IBM,"pandas, tableau, data visualization, statistics",Data Analysis,Intermediate,4.4
+SQL for Analysts Course,University of Colorado,"tableau, reporting, excel, data visualization",Data Analysis,Advanced,4.3
+Business Intelligence Professional Certificate,DeepLearning.AI,"tableau, pandas, data visualization, power bi",Data Analysis,Beginner,4.4
+Business Intelligence Specialization,University of Colorado,"tableau, power bi, sql, reporting",Data Analysis,Intermediate,4.5
+Business Intelligence Specialization,University of Michigan,"reporting, sql, pandas, tableau",Data Analysis,Advanced,4.1
+Data Visualization Professional Certificate,University of Michigan,"pandas, excel, statistics, reporting",Data Analysis,Beginner,4.9
+Data Visualization Specialization,IBM,"sql, reporting, data visualization, pandas",Data Analysis,Intermediate,4.8
+Data Visualization Specialization,DeepLearning.AI,"reporting, pandas, power bi, excel",Data Analysis,Advanced,4.6
+Spreadsheet Analytics Professional Certificate,Google,"power bi, excel, statistics, reporting",Data Analysis,Beginner,4.2
+Spreadsheet Analytics Specialization,Imperial College London,"power bi, excel, reporting, data visualization",Data Analysis,Intermediate,4.8
+Spreadsheet Analytics Course,Stanford University,"tableau, excel, reporting, pandas",Data Analysis,Advanced,4.7
+Data Engineering Course,DeepLearning.AI,"airflow, dbt, sql, etl",Data Engineering,Beginner,4.3
+Data Engineering Professional Certificate,Imperial College London,"data warehouse, etl, airflow, kafka",Data Engineering,Intermediate,4.8
+Data Engineering Course,Imperial College London,"etl, kafka, snowflake, airflow",Data Engineering,Advanced,4.7
+Big Data with Spark Specialization,Duke University,"data warehouse, kafka, sql, airflow",Data Engineering,Beginner,4.6
+Big Data with Spark Course,Google,"dbt, snowflake, airflow, kafka",Data Engineering,Intermediate,4.5
+Big Data with Spark Professional Certificate,Stanford University,"kafka, spark, sql, dbt",Data Engineering,Advanced,4.3
+Building Data Pipelines Course,Meta,"spark, airflow, dbt, kafka",Data Engineering,Beginner,4.8
+Building Data Pipelines Professional Certificate,Meta,"etl, airflow, spark, snowflake",Data Engineering,Intermediate,4.3
+Building Data Pipelines Course,Duke University,"spark, sql, data warehouse, etl",Data Engineering,Advanced,4.7
+Data Warehousing Course,Duke University,"dbt, etl, spark, kafka",Data Engineering,Beginner,4.8
+Data Warehousing Professional Certificate,University of Michigan,"data warehouse, etl, sql, spark",Data Engineering,Intermediate,4.3
+Data Warehousing Specialization,IBM,"airflow, snowflake, sql, kafka",Data Engineering,Advanced,4.2
+Streaming with Kafka Course,Google,"airflow, snowflake, etl, sql",Data Engineering,Beginner,4.5
+Streaming with Kafka Professional Certificate,Imperial College London,"sql, airflow, dbt, etl",Data Engineering,Intermediate,4.7
+Streaming with Kafka Course,Google,"kafka, airflow, snowflake, etl",Data Engineering,Advanced,4.3
+Machine Learning Professional Certificate,Meta,"pytorch, python, tensorflow, deep learning",Machine Learning,Beginner,4.5
+Machine Learning Course,Meta,"scikit-learn, deep learning, model deployment, python",Machine Learning,Intermediate,4.6
+Machine Learning Professional Certificate,Meta,"tensorflow, feature engineering, pytorch, model deployment",Machine Learning,Advanced,4.8
+Deep Learning Specialization,IBM,"feature engineering, python, deep learning, scikit-learn",Machine Learning,Beginner,4.5
+Deep Learning Course,University of Michigan,"tensorflow, python, deep learning, model deployment",Machine Learning,Intermediate,4.6
+Deep Learning Course,DeepLearning.AI,"tensorflow, deep learning, pytorch, feature engineering",Machine Learning,Advanced,4.6
+Applied ML Course,Meta,"deep learning, feature engineering, pytorch, model deployment",Machine Learning,Beginner,4.6
+Applied ML Professional Certificate,Duke University,"pytorch, scikit-learn, tensorflow, deep learning",Machine Learning,Intermediate,4.8
+Applied ML Professional Certificate,IBM,"pytorch, python, model deployment, tensorflow",Machine Learning,Advanced,4.7
+Neural Networks Course,DeepLearning.AI,"tensorflow, feature engineering, model deployment, scikit-learn",Machine Learning,Beginner,4.3
+Neural Networks Specialization,Duke University,"feature engineering, scikit-learn, tensorflow, model deployment",Machine Learning,Intermediate,4.3
+Neural Networks Professional Certificate,Stanford University,"pytorch, feature engineering, tensorflow, scikit-learn",Machine Learning,Advanced,4.9
+ML Engineering Course,IBM,"scikit-learn, python, deep learning, pytorch",Machine Learning,Beginner,4.4
+ML Engineering Specialization,Google,"scikit-learn, feature engineering, model deployment, python",Machine Learning,Intermediate,4.4
+ML Engineering Specialization,University of Michigan,"python, deep learning, scikit-learn, model deployment",Machine Learning,Advanced,4.2
+MLOps Course,DeepLearning.AI,"monitoring, mlflow, terraform, github actions",Cloud Computing,Beginner,4.1
+MLOps Specialization,Imperial College London,"ci/cd, kubernetes, monitoring, terraform",Cloud Computing,Intermediate,4.5
+MLOps Specialization,Duke University,"terraform, docker, ci/cd, monitoring",Cloud Computing,Advanced,4.9
+DevOps Professional Certificate,University of Michigan,"kubernetes, ci/cd, monitoring, mlflow",Cloud Computing,Beginner,4.8
+DevOps Course,University of Michigan,"terraform, docker, kubernetes, mlflow",Cloud Computing,Intermediate,4.7
+DevOps Professional Certificate,Stanford University,"ci/cd, terraform, mlflow, monitoring",Cloud Computing,Advanced,4.7
+Kubernetes in Production Course,Imperial College London,"kubernetes, terraform, docker, ci/cd",Cloud Computing,Beginner,4.8
+Kubernetes in Production Specialization,Google,"docker, github actions, kubernetes, terraform",Cloud Computing,Intermediate,4.5
+Kubernetes in Production Course,IBM,"monitoring, docker, kubernetes, ci/cd",Cloud Computing,Advanced,4.2
+CI/CD Pipelines Professional Certificate,University of Colorado,"ci/cd, terraform, kubernetes, monitoring",Cloud Computing,Beginner,4.6
+CI/CD Pipelines Course,University of Michigan,"terraform, ci/cd, docker, mlflow",Cloud Computing,Intermediate,4.5
+CI/CD Pipelines Course,University of Michigan,"kubernetes, terraform, monitoring, ci/cd",Cloud Computing,Advanced,4.3
+Infrastructure as Code Course,Google,"github actions, kubernetes, monitoring, ci/cd",Cloud Computing,Beginner,4.2
+Infrastructure as Code Course,University of Colorado,"kubernetes, mlflow, monitoring, ci/cd",Cloud Computing,Intermediate,4.8
+Infrastructure as Code Specialization,University of Colorado,"docker, terraform, mlflow, ci/cd",Cloud Computing,Advanced,4.5
+AWS Cloud Specialization,DeepLearning.AI,"lambda, cloud architecture, gcp, networking",Cloud Computing,Beginner,4.1
+AWS Cloud Professional Certificate,DeepLearning.AI,"serverless, lambda, azure, cloud architecture",Cloud Computing,Intermediate,4.6
+AWS Cloud Professional Certificate,DeepLearning.AI,"aws, cloud architecture, gcp, azure",Cloud Computing,Advanced,4.2
+Cloud Architecture Course,Google,"serverless, azure, lambda, gcp",Cloud Computing,Beginner,4.1
+Cloud Architecture Course,Meta,"azure, gcp, aws, networking",Cloud Computing,Intermediate,4.2
+Cloud Architecture Professional Certificate,Imperial College London,"cloud architecture, lambda, aws, serverless",Cloud Computing,Advanced,4.4
+Serverless Applications Course,Imperial College London,"cloud architecture, serverless, lambda, gcp",Cloud Computing,Beginner,4.6
+Serverless Applications Professional Certificate,Meta,"cloud architecture, lambda, aws, gcp",Cloud Computing,Intermediate,4.6
+Serverless Applications Professional Certificate,DeepLearning.AI,"serverless, aws, networking, gcp",Cloud Computing,Advanced,4.4
+Azure Fundamentals Course,University of Michigan,"gcp, serverless, networking, aws",Cloud Computing,Beginner,4.3
+Azure Fundamentals Specialization,Meta,"gcp, aws, azure, serverless",Cloud Computing,Intermediate,4.2
+Azure Fundamentals Professional Certificate,DeepLearning.AI,"aws, azure, lambda, networking",Cloud Computing,Advanced,4.5
+Cloud Security Professional Certificate,IBM,"serverless, lambda, gcp, aws",Cloud Computing,Beginner,4.9
+Cloud Security Course,Meta,"lambda, cloud architecture, azure, serverless",Cloud Computing,Intermediate,4.7
+Cloud Security Specialization,Duke University,"gcp, aws, cloud architecture, lambda",Cloud Computing,Advanced,4.7
+Product Management Course,University of Colorado,"stakeholder management, agile, prioritization, roadmap",Business,Beginner,4.2
+Product Management Course,Imperial College London,"prioritization, metrics, scrum, product strategy",Business,Intermediate,4.8
+Product Management Professional Certificate,Stanford University,"agile, scrum, metrics, roadmap",Business,Advanced,4.8
+Project Management Professional Certificate,Stanford University,"product strategy, scrum, prioritization, stakeholder management",Business,Beginner,4.2
+Project Management Course,Duke University,"agile, prioritization, scrum, product strategy",Business,Intermediate,4.6
+Project Management Course,University of Michigan,"roadmap, product strategy, stakeholder management, agile",Business,Advanced,4.7
+Agile & Scrum Professional Certificate,Stanford University,"metrics, prioritization, scrum, agile",Business,Beginner,4.3
+Agile & Scrum Specialization,Meta,"metrics, agile, product strategy, stakeholder management",Business,Intermediate,4.2
+Agile & Scrum Professional Certificate,IBM,"product strategy, stakeholder management, agile, scrum",Business,Advanced,4.6
+Product Strategy Specialization,University of Colorado,"prioritization, agile, product strategy, roadmap",Business,Beginner,4.3
+Product Strategy Specialization,Meta,"scrum, product strategy, agile, stakeholder management",Business,Intermediate,4.4
+Product Strategy Specialization,University of Michigan,"product strategy, roadmap, metrics, prioritization",Business,Advanced,4.8
+Roadmapping Course,University of Colorado,"roadmap, scrum, product strategy, prioritization",Business,Beginner,4.3
+Roadmapping Professional Certificate,Meta,"roadmap, product strategy, metrics, prioritization",Business,Intermediate,4.1
+Roadmapping Course,Google,"stakeholder management, roadmap, agile, product strategy",Business,Advanced,4.5
+Test Automation Professional Certificate,University of Colorado,"test automation, playwright, qa, pytest",Software Development,Beginner,4.3
+Test Automation Course,Duke University,"test automation, cypress, pytest, qa",Software Development,Intermediate,4.3
+Test Automation Course,Google,"test automation, pytest, qa, test planning",Software Development,Advanced,4.5
+QA Engineering Course,Google,"qa, test planning, cypress, selenium",Software Development,Beginner,4.6
+QA Engineering Course,Google,"test automation, playwright, pytest, selenium",Software Development,Intermediate,4.4
+QA Engineering Course,University of Michigan,"playwright, test automation, pytest, cypress",Software Development,Advanced,4.8
+Selenium WebDriver Specialization,University of Michigan,"test planning, selenium, qa, test automation",Software Development,Beginner,4.7
+Selenium WebDriver Professional Certificate,DeepLearning.AI,"pytest, qa, cypress, selenium",Software Development,Intermediate,4.4
+Selenium WebDriver Professional Certificate,Google,"cypress, qa, test planning, playwright",Software Development,Advanced,4.5
+API Testing Course,Google,"cypress, test planning, qa, test automation",Software Development,Beginner,4.3
+API Testing Course,University of Michigan,"playwright, selenium, test planning, qa",Software Development,Intermediate,4.3
+API Testing Professional Certificate,Google,"test automation, pytest, selenium, qa",Software Development,Advanced,4.4
+End-to-End Testing Professional Certificate,University of Michigan,"test automation, cypress, pytest, selenium",Software Development,Beginner,4.3
+End-to-End Testing Professional Certificate,Imperial College London,"playwright, cypress, pytest, qa",Software Development,Intermediate,4.5
+End-to-End Testing Professional Certificate,Google,"qa, selenium, test planning, pytest",Software Development,Advanced,4.7
+Web Development Specialization,Google,"rest api, css, typescript, react",Software Development,Beginner,4.4
+Web Development Course,Duke University,"css, html, javascript, rest api",Software Development,Intermediate,4.4
+Web Development Course,University of Michigan,"typescript, rest api, react, html",Software Development,Advanced,4.8
+React Specialization,DeepLearning.AI,"javascript, node.js, rest api, react",Software Development,Beginner,4.1
+React Specialization,Duke University,"css, typescript, html, rest api",Software Development,Intermediate,4.5
+React Professional Certificate,Imperial College London,"node.js, javascript, html, typescript",Software Development,Advanced,4.5
+Full-Stack JavaScript Specialization,IBM,"typescript, html, rest api, node.js",Software Development,Beginner,4.8
+Full-Stack JavaScript Specialization,Imperial College London,"react, rest api, html, typescript",Software Development,Intermediate,4.6
+Full-Stack JavaScript Course,University of Colorado,"rest api, react, css, javascript",Software Development,Advanced,4.7
+Frontend Engineering Professional Certificate,Duke University,"typescript, css, node.js, react",Software Development,Beginner,4.5
+Frontend Engineering Specialization,IBM,"react, node.js, typescript, css",Software Development,Intermediate,4.6
+Frontend Engineering Professional Certificate,University of Michigan,"typescript, html, javascript, node.js",Software Development,Advanced,4.3
+Node.js APIs Specialization,IBM,"node.js, react, typescript, css",Software Development,Beginner,4.9
+Node.js APIs Specialization,DeepLearning.AI,"css, node.js, typescript, react",Software Development,Intermediate,4.8
+Node.js APIs Course,Google,"css, html, react, node.js",Software Development,Advanced,4.4
+Cybersecurity Specialization,University of Colorado,"network security, penetration testing, incident response, cybersecurity",Security,Beginner,4.8
+Cybersecurity Specialization,DeepLearning.AI,"cybersecurity, cryptography, penetration testing, network security",Security,Intermediate,4.9
+Cybersecurity Professional Certificate,Imperial College London,"incident response, network security, cybersecurity, penetration testing",Security,Advanced,4.2
+Ethical Hacking Professional Certificate,Meta,"incident response, cybersecurity, network security, penetration testing",Security,Beginner,4.3
+Ethical Hacking Course,University of Colorado,"network security, penetration testing, cryptography, cybersecurity",Security,Intermediate,4.8
+Ethical Hacking Professional Certificate,University of Colorado,"cryptography, penetration testing, incident response, cybersecurity",Security,Advanced,4.3
+Network Security Professional Certificate,DeepLearning.AI,"cryptography, penetration testing, cybersecurity, incident response",Security,Beginner,4.8
+Network Security Specialization,Stanford University,"network security, cryptography, incident response, penetration testing",Security,Intermediate,4.8
+Network Security Specialization,Imperial College London,"penetration testing, incident response, cryptography, network security",Security,Advanced,4.7
+Security Operations Course,Meta,"cryptography, incident response, network security, cybersecurity",Security,Beginner,4.8
+Security Operations Specialization,University of Colorado,"cryptography, network security, cybersecurity, penetration testing",Security,Intermediate,4.8
+Security Operations Specialization,Imperial College London,"penetration testing, cybersecurity, incident response, cryptography",Security,Advanced,4.1
+Cryptography Specialization,IBM,"cybersecurity, incident response, penetration testing, network security",Security,Beginner,4.6
+Cryptography Professional Certificate,University of Colorado,"cybersecurity, network security, cryptography, penetration testing",Security,Intermediate,4.1
+Cryptography Course,University of Colorado,"penetration testing, cybersecurity, network security, cryptography",Security,Advanced,4.6
+Natural Language Processing Course,Google,"hugging face, prompt engineering, llm, rag",Machine Learning,Beginner,4.7
+Natural Language Processing Specialization,Meta,"rag, transformers, llm, embeddings",Machine Learning,Intermediate,4.6
+Natural Language Processing Professional Certificate,Stanford University,"llm, embeddings, nlp, prompt engineering",Machine Learning,Advanced,4.5
+Large Language Models Professional Certificate,Stanford University,"prompt engineering, embeddings, llm, rag",Machine Learning,Beginner,4.4
+Large Language Models Professional Certificate,University of Michigan,"transformers, nlp, embeddings, rag",Machine Learning,Intermediate,4.3
+Large Language Models Professional Certificate,Imperial College London,"llm, prompt engineering, rag, embeddings",Machine Learning,Advanced,4.4
+Generative AI Specialization,Duke University,"llm, rag, embeddings, hugging face",Machine Learning,Beginner,4.8
+Generative AI Specialization,University of Michigan,"embeddings, rag, hugging face, transformers",Machine Learning,Intermediate,4.3
+Generative AI Specialization,DeepLearning.AI,"embeddings, llm, prompt engineering, nlp",Machine Learning,Advanced,4.6
+Building RAG Apps Professional Certificate,Imperial College London,"transformers, prompt engineering, hugging face, embeddings",Machine Learning,Beginner,4.4
+Building RAG Apps Professional Certificate,Duke University,"rag, transformers, prompt engineering, embeddings",Machine Learning,Intermediate,4.2
+Building RAG Apps Course,Duke University,"prompt engineering, transformers, embeddings, hugging face",Machine Learning,Advanced,4.4
+Transformers Specialization,IBM,"prompt engineering, rag, hugging face, nlp",Machine Learning,Beginner,4.3
+Transformers Professional Certificate,DeepLearning.AI,"prompt engineering, rag, embeddings, hugging face",Machine Learning,Intermediate,4.4
+Transformers Course,Meta,"transformers, llm, embeddings, rag",Machine Learning,Advanced,4.2

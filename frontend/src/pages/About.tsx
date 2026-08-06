@@ -228,17 +228,13 @@ export default function About() {
       <section className="mt-16 rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))]/50 p-6">
         <h2 className="text-lg font-semibold">Dataset</h2>
         <p className="mt-2 text-sm text-body">
-          Built on the Kaggle{" "}
-          <a
-            href="https://www.kaggle.com/datasets/everydaycodings/multi-platform-online-courses-dataset"
-            target="_blank"
-            rel="noreferrer"
-            className="link-underline"
-          >
-            Multi-Platform Online Courses
-          </a>{" "}
-          dataset (Coursera slice). Content-based only — the system needs no user interaction history to make
-          quality recommendations.
+          A multi-platform catalog: public{" "}
+          <a href="https://www.kaggle.com/datasets/siddharthm1698/coursera-course-dataset" target="_blank" rel="noreferrer" className="link-underline">Coursera</a>,{" "}
+          <a href="https://www.kaggle.com/datasets/andrewmvd/udemy-courses" target="_blank" rel="noreferrer" className="link-underline">Udemy</a>, and{" "}
+          <a href="https://www.kaggle.com/datasets/imuhammad/edx-courses" target="_blank" rel="noreferrer" className="link-underline">edX</a>{" "}
+          datasets are normalized onto one schema (title, provider, skills, level, description, syllabus, …) and
+          merged. Ingestion is by column signature, so dropping a new platform's CSV into <code>data/</code> is
+          auto-detected. Content-based only — no user interaction history required.
         </p>
       </section>
     </div>

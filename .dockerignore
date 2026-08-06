@@ -14,6 +14,8 @@ frontend/dist
 data
 !data/.gitkeep
 !data/Coursera.csv
+!data/udemy_courses.csv
+!data/edx_courses.csv
 artifacts/*
 !artifacts/.gitkeep
 .env

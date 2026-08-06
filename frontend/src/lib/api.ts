@@ -11,6 +11,8 @@ export interface CourseHit {
   rating?: number | string | null;
   url?: string | null;
   skills?: string | null;
+  provider?: string | null;
+  source?: string | null;
 }
 
 export interface RecommendResponse {
