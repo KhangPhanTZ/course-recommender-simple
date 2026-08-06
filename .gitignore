@@ -24,6 +24,15 @@ data/*
 !data/udemy_courses.csv
 !data/edx_courses.csv
 
+# Terraform (never commit state — it can contain sensitive values)
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+!*.tfvars.example
+.terraform.lock.hcl
+
 # OS
 .DS_Store
 

@@ -48,7 +48,7 @@ Data: point `--data` at a **directory** to merge every recognized Coursera / Ude
 ## Deploy
 
 - **Render (one click):** the button above, driven by [`render.yaml`](render.yaml).
-- **AWS:** `./scripts/deploy_aws.sh` provisions ECR, ECS Fargate, ALB, S3, IAM and Bedrock via Terraform ([infra/aws](infra/aws)).
+- **AWS:** Terraform ([infra/aws](infra/aws)) provisions ECR, ECS Fargate, ALB, S3, IAM, Bedrock, and a **CloudFront** distribution that serves the SPA over **HTTPS** and proxies `/api/*` to the ALB (same-origin, no custom domain needed). Deploy the API with `./scripts/deploy_aws.sh`, then publish the UI with `./scripts/deploy_frontend.sh`; the shareable link is the `web_url` output.
 
 ## Development
 

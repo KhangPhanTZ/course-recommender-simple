@@ -25,3 +25,18 @@ output "aws_region" {
   description = "Region the stack is deployed in."
   value       = var.aws_region
 }
+
+output "web_url" {
+  description = "Public HTTPS URL of the full app (SPA + /api) via CloudFront."
+  value       = "https://${aws_cloudfront_distribution.web.domain_name}"
+}
+
+output "web_bucket" {
+  description = "S3 bucket the built frontend is uploaded to."
+  value       = aws_s3_bucket.site.bucket
+}
+
+output "cloudfront_distribution_id" {
+  description = "CloudFront distribution id (for cache invalidations)."
+  value       = aws_cloudfront_distribution.web.id
+}

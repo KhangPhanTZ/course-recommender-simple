@@ -75,5 +75,5 @@ echo "   API:   $API_URL"
 echo "   Docs:  $API_URL/docs"
 echo "   Health:$API_URL/health"
 echo
-echo "Point the web UI at it and host the static build (e.g. Vercel/Netlify):"
-echo "   cd frontend && VITE_API_URL=\"$API_URL\" npm run build   # deploy ./dist"
+echo "Now publish the web UI over HTTPS (CloudFront, same-origin /api):"
+echo "   ./scripts/deploy_frontend.sh        # prints the shareable web_url"
