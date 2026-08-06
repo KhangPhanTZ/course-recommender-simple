@@ -44,6 +44,42 @@ export interface Health {
   version: string;
 }
 
+export interface TrackInfo {
+  id: string;
+  label: string;
+  summary: string;
+}
+
+export interface RoadmapNode {
+  id: string;
+  tier: string;
+  skills: string[];
+  courses: CourseHit[];
+}
+
+export interface RoadmapEdge {
+  source: string;
+  target: string;
+  kind: string;
+}
+
+export interface RoadmapBridge {
+  track: string;
+  label: string;
+  note: string;
+}
+
+export interface Roadmap {
+  track: string;
+  label: string;
+  summary: string;
+  intro?: string | null;
+  nodes: RoadmapNode[];
+  edges: RoadmapEdge[];
+  bridges: RoadmapBridge[];
+  llm_enabled: boolean;
+}
+
 export interface RecommendParams {
   query: string;
   top_k?: number;
@@ -97,6 +133,12 @@ export const api = {
     request<ChatResponse>("/chat", {
       method: "POST",
       body: JSON.stringify({ messages, top_k }),
+    }),
+  tracks: () => request<TrackInfo[]>("/roadmap/tracks"),
+  roadmap: (track: string, per_tier = 2) =>
+    request<Roadmap>("/roadmap", {
+      method: "POST",
+      body: JSON.stringify({ track, per_tier }),
     }),
 };
 

@@ -19,14 +19,14 @@ const layers = [
     color: "brand",
     title: "FastAPI service",
     path: "src/api",
-    points: ["/recommend, /chat, /similar, /courses, /health", "OpenAPI docs + request timing", "Models loaded once, reused"],
+    points: ["/recommend, /chat, /roadmap, /similar, /health", "OpenAPI docs + request timing", "Models loaded once, reused"],
   },
   {
     tag: "GenAI / RAG",
     color: "amber",
     title: "LLM layer",
     path: "src/llm",
-    points: ["Query understanding: NL → filters", "Grounded explanations + chat advisor", "Claude API ⇄ AWS Bedrock, one env var"],
+    points: ["Query understanding: NL → filters", "Grounded explanations, chat advisor & career-track roadmaps", "Claude API ⇄ AWS Bedrock, one env var"],
   },
   {
     tag: "Engine",
@@ -84,7 +84,7 @@ export default function About() {
             {[
               "Real ANN search (FAISS) with a numpy fallback so it runs anywhere.",
               "A GenAI layer that understands messy queries and grounds explanations in real results.",
-              "A conversational advisor that answers about syllabi and learning paths — grounded in the catalog.",
+              "A conversational advisor plus career-track roadmaps (PM, QA, ML, DevOps…) grounded in the catalog.",
               "A storage abstraction that switches from local files to S3 with one env var.",
               "Infrastructure as code: one terraform apply provisions the whole AWS stack.",
               "Graceful degradation everywhere — the API never fails because an LLM is missing.",

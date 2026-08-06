@@ -1,28 +1,30 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { api, ApiError, type ChatMessage, type CourseHit } from "../lib/api";
-import { Chat as ChatIcon, Send, Sparkles } from "../components/icons";
+import { api, ApiError, type ChatMessage, type CourseHit, type Roadmap, type TrackInfo } from "../lib/api";
+import { Chat as ChatIcon, Compass, Send, Sparkles } from "../components/icons";
+import RoadmapGraph from "../components/RoadmapGraph";
 
 interface Turn {
   role: "user" | "assistant";
   content: string;
   courses?: CourseHit[];
+  roadmap?: Roadmap;
 }
 
 const SUGGESTIONS = [
   "I want to move into data engineering — where do I start?",
-  "What should I learn to become an ML engineer?",
   "Explain what a deep learning course covers and how to progress.",
-  "Build me a path from Python basics to cloud/DevOps.",
+  "Which courses cover SQL for analytics?",
 ];
 
 const GREETING: Turn = {
   role: "assistant",
   content:
-    "Hi! I'm your learning advisor. Tell me your goal or a topic, and I'll explain what the relevant courses cover and suggest a path — grounded in the catalog.",
+    "Hi! I'm your learning advisor. Pick a career track for a grounded roadmap, or ask about any topic — I'll explain what the relevant courses cover and how to progress.",
 };
 
 export default function ChatPage() {
   const [turns, setTurns] = useState<Turn[]>([GREETING]);
+  const [tracks, setTracks] = useState<TrackInfo[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -31,6 +33,10 @@ export default function ChatPage() {
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [turns, loading]);
+
+  useEffect(() => {
+    api.tracks().then(setTracks).catch(() => undefined);
+  }, []);
 
   async function send(text: string) {
     const msg = text.trim();
@@ -42,12 +48,27 @@ export default function ChatPage() {
     setLoading(true);
     try {
       const history: ChatMessage[] = next
-        .filter((t) => t !== GREETING)
+        .filter((t) => t !== GREETING && !t.roadmap)
         .map((t) => ({ role: t.role, content: t.content }));
       const res = await api.chat(history);
       setTurns((t) => [...t, { role: "assistant", content: res.reply, courses: res.courses }]);
     } catch (e) {
       setError(e instanceof ApiError ? `${e.message} (HTTP ${e.status})` : "Could not reach the API.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function pickTrack(track: TrackInfo) {
+    if (loading) return;
+    setError(null);
+    setTurns((prev) => [...prev, { role: "user", content: `Show me the ${track.label} roadmap` }]);
+    setLoading(true);
+    try {
+      const rm = await api.roadmap(track.id);
+      setTurns((t) => [...t, { role: "assistant", content: rm.intro || rm.summary, roadmap: rm }]);
+    } catch (e) {
+      setError(e instanceof ApiError ? `${e.message} (HTTP ${e.status})` : "Could not build the roadmap.");
     } finally {
       setLoading(false);
     }
@@ -66,19 +87,43 @@ export default function ChatPage() {
         </span>
         <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">Chat</h1>
         <p className="mt-1.5 text-sm text-body">
-          Ask about courses, syllabi, or a development path. Replies are grounded in the catalog (RAG).
+          Pick a career track for a grounded roadmap, or ask anything. Replies are grounded in the catalog (RAG).
         </p>
       </div>
+
+      {/* career-track picker */}
+      {tracks.length > 0 && (
+        <div className="mb-4 rounded-xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))]/40 p-3">
+          <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-muted">
+            <Compass width={14} height={14} /> Build a career roadmap
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {tracks.map((t) => (
+              <button
+                key={t.id}
+                onClick={() => pickTrack(t)}
+                disabled={loading}
+                title={t.summary}
+                className="chip transition-colors hover:border-brand-400 hover:text-[rgb(var(--text))] disabled:opacity-50"
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* conversation */}
       <div className="flex-1 space-y-4 overflow-y-auto pb-4">
         {turns.map((t, i) => (
           <div key={i} className={`flex ${t.role === "user" ? "justify-end" : "justify-start"}`}>
             <div
-              className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+              className={`rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                 t.role === "user"
-                  ? "bg-brand-600 text-white"
-                  : "surface text-[rgb(var(--text))]"
+                  ? "max-w-[85%] bg-brand-600 text-white"
+                  : t.roadmap
+                    ? "w-full max-w-2xl surface text-[rgb(var(--text))]"
+                    : "max-w-[85%] surface text-[rgb(var(--text))]"
               }`}
             >
               {t.role === "assistant" && (
@@ -87,6 +132,8 @@ export default function ChatPage() {
                 </div>
               )}
               <p className="whitespace-pre-wrap">{t.content}</p>
+
+              {t.roadmap && <RoadmapGraph roadmap={t.roadmap} />}
 
               {t.courses && t.courses.length > 0 && (
                 <div className="mt-3 flex flex-wrap gap-1.5 border-t border-[rgb(var(--border))] pt-2.5">
