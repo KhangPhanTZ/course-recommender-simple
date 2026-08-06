@@ -11,7 +11,6 @@ abstraction (local filesystem or S3):
     tfidf_vectorizer.pkl fitted TF-IDF vectorizer        (tfidf backend)
     X_tfidf.npz          sparse TF-IDF matrix            (tfidf backend)
     kmeans.pkl           KMeans model                    (clusters)
-    umap_embedding.npy   2D projection for the map       (if compute_viz)
 
 Run::
 
@@ -28,7 +27,7 @@ import pickle
 import numpy as np
 import pandas as pd
 
-from .models.clustering import compute_umap_2d, fit_kmeans
+from .models.clustering import fit_kmeans
 from .models.similarity import build_corpus, embed_sbert, fit_tfidf
 from .storage import ArtifactStore, get_artifact_store
 from .utils.config import Config, load_config
@@ -133,16 +132,6 @@ def build(
     store.write_bytes("kmeans.pkl", pickle.dumps(km))
     clean_df["cluster"] = km.labels_
     meta["kmeans_k"] = int(cfg.kmeans_k)
-
-    # --- 2D visualization (optional, best-effort) ---
-    if cfg.compute_viz:
-        try:
-            emb2d = compute_umap_2d(cluster_input, cfg.random_state)
-            store.write_bytes("umap_embedding.npy", _np_to_bytes(np.asarray(emb2d, dtype=np.float32)))
-            meta["has_viz"] = True
-        except Exception as exc:  # UMAP is optional; never fail the build for it
-            print(f"⚠️  Skipping UMAP visualization: {exc}")
-            meta["has_viz"] = False
 
     # --- persist dataset + metadata ---
     store.write_bytes("courses.parquet", _parquet_to_bytes(clean_df))

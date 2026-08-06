@@ -115,16 +115,6 @@ def similar(req: SimilarRequest) -> list[CourseHit]:
     return [CourseHit(**_hit(h)) for h in hits]
 
 
-@router.get("/map", tags=["catalog"])
-def cluster_map():
-    """2-D UMAP projection of the catalog, colored by cluster (for the map view)."""
-    rec = deps.get_recommender()
-    data = rec.cluster_map()
-    if data is None:
-        return {"points": [], "n_clusters": 0, "count": 0, "total": 0, "available": False}
-    return {**data, "available": True}
-
-
 @router.get("/courses/{course_id}", tags=["catalog"])
 def get_course(course_id: str):
     """Fetch a single course by id (tries int then string)."""

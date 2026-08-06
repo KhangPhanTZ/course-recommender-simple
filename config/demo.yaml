@@ -24,7 +24,6 @@ use_sbert: false          # TF-IDF: no torch / model downloads
 tfidf_max_features: 20000
 kmeans_k: 8
 random_state: 42
-compute_viz: false        # UMAP omitted (no umap-learn in lite deps); see build script
 top_k: 10
 overfetch: 50
 use_rerank: false
