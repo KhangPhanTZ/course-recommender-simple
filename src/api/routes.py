@@ -8,6 +8,8 @@ from fastapi import APIRouter, HTTPException
 from .. import __version__
 from . import deps
 from .schemas import (
+    ChatRequest,
+    ChatResponse,
     CourseHit,
     HealthResponse,
     RecommendRequest,
@@ -80,6 +82,24 @@ def recommend(req: RecommendRequest) -> RecommendResponse:
         filters=filters,
         results=results,
         explanation=explanation,
+        llm_enabled=llm.enabled,
+    )
+
+
+@router.post("/chat", response_model=ChatResponse, tags=["chat"])
+def chat(req: ChatRequest) -> ChatResponse:
+    """Conversational advisor: grounds a reply in courses retrieved for the last message."""
+    rec = deps.get_recommender()
+    llm = deps.get_llm()
+
+    last_user = next((m.content for m in reversed(req.messages) if m.role == "user"), "")
+    hits = rec.recommend(last_user, top_k=req.top_k) if last_user.strip() else []
+    history = [{"role": m.role, "content": m.content} for m in req.messages]
+    reply = llm.advise_chat(history, [h.to_dict() for h in hits])
+
+    return ChatResponse(
+        reply=reply,
+        courses=[CourseHit(**_hit(h)) for h in hits],
         llm_enabled=llm.enabled,
     )
 
