@@ -14,7 +14,7 @@ flowchart TB
     end
 
     subgraph Serving["FastAPI service"]
-        R["/recommend, /chat, /roadmap, /similar, /courses, /health"]
+        R["/recommend, /chat, /roadmap, /metrics, /similar, /courses, /health"]
         DEP["cached singletons\n(Recommender + LLM)"]
     end
 

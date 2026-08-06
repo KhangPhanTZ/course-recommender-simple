@@ -76,8 +76,9 @@ resource "aws_ecs_service" "api" {
   }
 
   # CI updates the service with a new image tag; ignore drift on the task def.
+  # Autoscaling manages desired_count at runtime, so ignore it here too.
   lifecycle {
-    ignore_changes = [task_definition]
+    ignore_changes = [task_definition, desired_count]
   }
 
   depends_on = [aws_lb_listener.http]

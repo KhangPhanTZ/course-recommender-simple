@@ -8,11 +8,14 @@ terraform {
     }
   }
 
-  # Uncomment to store state remotely (recommended for teams):
+  # Uncomment to store state remotely (recommended for teams). Create the
+  # bucket + lock table once, then run `terraform init -migrate-state`.
   # backend "s3" {
-  #   bucket = "my-tf-state-bucket"
-  #   key    = "course-recommender/terraform.tfstate"
-  #   region = "us-east-1"
+  #   bucket         = "my-tf-state-bucket"
+  #   key            = "course-recommender/terraform.tfstate"
+  #   region         = "us-east-1"
+  #   dynamodb_table = "my-tf-locks"
+  #   encrypt        = true
   # }
 }
 

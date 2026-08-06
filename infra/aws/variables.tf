@@ -41,9 +41,33 @@ variable "task_memory" {
 }
 
 variable "desired_count" {
-  description = "Number of ECS tasks to run."
+  description = "Initial ECS task count (autoscaling manages it thereafter)."
   type        = number
   default     = 2
+}
+
+variable "min_capacity" {
+  description = "Minimum ECS tasks (autoscaling floor). Set 1 to keep cost low."
+  type        = number
+  default     = 1
+}
+
+variable "max_capacity" {
+  description = "Maximum ECS tasks (autoscaling ceiling)."
+  type        = number
+  default     = 4
+}
+
+variable "cpu_target" {
+  description = "Target average CPU %% for the autoscaling policy."
+  type        = number
+  default     = 60
+}
+
+variable "alarm_email" {
+  description = "Email for CloudWatch alarm notifications. Empty disables SNS."
+  type        = string
+  default     = ""
 }
 
 variable "llm_provider" {

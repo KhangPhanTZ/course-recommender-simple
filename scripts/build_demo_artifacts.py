@@ -57,7 +57,17 @@ def main() -> None:
 
     store = get_artifact_store()
     build(_adaptive_config(CONFIG, n_rows), data_dir, store=store)
-    print(f"Demo artifacts ready: {n_rows} courses.")
+
+    # Evaluate the freshly built catalog so the Metrics page has data.
+    import json
+
+    from src.evaluation import evaluate
+    from src.recsys.recommender import Recommender
+
+    metrics = evaluate(Recommender.load(store))
+    store.write_bytes("metrics.json", json.dumps(metrics, indent=2).encode("utf-8"))
+    print(f"Demo artifacts ready: {n_rows} courses. "
+          f"Metrics: hit_rate={metrics.get('hit_rate')} ndcg@k={metrics.get('ndcg_at_k')}")
 
 
 if __name__ == "__main__":

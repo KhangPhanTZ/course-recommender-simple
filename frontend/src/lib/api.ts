@@ -44,6 +44,23 @@ export interface Health {
   version: string;
 }
 
+export interface Metrics {
+  available: boolean;
+  k?: number;
+  backend?: string;
+  n_courses?: number;
+  generated_at?: string;
+  n_eval?: number;
+  precision_at_k?: number;
+  recall_at_k?: number;
+  hit_rate?: number;
+  mrr?: number;
+  ndcg_at_k?: number;
+  latency_ms?: { p50: number; p95: number; mean: number };
+  silhouette?: number;
+  sources?: Record<string, number>;
+}
+
 export interface TrackInfo {
   id: string;
   label: string;
@@ -134,6 +151,7 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ messages, top_k }),
     }),
+  metrics: () => request<Metrics>("/metrics"),
   tracks: () => request<TrackInfo[]>("/roadmap/tracks"),
   roadmap: (track: string, per_tier = 2) =>
     request<Roadmap>("/roadmap", {
