@@ -4,6 +4,15 @@ name: deploy-aws
 # Trigger manually, or automatically on pushes to main once secrets are set.
 on:
   workflow_dispatch:
+    inputs:
+      rebuild_artifacts:
+        description: "Rebuild catalog + metrics into S3 (needs ARTIFACT_S3_BUCKET var)"
+        type: boolean
+        default: false
+      deploy_frontend:
+        description: "Build + publish the SPA to CloudFront (needs WEB_BUCKET + CLOUDFRONT_DISTRIBUTION_ID vars)"
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths:
@@ -15,6 +24,10 @@ on:
 # Required repo configuration:
 #   Secrets:   AWS_DEPLOY_ROLE_ARN  (IAM role trusted for GitHub OIDC)
 #   Variables: AWS_REGION, ECR_REPOSITORY, ECS_CLUSTER, ECS_SERVICE
+# Optional (only for the opt-in steps below):
+#   Variables: ARTIFACT_S3_BUCKET, WEB_BUCKET, CLOUDFRONT_DISTRIBUTION_ID
+#   Extra IAM on the deploy role: s3:PutObject/ListBucket/DeleteObject on the
+#   artifact + web buckets, and cloudfront:CreateInvalidation.
 env:
   AWS_REGION: ${{ vars.AWS_REGION }}
   ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }}
@@ -65,3 +78,37 @@ jobs:
             --cluster "$ECS_CLUSTER" \
             --services "$ECS_SERVICE" \
             --region "$AWS_REGION"
+
+      # --- Opt-in: rebuild the catalog + metrics into S3 --------------------
+      - name: Set up Python
+        if: ${{ inputs.rebuild_artifacts }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Rebuild artifacts + metrics into S3
+        if: ${{ inputs.rebuild_artifacts }}
+        env:
+          ARTIFACT_STORE: s3
+          ARTIFACT_S3_BUCKET: ${{ vars.ARTIFACT_S3_BUCKET }}
+          ARTIFACT_S3_PREFIX: artifacts
+        run: |
+          pip install -r requirements-lite.txt boto3
+          python scripts/build_demo_artifacts.py
+
+      # --- Opt-in: build + publish the SPA to CloudFront -------------------
+      - name: Set up Node
+        if: ${{ inputs.deploy_frontend }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build + publish the frontend
+        if: ${{ inputs.deploy_frontend }}
+        working-directory: frontend
+        run: |
+          npm ci
+          VITE_API_URL=/api npm run build
+          aws s3 sync dist/ "s3://${{ vars.WEB_BUCKET }}/" --delete --region "$AWS_REGION"
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}" --paths "/*"
