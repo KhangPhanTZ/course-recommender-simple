@@ -2,8 +2,15 @@
 
 TF-IDF backend (no heavy models / torch / model downloads), so the demo image
 stays small and boots fast on free-tier hosts.
+
+Data source, in priority order:
+    1. ``data/``            — real datasets you committed (Coursera + Udemy + edX);
+                              every recognized file is merged onto one schema.
+    2. ``examples/catalog/`` — the bundled synthetic multi-platform sample.
+
+Both go through the same multi-platform ingestion (src/data/sources.py), so the
+demo behaves exactly like a production build.
 """
-import os
 import sys
 import tempfile
 
@@ -11,12 +18,21 @@ import yaml
 
 sys.path.insert(0, ".")
 
+from src.data import discover, load_catalog  # noqa: E402
 from src.pipeline import build  # noqa: E402
 from src.storage import get_artifact_store  # noqa: E402
 
 CONFIG = "config/demo.yaml"
-FULL_DATASET = "data/Coursera.csv"
-SAMPLE_DATASET = "examples/sample_courses.csv"
+DATA_DIR = "data"
+SAMPLE_DIR = "examples/catalog"
+
+
+def _has_datasets(data_dir: str) -> bool:
+    """True when data/ holds at least one recognized course dataset."""
+    try:
+        return len(load_catalog(discover(data_dir))) > 0
+    except ValueError:
+        return False
 
 
 def _adaptive_config(base_config: str, n_rows: int) -> str:
@@ -34,14 +50,13 @@ def _adaptive_config(base_config: str, n_rows: int) -> str:
 
 
 def main() -> None:
-    # Use the full Coursera dataset when it's committed, else the sample.
-    data = FULL_DATASET if os.path.isfile(FULL_DATASET) else SAMPLE_DATASET
-    with open(data, encoding="utf-8") as f:
-        n_rows = max(0, sum(1 for _ in f) - 1)
-    print(f"Building demo artifacts from: {data} ({n_rows} rows)")
+    data_dir = DATA_DIR if _has_datasets(DATA_DIR) else SAMPLE_DIR
+    catalog = load_catalog(discover(data_dir))
+    n_rows = len(catalog)
+    print(f"Building demo artifacts from: {data_dir}/ ({n_rows} courses)")
 
     store = get_artifact_store()
-    build(_adaptive_config(CONFIG, n_rows), data, store=store)
+    build(_adaptive_config(CONFIG, n_rows), data_dir, store=store)
     print(f"Demo artifacts ready: {n_rows} courses.")
 
 

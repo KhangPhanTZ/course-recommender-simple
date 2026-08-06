@@ -16,9 +16,13 @@ artifacts/*
 !artifacts/.gitkeep
 data/*
 !data/.gitkeep
-# Commit the full Coursera dataset here to deploy the complete catalog
-# (the demo build auto-detects it). Check the dataset license first.
+!data/README.md
+# Commit real datasets here to deploy the complete multi-platform catalog; the
+# build auto-detects and merges them (see src/data/sources.py). Check each
+# dataset's license first.
 !data/Coursera.csv
+!data/udemy_courses.csv
+!data/edx_courses.csv
 
 # OS
 .DS_Store

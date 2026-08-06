@@ -35,6 +35,8 @@ class CourseHit(BaseModel):
     rating: Any | None = None
     url: str | None = None
     skills: str | None = None
+    provider: str | None = None
+    source: str | None = None
 
 
 class RecommendResponse(BaseModel):

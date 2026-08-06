@@ -1,5 +1,10 @@
 # Config for the self-contained demo image (docker/Dockerfile.demo).
 # Lightweight TF-IDF backend so the image is small and fits free hosting tiers.
+#
+# When data/ holds a directory of catalogs (Coursera + Udemy + edX), the build
+# ingests them onto one canonical schema and the `columns` map below is ignored;
+# it only applies to a single legacy CSV. `text_fields` reference the canonical
+# columns either way.
 columns:
   id:
   title: course
@@ -16,6 +21,7 @@ text_fields:
   - skills
   - skills
   - description
+  - syllabus
   - level
   - category
 

@@ -9,6 +9,12 @@ function levelTone(level?: string | null) {
   return "bg-[rgb(var(--surface-2))] text-muted";
 }
 
+const SOURCE_LABEL: Record<string, string> = {
+  coursera: "Coursera",
+  udemy: "Udemy",
+  edx: "edX",
+};
+
 function skillList(skills?: string | null): string[] {
   if (!skills) return [];
   return skills
@@ -57,7 +63,16 @@ export default function CourseCard({
         )}
       </div>
 
+      {hit.provider && (
+        <div className="-mt-1 text-xs text-muted">{hit.provider}</div>
+      )}
+
       <div className="flex flex-wrap items-center gap-1.5">
+        {hit.source && (
+          <span className="rounded-md bg-brand-500/12 px-2 py-0.5 text-xs font-medium text-brand-700 dark:text-brand-300">
+            {SOURCE_LABEL[hit.source] ?? hit.source}
+          </span>
+        )}
         {hit.level && (
           <span className={`rounded-md px-2 py-0.5 text-xs font-medium ${levelTone(hit.level)}`}>{hit.level}</span>
         )}

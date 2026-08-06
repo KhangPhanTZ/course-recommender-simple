@@ -22,11 +22,13 @@ from __future__ import annotations
 import argparse
 import io
 import json
+import os
 import pickle
 
 import numpy as np
 import pandas as pd
 
+from .data import discover, load_catalog, source_counts
 from .models.clustering import fit_kmeans
 from .models.similarity import build_corpus, embed_sbert, fit_tfidf
 from .storage import ArtifactStore, get_artifact_store
@@ -96,8 +98,17 @@ def build(
     cfg = load_config(cfg_path)
     store = store or get_artifact_store()
 
-    df = load_dataset(data_path)
-    norm = _normalize_columns(df, cfg)
+    # A directory triggers multi-platform ingestion: every recognized Coursera /
+    # Udemy / edX file inside is normalized onto one schema and merged. A single
+    # file keeps the legacy config-driven column mapping (back-compat).
+    sources: dict[str, int] = {}
+    if os.path.isdir(data_path):
+        norm = load_catalog(discover(data_path))
+        sources = source_counts(norm)
+        print(f"Merged {len(norm)} courses from {len(sources)} source(s): {sources}")
+    else:
+        norm = _normalize_columns(load_dataset(data_path), cfg)
+
     clean_df, corpus = build_corpus(norm, cfg.text_fields, cfg.min_characters)
     clean_df = clean_df.reset_index(drop=True)
 
@@ -106,6 +117,8 @@ def build(
         "n_rows": int(len(clean_df)),
         "text_fields": cfg.text_fields,
     }
+    if sources:
+        meta["sources"] = sources
 
     # --- embeddings + retrieval index ---
     if cfg.use_sbert:

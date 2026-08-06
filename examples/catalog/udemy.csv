@@ -1,0 +1,151 @@
+course_id,course_title,url,is_paid,price,num_subscribers,num_reviews,num_lectures,level,content_duration,published_timestamp,subject
+1000,The Complete Data Analytics Bootcamp,https://www.udemy.com/course/data-analytics-beginner/,True,0,89196,4487,64,Beginner Level,25.6,2018-01-15T00:00:00Z,Business
+1001,The Complete Data Analytics Bootcamp,https://www.udemy.com/course/data-analytics-intermediate/,True,1999,55892,2807,162,Intermediate Level,8.2,2024-06-15T00:00:00Z,Business
+1002,The Complete Data Analytics Bootcamp,https://www.udemy.com/course/data-analytics-advanced/,True,4999,10828,4542,170,Expert Level,35.2,2022-06-15T00:00:00Z,Business
+1003,The Complete SQL for Analysts Bootcamp,https://www.udemy.com/course/sql-for-analysts-beginner/,True,2999,21819,3052,201,Beginner Level,10.4,2020-02-15T00:00:00Z,Business
+1004,The Complete SQL for Analysts Bootcamp,https://www.udemy.com/course/sql-for-analysts-intermediate/,True,0,30521,282,181,Intermediate Level,18.0,2018-04-15T00:00:00Z,Business
+1005,The Complete SQL for Analysts Bootcamp,https://www.udemy.com/course/sql-for-analysts-advanced/,True,4999,76984,3291,205,Expert Level,10.8,2019-09-15T00:00:00Z,Business
+1006,The Complete Business Intelligence Bootcamp,https://www.udemy.com/course/business-intelligence-beginner/,True,4999,69852,2079,303,Beginner Level,36.4,2018-02-15T00:00:00Z,Business
+1007,The Complete Business Intelligence Bootcamp,https://www.udemy.com/course/business-intelligence-intermediate/,True,0,82459,2464,279,Intermediate Level,26.4,2019-06-15T00:00:00Z,Business
+1008,The Complete Business Intelligence Bootcamp,https://www.udemy.com/course/business-intelligence-advanced/,True,0,11726,4001,55,Expert Level,41.1,2022-03-15T00:00:00Z,Business
+1009,The Complete Data Visualization Bootcamp,https://www.udemy.com/course/data-visualization-beginner/,True,2999,57922,4259,251,Beginner Level,6.8,2019-02-15T00:00:00Z,Business
+1010,The Complete Data Visualization Bootcamp,https://www.udemy.com/course/data-visualization-intermediate/,True,2999,9787,4231,141,Intermediate Level,13.1,2021-04-15T00:00:00Z,Business
+1011,The Complete Data Visualization Bootcamp,https://www.udemy.com/course/data-visualization-advanced/,True,2999,56019,3387,259,Expert Level,36.6,2018-02-15T00:00:00Z,Business
+1012,The Complete Spreadsheet Analytics Bootcamp,https://www.udemy.com/course/spreadsheet-analytics-beginner/,True,4999,33242,637,246,Beginner Level,34.3,2024-09-15T00:00:00Z,Business
+1013,The Complete Spreadsheet Analytics Bootcamp,https://www.udemy.com/course/spreadsheet-analytics-intermediate/,True,0,22079,3124,21,Intermediate Level,41.4,2020-08-15T00:00:00Z,Business
+1014,The Complete Spreadsheet Analytics Bootcamp,https://www.udemy.com/course/spreadsheet-analytics-advanced/,True,0,41604,488,45,Expert Level,25.4,2022-09-15T00:00:00Z,Business
+1015,The Complete Data Engineering Bootcamp,https://www.udemy.com/course/data-engineering-beginner/,True,0,81683,691,234,Beginner Level,28.3,2022-09-15T00:00:00Z,IT & Software
+1016,The Complete Data Engineering Bootcamp,https://www.udemy.com/course/data-engineering-intermediate/,True,0,1720,3774,308,Intermediate Level,41.8,2018-09-15T00:00:00Z,IT & Software
+1017,The Complete Data Engineering Bootcamp,https://www.udemy.com/course/data-engineering-advanced/,True,0,88038,4563,173,Expert Level,39.3,2018-03-15T00:00:00Z,IT & Software
+1018,The Complete Big Data with Spark Bootcamp,https://www.udemy.com/course/big-data-with-spark-beginner/,True,2999,66744,4022,148,Beginner Level,38.2,2024-01-15T00:00:00Z,IT & Software
+1019,The Complete Big Data with Spark Bootcamp,https://www.udemy.com/course/big-data-with-spark-intermediate/,True,4999,74019,99,77,Intermediate Level,5.0,2023-03-15T00:00:00Z,IT & Software
+1020,The Complete Big Data with Spark Bootcamp,https://www.udemy.com/course/big-data-with-spark-advanced/,True,1999,87916,862,201,Expert Level,33.2,2024-07-15T00:00:00Z,IT & Software
+1021,The Complete Building Data Pipelines Bootcamp,https://www.udemy.com/course/building-data-pipelines-beginner/,True,1999,35470,1324,75,Beginner Level,17.3,2018-08-15T00:00:00Z,IT & Software
+1022,The Complete Building Data Pipelines Bootcamp,https://www.udemy.com/course/building-data-pipelines-intermediate/,True,0,37085,2896,280,Intermediate Level,18.0,2024-09-15T00:00:00Z,IT & Software
+1023,The Complete Building Data Pipelines Bootcamp,https://www.udemy.com/course/building-data-pipelines-advanced/,True,4999,79957,4209,79,Expert Level,17.4,2022-04-15T00:00:00Z,IT & Software
+1024,The Complete Data Warehousing Bootcamp,https://www.udemy.com/course/data-warehousing-beginner/,True,2999,66969,2553,229,Beginner Level,15.0,2023-05-15T00:00:00Z,IT & Software
+1025,The Complete Data Warehousing Bootcamp,https://www.udemy.com/course/data-warehousing-intermediate/,True,2999,61446,3639,246,Intermediate Level,29.0,2022-08-15T00:00:00Z,IT & Software
+1026,The Complete Data Warehousing Bootcamp,https://www.udemy.com/course/data-warehousing-advanced/,True,0,32592,3912,57,Expert Level,20.2,2023-04-15T00:00:00Z,IT & Software
+1027,The Complete Streaming with Kafka Bootcamp,https://www.udemy.com/course/streaming-with-kafka-beginner/,True,0,73560,2061,82,Beginner Level,20.3,2024-08-15T00:00:00Z,IT & Software
+1028,The Complete Streaming with Kafka Bootcamp,https://www.udemy.com/course/streaming-with-kafka-intermediate/,True,2999,68827,3989,142,Intermediate Level,13.0,2018-05-15T00:00:00Z,IT & Software
+1029,The Complete Streaming with Kafka Bootcamp,https://www.udemy.com/course/streaming-with-kafka-advanced/,True,4999,53924,2730,297,Expert Level,20.6,2018-04-15T00:00:00Z,IT & Software
+1030,The Complete Machine Learning Bootcamp,https://www.udemy.com/course/machine-learning-beginner/,True,1999,64493,1817,159,Beginner Level,19.4,2018-07-15T00:00:00Z,Development
+1031,The Complete Machine Learning Bootcamp,https://www.udemy.com/course/machine-learning-intermediate/,True,0,11503,5285,239,Intermediate Level,7.4,2021-03-15T00:00:00Z,Development
+1032,The Complete Machine Learning Bootcamp,https://www.udemy.com/course/machine-learning-advanced/,True,4999,3040,4438,46,Expert Level,42.0,2020-04-15T00:00:00Z,Development
+1033,The Complete Deep Learning Bootcamp,https://www.udemy.com/course/deep-learning-beginner/,True,0,74420,1805,258,Beginner Level,30.0,2024-06-15T00:00:00Z,Development
+1034,The Complete Deep Learning Bootcamp,https://www.udemy.com/course/deep-learning-intermediate/,True,4999,52490,5877,121,Intermediate Level,5.0,2023-04-15T00:00:00Z,Development
+1035,The Complete Deep Learning Bootcamp,https://www.udemy.com/course/deep-learning-advanced/,True,0,55557,4035,74,Expert Level,19.3,2020-08-15T00:00:00Z,Development
+1036,The Complete Applied ML Bootcamp,https://www.udemy.com/course/applied-ml-beginner/,True,2999,32677,729,162,Beginner Level,37.3,2019-08-15T00:00:00Z,Development
+1037,The Complete Applied ML Bootcamp,https://www.udemy.com/course/applied-ml-intermediate/,True,2999,73348,103,284,Intermediate Level,39.9,2018-04-15T00:00:00Z,Development
+1038,The Complete Applied ML Bootcamp,https://www.udemy.com/course/applied-ml-advanced/,True,2999,87526,4784,208,Expert Level,20.9,2022-06-15T00:00:00Z,Development
+1039,The Complete Neural Networks Bootcamp,https://www.udemy.com/course/neural-networks-beginner/,True,0,70736,5673,114,Beginner Level,9.7,2023-08-15T00:00:00Z,Development
+1040,The Complete Neural Networks Bootcamp,https://www.udemy.com/course/neural-networks-intermediate/,True,1999,36454,392,47,Intermediate Level,24.1,2023-03-15T00:00:00Z,Development
+1041,The Complete Neural Networks Bootcamp,https://www.udemy.com/course/neural-networks-advanced/,True,4999,15453,555,225,Expert Level,21.7,2022-01-15T00:00:00Z,Development
+1042,The Complete ML Engineering Bootcamp,https://www.udemy.com/course/ml-engineering-beginner/,True,4999,39474,4841,239,Beginner Level,14.2,2022-01-15T00:00:00Z,Development
+1043,The Complete ML Engineering Bootcamp,https://www.udemy.com/course/ml-engineering-intermediate/,True,4999,38675,287,138,Intermediate Level,13.5,2020-08-15T00:00:00Z,Development
+1044,The Complete ML Engineering Bootcamp,https://www.udemy.com/course/ml-engineering-advanced/,True,1999,40819,4894,311,Expert Level,38.8,2021-02-15T00:00:00Z,Development
+1045,The Complete MLOps Bootcamp,https://www.udemy.com/course/mlops-beginner/,True,4999,42747,4965,148,Beginner Level,3.0,2019-01-15T00:00:00Z,IT & Software
+1046,The Complete MLOps Bootcamp,https://www.udemy.com/course/mlops-intermediate/,True,4999,44187,2650,73,Intermediate Level,36.3,2020-07-15T00:00:00Z,IT & Software
+1047,The Complete MLOps Bootcamp,https://www.udemy.com/course/mlops-advanced/,True,4999,67949,29,297,Expert Level,20.5,2018-04-15T00:00:00Z,IT & Software
+1048,The Complete DevOps Bootcamp,https://www.udemy.com/course/devops-beginner/,True,4999,16415,256,142,Beginner Level,30.4,2020-09-15T00:00:00Z,IT & Software
+1049,The Complete DevOps Bootcamp,https://www.udemy.com/course/devops-intermediate/,True,4999,63742,3888,144,Intermediate Level,20.3,2019-07-15T00:00:00Z,IT & Software
+1050,The Complete DevOps Bootcamp,https://www.udemy.com/course/devops-advanced/,True,4999,19976,3678,295,Expert Level,21.4,2020-09-15T00:00:00Z,IT & Software
+1051,The Complete Kubernetes in Production Bootcamp,https://www.udemy.com/course/kubernetes-in-production-beginner/,True,4999,51104,5456,97,Beginner Level,21.8,2018-03-15T00:00:00Z,IT & Software
+1052,The Complete Kubernetes in Production Bootcamp,https://www.udemy.com/course/kubernetes-in-production-intermediate/,True,2999,44875,5125,223,Intermediate Level,28.0,2024-06-15T00:00:00Z,IT & Software
+1053,The Complete Kubernetes in Production Bootcamp,https://www.udemy.com/course/kubernetes-in-production-advanced/,True,0,83566,5786,71,Expert Level,19.7,2023-05-15T00:00:00Z,IT & Software
+1054,The Complete CI/CD Pipelines Bootcamp,https://www.udemy.com/course/ci-cd-pipelines-beginner/,True,1999,22780,1454,60,Beginner Level,26.4,2021-04-15T00:00:00Z,IT & Software
+1055,The Complete CI/CD Pipelines Bootcamp,https://www.udemy.com/course/ci-cd-pipelines-intermediate/,True,0,58398,2850,320,Intermediate Level,14.0,2021-05-15T00:00:00Z,IT & Software
+1056,The Complete CI/CD Pipelines Bootcamp,https://www.udemy.com/course/ci-cd-pipelines-advanced/,True,4999,36476,86,309,Expert Level,36.6,2024-01-15T00:00:00Z,IT & Software
+1057,The Complete Infrastructure as Code Bootcamp,https://www.udemy.com/course/infrastructure-as-code-beginner/,True,0,40992,3631,37,Beginner Level,25.2,2023-03-15T00:00:00Z,IT & Software
+1058,The Complete Infrastructure as Code Bootcamp,https://www.udemy.com/course/infrastructure-as-code-intermediate/,True,1999,34181,3967,171,Intermediate Level,31.9,2020-02-15T00:00:00Z,IT & Software
+1059,The Complete Infrastructure as Code Bootcamp,https://www.udemy.com/course/infrastructure-as-code-advanced/,True,2999,77119,3141,210,Expert Level,6.3,2019-08-15T00:00:00Z,IT & Software
+1060,The Complete AWS Cloud Bootcamp,https://www.udemy.com/course/aws-cloud-beginner/,True,0,40393,4055,79,Beginner Level,5.9,2022-03-15T00:00:00Z,IT & Software
+1061,The Complete AWS Cloud Bootcamp,https://www.udemy.com/course/aws-cloud-intermediate/,True,2999,4788,5674,209,Intermediate Level,10.7,2021-04-15T00:00:00Z,IT & Software
+1062,The Complete AWS Cloud Bootcamp,https://www.udemy.com/course/aws-cloud-advanced/,True,1999,84609,5258,30,Expert Level,4.0,2020-04-15T00:00:00Z,IT & Software
+1063,The Complete Cloud Architecture Bootcamp,https://www.udemy.com/course/cloud-architecture-beginner/,True,1999,17538,4445,148,Beginner Level,33.9,2018-01-15T00:00:00Z,IT & Software
+1064,The Complete Cloud Architecture Bootcamp,https://www.udemy.com/course/cloud-architecture-intermediate/,True,0,62922,3692,205,Intermediate Level,22.5,2018-08-15T00:00:00Z,IT & Software
+1065,The Complete Cloud Architecture Bootcamp,https://www.udemy.com/course/cloud-architecture-advanced/,True,0,64760,5855,247,Expert Level,4.9,2018-06-15T00:00:00Z,IT & Software
+1066,The Complete Serverless Applications Bootcamp,https://www.udemy.com/course/serverless-applications-beginner/,True,0,15496,5383,302,Beginner Level,30.8,2019-07-15T00:00:00Z,IT & Software
+1067,The Complete Serverless Applications Bootcamp,https://www.udemy.com/course/serverless-applications-intermediate/,True,2999,20506,5646,262,Intermediate Level,4.7,2024-02-15T00:00:00Z,IT & Software
+1068,The Complete Serverless Applications Bootcamp,https://www.udemy.com/course/serverless-applications-advanced/,True,4999,7243,2376,179,Expert Level,16.1,2022-09-15T00:00:00Z,IT & Software
+1069,The Complete Azure Fundamentals Bootcamp,https://www.udemy.com/course/azure-fundamentals-beginner/,True,4999,74026,5113,305,Beginner Level,3.1,2023-05-15T00:00:00Z,IT & Software
+1070,The Complete Azure Fundamentals Bootcamp,https://www.udemy.com/course/azure-fundamentals-intermediate/,True,0,12526,4365,130,Intermediate Level,17.0,2021-06-15T00:00:00Z,IT & Software
+1071,The Complete Azure Fundamentals Bootcamp,https://www.udemy.com/course/azure-fundamentals-advanced/,True,4999,64156,4993,246,Expert Level,18.6,2019-09-15T00:00:00Z,IT & Software
+1072,The Complete Cloud Security Bootcamp,https://www.udemy.com/course/cloud-security-beginner/,True,0,1507,1694,174,Beginner Level,39.8,2024-03-15T00:00:00Z,IT & Software
+1073,The Complete Cloud Security Bootcamp,https://www.udemy.com/course/cloud-security-intermediate/,True,2999,9947,3272,41,Intermediate Level,19.4,2021-02-15T00:00:00Z,IT & Software
+1074,The Complete Cloud Security Bootcamp,https://www.udemy.com/course/cloud-security-advanced/,True,4999,47928,741,243,Expert Level,35.8,2019-07-15T00:00:00Z,IT & Software
+1075,The Complete Product Management Bootcamp,https://www.udemy.com/course/product-management-beginner/,True,1999,46293,2896,95,Beginner Level,11.5,2019-05-15T00:00:00Z,Business
+1076,The Complete Product Management Bootcamp,https://www.udemy.com/course/product-management-intermediate/,True,2999,82710,2609,97,Intermediate Level,19.6,2021-08-15T00:00:00Z,Business
+1077,The Complete Product Management Bootcamp,https://www.udemy.com/course/product-management-advanced/,True,0,84997,759,279,Expert Level,17.4,2022-09-15T00:00:00Z,Business
+1078,The Complete Project Management Bootcamp,https://www.udemy.com/course/project-management-beginner/,True,2999,11553,4153,108,Beginner Level,3.6,2023-08-15T00:00:00Z,Business
+1079,The Complete Project Management Bootcamp,https://www.udemy.com/course/project-management-intermediate/,True,2999,9139,2720,68,Intermediate Level,24.3,2021-05-15T00:00:00Z,Business
+1080,The Complete Project Management Bootcamp,https://www.udemy.com/course/project-management-advanced/,True,4999,17401,4894,63,Expert Level,14.4,2021-06-15T00:00:00Z,Business
+1081,The Complete Agile & Scrum Bootcamp,https://www.udemy.com/course/agile---scrum-beginner/,True,1999,45291,4003,118,Beginner Level,11.1,2019-03-15T00:00:00Z,Business
+1082,The Complete Agile & Scrum Bootcamp,https://www.udemy.com/course/agile---scrum-intermediate/,True,1999,57866,377,230,Intermediate Level,16.6,2023-04-15T00:00:00Z,Business
+1083,The Complete Agile & Scrum Bootcamp,https://www.udemy.com/course/agile---scrum-advanced/,True,4999,61013,2328,215,Expert Level,22.1,2021-03-15T00:00:00Z,Business
+1084,The Complete Product Strategy Bootcamp,https://www.udemy.com/course/product-strategy-beginner/,True,1999,36255,3700,282,Beginner Level,7.9,2021-02-15T00:00:00Z,Business
+1085,The Complete Product Strategy Bootcamp,https://www.udemy.com/course/product-strategy-intermediate/,True,0,42270,831,191,Intermediate Level,33.7,2019-01-15T00:00:00Z,Business
+1086,The Complete Product Strategy Bootcamp,https://www.udemy.com/course/product-strategy-advanced/,True,4999,15073,2380,141,Expert Level,14.0,2018-04-15T00:00:00Z,Business
+1087,The Complete Roadmapping Bootcamp,https://www.udemy.com/course/roadmapping-beginner/,True,1999,38677,3536,20,Beginner Level,26.6,2019-07-15T00:00:00Z,Business
+1088,The Complete Roadmapping Bootcamp,https://www.udemy.com/course/roadmapping-intermediate/,True,4999,49429,2097,28,Intermediate Level,16.3,2018-06-15T00:00:00Z,Business
+1089,The Complete Roadmapping Bootcamp,https://www.udemy.com/course/roadmapping-advanced/,True,4999,83302,1513,89,Expert Level,4.5,2024-08-15T00:00:00Z,Business
+1090,The Complete Test Automation Bootcamp,https://www.udemy.com/course/test-automation-beginner/,True,1999,38001,2944,44,Beginner Level,36.6,2020-05-15T00:00:00Z,Development
+1091,The Complete Test Automation Bootcamp,https://www.udemy.com/course/test-automation-intermediate/,True,0,56140,666,240,Intermediate Level,26.1,2024-03-15T00:00:00Z,Development
+1092,The Complete Test Automation Bootcamp,https://www.udemy.com/course/test-automation-advanced/,True,4999,6051,5974,200,Expert Level,26.6,2021-05-15T00:00:00Z,Development
+1093,The Complete QA Engineering Bootcamp,https://www.udemy.com/course/qa-engineering-beginner/,True,4999,5061,1054,54,Beginner Level,11.4,2023-06-15T00:00:00Z,Development
+1094,The Complete QA Engineering Bootcamp,https://www.udemy.com/course/qa-engineering-intermediate/,True,2999,85639,2303,147,Intermediate Level,40.4,2018-03-15T00:00:00Z,Development
+1095,The Complete QA Engineering Bootcamp,https://www.udemy.com/course/qa-engineering-advanced/,True,4999,26737,1024,89,Expert Level,36.1,2021-03-15T00:00:00Z,Development
+1096,The Complete Selenium WebDriver Bootcamp,https://www.udemy.com/course/selenium-webdriver-beginner/,True,1999,47881,4187,134,Beginner Level,6.9,2019-03-15T00:00:00Z,Development
+1097,The Complete Selenium WebDriver Bootcamp,https://www.udemy.com/course/selenium-webdriver-intermediate/,True,4999,69403,3385,229,Intermediate Level,34.9,2018-03-15T00:00:00Z,Development
+1098,The Complete Selenium WebDriver Bootcamp,https://www.udemy.com/course/selenium-webdriver-advanced/,True,0,16774,4264,98,Expert Level,14.2,2019-06-15T00:00:00Z,Development
+1099,The Complete API Testing Bootcamp,https://www.udemy.com/course/api-testing-beginner/,True,0,66373,5270,106,Beginner Level,25.7,2022-03-15T00:00:00Z,Development
+1100,The Complete API Testing Bootcamp,https://www.udemy.com/course/api-testing-intermediate/,True,4999,81516,5254,35,Intermediate Level,21.9,2023-09-15T00:00:00Z,Development
+1101,The Complete API Testing Bootcamp,https://www.udemy.com/course/api-testing-advanced/,True,4999,27241,2806,93,Expert Level,14.5,2023-06-15T00:00:00Z,Development
+1102,The Complete End-to-End Testing Bootcamp,https://www.udemy.com/course/end-to-end-testing-beginner/,True,0,7132,2397,216,Beginner Level,36.6,2021-04-15T00:00:00Z,Development
+1103,The Complete End-to-End Testing Bootcamp,https://www.udemy.com/course/end-to-end-testing-intermediate/,True,0,52043,4160,254,Intermediate Level,40.7,2019-06-15T00:00:00Z,Development
+1104,The Complete End-to-End Testing Bootcamp,https://www.udemy.com/course/end-to-end-testing-advanced/,True,4999,48464,390,225,Expert Level,4.0,2022-04-15T00:00:00Z,Development
+1105,The Complete Web Development Bootcamp,https://www.udemy.com/course/web-development-beginner/,True,2999,73616,3015,93,Beginner Level,10.0,2022-07-15T00:00:00Z,Web Development
+1106,The Complete Web Development Bootcamp,https://www.udemy.com/course/web-development-intermediate/,True,4999,81305,2471,192,Intermediate Level,22.3,2022-09-15T00:00:00Z,Web Development
+1107,The Complete Web Development Bootcamp,https://www.udemy.com/course/web-development-advanced/,True,0,78738,3907,155,Expert Level,40.7,2024-04-15T00:00:00Z,Web Development
+1108,The Complete React Bootcamp,https://www.udemy.com/course/react-beginner/,True,2999,55390,1260,231,Beginner Level,29.6,2021-09-15T00:00:00Z,Web Development
+1109,The Complete React Bootcamp,https://www.udemy.com/course/react-intermediate/,True,2999,72101,2922,155,Intermediate Level,26.4,2019-04-15T00:00:00Z,Web Development
+1110,The Complete React Bootcamp,https://www.udemy.com/course/react-advanced/,True,2999,38221,1018,313,Expert Level,29.1,2021-07-15T00:00:00Z,Web Development
+1111,The Complete Full-Stack JavaScript Bootcamp,https://www.udemy.com/course/full-stack-javascript-beginner/,True,2999,74164,5723,159,Beginner Level,7.5,2022-04-15T00:00:00Z,Web Development
+1112,The Complete Full-Stack JavaScript Bootcamp,https://www.udemy.com/course/full-stack-javascript-intermediate/,True,1999,1179,4528,100,Intermediate Level,18.3,2021-08-15T00:00:00Z,Web Development
+1113,The Complete Full-Stack JavaScript Bootcamp,https://www.udemy.com/course/full-stack-javascript-advanced/,True,0,23446,3443,110,Expert Level,39.4,2018-07-15T00:00:00Z,Web Development
+1114,The Complete Frontend Engineering Bootcamp,https://www.udemy.com/course/frontend-engineering-beginner/,True,4999,18089,4150,259,Beginner Level,12.9,2024-02-15T00:00:00Z,Web Development
+1115,The Complete Frontend Engineering Bootcamp,https://www.udemy.com/course/frontend-engineering-intermediate/,True,4999,56559,4241,187,Intermediate Level,5.5,2023-02-15T00:00:00Z,Web Development
+1116,The Complete Frontend Engineering Bootcamp,https://www.udemy.com/course/frontend-engineering-advanced/,True,0,34782,5374,204,Expert Level,29.7,2018-02-15T00:00:00Z,Web Development
+1117,The Complete Node.js APIs Bootcamp,https://www.udemy.com/course/node-js-apis-beginner/,True,4999,20578,3747,211,Beginner Level,18.6,2022-08-15T00:00:00Z,Web Development
+1118,The Complete Node.js APIs Bootcamp,https://www.udemy.com/course/node-js-apis-intermediate/,True,1999,75565,4416,96,Intermediate Level,8.6,2024-09-15T00:00:00Z,Web Development
+1119,The Complete Node.js APIs Bootcamp,https://www.udemy.com/course/node-js-apis-advanced/,True,0,73742,3807,177,Expert Level,30.9,2021-05-15T00:00:00Z,Web Development
+1120,The Complete Cybersecurity Bootcamp,https://www.udemy.com/course/cybersecurity-beginner/,True,0,62375,279,166,Beginner Level,18.4,2024-03-15T00:00:00Z,IT & Software
+1121,The Complete Cybersecurity Bootcamp,https://www.udemy.com/course/cybersecurity-intermediate/,True,4999,69816,1063,134,Intermediate Level,35.4,2024-01-15T00:00:00Z,IT & Software
+1122,The Complete Cybersecurity Bootcamp,https://www.udemy.com/course/cybersecurity-advanced/,True,1999,15290,283,234,Expert Level,26.6,2018-04-15T00:00:00Z,IT & Software
+1123,The Complete Ethical Hacking Bootcamp,https://www.udemy.com/course/ethical-hacking-beginner/,True,1999,7898,1167,277,Beginner Level,41.7,2019-06-15T00:00:00Z,IT & Software
+1124,The Complete Ethical Hacking Bootcamp,https://www.udemy.com/course/ethical-hacking-intermediate/,True,1999,82550,5580,238,Intermediate Level,24.2,2018-06-15T00:00:00Z,IT & Software
+1125,The Complete Ethical Hacking Bootcamp,https://www.udemy.com/course/ethical-hacking-advanced/,True,1999,39918,5816,93,Expert Level,34.2,2018-09-15T00:00:00Z,IT & Software
+1126,The Complete Network Security Bootcamp,https://www.udemy.com/course/network-security-beginner/,True,0,70706,5955,117,Beginner Level,4.1,2021-01-15T00:00:00Z,IT & Software
+1127,The Complete Network Security Bootcamp,https://www.udemy.com/course/network-security-intermediate/,True,0,63273,2007,124,Intermediate Level,17.9,2019-09-15T00:00:00Z,IT & Software
+1128,The Complete Network Security Bootcamp,https://www.udemy.com/course/network-security-advanced/,True,4999,42473,1684,209,Expert Level,14.5,2018-04-15T00:00:00Z,IT & Software
+1129,The Complete Security Operations Bootcamp,https://www.udemy.com/course/security-operations-beginner/,True,4999,72673,5382,192,Beginner Level,12.3,2024-08-15T00:00:00Z,IT & Software
+1130,The Complete Security Operations Bootcamp,https://www.udemy.com/course/security-operations-intermediate/,True,0,88084,417,23,Intermediate Level,18.5,2024-04-15T00:00:00Z,IT & Software
+1131,The Complete Security Operations Bootcamp,https://www.udemy.com/course/security-operations-advanced/,True,4999,2053,157,291,Expert Level,30.9,2022-05-15T00:00:00Z,IT & Software
+1132,The Complete Cryptography Bootcamp,https://www.udemy.com/course/cryptography-beginner/,True,2999,46957,2209,223,Beginner Level,5.2,2021-08-15T00:00:00Z,IT & Software
+1133,The Complete Cryptography Bootcamp,https://www.udemy.com/course/cryptography-intermediate/,True,0,22963,697,275,Intermediate Level,35.8,2023-06-15T00:00:00Z,IT & Software
+1134,The Complete Cryptography Bootcamp,https://www.udemy.com/course/cryptography-advanced/,True,1999,41720,148,126,Expert Level,25.5,2024-07-15T00:00:00Z,IT & Software
+1135,The Complete Natural Language Processing Bootcamp,https://www.udemy.com/course/natural-language-processing-beginner/,True,2999,7538,820,243,Beginner Level,11.3,2018-06-15T00:00:00Z,Development
+1136,The Complete Natural Language Processing Bootcamp,https://www.udemy.com/course/natural-language-processing-intermediate/,True,4999,11732,5087,171,Intermediate Level,33.9,2023-02-15T00:00:00Z,Development
+1137,The Complete Natural Language Processing Bootcamp,https://www.udemy.com/course/natural-language-processing-advanced/,True,2999,13899,1105,64,Expert Level,9.5,2021-09-15T00:00:00Z,Development
+1138,The Complete Large Language Models Bootcamp,https://www.udemy.com/course/large-language-models-beginner/,True,0,73839,2008,312,Beginner Level,22.8,2023-07-15T00:00:00Z,Development
+1139,The Complete Large Language Models Bootcamp,https://www.udemy.com/course/large-language-models-intermediate/,True,0,47833,2081,146,Intermediate Level,30.8,2021-04-15T00:00:00Z,Development
+1140,The Complete Large Language Models Bootcamp,https://www.udemy.com/course/large-language-models-advanced/,True,1999,39878,2646,122,Expert Level,21.2,2019-07-15T00:00:00Z,Development
+1141,The Complete Generative AI Bootcamp,https://www.udemy.com/course/generative-ai-beginner/,True,1999,78124,4489,112,Beginner Level,29.3,2022-01-15T00:00:00Z,Development
+1142,The Complete Generative AI Bootcamp,https://www.udemy.com/course/generative-ai-intermediate/,True,1999,55960,3108,57,Intermediate Level,20.0,2022-08-15T00:00:00Z,Development
+1143,The Complete Generative AI Bootcamp,https://www.udemy.com/course/generative-ai-advanced/,True,2999,22302,5320,42,Expert Level,24.5,2023-07-15T00:00:00Z,Development
+1144,The Complete Building RAG Apps Bootcamp,https://www.udemy.com/course/building-rag-apps-beginner/,True,1999,45715,221,267,Beginner Level,6.2,2021-02-15T00:00:00Z,Development
+1145,The Complete Building RAG Apps Bootcamp,https://www.udemy.com/course/building-rag-apps-intermediate/,True,4999,42300,570,173,Intermediate Level,3.8,2023-02-15T00:00:00Z,Development
+1146,The Complete Building RAG Apps Bootcamp,https://www.udemy.com/course/building-rag-apps-advanced/,True,4999,30889,3338,114,Expert Level,9.5,2023-07-15T00:00:00Z,Development
+1147,The Complete Transformers Bootcamp,https://www.udemy.com/course/transformers-beginner/,True,0,76174,853,294,Beginner Level,9.5,2020-04-15T00:00:00Z,Development
+1148,The Complete Transformers Bootcamp,https://www.udemy.com/course/transformers-intermediate/,True,4999,81418,1433,172,Intermediate Level,38.7,2022-02-15T00:00:00Z,Development
+1149,The Complete Transformers Bootcamp,https://www.udemy.com/course/transformers-advanced/,True,4999,55948,1541,269,Expert Level,27.4,2023-03-15T00:00:00Z,Development

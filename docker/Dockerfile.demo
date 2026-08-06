@@ -32,15 +32,15 @@ RUN pip install --upgrade pip && pip install -r requirements-lite.txt
 COPY src/ ./src/
 COPY config/ ./config/
 COPY examples/ ./examples/
-# data/ carries the full Coursera.csv when committed (else just .gitkeep);
-# the build script auto-detects it and falls back to the sample catalog.
+# data/ carries real datasets when committed (Coursera + Udemy + edX, else just
+# .gitkeep); the build merges whatever it finds, else the bundled sample catalog.
 COPY data/ ./data/
 COPY scripts/build_demo_artifacts.py ./scripts/build_demo_artifacts.py
 COPY --from=web /web/dist ./static
 # Fail fast (and log the listing) if the SPA build didn't land in /app/static.
 RUN ls -la /app/static && test -f /app/static/index.html
 
-# Bake the TF-IDF catalog + 2-D map into the image.
+# Bake the TF-IDF catalog into the image.
 RUN python scripts/build_demo_artifacts.py
 
 RUN useradd --create-home --uid 10001 appuser && chown -R appuser /app
