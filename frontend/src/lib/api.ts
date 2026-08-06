@@ -38,6 +38,17 @@ export interface ClusterMap {
   available: boolean;
 }
 
+export interface ChatMessage {
+  role: "user" | "assistant";
+  content: string;
+}
+
+export interface ChatResponse {
+  reply: string;
+  courses: CourseHit[];
+  llm_enabled: boolean;
+}
+
 export interface Health {
   status: string;
   backend?: string | null;
@@ -97,6 +108,11 @@ export const api = {
     }),
   course: (id: number | string) => request<Record<string, unknown>>(`/courses/${id}`),
   map: () => request<ClusterMap>("/map"),
+  chat: (messages: ChatMessage[], top_k = 6) =>
+    request<ChatResponse>("/chat", {
+      method: "POST",
+      body: JSON.stringify({ messages, top_k }),
+    }),
 };
 
 export { BASE as API_BASE };

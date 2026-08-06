@@ -47,6 +47,20 @@ def test_course_not_found(built_artifacts):
     assert c.get("/courses/9999").status_code == 404
 
 
+def test_chat_endpoint(built_artifacts):
+    c = _client(built_artifacts)
+    r = c.post("/chat", json={"messages": [{"role": "user", "content": "deep learning with pytorch"}]})
+    assert r.status_code == 200
+    body = r.json()
+    assert body["reply"]                    # template fallback always returns text
+    assert len(body["courses"]) > 0         # grounded in retrieved courses
+
+
+def test_chat_requires_messages(built_artifacts):
+    c = _client(built_artifacts)
+    assert c.post("/chat", json={"messages": []}).status_code == 422
+
+
 def test_map_endpoint_graceful_without_viz(built_artifacts):
     # The test fixture builds with compute_viz disabled -> no UMAP artifact.
     c = _client(built_artifacts)

@@ -90,6 +90,17 @@ export const Close = (p: P) => (
     <path d="M18 6 6 18M6 6l12 12" />
   </svg>
 );
+export const Chat = (p: P) => (
+  <svg {...base(p)}>
+    <path d="M21 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z" />
+    <path d="M8 9h8M8 13h5" />
+  </svg>
+);
+export const Send = (p: P) => (
+  <svg {...base(p)}>
+    <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" />
+  </svg>
+);
 export const Star = (p: P) => (
   <svg {...base({ ...p, fill: p.fill ?? "currentColor", stroke: "none" })}>
     <path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.2 1 5.9-5.3-2.8-5.3 2.8 1-5.9L4.5 9.7l5.9-.9L12 3.5z" />

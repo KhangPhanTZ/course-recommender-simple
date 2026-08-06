@@ -5,6 +5,7 @@ import { Close, Github, Menu, Sparkles } from "./icons";
 
 const links = [
   { to: "/search", label: "Search" },
+  { to: "/chat", label: "Chat" },
   { to: "/explore", label: "Explore" },
   { to: "/map", label: "Map" },
   { to: "/architecture", label: "Architecture" },

@@ -51,6 +51,32 @@ class SimilarRequest(BaseModel):
     top_k: int = Field(10, ge=1, le=100)
 
 
+class ChatMessage(BaseModel):
+    role: str = Field(..., description='"user" or "assistant".')
+    content: str = Field(..., min_length=1)
+
+
+class ChatRequest(BaseModel):
+    messages: list[ChatMessage] = Field(..., min_length=1)
+    top_k: int = Field(6, ge=1, le=20)
+
+    model_config = {
+        "json_schema_extra": {
+            "example": {
+                "messages": [
+                    {"role": "user", "content": "I want to move into data engineering — where do I start?"}
+                ]
+            }
+        }
+    }
+
+
+class ChatResponse(BaseModel):
+    reply: str
+    courses: list[CourseHit]
+    llm_enabled: bool = False
+
+
 class HealthResponse(BaseModel):
     status: str
     backend: str | None = None

@@ -41,6 +41,16 @@ _EXPLAIN_SYSTEM = (
     "courses beyond the provided list."
 )
 
+_ADVISOR_SYSTEM = (
+    "You are a friendly learning advisor for an online-course catalog. Using "
+    "ONLY the courses provided as context, help the learner understand what the "
+    "relevant courses cover (topics, skills, level) and suggest a sensible "
+    "development path — what to learn first and what to move on to next. Be "
+    "concise (3-6 sentences), reference courses by title, and never invent "
+    "courses that are not in the context. If the context is empty, say you "
+    "couldn't find matching courses and ask the learner to describe a topic."
+)
+
 
 class RecommendationLLM:
     """Bundles the GenAI features and their non-LLM fallbacks."""
@@ -115,6 +125,51 @@ class RecommendationLLM:
             f"“{top.get('title')}”. Related picks include {names}. "
             "Start with the highest-scored course, then branch into the others "
             "to broaden the skills they share."
+        )
+
+    # ------------------------------------------------------------- chat advisor
+    def advise_chat(self, history: list[dict[str, str]], courses: list[dict[str, Any]]) -> str:
+        """Answer the learner's latest message, grounded in retrieved ``courses``."""
+        if self.enabled:
+            try:
+                context = "\n".join(
+                    f"- {c.get('title')} | skills: {c.get('skills') or 'n/a'} "
+                    f"| level: {c.get('level') or 'n/a'}"
+                    for c in courses[:8]
+                )
+                convo = "\n".join(f"{m['role']}: {m['content']}" for m in history[-6:])
+                prompt = (
+                    f"Conversation so far:\n{convo}\n\n"
+                    f"Relevant courses:\n{context or '(none found)'}\n\n"
+                    "Reply as the advisor to the learner's last message."
+                )
+                return self.provider.complete(
+                    _ADVISOR_SYSTEM,
+                    prompt,
+                    max_tokens=self.settings.max_tokens,
+                    temperature=self.settings.temperature,
+                ).strip()
+            except Exception:
+                pass
+        return self._template_chat(history, courses)
+
+    @staticmethod
+    def _template_chat(history: list[dict[str, str]], courses: list[dict[str, Any]]) -> str:
+        last = next((m["content"] for m in reversed(history) if m["role"] == "user"), "")
+        if not courses:
+            return (
+                "I couldn't find matching courses for that. Try describing a topic "
+                "or skill you'd like to learn (e.g. \"data analysis with Python\")."
+            )
+        top = courses[0]
+        names = ", ".join(str(c.get("title")) for c in courses[:4])
+        skills = top.get("skills") or "the core skills"
+        return (
+            f"For “{last}”, a good starting point is “{top.get('title')}” "
+            f"(covers {skills}; level: {top.get('level') or 'all levels'}). "
+            f"Related options: {names}. Begin with a beginner course to build "
+            "fundamentals, then move to intermediate/advanced ones that go deeper "
+            "into the same skills."
         )
 
 
