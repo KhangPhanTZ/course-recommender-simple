@@ -39,12 +39,24 @@ def health() -> HealthResponse:
     except Exception as exc:  # artifacts not built yet -> degraded, not dead
         logger.warning("Recommender not ready: %s", exc)
         status = "degraded"
+
+    # Report whether the provider is actually usable, not merely configured.
+    # The GenAI layer falls back to templates on failure, so a probe that
+    # echoed the config alone would call the layer healthy while every request
+    # silently degraded.
+    llm_ready = False
+    if s.llm.is_active:
+        try:
+            llm_ready = deps.get_llm().provider.available
+        except Exception as exc:
+            logger.warning("LLM provider not ready: %s", exc)
+
     return HealthResponse(
         status=status,
         backend=backend,
         n_courses=n,
-        llm_provider=s.llm.provider if s.llm.is_active else None,
-        llm_enabled=s.llm.is_active,
+        llm_provider=s.llm.provider if llm_ready else None,
+        llm_enabled=llm_ready,
         version=__version__,
     )
 

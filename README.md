@@ -8,6 +8,14 @@ Render (one click) or AWS (Terraform).
 **🔗 Live demo:** https://course-recommender-6y4z.onrender.com
 _(free tier — the first request may take ~50s while the instance wakes up)_
 
+What the demo runs, so the numbers are read for what they are: the bundled
+**synthetic** multi-platform catalog (~330 courses, not the real Kaggle data) on
+the **TF-IDF** backend rather than Sentence-BERT, to fit the free tier. The
+figures on the Metrics page are therefore evidence that the evaluation harness
+works, not a measurement of retrieval quality on real courses. `/api/health`
+reports whether the GenAI layer is actually reachable; when it is not, the
+service answers from deterministic templates instead of failing.
+
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/KhangPhanTZ/course-recommender-simple)
 
 ## Features

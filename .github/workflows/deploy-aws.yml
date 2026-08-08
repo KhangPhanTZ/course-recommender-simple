@@ -1,7 +1,12 @@
 name: deploy-aws
 
 # Builds the API image, pushes it to ECR, and rolls the ECS Fargate service.
-# Trigger manually, or automatically on pushes to main once secrets are set.
+#
+# Manual only. The push trigger below is commented out on purpose: no AWS
+# infrastructure is provisioned for this repository, so an automatic run fails
+# at the OIDC step on every push touching src/ and leaves a red X on an
+# otherwise green project. Uncomment it once the secrets and variables listed
+# further down exist.
 on:
   workflow_dispatch:
     inputs:
@@ -13,13 +18,13 @@ on:
         description: "Build + publish the SPA to CloudFront (needs WEB_BUCKET + CLOUDFRONT_DISTRIBUTION_ID vars)"
         type: boolean
         default: false
-  push:
-    branches: [main]
-    paths:
-      - "src/**"
-      - "docker/**"
-      - "requirements-api.txt"
-      - ".github/workflows/deploy-aws.yml"
+  # push:
+  #   branches: [main]
+  #   paths:
+  #     - "src/**"
+  #     - "docker/**"
+  #     - "requirements-api.txt"
+  #     - ".github/workflows/deploy-aws.yml"
 
 # Required repo configuration:
 #   Secrets:   AWS_DEPLOY_ROLE_ARN  (IAM role trusted for GitHub OIDC)

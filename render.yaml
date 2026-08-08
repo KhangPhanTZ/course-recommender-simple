@@ -12,10 +12,16 @@ services:
     dockerContext: .
     healthCheckPath: /api/health
     envVars:
-      # GenAI is off by default so no key is required. To enable real RAG
-      # explanations, set LLM_PROVIDER=anthropic and add ANTHROPIC_API_KEY
-      # in the Render dashboard.
+      # The GenAI layer needs ANTHROPIC_API_KEY, which is set in the Render
+      # dashboard rather than here so the secret stays out of the repository.
+      # Without it the provider reports itself unavailable and the service
+      # answers from deterministic templates, so leaving these on is safe:
+      # a missing key degrades the demo, it does not break it.
       - key: LLM_PROVIDER
-        value: disabled
+        value: anthropic
       - key: LLM_ENABLED
-        value: "false"
+        value: "true"
+      # Cheapest model that still handles the query-understanding and
+      # explanation prompts well; a few hundred demo requests cost under $1.
+      - key: LLM_MODEL
+        value: claude-haiku-4-5

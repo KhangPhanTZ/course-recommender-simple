@@ -13,8 +13,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends build-essential
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements-api.txt .
+# Install CPU-only torch first. sentence-transformers otherwise pulls the
+# default CUDA build and its NVIDIA runtime packages, which add several GB to
+# an image that runs on Fargate, where there is no GPU to use them.
 RUN python -m venv /opt/venv \
     && /opt/venv/bin/pip install --upgrade pip \
+    && /opt/venv/bin/pip install --index-url https://download.pytorch.org/whl/cpu torch \
     && /opt/venv/bin/pip install -r requirements-api.txt
 
 

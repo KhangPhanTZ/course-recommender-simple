@@ -30,7 +30,7 @@ jobs:
           pip install ruff
 
       - name: Lint (ruff)
-        run: ruff check src tests
+        run: ruff check src tests scripts
 
       - name: Byte-compile
         run: python -m compileall -q src

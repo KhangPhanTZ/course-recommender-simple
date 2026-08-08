@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import abc
 import json
+import os
 
 from ..settings import LLMSettings
 
@@ -48,6 +49,16 @@ class AnthropicProvider(LLMProvider):
     def __init__(self, model: str) -> None:
         self.model = model
         self._client = None
+
+    @property
+    def available(self) -> bool:
+        """Whether a call could plausibly succeed.
+
+        Without a key the SDK raises on construction and every completion falls
+        back to a template, so reporting ``True`` here would let ``/health`` and
+        every response advertise a GenAI layer that never actually runs.
+        """
+        return bool(os.getenv("ANTHROPIC_API_KEY"))
 
     @property
     def client(self):
