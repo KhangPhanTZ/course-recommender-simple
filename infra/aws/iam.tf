@@ -40,9 +40,17 @@ data "aws_iam_policy_document" "task_permissions" {
 
   # Invoke Claude on Bedrock for the GenAI/RAG layer.
   statement {
-    sid       = "InvokeBedrock"
-    actions   = ["bedrock:InvokeModel", "bedrock:InvokeModelWithResponseStream"]
-    resources = ["arn:aws:bedrock:${var.aws_region}::foundation-model/*"]
+    sid     = "InvokeBedrock"
+    actions = ["bedrock:InvokeModel", "bedrock:InvokeModelWithResponseStream"]
+    # Current Claude models are reachable only through an inference profile;
+    # invoking a bare foundation-model id returns a ValidationException. Such a
+    # call is authorized against both the profile and every foundation model the
+    # profile routes to, and a cross-region profile routes outside this region
+    # and to region-less ARNs, so the model wildcard has to span regions.
+    resources = [
+      "arn:aws:bedrock:${var.aws_region}:${data.aws_caller_identity.current.account_id}:inference-profile/*",
+      "arn:aws:bedrock:*::foundation-model/*",
+    ]
   }
 }
 
