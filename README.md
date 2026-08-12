@@ -58,6 +58,23 @@ Data: point `--data` at a **directory** to merge every recognized Coursera / Ude
 
 - **Render (one click):** the button above, driven by [`render.yaml`](render.yaml).
 - **AWS:** Terraform ([infra/aws](infra/aws)) provisions ECR, ECS Fargate, ALB, S3, IAM, Bedrock, and a **CloudFront** distribution that serves the SPA over **HTTPS** and proxies `/api/*` to the ALB (same-origin, no custom domain needed). Deploy the API with `./scripts/deploy_aws.sh`, then publish the UI with `./scripts/deploy_frontend.sh`; the shareable link is the `web_url` output.
+- **From CI:** [`deploy-aws.yml`](.github/workflows/deploy-aws.yml) does the same from GitHub Actions, authenticating through OIDC against the role in [`github_oidc.tf`](infra/aws/github_oidc.tf) — no long-lived AWS key in repository secrets, and the multi-gigabyte image push runs on GitHub's network rather than a laptop's uplink. Set `github_repository` in `terraform.tfvars`, apply, then set the repository variables the workflow reads.
+
+### Deployment status
+
+The AWS path has been applied and exercised end to end, not just validated:
+ECS ran the pushed image, the ALB served `/health` and `/recommend`, CloudFront
+served the SPA over HTTPS, and the GenAI layer answered **through Bedrock**.
+
+Two things that path taught, both fixed here: current Claude models reject
+on-demand invocation of a bare foundation-model id and must be called through an
+**inference profile**, so the task policy grants the profile plus the foundation
+models it routes to across regions; and the AWS deployment builds its artifacts
+with the **TF-IDF** backend, so semantic matching on non-English queries is
+weaker there than a Sentence-BERT build would be.
+
+Tear the stack down with `terraform destroy` when you are done — the ALB and the
+CloudFront distribution bill by the hour whether or not anything is serving.
 
 ## Development
 
