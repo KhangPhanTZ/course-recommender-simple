@@ -11,6 +11,8 @@ from ..llm.tracks import assemble_roadmap, list_tracks
 from ..storage import get_artifact_store
 from . import deps
 from .schemas import (
+    CatalogCourse,
+    CatalogResponse,
     ChatRequest,
     ChatResponse,
     CourseHit,
@@ -173,6 +175,25 @@ def similar(req: SimilarRequest) -> list[CourseHit]:
     except KeyError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
     return [CourseHit(**_hit(h)) for h in hits]
+
+
+@router.get("/courses", response_model=CatalogResponse, tags=["catalog"])
+def list_courses(
+    q: str | None = None,
+    source: str | None = None,
+    level: str | None = None,
+    limit: int = 24,
+    offset: int = 0,
+):
+    """Browse the full catalog with optional text/source/level filters (paginated)."""
+    rec = deps.get_recommender()
+    limit = max(1, min(limit, 100))
+    offset = max(0, offset)
+    items, total = rec.catalog(q=q, source=source, level=level, limit=limit, offset=offset)
+    return CatalogResponse(
+        total=total, limit=limit, offset=offset,
+        items=[CatalogCourse(**i) for i in items],
+    )
 
 
 @router.get("/courses/{course_id}", tags=["catalog"])

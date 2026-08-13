@@ -47,6 +47,27 @@ def test_course_not_found(built_artifacts):
     assert c.get("/courses/9999").status_code == 404
 
 
+def test_courses_catalog_lists_and_paginates(built_artifacts):
+    c = _client(built_artifacts)
+    body = c.get("/courses", params={"limit": 3}).json()
+    assert body["total"] == 8            # fixture catalog size
+    assert len(body["items"]) == 3       # page honored
+    assert {"id", "title", "skills", "description"} <= body["items"][0].keys()
+    # offset advances the window
+    page2 = c.get("/courses", params={"limit": 3, "offset": 3}).json()
+    assert page2["items"][0]["id"] != body["items"][0]["id"]
+
+
+def test_courses_catalog_filters(built_artifacts):
+    c = _client(built_artifacts)
+    # the fixture has a "beginner" level and pytorch/deep-learning skills
+    lvl = c.get("/courses", params={"level": "beginner"}).json()
+    assert lvl["total"] >= 1
+    assert all((it["level"] or "").lower() == "beginner" for it in lvl["items"])
+    q = c.get("/courses", params={"q": "pytorch"}).json()
+    assert q["total"] >= 1
+
+
 def test_chat_endpoint(built_artifacts):
     c = _client(built_artifacts)
     r = c.post("/chat", json={"messages": [{"role": "user", "content": "deep learning with pytorch"}]})

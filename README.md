@@ -23,7 +23,8 @@ deterministic templates instead of failing.
 - **Multi-platform catalog** — Coursera, Udemy, and edX datasets normalized onto one schema and merged; drop a CSV into `data/` and the build auto-detects it (see [`data/README.md`](data/README.md)).
 - **Two-stage retrieval** — Sentence-BERT + FAISS (numpy fallback) + optional cross-encoder rerank.
 - **GenAI / RAG** — natural-language query understanding and retrieval-grounded explanations, via Claude API or AWS Bedrock, with deterministic fallbacks when no LLM is set.
-- **Chat advisor** — a conversational RAG assistant that explains syllabi and learning paths, grounded in the catalog.
+- **Chat advisor** — a conversational RAG assistant that explains syllabi and learning paths, grounded in the catalog. Every course it (or a roadmap) surfaces is clickable for a summary, skills, and a link to the real course.
+- **Catalog browse** — a `/courses` page and endpoint to search/filter the whole catalog (title/skills, source, level) with pagination.
 - **Career-track roadmaps** — pick a track (Data Analyst, ML Engineer, MLOps, PM, QA…) and get a tiered Foundation→Specialization roadmap, each tier grounded in real catalog courses, with bridges to adjacent tracks.
 - **Evaluation dashboard** — offline retrieval metrics (Precision/Recall/MRR/nDCG@k, hit-rate), query latency (p50/p95), and clustering silhouette, surfaced at `/metrics` and a Metrics page.
 - **Web UI** — React + Vite + Tailwind SPA (landing, search, chat, about), dark/light.

@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
+import Courses from "./pages/Courses";
 import ChatPage from "./pages/Chat";
 import MetricsPage from "./pages/Metrics";
 import About from "./pages/About";
@@ -13,6 +14,7 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/courses" element={<Courses />} />
         <Route path="/chat" element={<ChatPage />} />
         <Route path="/metrics" element={<MetricsPage />} />
         <Route path="/about" element={<About />} />

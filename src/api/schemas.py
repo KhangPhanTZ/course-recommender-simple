@@ -79,6 +79,26 @@ class ChatResponse(BaseModel):
     llm_enabled: bool = False
 
 
+class CatalogCourse(BaseModel):
+    id: Any
+    title: str
+    provider: str | None = None
+    source: str | None = None
+    category: str | None = None
+    level: str | None = None
+    rating: Any | None = None
+    url: str | None = None
+    skills: str | None = None
+    description: str | None = None
+
+
+class CatalogResponse(BaseModel):
+    total: int
+    limit: int
+    offset: int
+    items: list[CatalogCourse]
+
+
 class TrackInfo(BaseModel):
     id: str
     label: str
