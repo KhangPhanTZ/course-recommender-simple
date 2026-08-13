@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { api, ApiError, type ChatMessage, type CourseHit, type Roadmap, type TrackInfo } from "../lib/api";
 import { Chat as ChatIcon, Compass, Send, Sparkles } from "../components/icons";
 import RoadmapGraph from "../components/RoadmapGraph";
+import CourseModal, { type CourseRef } from "../components/CourseModal";
 
 interface Turn {
   role: "user" | "assistant";
@@ -28,6 +29,7 @@ export default function ChatPage() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [selected, setSelected] = useState<CourseRef | null>(null);
   const endRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -133,14 +135,19 @@ export default function ChatPage() {
               )}
               <p className="whitespace-pre-wrap">{t.content}</p>
 
-              {t.roadmap && <RoadmapGraph roadmap={t.roadmap} />}
+              {t.roadmap && <RoadmapGraph roadmap={t.roadmap} onOpenCourse={setSelected} />}
 
               {t.courses && t.courses.length > 0 && (
                 <div className="mt-3 flex flex-wrap gap-1.5 border-t border-[rgb(var(--border))] pt-2.5">
                   {t.courses.slice(0, 6).map((c, j) => (
-                    <span key={`${c.id}-${j}`} className="chip !py-1" title={c.skills ?? ""}>
+                    <button
+                      key={`${c.id}-${j}`}
+                      onClick={() => setSelected(c)}
+                      className="chip !py-1 transition-colors hover:border-brand-400 hover:text-[rgb(var(--text))]"
+                      title={c.skills ?? "View details"}
+                    >
                       {c.title.length > 46 ? c.title.slice(0, 46) + "…" : c.title}
-                    </span>
+                    </button>
                   ))}
                 </div>
               )}
@@ -192,6 +199,8 @@ export default function ChatPage() {
           <Send width={18} height={18} />
         </button>
       </form>
+
+      {selected && <CourseModal hit={selected} onClose={() => setSelected(null)} />}
     </div>
   );
 }

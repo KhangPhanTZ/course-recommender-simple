@@ -1,10 +1,16 @@
-import type { Roadmap } from "../lib/api";
+import type { CourseHit, Roadmap } from "../lib/api";
 import { ArrowRight } from "./icons";
 
 const SOURCE_LABEL: Record<string, string> = { coursera: "Coursera", udemy: "Udemy", edx: "edX" };
 
 /** A grounded career-track roadmap rendered as a vertical tier flow. */
-export default function RoadmapGraph({ roadmap }: { roadmap: Roadmap }) {
+export default function RoadmapGraph({
+  roadmap,
+  onOpenCourse,
+}: {
+  roadmap: Roadmap;
+  onOpenCourse?: (course: CourseHit) => void;
+}) {
   return (
     <div className="mt-3 w-full">
       <div className="mb-3 flex flex-wrap items-baseline gap-x-2 gap-y-1">
@@ -34,11 +40,12 @@ export default function RoadmapGraph({ roadmap }: { roadmap: Roadmap }) {
                     <li key={`${c.id}-${j}`} className="flex items-start gap-2 text-sm">
                       <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-brand-500" />
                       <span className="text-body">
-                        {c.url ? (
-                          <a href={c.url} target="_blank" rel="noreferrer" className="hover:text-brand-600">{c.title}</a>
-                        ) : (
-                          c.title
-                        )}
+                        <button
+                          onClick={() => onOpenCourse?.(c)}
+                          className="text-left hover:text-brand-600"
+                        >
+                          {c.title}
+                        </button>
                         {c.source && (
                           <span className="ml-1.5 rounded bg-brand-500/12 px-1.5 py-0.5 text-[10px] font-medium text-brand-700 dark:text-brand-300">
                             {SOURCE_LABEL[c.source] ?? c.source}

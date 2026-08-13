@@ -19,7 +19,7 @@ const layers = [
     color: "brand",
     title: "FastAPI service",
     path: "src/api",
-    points: ["/recommend, /chat, /roadmap, /metrics, /health", "OpenAPI docs + request timing", "Models loaded once, reused"],
+    points: ["/recommend, /chat, /roadmap, /courses, /metrics", "OpenAPI docs + request timing", "Models loaded once, reused"],
   },
   {
     tag: "GenAI / RAG",

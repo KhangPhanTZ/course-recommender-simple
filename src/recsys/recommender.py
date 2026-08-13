@@ -236,6 +236,40 @@ class Recommender:
             return None
         return matches.iloc[0].to_dict()
 
+    def catalog(
+        self,
+        q: str | None = None,
+        source: str | None = None,
+        level: str | None = None,
+        limit: int = 24,
+        offset: int = 0,
+    ) -> tuple[list[dict[str, Any]], int]:
+        """Browse the full catalog with optional text/source/level filters.
+
+        Returns ``(items, total)`` where ``items`` is the requested page and
+        ``total`` is the number of rows matching the filters.
+        """
+        df = self.courses
+        mask = pd.Series(True, index=df.index)
+        if q and q.strip():
+            terms = q.strip().lower()
+            hay = (
+                df.get("title", "").astype("string").fillna("").str.lower()
+                + " " + df.get("skills", "").astype("string").fillna("").str.lower()
+            )
+            mask &= hay.str.contains(re.escape(terms), regex=True)
+        if source:
+            mask &= df.get("source", "").astype("string").fillna("").str.lower() == source.lower()
+        if level:
+            mask &= df.get("level", "").astype("string").fillna("").str.lower() == level.lower()
+
+        sub = df[mask]
+        total = int(len(sub))
+        cols = ["id", "title", "provider", "source", "category", "level", "rating", "url", "skills", "description"]
+        page = sub.iloc[offset:offset + limit]
+        items = [{c: _opt(row.get(c)) for c in cols if c in df.columns} for _, row in page.iterrows()]
+        return items, total
+
 
 def _opt(value: Any) -> Any:
     """Normalize NA/NaN to None and numpy scalars to native Python for JSON."""

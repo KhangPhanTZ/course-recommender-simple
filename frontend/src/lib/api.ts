@@ -59,6 +59,21 @@ export interface CourseDetail {
   [key: string]: unknown;
 }
 
+export interface CatalogResponse {
+  total: number;
+  limit: number;
+  offset: number;
+  items: CourseDetail[];
+}
+
+export interface CatalogParams {
+  q?: string;
+  source?: string;
+  level?: string;
+  limit?: number;
+  offset?: number;
+}
+
 export interface Metrics {
   available: boolean;
   k?: number;
@@ -161,6 +176,15 @@ export const api = {
       body: JSON.stringify({ course_id, top_k }),
     }),
   course: (id: number | string) => request<CourseDetail>(`/courses/${id}`),
+  catalog: (params: CatalogParams = {}) => {
+    const qs = new URLSearchParams();
+    if (params.q) qs.set("q", params.q);
+    if (params.source) qs.set("source", params.source);
+    if (params.level) qs.set("level", params.level);
+    qs.set("limit", String(params.limit ?? 24));
+    qs.set("offset", String(params.offset ?? 0));
+    return request<CatalogResponse>(`/courses?${qs.toString()}`);
+  },
   chat: (messages: ChatMessage[], top_k = 6) =>
     request<ChatResponse>("/chat", {
       method: "POST",

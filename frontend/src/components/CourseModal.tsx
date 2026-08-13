@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { api, type CourseDetail, type CourseHit } from "../lib/api";
+import { api, type CourseDetail } from "../lib/api";
 import { ArrowRight, Close, Layers, Star } from "./icons";
 
 const SOURCE_LABEL: Record<string, string> = { coursera: "Coursera", udemy: "Udemy", edx: "edX" };
@@ -20,8 +20,23 @@ function syllabusItems(value?: string | null): string[] {
     .filter(Boolean);
 }
 
+/** Minimal shape needed to open the modal — anything with an id and title. */
+export type CourseRef = {
+  id: number | string;
+  title: string;
+  provider?: string | null;
+  source?: string | null;
+  category?: string | null;
+  level?: string | null;
+  rating?: number | string | null;
+  url?: string | null;
+  skills?: string | null;
+  description?: string | null;
+  syllabus?: string | null;
+};
+
 /** Detail overlay for a course: summary, tech stack (skills), syllabus, real URL. */
-export default function CourseModal({ hit, onClose }: { hit: CourseHit; onClose: () => void }) {
+export default function CourseModal({ hit, onClose }: { hit: CourseRef; onClose: () => void }) {
   const [detail, setDetail] = useState<CourseDetail | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -45,7 +60,7 @@ export default function CourseModal({ hit, onClose }: { hit: CourseHit; onClose:
   }, [onClose]);
 
   // Fall back to the search hit while the full record loads.
-  const d: CourseDetail = detail ?? (hit as unknown as CourseDetail);
+  const d: CourseDetail = detail ?? (hit as CourseDetail);
   const rating = typeof d.rating === "number" ? d.rating : parseFloat(String(d.rating ?? ""));
   const skills = splitList(d.skills);
   const summary = (d.description && String(d.description).trim()) || "";
