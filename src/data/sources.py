@@ -71,9 +71,12 @@ class SourceSpec:
 
     name: str                            # canonical source id, e.g. "udemy"
     signature: tuple[str, ...]           # lowercased columns that identify the source
-    mapping: dict[str, str] = field(default_factory=dict)  # canonical -> source column (lowercased)
+    mapping: dict[str, str | tuple[str, ...]] = field(default_factory=dict)  # canonical -> source column(s)
     provider: str | None = None          # constant provider label, when the data has none
     provider_col: str | None = None      # else read provider from this column
+
+    # mapping values may be a single column name or a tuple of candidates
+    # (first present wins), so one spec tolerates naming variants of a dataset.
 
 
 # Detection order matters: earlier, more specific signatures win.
@@ -105,15 +108,17 @@ SPECS: list[SourceSpec] = [
     SourceSpec(
         name="coursera",
         signature=("course", "partner", "certificatetype"),
+        # Real Kaggle Coursera exports vary ("Course URL"/"Course Description");
+        # candidate lists pick the first column that's actually present.
         mapping={
-            "title": "course",
+            "title": ("course", "course name", "coursename"),
             "skills": "skills",
             "category": "certificatetype",
-            "level": "level",
-            "rating": "rating",
-            "url": "url",
-            # Coursera has no long description; skills stand in as the text field.
-            "description": "skills",
+            "level": ("level", "difficulty level"),
+            "rating": ("rating", "course rating"),
+            "url": ("url", "course url", "course_url", "courseurl"),
+            # Prefer a real description; fall back to skills as the text field.
+            "description": ("description", "course description", "course_description", "skills"),
         },
         provider_col="partner",
     ),
@@ -125,6 +130,15 @@ def _lower_columns(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     df.columns = [str(c).strip().lower() for c in df.columns]
     return df
+
+
+def _first_present(df: pd.DataFrame, candidates: str | tuple[str, ...] | None) -> str | None:
+    """Return the first candidate column that exists (mappings may list alternatives)."""
+    if not candidates:
+        return None
+    if isinstance(candidates, str):
+        candidates = (candidates,)
+    return next((c for c in candidates if c in df.columns), None)
 
 
 def detect_spec(df: pd.DataFrame) -> SourceSpec | None:
@@ -142,8 +156,8 @@ def normalize_source(df: pd.DataFrame, spec: SourceSpec) -> pd.DataFrame:
     out = pd.DataFrame(index=range(len(df)))
 
     for canon in _DATA_COLUMNS:
-        src = spec.mapping.get(canon)
-        out[canon] = df[src].to_numpy() if src and src in df.columns else pd.NA
+        src = _first_present(df, spec.mapping.get(canon))
+        out[canon] = df[src].to_numpy() if src else pd.NA
 
     if spec.provider is not None:
         out["provider"] = spec.provider

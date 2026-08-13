@@ -28,16 +28,23 @@ export default function CourseCard({
   hit,
   rank,
   onSimilar,
+  onOpen,
 }: {
   hit: CourseHit;
   rank?: number;
   onSimilar?: (hit: CourseHit) => void;
+  onOpen?: (hit: CourseHit) => void;
 }) {
   const pct = Math.max(0, Math.min(100, Math.round(hit.score * 100)));
   const rating = typeof hit.rating === "number" ? hit.rating : parseFloat(String(hit.rating ?? ""));
 
   return (
-    <article className="card group flex flex-col gap-3 p-5 transition-transform duration-200 hover:-translate-y-0.5">
+    <article
+      className={`card group flex flex-col gap-3 p-5 transition-transform duration-200 hover:-translate-y-0.5 ${
+        onOpen ? "cursor-pointer" : ""
+      }`}
+      onClick={onOpen ? () => onOpen(hit) : undefined}
+    >
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-start gap-3">
           {rank !== undefined && (
@@ -47,7 +54,13 @@ export default function CourseCard({
           )}
           <h3 className="text-[15px] font-semibold leading-snug text-[rgb(var(--text))]">
             {hit.url ? (
-              <a href={hit.url} target="_blank" rel="noreferrer" className="hover:text-brand-600">
+              <a
+                href={hit.url}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-600"
+                onClick={(e) => e.stopPropagation()}
+              >
                 {hit.title}
               </a>
             ) : (
@@ -104,14 +117,30 @@ export default function CourseCard({
         </div>
       </div>
 
-      {onSimilar && (
-        <button
-          onClick={() => onSimilar(hit)}
-          className="mt-1 self-start text-xs font-medium text-brand-700 opacity-0 transition-opacity group-hover:opacity-100 dark:text-brand-300"
-        >
-          Find similar →
-        </button>
-      )}
+      <div className="mt-1 flex items-center gap-4">
+        {onOpen && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onOpen(hit);
+            }}
+            className="text-xs font-medium text-brand-700 dark:text-brand-300"
+          >
+            View details
+          </button>
+        )}
+        {onSimilar && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onSimilar(hit);
+            }}
+            className="text-xs font-medium text-brand-700 opacity-0 transition-opacity group-hover:opacity-100 dark:text-brand-300"
+          >
+            Find similar →
+          </button>
+        )}
+      </div>
     </article>
   );
 }

@@ -52,6 +52,21 @@ def test_detect_spec_unknown():
     assert detect_spec(pd.DataFrame({"foo": [1], "bar": [2]})) is None
 
 
+def test_coursera_maps_real_url_and_description_columns():
+    # The real Kaggle Coursera export uses "Course URL" / "Course Description".
+    real = pd.DataFrame({
+        "Course": ["Machine Learning"], "Partner": ["Stanford"], "Skills": ["python, ml"],
+        "Certificatetype": ["COURSE"], "Level": ["Beginner"], "Rating": [4.8],
+        "Course URL": ["https://www.coursera.org/learn/machine-learning"],
+        "Course Description": ["Learn ML foundations."],
+    })
+    spec = detect_spec(real)
+    assert spec is not None and spec.name == "coursera"
+    row = normalize_source(real, spec).iloc[0]
+    assert row["url"] == "https://www.coursera.org/learn/machine-learning"
+    assert row["description"] == "Learn ML foundations."
+
+
 def test_normalize_level():
     assert normalize_level("Beginner Level") == "beginner"
     assert normalize_level("Introductory") == "beginner"

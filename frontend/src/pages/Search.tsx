@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { api, ApiError, type CourseHit, type RecommendResponse } from "../lib/api";
 import CourseCard from "../components/CourseCard";
+import CourseModal from "../components/CourseModal";
 import { Sparkles, SearchIcon, Bolt } from "../components/icons";
 
 const EXAMPLES = [
@@ -21,6 +22,7 @@ export default function Search() {
 
   const [data, setData] = useState<RecommendResponse | null>(null);
   const [similar, setSimilar] = useState<{ of: CourseHit; hits: CourseHit[] } | null>(null);
+  const [selected, setSelected] = useState<CourseHit | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -174,7 +176,7 @@ export default function Search() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {similar.hits.map((h, i) => (
-              <CourseCard key={`${h.id}-${i}`} hit={h} rank={i + 1} onSimilar={findSimilar} />
+              <CourseCard key={`${h.id}-${i}`} hit={h} rank={i + 1} onSimilar={findSimilar} onOpen={setSelected} />
             ))}
           </div>
         </div>
@@ -215,7 +217,7 @@ export default function Search() {
           ) : (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {data.results.map((h, i) => (
-                <CourseCard key={`${h.id}-${i}`} hit={h} rank={i + 1} onSimilar={findSimilar} />
+                <CourseCard key={`${h.id}-${i}`} hit={h} rank={i + 1} onSimilar={findSimilar} onOpen={setSelected} />
               ))}
             </div>
           )}
@@ -229,6 +231,8 @@ export default function Search() {
           <p className="mt-3">Enter a query or pick an example to get recommendations.</p>
         </div>
       )}
+
+      {selected && <CourseModal hit={selected} onClose={() => setSelected(null)} />}
     </div>
   );
 }
