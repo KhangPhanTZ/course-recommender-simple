@@ -44,6 +44,21 @@ export interface Health {
   version: string;
 }
 
+export interface CourseDetail {
+  id: number | string;
+  title: string;
+  provider?: string | null;
+  source?: string | null;
+  category?: string | null;
+  level?: string | null;
+  rating?: number | string | null;
+  url?: string | null;
+  skills?: string | null;
+  description?: string | null;
+  syllabus?: string | null;
+  [key: string]: unknown;
+}
+
 export interface Metrics {
   available: boolean;
   k?: number;
@@ -145,7 +160,7 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ course_id, top_k }),
     }),
-  course: (id: number | string) => request<Record<string, unknown>>(`/courses/${id}`),
+  course: (id: number | string) => request<CourseDetail>(`/courses/${id}`),
   chat: (messages: ChatMessage[], top_k = 6) =>
     request<ChatResponse>("/chat", {
       method: "POST",
