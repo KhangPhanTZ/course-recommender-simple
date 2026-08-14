@@ -58,6 +58,22 @@ def test_courses_catalog_lists_and_paginates(built_artifacts):
     assert page2["items"][0]["id"] != body["items"][0]["id"]
 
 
+def test_courses_have_resolved_urls(built_artifacts):
+    c = _client(built_artifacts)
+    # /recommend hits carry a real url + a url_direct flag
+    hit = c.post("/recommend", json={"query": "deep learning", "top_k": 1}).json()["results"][0]
+    assert hit["url"] and hit["url"].startswith("http")
+    assert isinstance(hit["url_direct"], bool)
+    # the fixture has no url column -> Coursera search deep-link, not direct
+    assert "coursera.org/search?query=" in hit["url"]
+    assert hit["url_direct"] is False
+    # catalog + single-course endpoints resolve too
+    item = c.get("/courses", params={"limit": 1}).json()["items"][0]
+    assert item["url"].startswith("http") and item["url_direct"] is False
+    detail = c.get(f"/courses/{item['id']}").json()
+    assert detail["url"].startswith("http") and detail["url_direct"] is False
+
+
 def test_courses_catalog_filters(built_artifacts):
     c = _client(built_artifacts)
     # the fixture has a "beginner" level and pytorch/deep-learning skills

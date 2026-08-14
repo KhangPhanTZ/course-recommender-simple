@@ -34,6 +34,7 @@ class CourseHit(BaseModel):
     level: str | None = None
     rating: Any | None = None
     url: str | None = None
+    url_direct: bool = False
     skills: str | None = None
     provider: str | None = None
     source: str | None = None
@@ -88,6 +89,7 @@ class CatalogCourse(BaseModel):
     level: str | None = None
     rating: Any | None = None
     url: str | None = None
+    url_direct: bool = False
     skills: str | None = None
     description: str | None = None
 

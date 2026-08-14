@@ -10,6 +10,7 @@ export interface CourseHit {
   level?: string | null;
   rating?: number | string | null;
   url?: string | null;
+  url_direct?: boolean;
   skills?: string | null;
   provider?: string | null;
   source?: string | null;
@@ -53,6 +54,7 @@ export interface CourseDetail {
   level?: string | null;
   rating?: number | string | null;
   url?: string | null;
+  url_direct?: boolean;
   skills?: string | null;
   description?: string | null;
   syllabus?: string | null;

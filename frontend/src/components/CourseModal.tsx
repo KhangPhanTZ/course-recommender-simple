@@ -30,6 +30,7 @@ export type CourseRef = {
   level?: string | null;
   rating?: number | string | null;
   url?: string | null;
+  url_direct?: boolean;
   skills?: string | null;
   description?: string | null;
   syllabus?: string | null;
@@ -66,6 +67,8 @@ export default function CourseModal({ hit, onClose }: { hit: CourseRef; onClose:
   const summary = (d.description && String(d.description).trim()) || "";
   const syllabus = syllabusItems(d.syllabus);
   const url = d.url ? String(d.url) : "";
+  const providerLabel = SOURCE_LABEL[String(d.source ?? "")] ?? "the provider";
+  const linkLabel = d.url_direct ? "Open course" : `Find on ${providerLabel}`;
 
   return (
     <div
@@ -140,17 +143,15 @@ export default function CourseModal({ hit, onClose }: { hit: CourseRef; onClose:
           </section>
         )}
 
-        {/* real course link */}
-        <div className="mt-6 border-t border-[rgb(var(--border))] pt-4">
-          {url ? (
+        {/* real course link — dataset URL when present, else a provider search deep-link */}
+        <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-[rgb(var(--border))] pt-4">
+          {url && (
             <a href={url} target="_blank" rel="noreferrer" className="btn-primary">
-              Open course <ArrowRight width={18} height={18} />
+              {linkLabel} <ArrowRight width={18} height={18} />
             </a>
-          ) : (
-            <p className="text-xs text-muted">
-              No external link in this dataset — real course URLs appear when the catalog is built from the
-              source platforms' data.
-            </p>
+          )}
+          {url && !d.url_direct && (
+            <span className="text-xs text-muted">opens a {providerLabel} search for this course</span>
           )}
         </div>
       </div>
