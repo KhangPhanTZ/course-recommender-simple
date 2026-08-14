@@ -20,6 +20,30 @@ SAMPLE_ROWS = [
 ]
 
 
+@pytest.fixture(autouse=True)
+def _no_llm_env(request, monkeypatch):
+    """Hide any real LLM configuration from the suite.
+
+    ``settings.get_settings()`` merges a developer's ``.env`` into ``os.environ``
+    the first time it runs, so a machine with a working ``ANTHROPIC_API_KEY``
+    leaks it into every test that runs afterwards. That made assertions about
+    the fallback path pass alone and fail in a full run, and pass in CI — where
+    there is no ``.env`` — while failing locally. Scrub the variables for every
+    test so the suite reads the same on both.
+
+    ``test_llm_live`` is exempt: it exists to call a real provider, and skips
+    itself unless ``RUN_LLM_TESTS=1``.
+    """
+    if request.module.__name__.endswith("test_llm_live"):
+        return
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.setenv("LLM_PROVIDER", "disabled")
+    # LLM_ENABLED is deliberately left alone: LLMSettings reads it even when the
+    # provider is passed explicitly, so forcing it false would turn every
+    # get_provider(LLMSettings(provider=...)) into a NullProvider and break the
+    # tests that assert which provider a setting selects.
+
+
 @pytest.fixture()
 def built_artifacts(tmp_path, monkeypatch):
     """Build TF-IDF artifacts into a temp artifact dir; yield paths + config."""

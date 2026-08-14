@@ -11,9 +11,8 @@ _(free tier — the first request may take ~50s while the instance wakes up)_
 What the demo runs, so the numbers are read for what they are: the real Coursera
 catalog (~1,100 courses) on the **TF-IDF** backend rather than Sentence-BERT, to
 fit the free tier — so the Metrics figures reflect keyword retrieval, and a
-Sentence-BERT build scores differently. Udemy and edX are supported but not
-committed here, so the demo is single-platform. `/api/health` reports whether the
-GenAI layer is actually reachable; when it is not, the service answers from
+Sentence-BERT build scores differently. `/api/health` reports whether the GenAI
+layer is actually reachable; when it is not, the service answers from
 deterministic templates instead of failing.
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/KhangPhanTZ/course-recommender-simple)
