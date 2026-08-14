@@ -28,6 +28,7 @@ import pandas as pd
 
 from ..storage import ArtifactStore, get_artifact_store
 from .index import VectorIndex
+from .links import resolve_course_url
 
 META_KEY = "meta.json"
 COURSES_KEY = "courses.parquet"
@@ -51,6 +52,7 @@ class Recommendation:
     skills: str | None = None
     provider: str | None = None
     source: str | None = None
+    url_direct: bool = False
     explanation: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
@@ -62,6 +64,7 @@ class Recommendation:
             "level": self.level,
             "rating": self.rating,
             "url": self.url,
+            "url_direct": self.url_direct,
             "skills": self.skills,
             "provider": self.provider,
             "source": self.source,
@@ -167,17 +170,21 @@ class Recommender:
 
     def _row_to_reco(self, i: int, score: float) -> Recommendation:
         row = self.courses.iloc[i]
+        title = str(row.get("title", ""))
+        source = _opt(row.get("source"))
+        url, url_direct = resolve_course_url(source, title, _opt(row.get("url")))
         return Recommendation(
             id=_opt(row.get("id", i)),
-            title=str(row.get("title", "")),
+            title=title,
             score=score,
             category=_opt(row.get("category")),
             level=_opt(row.get("level")),
             rating=_opt(row.get("rating")),
-            url=_opt(row.get("url")),
+            url=url,
             skills=_opt(row.get("skills")),
             provider=_opt(row.get("provider")),
-            source=_opt(row.get("source")),
+            source=source,
+            url_direct=url_direct,
         )
 
     # ---------------------------------------------------------------- public
@@ -234,7 +241,11 @@ class Recommender:
         matches = self.courses[self.courses["id"] == course_id]
         if matches.empty:
             return None
-        return matches.iloc[0].to_dict()
+        course = matches.iloc[0].to_dict()
+        course["url"], course["url_direct"] = resolve_course_url(
+            course.get("source"), course.get("title"), course.get("url")
+        )
+        return course
 
     def catalog(
         self,
@@ -267,7 +278,13 @@ class Recommender:
         total = int(len(sub))
         cols = ["id", "title", "provider", "source", "category", "level", "rating", "url", "skills", "description"]
         page = sub.iloc[offset:offset + limit]
-        items = [{c: _opt(row.get(c)) for c in cols if c in df.columns} for _, row in page.iterrows()]
+        items = []
+        for _, row in page.iterrows():
+            item = {c: _opt(row.get(c)) for c in cols if c in df.columns}
+            item["url"], item["url_direct"] = resolve_course_url(
+                item.get("source"), item.get("title"), item.get("url")
+            )
+            items.append(item)
         return items, total
 
 

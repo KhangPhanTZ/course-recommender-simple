@@ -84,10 +84,6 @@ EDX_LEVELS = {"Beginner": "Introductory", "Intermediate": "Intermediate", "Advan
 UDEMY_LEVELS = {"Beginner": "Beginner Level", "Intermediate": "Intermediate Level", "Advanced": "Expert Level"}
 
 
-def _slug(s: str) -> str:
-    return "".join(c if c.isalnum() else "-" for c in s.lower()).strip("-")
-
-
 def generate() -> None:
     rng = random.Random(SEED)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -113,7 +109,9 @@ def generate() -> None:
                 udemy.append({
                     "course_id": len(udemy) + 1000,
                     "course_title": f"The Complete {topic} Bootcamp",
-                    "url": f"https://www.udemy.com/course/{_slug(topic)}-{level.lower()}/",
+                    # No fabricated course URL — the serving layer resolves a real
+                    # provider search deep-link from the title (see src/recsys/links.py).
+                    "url": "",
                     "is_paid": "True",
                     "price": rng.choice([0, 1999, 2999, 4999]),
                     "num_subscribers": rng.randint(500, 90000),
@@ -152,7 +150,7 @@ def generate() -> None:
                     "price": rng.choice(["Free", "Free (Audit)", "$49", "$99"]),
                     "course_description": desc,
                     "course_syllabus": syllabus,
-                    "course_url": f"https://www.edx.org/course/{_slug(topic)}-{level.lower()}",
+                    "course_url": "",  # resolved to a real search deep-link at serve time
                 })
 
     _write(OUT_DIR / "coursera.csv", coursera)
