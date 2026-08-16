@@ -105,6 +105,7 @@ class TrackInfo(BaseModel):
     id: str
     label: str
     summary: str
+    group: str = ""
 
 
 class RoadmapNode(BaseModel):

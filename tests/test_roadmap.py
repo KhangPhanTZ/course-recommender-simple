@@ -3,7 +3,15 @@ from fastapi.testclient import TestClient
 
 from src.api import deps
 from src.api.main import app
-from src.llm.tracks import TIER_ORDER, TRACKS, assemble_roadmap, get_track, list_tracks
+from src.llm.tracks import (
+    GROUP_ORDER,
+    TIER_ORDER,
+    TRACKS,
+    assemble_roadmap,
+    covered_tracks,
+    get_track,
+    list_tracks,
+)
 
 
 def _client(built_artifacts):
@@ -20,11 +28,21 @@ def _fake_retrieve(query, k):
 
 
 def test_registry_is_wellformed():
+    assert len(TRACKS) >= 15  # expanded beyond the original six
     for tid, track in TRACKS.items():
         assert track["tiers"], f"{tid} has no tiers"
         assert [t["name"] for t in track["tiers"]] == TIER_ORDER
+        assert track["group"] in GROUP_ORDER, f"{tid} has unknown group {track['group']}"
+        assert all(t["skills"] for t in track["tiers"]), f"{tid} has an empty tier"
         for bid in track.get("bridges", []):
             assert bid in TRACKS, f"{tid} bridges to unknown track {bid}"
+
+
+def test_covered_tracks_gate():
+    # a retriever that always returns courses -> every track qualifies
+    assert len(covered_tracks(_fake_retrieve)) == len(TRACKS)
+    # a retriever that returns nothing -> fall back to the full menu
+    assert len(covered_tracks(lambda q, k: [])) == len(TRACKS)
 
 
 def test_assemble_roadmap_structure_and_dedup():
@@ -58,7 +76,8 @@ def test_roadmap_tracks_endpoint(built_artifacts):
     assert r.status_code == 200
     body = r.json()
     assert any(t["id"] == "ml-engineer" for t in body)
-    assert all({"id", "label", "summary"} <= t.keys() for t in body)
+    assert all({"id", "label", "summary", "group"} <= t.keys() for t in body)
+    assert all(t["group"] in GROUP_ORDER for t in body)
 
 
 def test_roadmap_endpoint_builds_grounded_roadmap(built_artifacts):

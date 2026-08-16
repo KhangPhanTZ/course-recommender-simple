@@ -25,7 +25,7 @@ deterministic templates instead of failing.
 - **Chat advisor** — a conversational RAG assistant that explains syllabi and learning paths, grounded in the catalog. Every course it (or a roadmap) surfaces is clickable for a summary, skills, and a link to the real course.
 - **Catalog browse** — a `/courses` page and endpoint to search/filter the whole catalog (title/skills, source, level) with pagination.
 - **Real course links** — each course links to its dataset URL when present, otherwise to a provider **search deep-link** built from the title (Coursera/Udemy/edX), so the link always resolves to the real course. The UI labels it "Open course" vs "Find on …" accordingly.
-- **Career-track roadmaps** — pick a track (Data Analyst, ML Engineer, MLOps, PM, QA…) and get a tiered Foundation→Specialization roadmap, each tier grounded in real catalog courses, with bridges to adjacent tracks.
+- **Career-track roadmaps** — 17 tracks across Data & AI, Software & Cloud, Business & Product, and Design (Data Scientist, Cloud Engineer, Cybersecurity, Business/Financial Analyst, Digital Marketing, UX…), each a tiered Foundation→Specialization roadmap grounded in real catalog courses with bridges to adjacent tracks. The picker only shows tracks the loaded catalog actually covers, so it reflects the data and grows with it.
 - **Evaluation dashboard** — offline retrieval metrics (Precision/Recall/MRR/nDCG@k, hit-rate), query latency (p50/p95), and clustering silhouette, surfaced at `/metrics` and a Metrics page.
 - **Web UI** — React + Vite + Tailwind SPA (landing, search, chat, about), dark/light.
 - **Production-shaped** — pluggable local⇄S3 storage, Docker, Terraform (AWS ECS/Fargate), CI/CD, tests.
