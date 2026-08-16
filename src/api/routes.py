@@ -7,7 +7,7 @@ import logging
 from fastapi import APIRouter, HTTPException
 
 from .. import __version__
-from ..llm.tracks import assemble_roadmap, list_tracks
+from ..llm.tracks import assemble_roadmap, covered_tracks
 from ..storage import get_artifact_store
 from . import deps
 from .schemas import (
@@ -142,10 +142,28 @@ def metrics():
     return {"available": True, **data}
 
 
+_tracks_cache: dict[int, list[dict]] = {}
+
+
+def _retrieve_for(rec):
+    def retrieve(query: str, k: int) -> list[dict]:
+        return [_hit(h) for h in rec.recommend(query, top_k=k)]
+    return retrieve
+
+
 @router.get("/roadmap/tracks", response_model=list[TrackInfo], tags=["roadmap"])
 def roadmap_tracks() -> list[TrackInfo]:
-    """List the curated career tracks available for a roadmap."""
-    return [TrackInfo(**t) for t in list_tracks()]
+    """List the career tracks the loaded catalog can actually support.
+
+    Coverage is probed once per recommender (keyed on catalog size) and cached,
+    so the picker reflects the careers present in the data and adapts as it grows.
+    """
+    rec = deps.get_recommender()
+    key = rec.size
+    if key not in _tracks_cache:
+        _tracks_cache.clear()
+        _tracks_cache[key] = covered_tracks(_retrieve_for(rec))
+    return [TrackInfo(**t) for t in _tracks_cache[key]]
 
 
 @router.post("/roadmap", response_model=Roadmap, tags=["roadmap"])
@@ -153,9 +171,7 @@ def roadmap(req: RoadmapRequest) -> Roadmap:
     """Build a grounded, tiered learning roadmap for a career track."""
     rec = deps.get_recommender()
     llm = deps.get_llm()
-
-    def retrieve(query: str, k: int) -> list[dict]:
-        return [_hit(h) for h in rec.recommend(query, top_k=k)]
+    retrieve = _retrieve_for(rec)
 
     data = assemble_roadmap(req.track, retrieve, per_tier=req.per_tier)
     if data is None:

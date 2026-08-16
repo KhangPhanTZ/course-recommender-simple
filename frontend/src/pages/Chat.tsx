@@ -17,6 +17,21 @@ const SUGGESTIONS = [
   "Which courses cover SQL for analytics?",
 ];
 
+const GROUP_ORDER = ["Data & AI", "Software & Cloud", "Business & Product", "Design"];
+
+/** Bucket tracks by group, preserving a fixed group order. */
+function groupTracks(tracks: TrackInfo[]): [string, TrackInfo[]][] {
+  const byGroup = new Map<string, TrackInfo[]>();
+  for (const t of tracks) {
+    const g = t.group ?? "";
+    if (!byGroup.has(g)) byGroup.set(g, []);
+    byGroup.get(g)!.push(t);
+  }
+  return [...byGroup.entries()].sort(
+    (a, b) => (GROUP_ORDER.indexOf(a[0]) + 1 || 99) - (GROUP_ORDER.indexOf(b[0]) + 1 || 99),
+  );
+}
+
 const GREETING: Turn = {
   role: "assistant",
   content:
@@ -99,17 +114,26 @@ export default function ChatPage() {
           <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-muted">
             <Compass width={14} height={14} /> Build a career roadmap
           </div>
-          <div className="flex flex-wrap gap-2">
-            {tracks.map((t) => (
-              <button
-                key={t.id}
-                onClick={() => pickTrack(t)}
-                disabled={loading}
-                title={t.summary}
-                className="chip transition-colors hover:border-brand-400 hover:text-[rgb(var(--text))] disabled:opacity-50"
-              >
-                {t.label}
-              </button>
+          <div className="space-y-2.5">
+            {groupTracks(tracks).map(([group, groupTracksList]) => (
+              <div key={group}>
+                {group && (
+                  <div className="mb-1 text-[11px] font-medium uppercase tracking-wide text-muted/70">{group}</div>
+                )}
+                <div className="flex flex-wrap gap-2">
+                  {groupTracksList.map((t) => (
+                    <button
+                      key={t.id}
+                      onClick={() => pickTrack(t)}
+                      disabled={loading}
+                      title={t.summary}
+                      className="chip transition-colors hover:border-brand-400 hover:text-[rgb(var(--text))] disabled:opacity-50"
+                    >
+                      {t.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>

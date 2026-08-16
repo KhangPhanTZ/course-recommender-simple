@@ -97,6 +97,7 @@ export interface TrackInfo {
   id: string;
   label: string;
   summary: string;
+  group?: string;
 }
 
 export interface RoadmapNode {
