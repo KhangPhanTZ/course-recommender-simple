@@ -98,6 +98,39 @@ def test_chat_requires_messages(built_artifacts):
     assert c.post("/chat", json={"messages": []}).status_code == 422
 
 
+def test_conversation_query_blends_recent_user_turns():
+    from src.api.routes import _conversation_query
+    from src.api.schemas import ChatMessage
+
+    msgs = [
+        ChatMessage(role="user", content="deep learning with pytorch"),
+        ChatMessage(role="assistant", content="Here are some courses."),
+        ChatMessage(role="user", content="what should I learn next?"),
+    ]
+    q = _conversation_query(msgs)
+    # the short follow-up alone has no topic; the blended query keeps the thread
+    assert "next" in q and "pytorch" in q
+    # the latest message anchors the query (listed first)
+    assert q.startswith("what should I learn next?")
+
+
+def test_chat_followup_stays_grounded_in_context(built_artifacts):
+    c = _client(built_artifacts)
+    r = c.post(
+        "/chat",
+        json={
+            "messages": [
+                {"role": "user", "content": "deep learning with pytorch"},
+                {"role": "assistant", "content": "Here are some courses."},
+                {"role": "user", "content": "what next?"},
+            ]
+        },
+    )
+    assert r.status_code == 200
+    # a bare "what next?" would retrieve nothing on its own; context keeps it grounded
+    assert len(r.json()["courses"]) > 0
+
+
 def test_root(built_artifacts):
     c = _client(built_artifacts)
     assert c.get("/").json()["service"] == "course-recommender"

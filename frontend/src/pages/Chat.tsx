@@ -38,8 +38,25 @@ const GREETING: Turn = {
     "Hi! I'm your learning advisor. Pick a career track for a grounded roadmap, or ask about any topic — I'll explain what the relevant courses cover and how to progress.",
 };
 
+const STORAGE_KEY = "pathfinder.chat.v1";
+const MAX_STORED = 50;
+
+/** Restore a persisted conversation, falling back to a fresh greeting. */
+function loadTurns(): Turn[] {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed as Turn[];
+    }
+  } catch {
+    /* corrupt or unavailable storage — start fresh */
+  }
+  return [GREETING];
+}
+
 export default function ChatPage() {
-  const [turns, setTurns] = useState<Turn[]>([GREETING]);
+  const [turns, setTurns] = useState<Turn[]>(loadTurns);
   const [tracks, setTracks] = useState<TrackInfo[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -54,6 +71,26 @@ export default function ChatPage() {
   useEffect(() => {
     api.tracks().then(setTracks).catch(() => undefined);
   }, []);
+
+  // Persist the conversation so it survives a reload (client-side memory).
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(turns.slice(-MAX_STORED)));
+    } catch {
+      /* quota exceeded or storage disabled — non-fatal */
+    }
+  }, [turns]);
+
+  function clearChat() {
+    if (loading) return;
+    setTurns([GREETING]);
+    setError(null);
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch {
+      /* ignore */
+    }
+  }
 
   async function send(text: string) {
     const msg = text.trim();
@@ -98,14 +135,26 @@ export default function ChatPage() {
 
   return (
     <div className="container-page flex min-h-[calc(100vh-4rem)] flex-col py-8">
-      <div className="mb-4 max-w-2xl">
-        <span className="eyebrow flex items-center gap-2">
-          <ChatIcon width={15} height={15} /> Learning advisor
-        </span>
-        <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">Chat</h1>
-        <p className="mt-1.5 text-sm text-body">
-          Pick a career track for a grounded roadmap, or ask anything. Replies are grounded in the catalog (RAG).
-        </p>
+      <div className="mb-4 flex items-start justify-between gap-3">
+        <div className="max-w-2xl">
+          <span className="eyebrow flex items-center gap-2">
+            <ChatIcon width={15} height={15} /> Learning advisor
+          </span>
+          <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">Chat</h1>
+          <p className="mt-1.5 text-sm text-body">
+            Pick a career track for a grounded roadmap, or ask anything. Replies are grounded in the catalog (RAG).
+          </p>
+        </div>
+        {turns.length > 1 && (
+          <button
+            onClick={clearChat}
+            disabled={loading}
+            className="chip shrink-0 transition-colors hover:border-brand-400 hover:text-[rgb(var(--text))] disabled:opacity-50"
+            title="Clear this conversation and start over"
+          >
+            New chat
+          </button>
+        )}
       </div>
 
       {/* career-track picker */}
