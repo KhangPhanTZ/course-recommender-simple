@@ -13,6 +13,7 @@ from . import deps
 from .schemas import (
     CatalogCourse,
     CatalogResponse,
+    ChatMessage,
     ChatRequest,
     ChatResponse,
     CourseHit,
@@ -106,14 +107,30 @@ def recommend(req: RecommendRequest) -> RecommendResponse:
     )
 
 
+def _conversation_query(messages: list[ChatMessage], max_turns: int = 3) -> str:
+    """Build a retrieval query from recent user turns, not just the last one.
+
+    Follow-ups like "what's next?" or "and after that?" carry no topic on their
+    own, so retrieving on the last message alone loses the thread. Blending the
+    last few user messages keeps retrieval grounded in what the conversation is
+    actually about. The latest message stays the anchor (listed first); earlier
+    user turns are appended as context.
+    """
+    users = [m.content.strip() for m in messages if m.role == "user" and m.content.strip()]
+    if not users:
+        return ""
+    last, prior = users[-1], users[-max_turns:-1]
+    return " ".join([last, *prior]).strip()
+
+
 @router.post("/chat", response_model=ChatResponse, tags=["chat"])
 def chat(req: ChatRequest) -> ChatResponse:
-    """Conversational advisor: grounds a reply in courses retrieved for the last message."""
+    """Conversational advisor: grounds a reply in courses retrieved for the conversation."""
     rec = deps.get_recommender()
     llm = deps.get_llm()
 
-    last_user = next((m.content for m in reversed(req.messages) if m.role == "user"), "")
-    hits = rec.recommend(last_user, top_k=req.top_k) if last_user.strip() else []
+    query = _conversation_query(req.messages)
+    hits = rec.recommend(query, top_k=req.top_k) if query else []
     history = [{"role": m.role, "content": m.content} for m in req.messages]
     reply = llm.advise_chat(history, [h.to_dict() for h in hits])
 
