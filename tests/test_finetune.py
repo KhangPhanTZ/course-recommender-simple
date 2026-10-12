@@ -6,8 +6,10 @@ src/training/finetune.py is exercised only on a GPU box / Colab, not in CI.
 from src.training.pairs import (
     build_llm_pairs,
     build_proxy_pairs,
+    clean_skills,
     course_text,
     read_jsonl,
+    skill_list,
     write_jsonl,
 )
 
@@ -24,6 +26,26 @@ def test_course_text_joins_present_fields_and_skips_missing():
     text = course_text(_RECORDS[0])
     assert "Deep Learning with PyTorch" in text and "pytorch" in text
     assert course_text(_RECORDS[2]) == ""  # all fields empty
+
+
+def test_clean_skills_normalises_stringified_sets():
+    raw = '{" Network Security"," Python Programming"," Linux"}'
+    assert skill_list(raw) == ["Network Security", "Python Programming", "Linux"]
+    assert clean_skills(raw) == "Network Security, Python Programming, Linux"
+    # already-clean input is left intact; empty stays empty
+    assert clean_skills("sql, databases") == "sql, databases"
+    assert clean_skills(None) == "" and skill_list("nan") == []
+
+
+def test_proxy_pairs_do_not_leak_raw_skill_punctuation():
+    rec = {"id": 9, "title": "Google Cybersecurity",
+           "skills": '{" Network Security"," Python Programming"," Linux"," Cloud Computing"," SQL"}',
+           "description": "A security program.", "category": "Professional Certificate", "level": "Beginner"}
+    pairs = build_proxy_pairs([rec])
+    for p in pairs:
+        assert "{" not in p["query"] and '"' not in p["query"]  # no raw braces/quotes
+    # the skills anchor is capped to a few skills, not the whole dumped list
+    assert any(p["query"] == "Network Security, Python Programming, Linux, Cloud Computing" for p in pairs)
 
 
 def test_build_proxy_pairs_are_wellformed_and_skip_empty():
