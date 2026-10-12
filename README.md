@@ -77,6 +77,34 @@ weaker there than a Sentence-BERT build would be.
 Tear the stack down with `terraform destroy` when you are done — the ALB and the
 CloudFront distribution bill by the hour whether or not anything is serving.
 
+## Fine-tuning the retrieval encoder (optional)
+
+The serving stack uses a **pre-trained** Sentence-BERT model out of the box. An
+optional step adapts it to the catalog so retrieval ranks course text more
+faithfully — and, because the evaluation harness already exists, the gain is
+measurable **before vs after**. There is no click data, so training pairs are
+built from the catalog itself: synthetically via the LLM (query generation,
+InPars-style) or deterministically from course fields.
+
+```bash
+# 1. build base artifacts, then generate (query, course) pairs
+python -m src.pipeline --mode build --data data/
+python scripts/generate_pairs.py --mode proxy            # offline; or --mode llm (needs ANTHROPIC_API_KEY)
+
+# 2. fine-tune a bi-encoder on the pairs (GPU recommended — see the Colab notebook)
+pip install -r requirements-train.txt
+python -m src.training.finetune --pairs data/finetune/pairs.jsonl --base BAAI/bge-small-en-v1.5 --out artifacts/finetuned-encoder
+
+# 3. point the config at it, rebuild, and compare metrics
+#    set `sbert_model: artifacts/finetuned-encoder` in config/config.yaml
+python -m src.pipeline --mode build --data data/ && python scripts/run_eval.py
+```
+
+Training (`src/training/`) uses `MultipleNegativesRankingLoss` (in-batch
+negatives, no hand-labelled negatives needed). The model is a drop-in: serving
+just loads the new path, so inference cost is unchanged. Run the whole flow on a
+free GPU with [`notebooks/finetune_colab.ipynb`](notebooks/finetune_colab.ipynb).
+
 ## Development
 
 ```bash
