@@ -38,6 +38,9 @@ min_characters: 30        # drop rows whose cleaned text is shorter than this
 # true  -> Sentence-BERT dense vectors + FAISS/ANN index (best semantics)
 # false -> TF-IDF sparse vectors + exact cosine (lightweight, no downloads)
 use_sbert: true
+# A Hugging Face model id OR a local directory. To use a fine-tuned encoder
+# (see src/training/ + notebooks/finetune_colab.ipynb), point this at the
+# training output, e.g.  sbert_model: artifacts/finetuned-encoder
 sbert_model: sentence-transformers/all-MiniLM-L6-v2
 tfidf_max_features: 50000
 

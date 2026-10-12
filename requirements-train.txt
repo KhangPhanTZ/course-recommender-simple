@@ -1,0 +1,9 @@
+# Extra dependencies for the optional fine-tuning step (src/training/).
+# Not needed to run or serve the app — only to TRAIN the retrieval encoder.
+# A GPU is strongly recommended (e.g. Google Colab, see notebooks/finetune_colab.ipynb).
+#
+#   pip install -r requirements-train.txt
+
+sentence-transformers>=2.7
+torch
+accelerate
