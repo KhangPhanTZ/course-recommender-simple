@@ -38,11 +38,32 @@ def _clean(value: Any) -> str:
     return "" if text.lower() in ("", "nan", "none") else text
 
 
+def skill_list(value: Any) -> list[str]:
+    """Split a skills cell into clean items.
+
+    Some source datasets store skills as a stringified set/list, e.g.
+    ``{" Network Security"," Python Programming"}``. Strip the braces/brackets and
+    per-item quotes so the skills read as plain phrases rather than leaking raw
+    JSON-ish punctuation into queries and prompts.
+    """
+    s = _clean(value)
+    if not s:
+        return []
+    s = s.strip("{}[]")
+    items = [part.strip().strip("\"'").strip() for part in s.split(",")]
+    return [it for it in items if it]
+
+
+def clean_skills(value: Any) -> str:
+    """Skills as a readable comma-separated string (see :func:`skill_list`)."""
+    return ", ".join(skill_list(value))
+
+
 def course_text(record: dict) -> str:
     """The full text a query should match to — title, skills, description, etc."""
     parts = [
         _clean(record.get("title")),
-        _clean(record.get("skills")),
+        clean_skills(record.get("skills")),
         _clean(record.get("description")),
         _clean(record.get("category")),
         _clean(record.get("level")),
@@ -53,10 +74,11 @@ def course_text(record: dict) -> str:
 def build_proxy_pairs(records: Iterable[dict]) -> list[dict]:
     """Deterministic pairs from each course's own fields (no LLM, no network).
 
-    Produces a few short, query-like anchors per course (its title, its skills,
-    and a "learn <skills>" phrasing), each pointing at the full course text. Weak
-    supervision, but a sane baseline that always runs — useful for CI and as a
-    fallback when no LLM is configured.
+    Produces a few short, query-like anchors per course (its title, a few of its
+    skills, and a "learn <skills>" phrasing), each pointing at the full course
+    text. Weak supervision — queries overlap the positive heavily, so this is a
+    baseline/CI fallback; use ``build_llm_pairs`` for a harder, more realistic
+    training signal.
     """
     pairs: list[dict] = []
     for rec in records:
@@ -64,15 +86,17 @@ def build_proxy_pairs(records: Iterable[dict]) -> list[dict]:
         if not positive:
             continue
         cid = rec.get("id")
-        title, skills = _clean(rec.get("title")), _clean(rec.get("skills"))
+        title = _clean(rec.get("title"))
         category = _clean(rec.get("category"))
+        # cap skills to a few so the anchor reads like a query, not a dumped list
+        top_skills = ", ".join(skill_list(rec.get("skills"))[:4])
 
         anchors = set()
         if title:
             anchors.add(title)
-        if skills:
-            anchors.add(skills)
-            anchors.add(f"learn {skills}")
+        if top_skills:
+            anchors.add(top_skills)
+            anchors.add(f"learn {top_skills}")
         if category and title:
             anchors.add(f"{category} course on {title}")
 
@@ -114,7 +138,7 @@ def build_llm_pairs(
             continue
         prompt = (
             f"Course title: {_clean(rec.get('title')) or 'n/a'}\n"
-            f"Skills: {_clean(rec.get('skills')) or 'n/a'}\n"
+            f"Skills: {clean_skills(rec.get('skills')) or 'n/a'}\n"
             f"Category: {_clean(rec.get('category')) or 'n/a'}\n"
             f"Level: {_clean(rec.get('level')) or 'n/a'}\n\n"
             f"Write {per_course} diverse, realistic search queries (3-10 words each) "
